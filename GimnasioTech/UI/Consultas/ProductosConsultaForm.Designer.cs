@@ -173,6 +173,7 @@
             this.Controls.Add(this.ConsultartextBox);
             this.Controls.Add(this.ConsultadataGridView);
             this.Name = "ProductosConsultaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de productos";
             this.Load += new System.EventHandler(this.ProductosConsultaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();

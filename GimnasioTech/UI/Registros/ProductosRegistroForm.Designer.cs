@@ -65,6 +65,69 @@
             ((System.ComponentModel.ISupportInitialize)(this.CantidaderrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
+            // productoIdLabel
+            // 
+            productoIdLabel.AutoSize = true;
+            productoIdLabel.Location = new System.Drawing.Point(49, 43);
+            productoIdLabel.Name = "productoIdLabel";
+            productoIdLabel.Size = new System.Drawing.Size(65, 13);
+            productoIdLabel.TabIndex = 34;
+            productoIdLabel.Text = "Producto Id:";
+            // 
+            // descripcionLabel
+            // 
+            descripcionLabel.AutoSize = true;
+            descripcionLabel.Location = new System.Drawing.Point(49, 69);
+            descripcionLabel.Name = "descripcionLabel";
+            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.TabIndex = 36;
+            descripcionLabel.Text = "Descripcion:";
+            // 
+            // cantidadLabel
+            // 
+            cantidadLabel.AutoSize = true;
+            cantidadLabel.Location = new System.Drawing.Point(49, 92);
+            cantidadLabel.Name = "cantidadLabel";
+            cantidadLabel.Size = new System.Drawing.Size(52, 13);
+            cantidadLabel.TabIndex = 38;
+            cantidadLabel.Text = "Cantidad:";
+            // 
+            // costoLabel
+            // 
+            costoLabel.AutoSize = true;
+            costoLabel.Location = new System.Drawing.Point(49, 121);
+            costoLabel.Name = "costoLabel";
+            costoLabel.Size = new System.Drawing.Size(37, 13);
+            costoLabel.TabIndex = 40;
+            costoLabel.Text = "Costo:";
+            // 
+            // precioLabel
+            // 
+            precioLabel.AutoSize = true;
+            precioLabel.Location = new System.Drawing.Point(49, 147);
+            precioLabel.Name = "precioLabel";
+            precioLabel.Size = new System.Drawing.Size(40, 13);
+            precioLabel.TabIndex = 41;
+            precioLabel.Text = "Precio:";
+            // 
+            // fechaIngresoLabel
+            // 
+            fechaIngresoLabel.AutoSize = true;
+            fechaIngresoLabel.Location = new System.Drawing.Point(49, 174);
+            fechaIngresoLabel.Name = "fechaIngresoLabel";
+            fechaIngresoLabel.Size = new System.Drawing.Size(78, 13);
+            fechaIngresoLabel.TabIndex = 42;
+            fechaIngresoLabel.Text = "Fecha Ingreso:";
+            // 
+            // fechaVenciminetoLabel
+            // 
+            fechaVenciminetoLabel.AutoSize = true;
+            fechaVenciminetoLabel.Location = new System.Drawing.Point(49, 200);
+            fechaVenciminetoLabel.Name = "fechaVenciminetoLabel";
+            fechaVenciminetoLabel.Size = new System.Drawing.Size(101, 13);
+            fechaVenciminetoLabel.TabIndex = 44;
+            fechaVenciminetoLabel.Text = "Fecha Vencimiento:";
+            // 
             // PreciotextBox
             // 
             this.PreciotextBox.Location = new System.Drawing.Point(156, 144);
@@ -123,15 +186,6 @@
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // productoIdLabel
-            // 
-            productoIdLabel.AutoSize = true;
-            productoIdLabel.Location = new System.Drawing.Point(49, 43);
-            productoIdLabel.Name = "productoIdLabel";
-            productoIdLabel.Size = new System.Drawing.Size(65, 13);
-            productoIdLabel.TabIndex = 34;
-            productoIdLabel.Text = "Producto Id:";
-            // 
             // productoIdMaskedTextBox
             // 
             this.productoIdMaskedTextBox.Location = new System.Drawing.Point(156, 38);
@@ -142,15 +196,6 @@
             this.productoIdMaskedTextBox.ValidatingType = typeof(int);
             this.productoIdMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productoIdMaskedTextBox_KeyPress);
             // 
-            // descripcionLabel
-            // 
-            descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(49, 69);
-            descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionLabel.TabIndex = 36;
-            descripcionLabel.Text = "Descripcion:";
-            // 
             // descripcionTextBox
             // 
             this.descripcionTextBox.Location = new System.Drawing.Point(156, 66);
@@ -158,15 +203,6 @@
             this.descripcionTextBox.Size = new System.Drawing.Size(200, 20);
             this.descripcionTextBox.TabIndex = 37;
             this.descripcionTextBox.TextChanged += new System.EventHandler(this.descripcionTextBox_TextChanged);
-            // 
-            // cantidadLabel
-            // 
-            cantidadLabel.AutoSize = true;
-            cantidadLabel.Location = new System.Drawing.Point(49, 92);
-            cantidadLabel.Name = "cantidadLabel";
-            cantidadLabel.Size = new System.Drawing.Size(52, 13);
-            cantidadLabel.TabIndex = 38;
-            cantidadLabel.Text = "Cantidad:";
             // 
             // cantidadNumericUpDown
             // 
@@ -176,33 +212,6 @@
             this.cantidadNumericUpDown.TabIndex = 39;
             this.cantidadNumericUpDown.ValueChanged += new System.EventHandler(this.cantidadNumericUpDown_ValueChanged);
             // 
-            // costoLabel
-            // 
-            costoLabel.AutoSize = true;
-            costoLabel.Location = new System.Drawing.Point(49, 121);
-            costoLabel.Name = "costoLabel";
-            costoLabel.Size = new System.Drawing.Size(37, 13);
-            costoLabel.TabIndex = 40;
-            costoLabel.Text = "Costo:";
-            // 
-            // precioLabel
-            // 
-            precioLabel.AutoSize = true;
-            precioLabel.Location = new System.Drawing.Point(49, 147);
-            precioLabel.Name = "precioLabel";
-            precioLabel.Size = new System.Drawing.Size(40, 13);
-            precioLabel.TabIndex = 41;
-            precioLabel.Text = "Precio:";
-            // 
-            // fechaIngresoLabel
-            // 
-            fechaIngresoLabel.AutoSize = true;
-            fechaIngresoLabel.Location = new System.Drawing.Point(49, 174);
-            fechaIngresoLabel.Name = "fechaIngresoLabel";
-            fechaIngresoLabel.Size = new System.Drawing.Size(78, 13);
-            fechaIngresoLabel.TabIndex = 42;
-            fechaIngresoLabel.Text = "Fecha Ingreso:";
-            // 
             // fechaIngresoDateTimePicker
             // 
             this.fechaIngresoDateTimePicker.CustomFormat = "yyyy/MM/dd";
@@ -211,15 +220,6 @@
             this.fechaIngresoDateTimePicker.Name = "fechaIngresoDateTimePicker";
             this.fechaIngresoDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.fechaIngresoDateTimePicker.TabIndex = 43;
-            // 
-            // fechaVenciminetoLabel
-            // 
-            fechaVenciminetoLabel.AutoSize = true;
-            fechaVenciminetoLabel.Location = new System.Drawing.Point(49, 200);
-            fechaVenciminetoLabel.Name = "fechaVenciminetoLabel";
-            fechaVenciminetoLabel.Size = new System.Drawing.Size(101, 13);
-            fechaVenciminetoLabel.TabIndex = 44;
-            fechaVenciminetoLabel.Text = "Fecha Vencimiento:";
             // 
             // fechaVencimientoDateTimePicker
             // 
@@ -269,7 +269,10 @@
             this.Controls.Add(this.fechaIngresoDateTimePicker);
             this.Controls.Add(fechaVenciminetoLabel);
             this.Controls.Add(this.fechaVencimientoDateTimePicker);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ProductosRegistroForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de productos";
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DescripcionerrorProvider)).EndInit();

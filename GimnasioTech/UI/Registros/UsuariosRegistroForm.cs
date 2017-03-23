@@ -201,14 +201,14 @@ namespace GimnasioTech.UI.Registros
             ClaveerrorProvider.Clear();
         }
 
-        private void confirmarClaveTextBox_TextChanged(object sender, EventArgs e)
-        {
-            confirmarClaveTextBox.Clear();
-        }
-
         private void CargoscomboBox_TextChanged(object sender, EventArgs e)
         {
             CargoerrorProvider.Clear();
+        }
+
+        private void confirmarClaveTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ConfirmarClaveerrorProvider.Clear();
         }
     }
 }

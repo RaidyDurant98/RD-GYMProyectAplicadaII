@@ -16,73 +16,73 @@ namespace GimnasioTech.UI.Consultas
             InitializeComponent();
         }
 
-        private void Filtro()
+        private void UsuariosConsultaForm_Load(object sender, EventArgs e)
         {
-            if (ConsultarcomboBox.SelectedIndex == 0)
+            FiltrartextBox.Enabled = false;
+        }
+
+        private void Filtrar()
+        {
+            if (FiltrarcomboBox.SelectedIndex == 0)
             {
                 ConsultadataGridView.DataSource = BLL.UsuariosBLL.GetListAll();
             }
-            else if (ConsultarcomboBox.SelectedIndex != 0)
+            else if (FiltrarcomboBox.SelectedIndex != 0)
             {
-                if (string.IsNullOrEmpty(ConsultartextBox.Text))
+                if (string.IsNullOrEmpty(FiltrartextBox.Text))
                 {
-                    CampoVacioerrorProvider.SetError(ConsultartextBox, "Por favor llenar este campo.");
+                    CampoVacioerrorProvider.SetError(FiltrartextBox, "Por favor llenar este campo.");
                 }
                 else
                 {
-                    if (ConsultarcomboBox.SelectedIndex == 1)
+                    if (FiltrarcomboBox.SelectedIndex == 1)
                     {
-                        ConsultadataGridView.DataSource = BLL.UsuariosBLL.GetList(p => p.Nombres == ConsultartextBox.Text);
+                        ConsultadataGridView.DataSource = BLL.UsuariosBLL.GetList(p => p.Nombres ==FiltrartextBox.Text);
                     }
-                    if (ConsultarcomboBox.SelectedIndex == 2)
+                    if (FiltrarcomboBox.SelectedIndex == 2)
                     {
-                        ConsultadataGridView.DataSource = BLL.UsuariosBLL.GetList(p => p.Cargo == ConsultartextBox.Text);
+                        ConsultadataGridView.DataSource = BLL.UsuariosBLL.GetList(p => p.Cargo == FiltrartextBox.Text);
                     }
                 }
             }
         }
 
-        private void UsuariosConsultaForm_Load(object sender, EventArgs e)
+        private void FiltrarcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ConsultartextBox.Enabled = false;
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ConsultarcomboBox.SelectedIndex == 0)
+            if (FiltrarcomboBox.SelectedIndex == 0)
             {
-                ConsultartextBox.Clear();
+                FiltrartextBox.Clear();
                 CampoVacioerrorProvider.Clear();
-                ConsultartextBox.Enabled = false;
-                Filtro();
+                FiltrartextBox.Enabled = false;
+                Filtrar();
             }
             else
             {
-                ConsultartextBox.Enabled = true;
-                ConsultartextBox.Focus();
+                FiltrartextBox.Enabled = true;
+                FiltrartextBox.Focus();
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Filtrarbutton_Click(object sender, EventArgs e)
         {
-            Filtro();
+            Filtrar();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void FiltrartextBox_TextChanged(object sender, EventArgs e)
         {
             CampoVacioerrorProvider.Clear();
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void FiltrartextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((Keys)e.KeyChar == Keys.Enter)
             {
-                if (!string.IsNullOrEmpty(ConsultartextBox.Text))
+                if (!string.IsNullOrEmpty(FiltrartextBox.Text))
                 {
                     CampoVacioerrorProvider.Clear();
                 }
 
-                Filtro();
+                Filtrar();
             }
         }
     }

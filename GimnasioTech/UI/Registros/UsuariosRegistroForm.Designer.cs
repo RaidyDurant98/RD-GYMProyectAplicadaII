@@ -44,12 +44,12 @@
             this.nombresTextBox = new System.Windows.Forms.TextBox();
             this.nombreUsuarioTextBox = new System.Windows.Forms.TextBox();
             this.claveTextBox = new System.Windows.Forms.TextBox();
-            this.confirmarClaveTextBox = new System.Windows.Forms.TextBox();
             this.NombreserrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.NombreUsuarioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ClaveerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ConfirmarClaveerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.CargoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.confirmarClaveTextBox = new System.Windows.Forms.TextBox();
             label1 = new System.Windows.Forms.Label();
             usuarioIdLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
@@ -204,14 +204,6 @@
             this.claveTextBox.TabIndex = 41;
             this.claveTextBox.TextChanged += new System.EventHandler(this.claveTextBox_TextChanged);
             // 
-            // confirmarClaveTextBox
-            // 
-            this.confirmarClaveTextBox.Location = new System.Drawing.Point(156, 156);
-            this.confirmarClaveTextBox.Name = "confirmarClaveTextBox";
-            this.confirmarClaveTextBox.Size = new System.Drawing.Size(200, 20);
-            this.confirmarClaveTextBox.TabIndex = 43;
-            this.confirmarClaveTextBox.TextChanged += new System.EventHandler(this.confirmarClaveTextBox_TextChanged);
-            // 
             // NombreserrorProvider
             // 
             this.NombreserrorProvider.ContainerControl = this;
@@ -232,11 +224,20 @@
             // 
             this.CargoerrorProvider.ContainerControl = this;
             // 
+            // confirmarClaveTextBox
+            // 
+            this.confirmarClaveTextBox.Location = new System.Drawing.Point(156, 156);
+            this.confirmarClaveTextBox.Name = "confirmarClaveTextBox";
+            this.confirmarClaveTextBox.Size = new System.Drawing.Size(200, 20);
+            this.confirmarClaveTextBox.TabIndex = 50;
+            this.confirmarClaveTextBox.TextChanged += new System.EventHandler(this.confirmarClaveTextBox_TextChanged);
+            // 
             // UsuariosRegistroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 384);
+            this.Controls.Add(this.confirmarClaveTextBox);
             this.Controls.Add(this.CargoscomboBox);
             this.Controls.Add(label1);
             this.Controls.Add(this.Buscarbutton);
@@ -252,8 +253,10 @@
             this.Controls.Add(claveLabel);
             this.Controls.Add(this.claveTextBox);
             this.Controls.Add(confirmarClaveLabel);
-            this.Controls.Add(this.confirmarClaveTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "UsuariosRegistroForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.NombreserrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreUsuarioerrorProvider)).EndInit();
@@ -276,11 +279,11 @@
         private System.Windows.Forms.TextBox nombresTextBox;
         private System.Windows.Forms.TextBox nombreUsuarioTextBox;
         private System.Windows.Forms.TextBox claveTextBox;
-        private System.Windows.Forms.TextBox confirmarClaveTextBox;
         private System.Windows.Forms.ErrorProvider NombreserrorProvider;
         private System.Windows.Forms.ErrorProvider NombreUsuarioerrorProvider;
         private System.Windows.Forms.ErrorProvider ClaveerrorProvider;
         private System.Windows.Forms.ErrorProvider ConfirmarClaveerrorProvider;
         private System.Windows.Forms.ErrorProvider CargoerrorProvider;
+        private System.Windows.Forms.TextBox confirmarClaveTextBox;
     }
 }

@@ -172,7 +172,9 @@
             this.ClientSize = new System.Drawing.Size(583, 376);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MenuPrincipalForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuPrincipalForm_FormClosed);
             this.VisibleChanged += new System.EventHandler(this.MenuPrincipalForm_VisibleChanged);
             this.menuStrip1.ResumeLayout(false);

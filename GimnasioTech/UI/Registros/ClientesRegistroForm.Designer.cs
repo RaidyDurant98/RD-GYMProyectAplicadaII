@@ -302,8 +302,11 @@
             this.Controls.Add(this.direccionTextBox);
             this.Controls.Add(numeroCelularLabel);
             this.Controls.Add(this.numeroCelularMaskedTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ClientesRegistroForm";
-            this.Text = "S";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registro de clientes";
             ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DireccionerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SexoerrorProvider)).EndInit();

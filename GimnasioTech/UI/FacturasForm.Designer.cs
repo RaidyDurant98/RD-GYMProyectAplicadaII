@@ -162,6 +162,7 @@
             // Buscarbutton
             // 
             this.Buscarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Buscarbutton.Image = global::GimnasioTech.Properties.Resources.Search_25px;
             this.Buscarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Buscarbutton.Location = new System.Drawing.Point(134, 20);
             this.Buscarbutton.Name = "Buscarbutton";
@@ -175,6 +176,7 @@
             // 
             this.Eliminarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Eliminarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Eliminarbutton.Image = global::GimnasioTech.Properties.Resources.Delete_25px;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Eliminarbutton.Location = new System.Drawing.Point(180, 442);
@@ -190,6 +192,7 @@
             // 
             this.Guardarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Guardarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Guardarbutton.Image = global::GimnasioTech.Properties.Resources.Save_25px;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guardarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Guardarbutton.Location = new System.Drawing.Point(99, 442);
@@ -205,6 +208,7 @@
             // 
             this.Nuevobutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Nuevobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Nuevobutton.Image = global::GimnasioTech.Properties.Resources.New_Document_25px;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Nuevobutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Nuevobutton.Location = new System.Drawing.Point(18, 442);
@@ -239,6 +243,7 @@
             // 
             this.BuscarProductobutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BuscarProductobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BuscarProductobutton.Image = global::GimnasioTech.Properties.Resources.Search_25px;
             this.BuscarProductobutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.BuscarProductobutton.Location = new System.Drawing.Point(255, 24);
             this.BuscarProductobutton.Name = "BuscarProductobutton";
@@ -377,6 +382,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FacturasForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Factura";
             this.Load += new System.EventHandler(this.FacturasForm_Load);
             this.SaldogroupBox.ResumeLayout(false);
