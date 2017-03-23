@@ -47,6 +47,8 @@ namespace GimnasioTech.UI
             ProductoerrorProvider.Clear();
             RecibidoerrorProvider.Clear();
             GriderrorProvider.Clear();
+
+            RecibidotextBox.Enabled = false;
         }
 
         private bool Validar()
@@ -61,6 +63,11 @@ namespace GimnasioTech.UI
             if (ProductodataGridView.DataSource == null)
             {
                 GriderrorProvider.SetError(ProductodataGridView, "Por favor llenar el campo.");
+                interruptor = false;
+            }
+            if (string.IsNullOrEmpty(RecibidotextBox.Text))
+            {
+                RecibidoerrorProvider.SetError(RecibidotextBox, "Por favor llenar el campo.");
                 interruptor = false;
             }
 
@@ -129,6 +136,11 @@ namespace GimnasioTech.UI
                 }
                 else
                     MessageBox.Show("Error! no se pudo guardar.");
+            }
+
+            if (string.IsNullOrEmpty(RecibidotextBox.Text))
+            {
+                RecibidotextBox.Focus();
             }
         }
 
@@ -225,6 +237,7 @@ namespace GimnasioTech.UI
                     MessageBox.Show("El dinero no es suficiente para cubrir su comprar.");
                     RecibidotextBox.Clear();
                     RecibidotextBox.Focus();
+                    
                 }
                 else
                 {
@@ -291,6 +304,11 @@ namespace GimnasioTech.UI
             if ((Keys)e.KeyChar == Keys.Enter)
             {
                 CalcularDevuelta();
+
+                if (DevueltatextBox.Text != null)
+                {
+                    Guardarbutton.Focus();
+                }
             }
         }
 
@@ -315,6 +333,7 @@ namespace GimnasioTech.UI
             if ((Keys)e.KeyChar == Keys.Enter)
             {
                 AgregarProducto();
+                CantidadnumericUpDown.Value = 0;
             }
         }
 

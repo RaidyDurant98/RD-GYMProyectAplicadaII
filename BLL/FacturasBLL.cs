@@ -12,13 +12,19 @@ namespace BLL
     {
         public static bool Guardar(Facturas factura)
         {
-            using (var context = new DAL.RD_GYMDb())
+            using (var context = new DAL.Respository<Entidades.Facturas>())
             {
-                context.Factura.Add(factura);
+                try
+                {
+                    return context.Guardar(factura);
+                }
+                catch (Exception)
+                {
 
-                context.SaveChanges();
-                return true;
+                    throw;
+                }
             }
+        
         }
 
         public static bool Eliminar(Facturas factura)
