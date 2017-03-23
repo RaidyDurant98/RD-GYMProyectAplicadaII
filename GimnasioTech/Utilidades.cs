@@ -13,5 +13,12 @@ namespace GimnasioTech
             int.TryParse(num, out numero);
             return numero;
         }
+
+        public static decimal TODECIMAL(string num)
+        {
+            decimal numero = 0;
+            decimal.TryParse(num, out numero);
+            return numero;
+        }
     }
 }

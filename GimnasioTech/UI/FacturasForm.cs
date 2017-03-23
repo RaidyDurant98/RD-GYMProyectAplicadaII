@@ -33,13 +33,14 @@ namespace GimnasioTech.UI
 
             FacturaIdmaskedTextBox.Clear();
             NombresClientescomboBox.Text = null;
-            SubTotaltextBox.Clear();
-            TotaltextBox.Clear();
+            MontotextBox.Clear();
             FechadateTimePicker.Value = DateTime.Now;
             ProductocomboBox.Text = null;
             ProductodataGridView.DataSource = null;
             CantidadnumericUpDown.Value = 0;
             PreciotextBox.Clear();
+            DevueltatextBox.Clear();
+            RecibidotextBox.Clear();
         }
 
         private bool Validar()
@@ -86,9 +87,10 @@ namespace GimnasioTech.UI
         {
             Factura.NombreCliente = NombresClientescomboBox.Text;
             Factura.FacturaId = Utilidades.TOINT(FacturaIdmaskedTextBox.Text);
-            Factura.SubTotal = Utilidades.TOINT(SubTotaltextBox.Text);
-            Factura.Total = Utilidades.TOINT(TotaltextBox.Text);
+            Factura.Monto = Utilidades.TOINT(MontotextBox.Text);
             Factura.Fecha = FechadateTimePicker.Value;
+            Factura.DineroPagado = Utilidades.TOINT(RecibidotextBox.Text);
+            Factura.Devuelta = Utilidades.TOINT(DevueltatextBox.Text);
 
             return Factura;
         }
@@ -151,8 +153,9 @@ namespace GimnasioTech.UI
                 {
                     NombresClientescomboBox.Text = factura.NombreCliente;
                     FechadateTimePicker.Value = factura.Fecha;
-                    SubTotaltextBox.Text = factura.SubTotal.ToString();
-                    TotaltextBox.Text = factura.Total.ToString();
+                    MontotextBox.Text = factura.Monto.ToString();
+                    RecibidotextBox.Text = factura.DineroPagado.ToString();
+                    DevueltatextBox.Text = factura.Devuelta.ToString();
 
                     LlenarDataGrid(factura);
                 }
@@ -164,10 +167,53 @@ namespace GimnasioTech.UI
             }
         }
 
+        private decimal ExistenciaProducto()
+        {
+            decimal existecia = Detalle.Producto.Cantidad - CantidadnumericUpDown.Value;
+
+            return existecia;
+        }
+
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
-            Factura.AgregarDetalle(Detalle.Producto, CantidadnumericUpDown.Value);
-            LlenarDataGrid(Factura);
+            Detalle.Producto.Cantidad = ExistenciaProducto();
+
+            if (Detalle.Producto.Cantidad >= 0)
+            {
+                Factura.AgregarDetalle(Detalle.Producto, CantidadnumericUpDown.Value);
+                LlenarDataGrid(Factura);
+
+                CalculoMonto();
+            }
+            else
+            {
+                MessageBox.Show("No que en existencia ese producto.");
+            }
+        }
+
+        private void CalculoMonto()
+        {
+            Factura.Monto += Detalle.Producto.Precio * CantidadnumericUpDown.Value;
+            MontotextBox.Text = Factura.Monto.ToString();
+
+            RecibidotextBox.Focus();
+        }
+
+        private void CalcularDevuelta()
+        {
+            Factura.DineroPagado = Utilidades.TOINT(RecibidotextBox.Text);
+
+            if (Factura.DineroPagado < Factura.Monto)
+            {
+                MessageBox.Show("El dinero no es suficiente para cubrir su comprar.");
+                RecibidotextBox.Clear();
+                RecibidotextBox.Focus();
+            }
+            else
+            {
+                Factura.Devuelta = Factura.DineroPagado - Factura.Monto;
+                DevueltatextBox.Text = Factura.Devuelta.ToString();
+            }
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
@@ -202,6 +248,14 @@ namespace GimnasioTech.UI
             {
                 PreciotextBox.Text = Detalle.Producto.Precio.ToString();
                 CantidadnumericUpDown.Focus();
+            }
+        }
+
+        private void RecibidotextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                CalcularDevuelta();
             }
         }
     }

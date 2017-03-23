@@ -12,7 +12,7 @@ namespace Entidades
         public int Id { get; set; }
         public int FacturaId { get; set; }
         public int ProductoId { get; set; }
-        public double Precio { get; set; }
+        public decimal Precio { get; set; }
         public decimal Cantidad { get; set; }
         public string Descripcion { get; set; }
 
@@ -20,15 +20,16 @@ namespace Entidades
 
         public FacturasProductos()
         {
-            this.Producto = new Productos();
+            //Producto = new Productos();
         }
 
-        public FacturasProductos(int productoId, double precio, decimal cantidad, string descripcion)
+        public FacturasProductos(int productoId, decimal precio, decimal cantidad, string descripcion)
         {
             this.ProductoId = productoId;
             this.Precio = precio;
             this.Descripcion = descripcion;
             this.Cantidad = cantidad;
+            Producto = new Productos();
         }
     }
 }

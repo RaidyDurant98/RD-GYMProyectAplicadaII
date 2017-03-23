@@ -12,8 +12,8 @@ namespace Entidades
         public int ProductoId { get; set; }
         public string Descripcion { get; set; }
         public decimal Cantidad { get; set; }
-        public double Costo { get; set; }
-        public double Precio { get; set; }
+        public decimal Costo { get; set; }
+        public decimal Precio { get; set; }
         public DateTime FechaIngreso { get; set; }
         public DateTime FechaVencimiento { get; set; }
 
@@ -24,7 +24,7 @@ namespace Entidades
             Relacion = new HashSet<FacturasProductos>();
         }
 
-        public Productos(int productoId, string descripcion, int cantidad, double costo, double precio, DateTime fechaIngreso, DateTime fechaVencimiento)
+        public Productos(int productoId, string descripcion, int cantidad, decimal costo, decimal precio, DateTime fechaIngreso, DateTime fechaVencimiento)
         {
             this.ProductoId = productoId;
             this.Descripcion = descripcion;

@@ -13,8 +13,9 @@ namespace Entidades
         public string NombreCliente { get; set; }
         public int ProductoId { get; set; }
         public DateTime Fecha { get; set; }
-        public double SubTotal { get; set; }
-        public double Total { get; set; }
+        public decimal Monto { get; set; }
+        public decimal DineroPagado { get; set; }
+        public decimal Devuelta { get; set; }
 
         public virtual ICollection<FacturasProductos> Relacion { get; set; }
 

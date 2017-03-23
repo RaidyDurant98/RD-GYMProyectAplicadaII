@@ -32,12 +32,10 @@
             this.SaldogroupBox = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.RecibidotextBox = new System.Windows.Forms.TextBox();
+            this.DevueltatextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.SubTotaltextBox = new System.Windows.Forms.TextBox();
-            this.TotaltextBox = new System.Windows.Forms.TextBox();
+            this.MontotextBox = new System.Windows.Forms.TextBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -69,15 +67,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SaldogroupBox.Controls.Add(this.label6);
             this.SaldogroupBox.Controls.Add(this.label7);
-            this.SaldogroupBox.Controls.Add(this.textBox1);
-            this.SaldogroupBox.Controls.Add(this.textBox2);
-            this.SaldogroupBox.Controls.Add(this.label4);
+            this.SaldogroupBox.Controls.Add(this.RecibidotextBox);
+            this.SaldogroupBox.Controls.Add(this.DevueltatextBox);
             this.SaldogroupBox.Controls.Add(this.label5);
-            this.SaldogroupBox.Controls.Add(this.SubTotaltextBox);
-            this.SaldogroupBox.Controls.Add(this.TotaltextBox);
-            this.SaldogroupBox.Location = new System.Drawing.Point(267, 384);
+            this.SaldogroupBox.Controls.Add(this.MontotextBox);
+            this.SaldogroupBox.Location = new System.Drawing.Point(254, 384);
             this.SaldogroupBox.Name = "SaldogroupBox";
-            this.SaldogroupBox.Size = new System.Drawing.Size(409, 93);
+            this.SaldogroupBox.Size = new System.Drawing.Size(422, 93);
             this.SaldogroupBox.TabIndex = 43;
             this.SaldogroupBox.TabStop = false;
             this.SaldogroupBox.Text = "Dinero";
@@ -102,62 +98,44 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Devuelta:";
             // 
-            // textBox1
+            // RecibidotextBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox1.Location = new System.Drawing.Point(70, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 13;
+            this.RecibidotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.RecibidotextBox.Location = new System.Drawing.Point(70, 55);
+            this.RecibidotextBox.Name = "RecibidotextBox";
+            this.RecibidotextBox.Size = new System.Drawing.Size(100, 20);
+            this.RecibidotextBox.TabIndex = 13;
+            this.RecibidotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RecibidotextBox_KeyPress);
             // 
-            // textBox2
+            // DevueltatextBox
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.DevueltatextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(242, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 20);
-            this.textBox2.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "SubTotal:";
+            this.DevueltatextBox.Enabled = false;
+            this.DevueltatextBox.Location = new System.Drawing.Point(242, 55);
+            this.DevueltatextBox.Name = "DevueltatextBox";
+            this.DevueltatextBox.Size = new System.Drawing.Size(164, 20);
+            this.DevueltatextBox.TabIndex = 14;
             // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(186, 22);
+            this.label5.Location = new System.Drawing.Point(98, 22);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Total:";
+            this.label5.Text = "Monto:";
             // 
-            // SubTotaltextBox
+            // MontotextBox
             // 
-            this.SubTotaltextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.SubTotaltextBox.Enabled = false;
-            this.SubTotaltextBox.Location = new System.Drawing.Point(70, 19);
-            this.SubTotaltextBox.Name = "SubTotaltextBox";
-            this.SubTotaltextBox.Size = new System.Drawing.Size(100, 20);
-            this.SubTotaltextBox.TabIndex = 9;
-            // 
-            // TotaltextBox
-            // 
-            this.TotaltextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.MontotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotaltextBox.Enabled = false;
-            this.TotaltextBox.Location = new System.Drawing.Point(242, 19);
-            this.TotaltextBox.Name = "TotaltextBox";
-            this.TotaltextBox.Size = new System.Drawing.Size(151, 20);
-            this.TotaltextBox.TabIndex = 10;
+            this.MontotextBox.Enabled = false;
+            this.MontotextBox.Location = new System.Drawing.Point(154, 19);
+            this.MontotextBox.Name = "MontotextBox";
+            this.MontotextBox.Size = new System.Drawing.Size(164, 20);
+            this.MontotextBox.TabIndex = 10;
             // 
             // Buscarbutton
             // 
@@ -179,7 +157,7 @@
             this.Eliminarbutton.Image = global::GimnasioTech.Properties.Resources.Delete_25px;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Eliminarbutton.Location = new System.Drawing.Point(180, 442);
+            this.Eliminarbutton.Location = new System.Drawing.Point(173, 445);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 32);
             this.Eliminarbutton.TabIndex = 41;
@@ -195,7 +173,7 @@
             this.Guardarbutton.Image = global::GimnasioTech.Properties.Resources.Save_25px;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guardarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Guardarbutton.Location = new System.Drawing.Point(99, 442);
+            this.Guardarbutton.Location = new System.Drawing.Point(92, 445);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 32);
             this.Guardarbutton.TabIndex = 40;
@@ -211,7 +189,7 @@
             this.Nuevobutton.Image = global::GimnasioTech.Properties.Resources.New_Document_25px;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Nuevobutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Nuevobutton.Location = new System.Drawing.Point(18, 442);
+            this.Nuevobutton.Location = new System.Drawing.Point(11, 445);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 32);
             this.Nuevobutton.TabIndex = 39;
@@ -402,12 +380,10 @@
         private System.Windows.Forms.GroupBox SaldogroupBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox RecibidotextBox;
+        private System.Windows.Forms.TextBox DevueltatextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox SubTotaltextBox;
-        private System.Windows.Forms.TextBox TotaltextBox;
+        private System.Windows.Forms.TextBox MontotextBox;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
