@@ -22,6 +22,7 @@ namespace GimnasioTech.UI
 
         private void FacturasForm_Load(object sender, EventArgs e)
         {
+            RecibidotextBox.Enabled = false;
             LlenarComboClientes();
             LlenarComboProductos();
         }
@@ -41,24 +42,29 @@ namespace GimnasioTech.UI
             PreciotextBox.Clear();
             DevueltatextBox.Clear();
             RecibidotextBox.Clear();
+            ClienteerrorProvider.Clear();
+            CantidaderrorProvider.Clear();
+            ProductoerrorProvider.Clear();
+            RecibidoerrorProvider.Clear();
+            GriderrorProvider.Clear();
         }
 
         private bool Validar()
         {
-            bool x = true;
+            bool interruptor = true;
 
             if (string.IsNullOrEmpty(NombresClientescomboBox.Text))
             {
-                errorProvider1.SetError(NombresClientescomboBox, "Favor Llenar");
-                x = false;
+                ClienteerrorProvider.SetError(NombresClientescomboBox, "Por favor llenar el campo.");
+                interruptor = false;
             }
-            if (string.IsNullOrEmpty(ProductocomboBox.Text))
+            if (ProductodataGridView.DataSource == null)
             {
-                errorProvider1.SetError(ProductocomboBox, "Favor Llenar");
-                x = false;
+                GriderrorProvider.SetError(ProductodataGridView, "Por favor llenar el campo.");
+                interruptor = false;
             }
 
-            return x;
+            return interruptor;
         }
 
         private void LlenarComboClientes()
@@ -112,11 +118,7 @@ namespace GimnasioTech.UI
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            if (!Validar())
-            {
-                MessageBox.Show("Por favor llenar los campos vacios.");
-            }
-            else
+            if (Validar())
             {
                 Factura = LlenarCampos();
 
@@ -176,18 +178,31 @@ namespace GimnasioTech.UI
 
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
-            Detalle.Producto.Cantidad = ExistenciaProducto();
+            AgregarProducto();
+        }
 
-            if (Detalle.Producto.Cantidad >= 0)
+        private void AgregarProducto()
+        {
+            //Detalle.Producto.Cantidad = ExistenciaProducto();
+
+            if (ProductocomboBox.SelectedItem != null)
             {
-                Factura.AgregarDetalle(Detalle.Producto, CantidadnumericUpDown.Value);
-                LlenarDataGrid(Factura);
+                if (CantidadnumericUpDown.Value != 0)
+                {
+                    Factura.AgregarDetalle(Detalle.Producto, CantidadnumericUpDown.Value);
+                    LlenarDataGrid(Factura);
 
-                CalculoMonto();
+                    CalculoMonto();
+                }
+                else
+                {
+                    CantidaderrorProvider.SetError(CantidadnumericUpDown, "Digite una cantidad diferente de (0).");
+                    CantidadnumericUpDown.Focus();
+                }
             }
             else
             {
-                MessageBox.Show("No que en existencia ese producto.");
+                ProductoerrorProvider.SetError(ProductocomboBox, "Eliga un producto.");
             }
         }
 
@@ -203,16 +218,24 @@ namespace GimnasioTech.UI
         {
             Factura.DineroPagado = Utilidades.TOINT(RecibidotextBox.Text);
 
-            if (Factura.DineroPagado < Factura.Monto)
+            if (!string.IsNullOrEmpty(RecibidotextBox.Text))
             {
-                MessageBox.Show("El dinero no es suficiente para cubrir su comprar.");
-                RecibidotextBox.Clear();
-                RecibidotextBox.Focus();
+                if (Factura.DineroPagado < Factura.Monto)
+                {
+                    MessageBox.Show("El dinero no es suficiente para cubrir su comprar.");
+                    RecibidotextBox.Clear();
+                    RecibidotextBox.Focus();
+                }
+                else
+                {
+                    Factura.Devuelta = Factura.DineroPagado - Factura.Monto;
+                    DevueltatextBox.Text = Factura.Devuelta.ToString();
+                }
             }
             else
             {
-                Factura.Devuelta = Factura.DineroPagado - Factura.Monto;
-                DevueltatextBox.Text = Factura.Devuelta.ToString();
+                RecibidoerrorProvider.SetError(RecibidotextBox, "Digite la cantidad de dinero pagada.");
+                RecibidotextBox.Focus();
             }
         }
 
@@ -238,17 +261,29 @@ namespace GimnasioTech.UI
             }
         }
 
-        private void BuscarProductobutton_Click(object sender, EventArgs e)
+        private void BuscarProducto()
         {
             int id = Convert.ToInt32(ProductocomboBox.SelectedValue);
 
             Detalle.Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == id);
 
-            if (Detalle.Producto != null)
+            if (ProductocomboBox.SelectedItem != null)
             {
-                PreciotextBox.Text = Detalle.Producto.Precio.ToString();
-                CantidadnumericUpDown.Focus();
+                if (Detalle.Producto != null)
+                {
+                    PreciotextBox.Text = Detalle.Producto.Precio.ToString();
+                    CantidadnumericUpDown.Focus();
+                }
             }
+            else
+            {
+                ProductoerrorProvider.SetError(ProductocomboBox, "Eliga un producto.");
+            }
+        }
+
+        private void BuscarProductobutton_Click(object sender, EventArgs e)
+        {
+            BuscarProducto();
         }
 
         private void RecibidotextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -257,6 +292,60 @@ namespace GimnasioTech.UI
             {
                 CalcularDevuelta();
             }
+        }
+
+        private void ProductocomboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                BuscarProducto();
+            }
+        }
+
+        private void FacturaIdmaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                BuscarFactura();
+            }
+        }
+
+        private void CantidadnumericUpDown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                AgregarProducto();
+            }
+        }
+
+        private void CantidadnumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            CantidaderrorProvider.Clear();
+        }
+
+        private void ProductocomboBox_TextChanged(object sender, EventArgs e)
+        {
+            ProductoerrorProvider.Clear();
+        }
+
+        private void RecibidotextBox_TextChanged(object sender, EventArgs e)
+        {
+            RecibidoerrorProvider.Clear();
+        }
+
+        private void NombresClientescomboBox_TextChanged(object sender, EventArgs e)
+        {
+            ClienteerrorProvider.Clear();
+        }
+
+        private void ProductodataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            GriderrorProvider.Clear();
+        }
+
+        private void MontotextBox_TextChanged(object sender, EventArgs e)
+        {
+            RecibidotextBox.Enabled = true;
         }
     }
 }

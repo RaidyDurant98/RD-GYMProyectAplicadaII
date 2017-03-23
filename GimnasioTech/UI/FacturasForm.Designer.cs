@@ -41,6 +41,8 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.ProductosgroupBox = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.BuscarProductobutton = new System.Windows.Forms.Button();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -53,12 +55,20 @@
             this.FacturaIdmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ClienteerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CantidaderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ProductoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.RecibidoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.GriderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.SaldogroupBox.SuspendLayout();
             this.ProductosgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidaderrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductoerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RecibidoerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GriderrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // SaldogroupBox
@@ -73,7 +83,7 @@
             this.SaldogroupBox.Controls.Add(this.MontotextBox);
             this.SaldogroupBox.Location = new System.Drawing.Point(254, 384);
             this.SaldogroupBox.Name = "SaldogroupBox";
-            this.SaldogroupBox.Size = new System.Drawing.Size(422, 93);
+            this.SaldogroupBox.Size = new System.Drawing.Size(421, 93);
             this.SaldogroupBox.TabIndex = 43;
             this.SaldogroupBox.TabStop = false;
             this.SaldogroupBox.Text = "Dinero";
@@ -105,6 +115,7 @@
             this.RecibidotextBox.Name = "RecibidotextBox";
             this.RecibidotextBox.Size = new System.Drawing.Size(100, 20);
             this.RecibidotextBox.TabIndex = 13;
+            this.RecibidotextBox.TextChanged += new System.EventHandler(this.RecibidotextBox_TextChanged);
             this.RecibidotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RecibidotextBox_KeyPress);
             // 
             // DevueltatextBox
@@ -114,7 +125,7 @@
             this.DevueltatextBox.Enabled = false;
             this.DevueltatextBox.Location = new System.Drawing.Point(242, 55);
             this.DevueltatextBox.Name = "DevueltatextBox";
-            this.DevueltatextBox.Size = new System.Drawing.Size(164, 20);
+            this.DevueltatextBox.Size = new System.Drawing.Size(163, 20);
             this.DevueltatextBox.TabIndex = 14;
             // 
             // label5
@@ -134,8 +145,9 @@
             this.MontotextBox.Enabled = false;
             this.MontotextBox.Location = new System.Drawing.Point(154, 19);
             this.MontotextBox.Name = "MontotextBox";
-            this.MontotextBox.Size = new System.Drawing.Size(164, 20);
+            this.MontotextBox.Size = new System.Drawing.Size(163, 20);
             this.MontotextBox.TabIndex = 10;
+            this.MontotextBox.TextChanged += new System.EventHandler(this.MontotextBox_TextChanged);
             // 
             // Buscarbutton
             // 
@@ -203,6 +215,8 @@
             this.ProductosgroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProductosgroupBox.Controls.Add(this.label8);
+            this.ProductosgroupBox.Controls.Add(this.label4);
             this.ProductosgroupBox.Controls.Add(this.BuscarProductobutton);
             this.ProductosgroupBox.Controls.Add(this.PreciotextBox);
             this.ProductosgroupBox.Controls.Add(this.CantidadnumericUpDown);
@@ -212,10 +226,30 @@
             this.ProductosgroupBox.Controls.Add(this.ProductodataGridView);
             this.ProductosgroupBox.Location = new System.Drawing.Point(11, 81);
             this.ProductosgroupBox.Name = "ProductosgroupBox";
-            this.ProductosgroupBox.Size = new System.Drawing.Size(665, 279);
+            this.ProductosgroupBox.Size = new System.Drawing.Size(664, 279);
             this.ProductosgroupBox.TabIndex = 38;
             this.ProductosgroupBox.TabStop = false;
             this.ProductosgroupBox.Text = "Productos";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(439, 34);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 13);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "Cantidad:";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(301, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Precio:";
             // 
             // BuscarProductobutton
             // 
@@ -223,7 +257,7 @@
             this.BuscarProductobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BuscarProductobutton.Image = global::GimnasioTech.Properties.Resources.Search_25px;
             this.BuscarProductobutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BuscarProductobutton.Location = new System.Drawing.Point(255, 24);
+            this.BuscarProductobutton.Location = new System.Drawing.Point(255, 23);
             this.BuscarProductobutton.Name = "BuscarProductobutton";
             this.BuscarProductobutton.Size = new System.Drawing.Size(40, 31);
             this.BuscarProductobutton.TabIndex = 32;
@@ -235,23 +269,26 @@
             // 
             this.PreciotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PreciotextBox.Enabled = false;
-            this.PreciotextBox.Location = new System.Drawing.Point(314, 30);
+            this.PreciotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PreciotextBox.Location = new System.Drawing.Point(344, 26);
             this.PreciotextBox.Name = "PreciotextBox";
-            this.PreciotextBox.Size = new System.Drawing.Size(100, 20);
+            this.PreciotextBox.Size = new System.Drawing.Size(80, 26);
             this.PreciotextBox.TabIndex = 10;
             // 
             // CantidadnumericUpDown
             // 
             this.CantidadnumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CantidadnumericUpDown.Location = new System.Drawing.Point(447, 30);
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(497, 31);
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
-            this.CantidadnumericUpDown.Size = new System.Drawing.Size(73, 20);
+            this.CantidadnumericUpDown.Size = new System.Drawing.Size(54, 20);
             this.CantidadnumericUpDown.TabIndex = 9;
+            this.CantidadnumericUpDown.ValueChanged += new System.EventHandler(this.CantidadnumericUpDown_ValueChanged);
+            this.CantidadnumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadnumericUpDown_KeyPress);
             // 
             // Agregarbutton
             // 
             this.Agregarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Agregarbutton.Location = new System.Drawing.Point(584, 27);
+            this.Agregarbutton.Location = new System.Drawing.Point(573, 29);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(75, 23);
             this.Agregarbutton.TabIndex = 8;
@@ -265,10 +302,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProductocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductocomboBox.FormattingEnabled = true;
-            this.ProductocomboBox.Location = new System.Drawing.Point(77, 30);
+            this.ProductocomboBox.Location = new System.Drawing.Point(77, 29);
             this.ProductocomboBox.Name = "ProductocomboBox";
-            this.ProductocomboBox.Size = new System.Drawing.Size(172, 21);
+            this.ProductocomboBox.Size = new System.Drawing.Size(160, 21);
             this.ProductocomboBox.TabIndex = 7;
+            this.ProductocomboBox.TextChanged += new System.EventHandler(this.ProductocomboBox_TextChanged);
+            this.ProductocomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductocomboBox_KeyPress);
             // 
             // label3
             // 
@@ -288,15 +327,16 @@
             this.ProductodataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductodataGridView.Location = new System.Drawing.Point(6, 61);
             this.ProductodataGridView.Name = "ProductodataGridView";
-            this.ProductodataGridView.Size = new System.Drawing.Size(653, 212);
+            this.ProductodataGridView.Size = new System.Drawing.Size(642, 212);
             this.ProductodataGridView.TabIndex = 0;
+            this.ProductodataGridView.SelectionChanged += new System.EventHandler(this.ProductodataGridView_SelectionChanged);
             // 
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FechadateTimePicker.CustomFormat = "yyyy/MM/dd";
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(555, 29);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(554, 29);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(121, 20);
             this.FechadateTimePicker.TabIndex = 37;
@@ -309,8 +349,9 @@
             this.NombresClientescomboBox.FormattingEnabled = true;
             this.NombresClientescomboBox.Location = new System.Drawing.Point(88, 54);
             this.NombresClientescomboBox.Name = "NombresClientescomboBox";
-            this.NombresClientescomboBox.Size = new System.Drawing.Size(172, 21);
+            this.NombresClientescomboBox.Size = new System.Drawing.Size(171, 21);
             this.NombresClientescomboBox.TabIndex = 36;
+            this.NombresClientescomboBox.TextChanged += new System.EventHandler(this.NombresClientescomboBox_TextChanged);
             // 
             // FacturaIdmaskedTextBox
             // 
@@ -320,6 +361,7 @@
             this.FacturaIdmaskedTextBox.Size = new System.Drawing.Size(40, 20);
             this.FacturaIdmaskedTextBox.TabIndex = 35;
             this.FacturaIdmaskedTextBox.ValidatingType = typeof(int);
+            this.FacturaIdmaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FacturaIdmaskedTextBox_KeyPress);
             // 
             // label2
             // 
@@ -339,15 +381,31 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Factura Id:";
             // 
-            // errorProvider1
+            // ClienteerrorProvider
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.ClienteerrorProvider.ContainerControl = this;
+            // 
+            // CantidaderrorProvider
+            // 
+            this.CantidaderrorProvider.ContainerControl = this;
+            // 
+            // ProductoerrorProvider
+            // 
+            this.ProductoerrorProvider.ContainerControl = this;
+            // 
+            // RecibidoerrorProvider
+            // 
+            this.RecibidoerrorProvider.ContainerControl = this;
+            // 
+            // GriderrorProvider
+            // 
+            this.GriderrorProvider.ContainerControl = this;
             // 
             // FacturasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 496);
+            this.ClientSize = new System.Drawing.Size(684, 496);
             this.Controls.Add(this.SaldogroupBox);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Eliminarbutton);
@@ -369,7 +427,11 @@
             this.ProductosgroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidaderrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductoerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RecibidoerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GriderrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,6 +463,12 @@
         private System.Windows.Forms.MaskedTextBox FacturaIdmaskedTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider ClienteerrorProvider;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ErrorProvider CantidaderrorProvider;
+        private System.Windows.Forms.ErrorProvider ProductoerrorProvider;
+        private System.Windows.Forms.ErrorProvider RecibidoerrorProvider;
+        private System.Windows.Forms.ErrorProvider GriderrorProvider;
     }
 }

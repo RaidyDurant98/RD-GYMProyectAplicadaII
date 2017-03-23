@@ -20,7 +20,7 @@ namespace Entidades
 
         public FacturasProductos()
         {
-            //Producto = new Productos();
+            this.Producto = new Productos();
         }
 
         public FacturasProductos(int productoId, decimal precio, decimal cantidad, string descripcion)
@@ -29,7 +29,6 @@ namespace Entidades
             this.Precio = precio;
             this.Descripcion = descripcion;
             this.Cantidad = cantidad;
-            Producto = new Productos();
         }
     }
 }
