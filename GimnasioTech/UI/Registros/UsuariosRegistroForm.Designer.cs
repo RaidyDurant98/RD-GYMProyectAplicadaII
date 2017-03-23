@@ -132,41 +132,53 @@
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(199, 44);
+            this.Buscarbutton.Image = global::GimnasioTech.Properties.Resources.Search_25px1;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(199, 35);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Buscarbutton.Size = new System.Drawing.Size(75, 32);
             this.Buscarbutton.TabIndex = 47;
             this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // Eliminarbutton
             // 
+            this.Eliminarbutton.Image = global::GimnasioTech.Properties.Resources.Delete_25px1;
+            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.Location = new System.Drawing.Point(250, 317);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Eliminarbutton.Size = new System.Drawing.Size(75, 32);
             this.Eliminarbutton.TabIndex = 46;
             this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
+            this.Guardarbutton.Image = global::GimnasioTech.Properties.Resources.Save_50px;
+            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guardarbutton.Location = new System.Drawing.Point(169, 317);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Guardarbutton.Size = new System.Drawing.Size(75, 32);
             this.Guardarbutton.TabIndex = 45;
             this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
+            this.Nuevobutton.Image = global::GimnasioTech.Properties.Resources.New_File_25px;
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Nuevobutton.Location = new System.Drawing.Point(88, 317);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(75, 23);
+            this.Nuevobutton.Size = new System.Drawing.Size(75, 32);
             this.Nuevobutton.TabIndex = 44;
             this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 

@@ -111,21 +111,27 @@
             // Imprimirbutton
             // 
             this.Imprimirbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Imprimirbutton.Image = global::GimnasioTech.Properties.Resources.Print_25px;
+            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Imprimirbutton.Location = new System.Drawing.Point(16, 411);
             this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(75, 23);
+            this.Imprimirbutton.Size = new System.Drawing.Size(75, 32);
             this.Imprimirbutton.TabIndex = 34;
             this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
             // 
             // Buscarbutton
             // 
             this.Buscarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Buscarbutton.Image = global::GimnasioTech.Properties.Resources.Search_25px1;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Buscarbutton.Location = new System.Drawing.Point(499, 33);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Buscarbutton.Size = new System.Drawing.Size(75, 32);
             this.Buscarbutton.TabIndex = 33;
             this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 

@@ -183,6 +183,12 @@
       <DependentUpon>RD-GYMDb.mdf</DependentUpon>
     </Content>
     <Content Include="DataBase\Scripts.sql" />
+    <None Include="Resources\Print_25px.png" />
+    <None Include="Resources\New File_25px.png" />
+    <None Include="Resources\Delete_25px1.png" />
+    <None Include="Resources\Save_50px.png" />
+    <None Include="Resources\Plus_50px.png" />
+    <None Include="Resources\Search_25px1.png" />
     <None Include="Resources\Search_25px.png" />
     <None Include="Resources\Delete_25px.png" />
     <None Include="Resources\New Document_25px.png" />

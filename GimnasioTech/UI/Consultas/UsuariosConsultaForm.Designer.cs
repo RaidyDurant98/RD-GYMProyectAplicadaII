@@ -80,21 +80,27 @@
             // Imprimibutton
             // 
             this.Imprimibutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Imprimibutton.Image = global::GimnasioTech.Properties.Resources.Print_25px;
+            this.Imprimibutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Imprimibutton.Location = new System.Drawing.Point(16, 411);
             this.Imprimibutton.Name = "Imprimibutton";
-            this.Imprimibutton.Size = new System.Drawing.Size(75, 23);
+            this.Imprimibutton.Size = new System.Drawing.Size(75, 32);
             this.Imprimibutton.TabIndex = 22;
             this.Imprimibutton.Text = "Imprimir";
+            this.Imprimibutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Imprimibutton.UseVisualStyleBackColor = true;
             // 
             // Filtrarbutton
             // 
             this.Filtrarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Filtrarbutton.Image = global::GimnasioTech.Properties.Resources.Search_25px1;
+            this.Filtrarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Filtrarbutton.Location = new System.Drawing.Point(499, 33);
             this.Filtrarbutton.Name = "Filtrarbutton";
-            this.Filtrarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Filtrarbutton.Size = new System.Drawing.Size(75, 32);
             this.Filtrarbutton.TabIndex = 21;
             this.Filtrarbutton.Text = "Buscar";
+            this.Filtrarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Filtrarbutton.UseVisualStyleBackColor = true;
             this.Filtrarbutton.Click += new System.EventHandler(this.Filtrarbutton_Click);
             // 

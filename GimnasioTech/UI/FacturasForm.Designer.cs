@@ -36,17 +36,11 @@
             this.DevueltatextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.MontotextBox = new System.Windows.Forms.TextBox();
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
             this.ProductosgroupBox = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.BuscarProductobutton = new System.Windows.Forms.Button();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Agregarbutton = new System.Windows.Forms.Button();
             this.ProductocomboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ProductodataGridView = new System.Windows.Forms.DataGridView();
@@ -60,6 +54,12 @@
             this.ProductoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.RecibidoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.GriderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.BuscarProductobutton = new System.Windows.Forms.Button();
+            this.Agregarbutton = new System.Windows.Forms.Button();
             this.SaldogroupBox.SuspendLayout();
             this.ProductosgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
@@ -111,9 +111,10 @@
             // RecibidotextBox
             // 
             this.RecibidotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.RecibidotextBox.Location = new System.Drawing.Point(70, 55);
+            this.RecibidotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.RecibidotextBox.Location = new System.Drawing.Point(69, 50);
             this.RecibidotextBox.Name = "RecibidotextBox";
-            this.RecibidotextBox.Size = new System.Drawing.Size(100, 20);
+            this.RecibidotextBox.Size = new System.Drawing.Size(100, 26);
             this.RecibidotextBox.TabIndex = 13;
             this.RecibidotextBox.TextChanged += new System.EventHandler(this.RecibidotextBox_TextChanged);
             this.RecibidotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RecibidotextBox_KeyPress);
@@ -123,9 +124,10 @@
             this.DevueltatextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DevueltatextBox.Enabled = false;
-            this.DevueltatextBox.Location = new System.Drawing.Point(242, 55);
+            this.DevueltatextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.DevueltatextBox.Location = new System.Drawing.Point(242, 50);
             this.DevueltatextBox.Name = "DevueltatextBox";
-            this.DevueltatextBox.Size = new System.Drawing.Size(163, 20);
+            this.DevueltatextBox.Size = new System.Drawing.Size(163, 26);
             this.DevueltatextBox.TabIndex = 14;
             // 
             // label5
@@ -143,72 +145,12 @@
             this.MontotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MontotextBox.Enabled = false;
-            this.MontotextBox.Location = new System.Drawing.Point(154, 19);
+            this.MontotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.MontotextBox.Location = new System.Drawing.Point(159, 14);
             this.MontotextBox.Name = "MontotextBox";
-            this.MontotextBox.Size = new System.Drawing.Size(163, 20);
+            this.MontotextBox.Size = new System.Drawing.Size(163, 26);
             this.MontotextBox.TabIndex = 10;
             this.MontotextBox.TextChanged += new System.EventHandler(this.MontotextBox_TextChanged);
-            // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Buscarbutton.Image = global::GimnasioTech.Properties.Resources.Search_25px;
-            this.Buscarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Buscarbutton.Location = new System.Drawing.Point(134, 20);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(40, 31);
-            this.Buscarbutton.TabIndex = 42;
-            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
-            // 
-            // Eliminarbutton
-            // 
-            this.Eliminarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Eliminarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Eliminarbutton.Image = global::GimnasioTech.Properties.Resources.Delete_25px;
-            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Eliminarbutton.Location = new System.Drawing.Point(173, 445);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(75, 32);
-            this.Eliminarbutton.TabIndex = 41;
-            this.Eliminarbutton.Text = "Eliminar";
-            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
-            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
-            // 
-            // Guardarbutton
-            // 
-            this.Guardarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Guardarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Guardarbutton.Image = global::GimnasioTech.Properties.Resources.Save_25px;
-            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Guardarbutton.Location = new System.Drawing.Point(92, 445);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(75, 32);
-            this.Guardarbutton.TabIndex = 40;
-            this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Guardarbutton.UseVisualStyleBackColor = true;
-            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
-            // 
-            // Nuevobutton
-            // 
-            this.Nuevobutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Nuevobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Nuevobutton.Image = global::GimnasioTech.Properties.Resources.New_Document_25px;
-            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Nuevobutton.Location = new System.Drawing.Point(11, 445);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(75, 32);
-            this.Nuevobutton.TabIndex = 39;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // ProductosgroupBox
             // 
@@ -251,20 +193,6 @@
             this.label4.TabIndex = 33;
             this.label4.Text = "Precio:";
             // 
-            // BuscarProductobutton
-            // 
-            this.BuscarProductobutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BuscarProductobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BuscarProductobutton.Image = global::GimnasioTech.Properties.Resources.Search_25px;
-            this.BuscarProductobutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BuscarProductobutton.Location = new System.Drawing.Point(255, 23);
-            this.BuscarProductobutton.Name = "BuscarProductobutton";
-            this.BuscarProductobutton.Size = new System.Drawing.Size(40, 31);
-            this.BuscarProductobutton.TabIndex = 32;
-            this.BuscarProductobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BuscarProductobutton.UseVisualStyleBackColor = true;
-            this.BuscarProductobutton.Click += new System.EventHandler(this.BuscarProductobutton_Click);
-            // 
             // PreciotextBox
             // 
             this.PreciotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -284,17 +212,6 @@
             this.CantidadnumericUpDown.TabIndex = 9;
             this.CantidadnumericUpDown.ValueChanged += new System.EventHandler(this.CantidadnumericUpDown_ValueChanged);
             this.CantidadnumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadnumericUpDown_KeyPress);
-            // 
-            // Agregarbutton
-            // 
-            this.Agregarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Agregarbutton.Location = new System.Drawing.Point(573, 29);
-            this.Agregarbutton.Name = "Agregarbutton";
-            this.Agregarbutton.Size = new System.Drawing.Size(75, 23);
-            this.Agregarbutton.TabIndex = 8;
-            this.Agregarbutton.Text = "Agregar";
-            this.Agregarbutton.UseVisualStyleBackColor = true;
-            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
             // 
             // ProductocomboBox
             // 
@@ -400,6 +317,97 @@
             // GriderrorProvider
             // 
             this.GriderrorProvider.ContainerControl = this;
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Buscarbutton.Image = global::GimnasioTech.Properties.Resources.Search_25px1;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Buscarbutton.Location = new System.Drawing.Point(143, 14);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(75, 32);
+            this.Buscarbutton.TabIndex = 42;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // Eliminarbutton
+            // 
+            this.Eliminarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Eliminarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Eliminarbutton.Image = global::GimnasioTech.Properties.Resources.Delete_25px1;
+            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Eliminarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Eliminarbutton.Location = new System.Drawing.Point(173, 445);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(75, 32);
+            this.Eliminarbutton.TabIndex = 41;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
+            // 
+            // Guardarbutton
+            // 
+            this.Guardarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Guardarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Guardarbutton.Image = global::GimnasioTech.Properties.Resources.Save_50px;
+            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Guardarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Guardarbutton.Location = new System.Drawing.Point(92, 445);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(75, 32);
+            this.Guardarbutton.TabIndex = 40;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Nuevobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Nuevobutton.Image = global::GimnasioTech.Properties.Resources.New_File_25px;
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Nuevobutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Nuevobutton.Location = new System.Drawing.Point(11, 445);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(75, 32);
+            this.Nuevobutton.TabIndex = 39;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            // 
+            // BuscarProductobutton
+            // 
+            this.BuscarProductobutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BuscarProductobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BuscarProductobutton.Image = global::GimnasioTech.Properties.Resources.Search_25px1;
+            this.BuscarProductobutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BuscarProductobutton.Location = new System.Drawing.Point(255, 23);
+            this.BuscarProductobutton.Name = "BuscarProductobutton";
+            this.BuscarProductobutton.Size = new System.Drawing.Size(40, 32);
+            this.BuscarProductobutton.TabIndex = 32;
+            this.BuscarProductobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarProductobutton.UseVisualStyleBackColor = true;
+            this.BuscarProductobutton.Click += new System.EventHandler(this.BuscarProductobutton_Click);
+            // 
+            // Agregarbutton
+            // 
+            this.Agregarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Agregarbutton.Image = global::GimnasioTech.Properties.Resources.Plus_50px;
+            this.Agregarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Agregarbutton.Location = new System.Drawing.Point(573, 20);
+            this.Agregarbutton.Name = "Agregarbutton";
+            this.Agregarbutton.Size = new System.Drawing.Size(75, 32);
+            this.Agregarbutton.TabIndex = 8;
+            this.Agregarbutton.Text = "Agregar";
+            this.Agregarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Agregarbutton.UseVisualStyleBackColor = true;
+            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
             // 
             // FacturasForm
             // 
