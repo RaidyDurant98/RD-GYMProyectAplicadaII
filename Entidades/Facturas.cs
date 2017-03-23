@@ -26,7 +26,7 @@ namespace Entidades
 
         public void AgregarDetalle(Productos producto, decimal cantidad)
         {
-            this.Relacion.Add(new FacturasProductos(producto.ProductoId, producto.Precio, cantidad, producto.Descripcion));
+            this.Relacion.Add(new FacturasProductos(producto.ProductoId, producto.Descripcion, producto.Precio, cantidad));
         }
     }
 }

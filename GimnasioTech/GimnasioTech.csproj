@@ -68,6 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\ClientesConsultaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,14 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UI\MenuPrincipalForm.resx">
       <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,16 +183,20 @@
       <DependentUpon>RD-GYMDb.mdf</DependentUpon>
     </Content>
     <Content Include="DataBase\Scripts.sql" />
+    <None Include="Resources\Inspection_32px.png" />
+    <None Include="Resources\Checked User Male_32px.png" />
+    <None Include="Resources\New Product_32px.png" />
+    <None Include="Resources\Add User Male_32px.png" />
+    <None Include="Resources\Change_User_Male_32.png" />
+    <None Include="Resources\Logout Rounded_25px.png" />
+    <None Include="Resources\Login Rounded Right_25px.png" />
     <None Include="Resources\Print_25px.png" />
     <None Include="Resources\New File_25px.png" />
     <None Include="Resources\Delete_25px1.png" />
     <None Include="Resources\Save_50px.png" />
     <None Include="Resources\Plus_50px.png" />
     <None Include="Resources\Search_25px1.png" />
-    <None Include="Resources\Search_25px.png" />
-    <None Include="Resources\Delete_25px.png" />
     <None Include="Resources\New Document_25px.png" />
-    <None Include="Resources\Save_25px.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\Reportes\" />

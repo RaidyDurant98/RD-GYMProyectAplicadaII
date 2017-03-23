@@ -120,6 +120,17 @@
   <metadata name="ClienteerrorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Nuevobutton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAQRJREFUSEvt
+        k70OwVAYhk/8hMRK4gJcionV6hYwuIBTCYvNZvfbweZnN1otzEKYDUy8p/2alFbT70S3PsmT6onzPTmq
+        4hMp4SukM5iijRxYkTucQ26IFenAEVwKMcjQgDCwIviumcR1DFeMEDeisEITiJDM2muB6EQUVmgKw4R0
+        I4phGmsLuIZBIVYkyDYN9ONvka9TfhBHPMYRlpFG1Mt4g2fbXoEGu9GNGE1YxecELMEy3NlXD1qRAyzS
+        ABeyAa+wRQsO7MgD5mmzD7ILTbpx0DmJUafNPsg9rNCNAzvy/PFwib+dRB5hpM+EjP7f5Va9Jxe4hafg
+        n1KLfg6DN7BGC4QQb2GwSbCczw8pAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="CantidaderrorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>189, 16</value>
   </metadata>

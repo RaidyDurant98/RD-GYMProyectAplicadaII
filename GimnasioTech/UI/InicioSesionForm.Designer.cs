@@ -30,36 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Salirbutton = new System.Windows.Forms.Button();
-            this.IniciarSesionbutton = new System.Windows.Forms.Button();
             this.ClavetextBox = new System.Windows.Forms.TextBox();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.UsuarioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ClaveerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.IniciarSesionbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClaveerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // Salirbutton
             // 
+            this.Salirbutton.Image = global::GimnasioTech.Properties.Resources.Logout_Rounded_25px;
+            this.Salirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Salirbutton.Location = new System.Drawing.Point(182, 196);
             this.Salirbutton.Name = "Salirbutton";
             this.Salirbutton.Size = new System.Drawing.Size(76, 32);
             this.Salirbutton.TabIndex = 11;
             this.Salirbutton.Text = "Salir";
+            this.Salirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Salirbutton.UseVisualStyleBackColor = true;
             this.Salirbutton.Click += new System.EventHandler(this.Salirbutton_Click);
-            // 
-            // IniciarSesionbutton
-            // 
-            this.IniciarSesionbutton.Location = new System.Drawing.Point(81, 196);
-            this.IniciarSesionbutton.Name = "IniciarSesionbutton";
-            this.IniciarSesionbutton.Size = new System.Drawing.Size(76, 32);
-            this.IniciarSesionbutton.TabIndex = 10;
-            this.IniciarSesionbutton.Text = "Iniciar sesion";
-            this.IniciarSesionbutton.UseVisualStyleBackColor = true;
-            this.IniciarSesionbutton.Click += new System.EventHandler(this.IniciarSesionbutton_Click);
             // 
             // ClavetextBox
             // 
@@ -105,6 +98,19 @@
             // ClaveerrorProvider
             // 
             this.ClaveerrorProvider.ContainerControl = this;
+            // 
+            // IniciarSesionbutton
+            // 
+            this.IniciarSesionbutton.Image = global::GimnasioTech.Properties.Resources.Login_Rounded_Right_25px;
+            this.IniciarSesionbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.IniciarSesionbutton.Location = new System.Drawing.Point(81, 196);
+            this.IniciarSesionbutton.Name = "IniciarSesionbutton";
+            this.IniciarSesionbutton.Size = new System.Drawing.Size(76, 32);
+            this.IniciarSesionbutton.TabIndex = 10;
+            this.IniciarSesionbutton.Text = "Iniciar";
+            this.IniciarSesionbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.IniciarSesionbutton.UseVisualStyleBackColor = true;
+            this.IniciarSesionbutton.Click += new System.EventHandler(this.IniciarSesionbutton_Click);
             // 
             // InicioSesionForm
             // 

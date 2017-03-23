@@ -41,7 +41,7 @@ create table FacturasProductos(
 Id int identity(1,1) primary key,
 ProductoId int,
 FacturaId int,
-Cantidad decimal,
+Descripcion varchar(255),
 Precio decimal,
-Descripcion varchar(255) 
+Cantidad decimal
 );

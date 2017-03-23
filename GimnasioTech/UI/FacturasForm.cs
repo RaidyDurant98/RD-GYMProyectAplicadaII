@@ -22,7 +22,8 @@ namespace GimnasioTech.UI
 
         private void FacturasForm_Load(object sender, EventArgs e)
         {
-            RecibidotextBox.Enabled = false;
+            RecibidomaskedTextBox.Enabled = false;
+            CantidadnumericUpDown.Enabled = false;
             LlenarComboClientes();
             LlenarComboProductos();
         }
@@ -41,14 +42,15 @@ namespace GimnasioTech.UI
             CantidadnumericUpDown.Value = 0;
             PreciotextBox.Clear();
             DevueltatextBox.Clear();
-            RecibidotextBox.Clear();
+            RecibidomaskedTextBox.Clear();
             ClienteerrorProvider.Clear();
             CantidaderrorProvider.Clear();
             ProductoerrorProvider.Clear();
             RecibidoerrorProvider.Clear();
             GriderrorProvider.Clear();
 
-            RecibidotextBox.Enabled = false;
+            RecibidomaskedTextBox.Enabled = false;
+            CantidadnumericUpDown.Enabled = false;
         }
 
         private bool Validar()
@@ -65,9 +67,9 @@ namespace GimnasioTech.UI
                 GriderrorProvider.SetError(ProductodataGridView, "Por favor llenar el campo.");
                 interruptor = false;
             }
-            if (string.IsNullOrEmpty(RecibidotextBox.Text))
+            if (string.IsNullOrEmpty(RecibidomaskedTextBox.Text))
             {
-                RecibidoerrorProvider.SetError(RecibidotextBox, "Por favor llenar el campo.");
+                RecibidoerrorProvider.SetError(RecibidomaskedTextBox, "Por favor llenar el campo.");
                 interruptor = false;
             }
 
@@ -102,7 +104,7 @@ namespace GimnasioTech.UI
             Factura.FacturaId = Utilidades.TOINT(FacturaIdmaskedTextBox.Text);
             Factura.Monto = Utilidades.TOINT(MontotextBox.Text);
             Factura.Fecha = FechadateTimePicker.Value;
-            Factura.DineroPagado = Utilidades.TOINT(RecibidotextBox.Text);
+            Factura.DineroPagado = Utilidades.TOINT(RecibidomaskedTextBox.Text);
             Factura.Devuelta = Utilidades.TOINT(DevueltatextBox.Text);
 
             return Factura;
@@ -138,9 +140,9 @@ namespace GimnasioTech.UI
                     MessageBox.Show("Error! no se pudo guardar.");
             }
 
-            if (string.IsNullOrEmpty(RecibidotextBox.Text))
+            if (string.IsNullOrEmpty(RecibidomaskedTextBox.Text))
             {
-                RecibidotextBox.Focus();
+                RecibidomaskedTextBox.Focus();
             }
         }
 
@@ -168,7 +170,7 @@ namespace GimnasioTech.UI
                     NombresClientescomboBox.Text = factura.NombreCliente;
                     FechadateTimePicker.Value = factura.Fecha;
                     MontotextBox.Text = factura.Monto.ToString();
-                    RecibidotextBox.Text = factura.DineroPagado.ToString();
+                    RecibidomaskedTextBox.Text = factura.DineroPagado.ToString();
                     DevueltatextBox.Text = factura.Devuelta.ToString();
 
                     LlenarDataGrid(factura);
@@ -223,20 +225,20 @@ namespace GimnasioTech.UI
             Factura.Monto += Detalle.Producto.Precio * CantidadnumericUpDown.Value;
             MontotextBox.Text = Factura.Monto.ToString();
 
-            RecibidotextBox.Focus();
+            RecibidomaskedTextBox.Focus();
         }
 
         private void CalcularDevuelta()
         {
-            Factura.DineroPagado = Utilidades.TOINT(RecibidotextBox.Text);
+            Factura.DineroPagado = Utilidades.TOINT(RecibidomaskedTextBox.Text);
 
-            if (!string.IsNullOrEmpty(RecibidotextBox.Text))
+            if (!string.IsNullOrEmpty(RecibidomaskedTextBox.Text))
             {
                 if (Factura.DineroPagado < Factura.Monto)
                 {
                     MessageBox.Show("El dinero no es suficiente para cubrir su comprar.");
-                    RecibidotextBox.Clear();
-                    RecibidotextBox.Focus();
+                    RecibidomaskedTextBox.Clear();
+                    RecibidomaskedTextBox.Focus();
                     
                 }
                 else
@@ -247,8 +249,8 @@ namespace GimnasioTech.UI
             }
             else
             {
-                RecibidoerrorProvider.SetError(RecibidotextBox, "Digite la cantidad de dinero pagada.");
-                RecibidotextBox.Focus();
+                RecibidoerrorProvider.SetError(RecibidomaskedTextBox, "Digite la cantidad de dinero pagada.");
+                RecibidomaskedTextBox.Focus();
             }
         }
 
@@ -285,6 +287,7 @@ namespace GimnasioTech.UI
                 if (Detalle.Producto != null)
                 {
                     PreciotextBox.Text = Detalle.Producto.Precio.ToString();
+                    CantidadnumericUpDown.Enabled = true;
                     CantidadnumericUpDown.Focus();
                 }
             }
@@ -297,19 +300,6 @@ namespace GimnasioTech.UI
         private void BuscarProductobutton_Click(object sender, EventArgs e)
         {
             BuscarProducto();
-        }
-
-        private void RecibidotextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Keys)e.KeyChar == Keys.Enter)
-            {
-                CalcularDevuelta();
-
-                if (DevueltatextBox.Text != null)
-                {
-                    Guardarbutton.Focus();
-                }
-            }
         }
 
         private void ProductocomboBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -347,11 +337,6 @@ namespace GimnasioTech.UI
             ProductoerrorProvider.Clear();
         }
 
-        private void RecibidotextBox_TextChanged(object sender, EventArgs e)
-        {
-            RecibidoerrorProvider.Clear();
-        }
-
         private void NombresClientescomboBox_TextChanged(object sender, EventArgs e)
         {
             ClienteerrorProvider.Clear();
@@ -364,7 +349,25 @@ namespace GimnasioTech.UI
 
         private void MontotextBox_TextChanged(object sender, EventArgs e)
         {
-            RecibidotextBox.Enabled = true;
+            RecibidomaskedTextBox.Enabled = true;
+        }
+
+        private void RecibidomaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                CalcularDevuelta();
+
+                if (DevueltatextBox.Text != null)
+                {
+                    Guardarbutton.Focus();
+                }
+            }
+        }
+
+        private void RecibidomaskedTextBox_TextChanged(object sender, EventArgs e)
+        {
+            RecibidoerrorProvider.Clear();
         }
     }
 }

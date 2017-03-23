@@ -74,6 +74,7 @@ namespace GimnasioTech.UI.Consultas
                 DesdedateTimePicker.Enabled = true;
                 DesdedateTimePicker.Focus();
                 HastadateTimePicker.Enabled = true;
+                ConsultartextBox.Enabled = false;
             }
             else
             {
