@@ -35,13 +35,18 @@ namespace GimnasioTech.UI.Consultas
                 }
                 else
                 {
-                    if (FiltrarcomboBox.SelectedIndex == 1)
+                    if (FiltrarcomboBox.SelectedIndex == 2)
                     {
                         ConsultadataGridView.DataSource = BLL.UsuariosBLL.GetList(p => p.Nombres ==FiltrartextBox.Text);
                     }
-                    if (FiltrarcomboBox.SelectedIndex == 2)
+                    if (FiltrarcomboBox.SelectedIndex == 3)
                     {
                         ConsultadataGridView.DataSource = BLL.UsuariosBLL.GetList(p => p.Cargo == FiltrartextBox.Text);
+                    }
+                    if (FiltrarcomboBox.SelectedIndex == 1)
+                    {
+                        int id = Utilidades.TOINT(FiltrartextBox.Text);
+                        ConsultadataGridView.DataSource = BLL.UsuariosBLL.GetList(p => p.UsuarioId == id);
                     }
                 }
             }

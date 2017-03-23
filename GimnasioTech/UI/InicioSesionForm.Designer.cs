@@ -29,17 +29,84 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Salirbutton = new System.Windows.Forms.Button();
             this.ClavetextBox = new System.Windows.Forms.TextBox();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.UsuarioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ClaveerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Salirbutton = new System.Windows.Forms.Button();
             this.IniciarSesionbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClaveerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ClavetextBox
+            // 
+            this.ClavetextBox.Location = new System.Drawing.Point(165, 122);
+            this.ClavetextBox.Name = "ClavetextBox";
+            this.ClavetextBox.PasswordChar = '*';
+            this.ClavetextBox.Size = new System.Drawing.Size(128, 20);
+            this.ClavetextBox.TabIndex = 9;
+            this.ClavetextBox.TextChanged += new System.EventHandler(this.ClavetextBox_TextChanged);
+            this.ClavetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClavetextBox_KeyPress);
+            // 
+            // UsuariotextBox
+            // 
+            this.UsuariotextBox.Location = new System.Drawing.Point(165, 64);
+            this.UsuariotextBox.Name = "UsuariotextBox";
+            this.UsuariotextBox.Size = new System.Drawing.Size(128, 20);
+            this.UsuariotextBox.TabIndex = 8;
+            this.UsuariotextBox.TextChanged += new System.EventHandler(this.UsuariotextBox_TextChanged);
+            this.UsuariotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuariotextBox_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(84, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Clave:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(84, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Usuario:";
+            // 
+            // UsuarioerrorProvider
+            // 
+            this.UsuarioerrorProvider.ContainerControl = this;
+            // 
+            // ClaveerrorProvider
+            // 
+            this.ClaveerrorProvider.ContainerControl = this;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::GimnasioTech.Properties.Resources.Lock_2_50px;
+            this.pictureBox2.Location = new System.Drawing.Point(30, 104);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::GimnasioTech.Properties.Resources.User_50px;
+            this.pictureBox1.Location = new System.Drawing.Point(31, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // Salirbutton
             // 
@@ -53,51 +120,6 @@
             this.Salirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Salirbutton.UseVisualStyleBackColor = true;
             this.Salirbutton.Click += new System.EventHandler(this.Salirbutton_Click);
-            // 
-            // ClavetextBox
-            // 
-            this.ClavetextBox.Location = new System.Drawing.Point(148, 98);
-            this.ClavetextBox.Name = "ClavetextBox";
-            this.ClavetextBox.PasswordChar = '*';
-            this.ClavetextBox.Size = new System.Drawing.Size(128, 20);
-            this.ClavetextBox.TabIndex = 9;
-            this.ClavetextBox.TextChanged += new System.EventHandler(this.ClavetextBox_TextChanged);
-            this.ClavetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClavetextBox_KeyPress);
-            // 
-            // UsuariotextBox
-            // 
-            this.UsuariotextBox.Location = new System.Drawing.Point(148, 72);
-            this.UsuariotextBox.Name = "UsuariotextBox";
-            this.UsuariotextBox.Size = new System.Drawing.Size(128, 20);
-            this.UsuariotextBox.TabIndex = 8;
-            this.UsuariotextBox.TextChanged += new System.EventHandler(this.UsuariotextBox_TextChanged);
-            this.UsuariotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuariotextBox_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Clave:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Usuario:";
-            // 
-            // UsuarioerrorProvider
-            // 
-            this.UsuarioerrorProvider.ContainerControl = this;
-            // 
-            // ClaveerrorProvider
-            // 
-            this.ClaveerrorProvider.ContainerControl = this;
             // 
             // IniciarSesionbutton
             // 
@@ -118,6 +140,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(343, 300);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Salirbutton);
             this.Controls.Add(this.IniciarSesionbutton);
             this.Controls.Add(this.ClavetextBox);
@@ -129,6 +153,8 @@
             this.Text = "Inicio de sesion";
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClaveerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,6 +170,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider UsuarioerrorProvider;
         private System.Windows.Forms.ErrorProvider ClaveerrorProvider;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

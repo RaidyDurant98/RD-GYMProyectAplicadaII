@@ -35,17 +35,17 @@ namespace GimnasioTech.UI.Consultas
                 ConsultadataGridView.DataSource = BLL.ProductosBLL.GetListAll();
                 OcultarColumna();
             }
-            if (ConsultarcomboBox.SelectedIndex == 2)
+            if (ConsultarcomboBox.SelectedIndex == 3)
             {
                 ConsultadataGridView.DataSource = BLL.ProductosBLL.GetList(p => p.FechaIngreso >= DesdedateTimePicker.Value.Date && p.FechaIngreso <= HastadateTimePicker.Value.Date);
                 OcultarColumna();
             }
-            if (ConsultarcomboBox.SelectedIndex == 3)
+            if (ConsultarcomboBox.SelectedIndex == 4)
             {
                 ConsultadataGridView.DataSource = BLL.ProductosBLL.GetList(p => p.FechaVencimiento >= DesdedateTimePicker.Value.Date && p.FechaVencimiento <= HastadateTimePicker.Value.Date);
                 OcultarColumna();
             }
-            else if (ConsultarcomboBox.SelectedIndex != 0 && ConsultarcomboBox.SelectedIndex != 2 && ConsultarcomboBox.SelectedIndex != 3)
+            else if (ConsultarcomboBox.SelectedIndex != 0 && ConsultarcomboBox.SelectedIndex != 3 && ConsultarcomboBox.SelectedIndex != 4)
             {
                 if (string.IsNullOrEmpty(ConsultartextBox.Text))
                 {
@@ -53,9 +53,15 @@ namespace GimnasioTech.UI.Consultas
                 }
                 else
                 {
-                    if (ConsultarcomboBox.SelectedIndex == 1)
+                    if (ConsultarcomboBox.SelectedIndex == 2)
                     {
                         ConsultadataGridView.DataSource = BLL.ProductosBLL.GetList(p => p.Descripcion == ConsultartextBox.Text);
+                        OcultarColumna();
+                    }
+                    if (ConsultarcomboBox.SelectedIndex == 1)
+                    {
+                        int id = Utilidades.TOINT(ConsultartextBox.Text);
+                        ConsultadataGridView.DataSource = BLL.ProductosBLL.GetList(p => p.ProductoId == id);
                         OcultarColumna();
                     }
                 }

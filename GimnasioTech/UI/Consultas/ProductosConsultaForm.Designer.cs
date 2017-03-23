@@ -99,6 +99,7 @@
             this.ConsultarcomboBox.FormattingEnabled = true;
             this.ConsultarcomboBox.Items.AddRange(new object[] {
             "Todo",
+            "Id",
             "Descripcion",
             "Fecha ingreso",
             "Fecha vencimiento"});

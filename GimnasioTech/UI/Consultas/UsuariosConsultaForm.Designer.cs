@@ -69,6 +69,7 @@
             this.FiltrarcomboBox.FormattingEnabled = true;
             this.FiltrarcomboBox.Items.AddRange(new object[] {
             "Todo",
+            "Id",
             "Nombre",
             "Cargo"});
             this.FiltrarcomboBox.Location = new System.Drawing.Point(59, 36);

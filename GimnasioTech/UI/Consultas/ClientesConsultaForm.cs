@@ -29,7 +29,7 @@ namespace GimnasioTech.UI.Consultas
             {
                 ConsultadataGridView.DataSource = BLL.ClientesBLL.GetListAll();
             }
-            if (ConsultarcomboBox.SelectedIndex == 3)
+            if (ConsultarcomboBox.SelectedIndex == 4)
             {
                 ConsultadataGridView.DataSource = BLL.ClientesBLL.GetList(p => p.FechaInscripcion >= DesdedateTimePicker.Value.Date && p.FechaInscripcion <= HastadateTimePicker.Value.Date);
             }
@@ -41,17 +41,22 @@ namespace GimnasioTech.UI.Consultas
                 }
                 else
                 {
-                    if (ConsultarcomboBox.SelectedIndex == 1)
+                    if (ConsultarcomboBox.SelectedIndex == 2)
                     {
                         ConsultadataGridView.DataSource = BLL.ClientesBLL.GetList(p => p.Nombres == ConsultartextBox.Text);
                     }
-                    if (ConsultarcomboBox.SelectedIndex == 2)
+                    if (ConsultarcomboBox.SelectedIndex == 3)
                     {
                         ConsultadataGridView.DataSource = BLL.ClientesBLL.GetList(p => p.Sexo == ConsultartextBox.Text);
                     }
-                    if (ConsultarcomboBox.SelectedIndex == 4)
+                    if (ConsultarcomboBox.SelectedIndex == 5)
                     {
                         ConsultadataGridView.DataSource = BLL.ClientesBLL.GetList(p => p.Direccion == ConsultartextBox.Text);
+                    }
+                    if (ConsultarcomboBox.SelectedIndex == 1)
+                    {
+                        int id = Utilidades.TOINT(ConsultartextBox.Text);
+                        ConsultadataGridView.DataSource = BLL.ClientesBLL.GetList(p => p.ClienteId == id);
                     }
                 }
             }
@@ -68,7 +73,7 @@ namespace GimnasioTech.UI.Consultas
                 HastadateTimePicker.Enabled = false;
                 Filtro();
             }
-            else if (ConsultarcomboBox.SelectedIndex == 3)
+            else if (ConsultarcomboBox.SelectedIndex == 4)
             {
                 CampoVacioerrorProvider.Clear();
                 DesdedateTimePicker.Enabled = true;
