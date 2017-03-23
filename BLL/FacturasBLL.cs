@@ -18,37 +18,6 @@ namespace BLL
 
                 context.SaveChanges();
                 return true;
-                /*List<int> entero = new List<int>();
-                bool existe = false;
-
-                try
-                {
-                    foreach (var g in factura.Productos)
-                    {
-                        if(entero.Count > 0)
-                        {
-                            foreach (var id in entero)
-                            {
-                                if (id == g.ProductoId)
-                                    existe = true;
-                                break;
-                            }
-                        }
-                        entero.Add(g.ProductoId);
-                        if (existe)
-                            continue;
-                        context.Entry(g).State = System.Data.Entity.EntityState.Unchanged;
-                    }
-
-                    context.Factura.Add(factura);
-                    context.SaveChanges();
-                    return true;
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }*/
             }
         }
 
@@ -58,10 +27,6 @@ namespace BLL
             {
                 try
                 {
-                    /*context.Entry(factura).State = System.Data.Entity.EntityState.Deleted;
-                    context.SaveChanges();
-                    return true;*/
-
                     return context.Eliminar(factura);
                 }
                 catch (Exception)

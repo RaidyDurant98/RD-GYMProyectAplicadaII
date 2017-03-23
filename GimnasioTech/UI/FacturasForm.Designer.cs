@@ -169,6 +169,7 @@
             this.Buscarbutton.TabIndex = 42;
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -183,6 +184,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -197,6 +199,7 @@
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -211,6 +214,7 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // ProductosgroupBox
             // 
@@ -242,6 +246,7 @@
             this.BuscarProductobutton.TabIndex = 32;
             this.BuscarProductobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarProductobutton.UseVisualStyleBackColor = true;
+            this.BuscarProductobutton.Click += new System.EventHandler(this.BuscarProductobutton_Click);
             // 
             // PreciotextBox
             // 
@@ -269,6 +274,7 @@
             this.Agregarbutton.TabIndex = 8;
             this.Agregarbutton.Text = "Agregar";
             this.Agregarbutton.UseVisualStyleBackColor = true;
+            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
             // 
             // ProductocomboBox
             // 
@@ -372,6 +378,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FacturasForm";
             this.Text = "Factura";
+            this.Load += new System.EventHandler(this.FacturasForm_Load);
             this.SaldogroupBox.ResumeLayout(false);
             this.SaldogroupBox.PerformLayout();
             this.ProductosgroupBox.ResumeLayout(false);

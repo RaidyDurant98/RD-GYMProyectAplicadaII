@@ -41,5 +41,6 @@ Id int identity(1,1) primary key,
 ProductoId int,
 FacturaId int,
 Cantidad decimal,
-Precio float
+Precio float,
+Descripcion varchar(255) 
 );
