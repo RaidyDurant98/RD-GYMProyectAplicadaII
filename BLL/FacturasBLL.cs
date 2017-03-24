@@ -50,6 +50,22 @@ namespace BLL
             }
         }
 
+        public static bool Modificar(Facturas factura)
+        {
+            using (var context = new DAL.Respository<Entidades.Facturas>())
+            {
+                try
+                {
+                    return context.Modificar(factura);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
         public static List<Facturas> GetList(Expression<Func<Facturas, bool>> criterio)
         {
             using (var context = new Respository<Facturas>())

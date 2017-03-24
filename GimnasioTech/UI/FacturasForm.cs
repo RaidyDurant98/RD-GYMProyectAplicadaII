@@ -112,7 +112,8 @@ namespace GimnasioTech.UI
 
                 if (BLL.FacturasBLL.Guardar(Factura))
                 {
-                    MessageBox.Show("Guardado con exito.");
+                    ExistenciaProducto(CantidadnumericUpDown.Value);
+                    MessageBox.Show("Guardado con exito.");                    
                     Limpiar();
                 }
                 else
@@ -162,11 +163,13 @@ namespace GimnasioTech.UI
             }
         }
 
-        private decimal ExistenciaProducto()
+        private void ExistenciaProducto(decimal existencia)
         {
-            decimal existecia = Detalle.Producto.Cantidad - CantidadnumericUpDown.Value;
+            Entidades.Productos producto = new Entidades.Productos();
 
-            return existecia;
+            producto = BLL.ProductosBLL.BuscarOtro(Utilidades.TOINT(ProductoIdmaskedTextBox.Text));
+            producto.Cantidad -= existencia;
+            BLL.ProductosBLL.Modificar(producto);
         }
 
         private void Agregarbutton_Click(object sender, EventArgs e)
@@ -211,6 +214,7 @@ namespace GimnasioTech.UI
         private void CalcularDevuelta()
         {
             Factura.DineroPagado = Utilidades.TOINT(RecibidomaskedTextBox.Text);
+            Factura.Monto = Utilidades.TOINT(MontotextBox.Text);
 
             if (!string.IsNullOrEmpty(RecibidomaskedTextBox.Text))
             {
@@ -266,7 +270,6 @@ namespace GimnasioTech.UI
 
                 if (Detalle.Producto != null)
                 {
-                    ProductoIdmaskedTextBox.Clear();
                     DescripcionProductotextBox.Text = Detalle.Producto.Descripcion;
                     PreciotextBox.Text = Detalle.Producto.Precio.ToString();
                     CantidadnumericUpDown.Enabled = true;                   
@@ -306,7 +309,7 @@ namespace GimnasioTech.UI
             if ((Keys)e.KeyChar == Keys.Enter)
             {
                 AgregarProducto();
-                CantidadnumericUpDown.Value = 0;
+                CantidadnumericUpDown.Text = null;
             }
         }
 

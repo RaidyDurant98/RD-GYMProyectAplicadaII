@@ -114,5 +114,18 @@ namespace DAL
                 throw;
             }
         }
+
+        public TEntity BuscarOtro(int id)
+        {
+            try
+            {
+                return EntitySet.Find(id);              
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
