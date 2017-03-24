@@ -183,10 +183,9 @@
       <DependentUpon>RD-GYMDb.mdf</DependentUpon>
     </Content>
     <Content Include="DataBase\Scripts.sql" />
-    <None Include="Resources\Lock 2_35px.png" />
+    <None Include="Resources\Lock 2_32px.png" />
+    <None Include="Resources\Gender Neutral User_32px.png" />
     <None Include="Resources\User_35px.png" />
-    <None Include="Resources\Lock 2_50px.png" />
-    <None Include="Resources\User_50px.png" />
     <None Include="Resources\Key_25px.png" />
     <None Include="Resources\Inspection_32px.png" />
     <None Include="Resources\Checked User Male_32px.png" />
@@ -201,7 +200,6 @@
     <None Include="Resources\Save_50px.png" />
     <None Include="Resources\Plus_50px.png" />
     <None Include="Resources\Search_25px1.png" />
-    <None Include="Resources\New Document_25px.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\Reportes\" />

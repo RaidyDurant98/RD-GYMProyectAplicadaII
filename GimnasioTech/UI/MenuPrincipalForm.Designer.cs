@@ -30,19 +30,19 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CambiarusuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CambiarusuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +70,22 @@
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.registrosToolStripMenuItem.Text = "Archivos";
             // 
+            // CambiarusuarioToolStripMenuItem
+            // 
+            this.CambiarusuarioToolStripMenuItem.Image = global::GimnasioTech.Properties.Resources.Change_User_Male_32;
+            this.CambiarusuarioToolStripMenuItem.Name = "CambiarusuarioToolStripMenuItem";
+            this.CambiarusuarioToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.CambiarusuarioToolStripMenuItem.Text = "Cambiar usuario";
+            this.CambiarusuarioToolStripMenuItem.Click += new System.EventHandler(this.CambiarusuarioToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Image = global::GimnasioTech.Properties.Resources.Logout_Rounded_25px;
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
@@ -85,61 +101,6 @@
             this.registrosToolStripMenuItem1.Name = "registrosToolStripMenuItem1";
             this.registrosToolStripMenuItem1.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem1.Text = "Registros";
-            // 
-            // consultasToolStripMenuItem1
-            // 
-            this.consultasToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientesToolStripMenuItem1,
-            this.usuariosToolStripMenuItem,
-            this.productosToolStripMenuItem1});
-            this.consultasToolStripMenuItem1.Name = "consultasToolStripMenuItem1";
-            this.consultasToolStripMenuItem1.Size = new System.Drawing.Size(71, 20);
-            this.consultasToolStripMenuItem1.Text = "Consultas";
-            // 
-            // usuariosToolStripMenuItem
-            // 
-            this.usuariosToolStripMenuItem.Image = global::GimnasioTech.Properties.Resources.Checked_User_Male_32px;
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.usuariosToolStripMenuItem.Text = "Clientes";
-            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
-            // 
-            // productosToolStripMenuItem1
-            // 
-            this.productosToolStripMenuItem1.Image = global::GimnasioTech.Properties.Resources.Inspection_32px;
-            this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
-            this.productosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.productosToolStripMenuItem1.Text = "Productos";
-            this.productosToolStripMenuItem1.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
-            // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.ayudaToolStripMenuItem.Text = "Factura";
-            this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
-            // 
-            // ayudarToolStripMenuItem
-            // 
-            this.ayudarToolStripMenuItem.Name = "ayudarToolStripMenuItem";
-            this.ayudarToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.ayudarToolStripMenuItem.Text = "Ayudar";
-            // 
-            // CambiarusuarioToolStripMenuItem
-            // 
-            this.CambiarusuarioToolStripMenuItem.Image = global::GimnasioTech.Properties.Resources.Change_User_Male_32;
-            this.CambiarusuarioToolStripMenuItem.Name = "CambiarusuarioToolStripMenuItem";
-            this.CambiarusuarioToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.CambiarusuarioToolStripMenuItem.Text = "Cambiar usuario";
-            this.CambiarusuarioToolStripMenuItem.Click += new System.EventHandler(this.CambiarusuarioToolStripMenuItem_Click);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Image = global::GimnasioTech.Properties.Resources.Change_User_Male_32;
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem1
             // 
@@ -165,13 +126,52 @@
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
+            // consultasToolStripMenuItem1
+            // 
+            this.consultasToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clientesToolStripMenuItem1,
+            this.usuariosToolStripMenuItem,
+            this.productosToolStripMenuItem1});
+            this.consultasToolStripMenuItem1.Name = "consultasToolStripMenuItem1";
+            this.consultasToolStripMenuItem1.Size = new System.Drawing.Size(71, 20);
+            this.consultasToolStripMenuItem1.Text = "Consultas";
+            // 
             // clientesToolStripMenuItem1
             // 
             this.clientesToolStripMenuItem1.Image = global::GimnasioTech.Properties.Resources.Checked_User_Male_32px;
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.clientesToolStripMenuItem1.Text = "Usuarios";
             this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Image = global::GimnasioTech.Properties.Resources.Checked_User_Male_32px;
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.usuariosToolStripMenuItem.Text = "Clientes";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            // 
+            // productosToolStripMenuItem1
+            // 
+            this.productosToolStripMenuItem1.Image = global::GimnasioTech.Properties.Resources.Inspection_32px;
+            this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
+            this.productosToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.productosToolStripMenuItem1.Text = "Productos";
+            this.productosToolStripMenuItem1.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.ayudaToolStripMenuItem.Text = "Factura";
+            this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
+            // 
+            // ayudarToolStripMenuItem
+            // 
+            this.ayudarToolStripMenuItem.Name = "ayudarToolStripMenuItem";
+            this.ayudarToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudarToolStripMenuItem.Text = "Ayuda";
             // 
             // MenuPrincipalForm
             // 

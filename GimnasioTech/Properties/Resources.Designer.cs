@@ -103,6 +103,16 @@ namespace GimnasioTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gender_Neutral_User_32px {
+            get {
+                object obj = ResourceManager.GetObject("Gender_Neutral_User_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Inspection_32px {
             get {
                 object obj = ResourceManager.GetObject("Inspection_32px", resourceCulture);
@@ -123,19 +133,9 @@ namespace GimnasioTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Lock_2_35px {
+        internal static System.Drawing.Bitmap Lock_2_32px {
             get {
-                object obj = ResourceManager.GetObject("Lock 2_35px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Lock_2_50px {
-            get {
-                object obj = ResourceManager.GetObject("Lock 2_50px", resourceCulture);
+                object obj = ResourceManager.GetObject("Lock_2_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,16 +226,6 @@ namespace GimnasioTech.Properties {
         internal static System.Drawing.Bitmap User_35px {
             get {
                 object obj = ResourceManager.GetObject("User_35px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap User_50px {
-            get {
-                object obj = ResourceManager.GetObject("User_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
