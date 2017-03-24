@@ -46,11 +46,10 @@
             this.Agregarbutton = new System.Windows.Forms.Button();
             this.ProductodataGridView = new System.Windows.Forms.DataGridView();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.NombresClientescomboBox = new System.Windows.Forms.ComboBox();
             this.FacturaIdmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ClienteerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.NombreClienteerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.CantidaderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ProductoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.RecibidoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -63,15 +62,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.DescripcionProductotextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.NombreClientetextBox = new System.Windows.Forms.TextBox();
+            this.ClienteIdmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.BuscarClientebutton = new System.Windows.Forms.Button();
+            this.ClienteIderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.SaldogroupBox.SuspendLayout();
             this.ProductosgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NombreClienteerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidaderrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RecibidoerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GriderrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteIderrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // SaldogroupBox
@@ -268,18 +273,6 @@
             this.FechadateTimePicker.Size = new System.Drawing.Size(121, 20);
             this.FechadateTimePicker.TabIndex = 37;
             // 
-            // NombresClientescomboBox
-            // 
-            this.NombresClientescomboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.NombresClientescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.NombresClientescomboBox.FormattingEnabled = true;
-            this.NombresClientescomboBox.Location = new System.Drawing.Point(88, 54);
-            this.NombresClientescomboBox.Name = "NombresClientescomboBox";
-            this.NombresClientescomboBox.Size = new System.Drawing.Size(246, 21);
-            this.NombresClientescomboBox.TabIndex = 36;
-            this.NombresClientescomboBox.TextChanged += new System.EventHandler(this.NombresClientescomboBox_TextChanged);
-            // 
             // FacturaIdmaskedTextBox
             // 
             this.FacturaIdmaskedTextBox.Location = new System.Drawing.Point(88, 26);
@@ -295,9 +288,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 34;
-            this.label2.Text = "Cliente:";
+            this.label2.Text = "Cliente Id:";
             // 
             // label1
             // 
@@ -308,9 +301,9 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Factura Id:";
             // 
-            // ClienteerrorProvider
+            // NombreClienteerrorProvider
             // 
-            this.ClienteerrorProvider.ContainerControl = this;
+            this.NombreClienteerrorProvider.ContainerControl = this;
             // 
             // CantidaderrorProvider
             // 
@@ -425,16 +418,69 @@
             this.DescripcionProductotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DescripcionProductotextBox.Enabled = false;
+            this.DescripcionProductotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DescripcionProductotextBox.Location = new System.Drawing.Point(253, 31);
             this.DescripcionProductotextBox.Name = "DescripcionProductotextBox";
-            this.DescripcionProductotextBox.Size = new System.Drawing.Size(117, 20);
+            this.DescripcionProductotextBox.Size = new System.Drawing.Size(117, 21);
             this.DescripcionProductotextBox.TabIndex = 39;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(192, 58);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 13);
+            this.label10.TabIndex = 47;
+            this.label10.Text = "Nombre:";
+            // 
+            // NombreClientetextBox
+            // 
+            this.NombreClientetextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NombreClientetextBox.Enabled = false;
+            this.NombreClientetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombreClientetextBox.Location = new System.Drawing.Point(245, 55);
+            this.NombreClientetextBox.Name = "NombreClientetextBox";
+            this.NombreClientetextBox.Size = new System.Drawing.Size(136, 21);
+            this.NombreClientetextBox.TabIndex = 46;
+            // 
+            // ClienteIdmaskedTextBox
+            // 
+            this.ClienteIdmaskedTextBox.Location = new System.Drawing.Point(88, 56);
+            this.ClienteIdmaskedTextBox.Mask = "99999";
+            this.ClienteIdmaskedTextBox.Name = "ClienteIdmaskedTextBox";
+            this.ClienteIdmaskedTextBox.Size = new System.Drawing.Size(40, 20);
+            this.ClienteIdmaskedTextBox.TabIndex = 45;
+            this.ClienteIdmaskedTextBox.ValidatingType = typeof(int);
+            this.ClienteIdmaskedTextBox.TextChanged += new System.EventHandler(this.ClienteIdmaskedTextBox_TextChanged);
+            this.ClienteIdmaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClienteIdmaskedTextBox_KeyPress);
+            // 
+            // BuscarClientebutton
+            // 
+            this.BuscarClientebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BuscarClientebutton.Image = global::GimnasioTech.Properties.Resources.Search_25px1;
+            this.BuscarClientebutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BuscarClientebutton.Location = new System.Drawing.Point(146, 47);
+            this.BuscarClientebutton.Name = "BuscarClientebutton";
+            this.BuscarClientebutton.Size = new System.Drawing.Size(40, 32);
+            this.BuscarClientebutton.TabIndex = 44;
+            this.BuscarClientebutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarClientebutton.UseVisualStyleBackColor = true;
+            this.BuscarClientebutton.Click += new System.EventHandler(this.BuscarClientebutton_Click);
+            // 
+            // ClienteIderrorProvider
+            // 
+            this.ClienteIderrorProvider.ContainerControl = this;
             // 
             // FacturasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 496);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.NombreClientetextBox);
+            this.Controls.Add(this.ClienteIdmaskedTextBox);
+            this.Controls.Add(this.BuscarClientebutton);
             this.Controls.Add(this.SaldogroupBox);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Eliminarbutton);
@@ -442,7 +488,6 @@
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.ProductosgroupBox);
             this.Controls.Add(this.FechadateTimePicker);
-            this.Controls.Add(this.NombresClientescomboBox);
             this.Controls.Add(this.FacturaIdmaskedTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -456,11 +501,12 @@
             this.ProductosgroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NombreClienteerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidaderrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RecibidoerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GriderrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteIderrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,11 +531,10 @@
         private System.Windows.Forms.Button Agregarbutton;
         private System.Windows.Forms.DataGridView ProductodataGridView;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
-        private System.Windows.Forms.ComboBox NombresClientescomboBox;
         private System.Windows.Forms.MaskedTextBox FacturaIdmaskedTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ErrorProvider ClienteerrorProvider;
+        private System.Windows.Forms.ErrorProvider NombreClienteerrorProvider;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider CantidaderrorProvider;
@@ -501,5 +546,10 @@
         private System.Windows.Forms.TextBox DescripcionProductotextBox;
         private System.Windows.Forms.MaskedTextBox ProductoIdmaskedTextBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox NombreClientetextBox;
+        private System.Windows.Forms.MaskedTextBox ClienteIdmaskedTextBox;
+        private System.Windows.Forms.Button BuscarClientebutton;
+        private System.Windows.Forms.ErrorProvider ClienteIderrorProvider;
     }
 }

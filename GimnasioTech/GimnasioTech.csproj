@@ -183,6 +183,8 @@
       <DependentUpon>RD-GYMDb.mdf</DependentUpon>
     </Content>
     <Content Include="DataBase\Scripts.sql" />
+    <None Include="Resources\Lock 2_35px.png" />
+    <None Include="Resources\User_35px.png" />
     <None Include="Resources\Lock 2_50px.png" />
     <None Include="Resources\User_50px.png" />
     <None Include="Resources\Key_25px.png" />

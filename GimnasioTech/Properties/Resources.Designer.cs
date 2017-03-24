@@ -123,6 +123,16 @@ namespace GimnasioTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Lock_2_35px {
+            get {
+                object obj = ResourceManager.GetObject("Lock 2_35px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lock_2_50px {
             get {
                 object obj = ResourceManager.GetObject("Lock 2_50px", resourceCulture);
@@ -206,6 +216,16 @@ namespace GimnasioTech.Properties {
         internal static System.Drawing.Bitmap Search_25px1 {
             get {
                 object obj = ResourceManager.GetObject("Search_25px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User_35px {
+            get {
+                object obj = ResourceManager.GetObject("User_35px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

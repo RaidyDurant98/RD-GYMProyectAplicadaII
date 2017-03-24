@@ -47,7 +47,7 @@
             // 
             // ClavetextBox
             // 
-            this.ClavetextBox.Location = new System.Drawing.Point(165, 122);
+            this.ClavetextBox.Location = new System.Drawing.Point(158, 115);
             this.ClavetextBox.Name = "ClavetextBox";
             this.ClavetextBox.PasswordChar = '*';
             this.ClavetextBox.Size = new System.Drawing.Size(128, 20);
@@ -57,7 +57,7 @@
             // 
             // UsuariotextBox
             // 
-            this.UsuariotextBox.Location = new System.Drawing.Point(165, 64);
+            this.UsuariotextBox.Location = new System.Drawing.Point(158, 66);
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.Size = new System.Drawing.Size(128, 20);
             this.UsuariotextBox.TabIndex = 8;
@@ -67,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 125);
+            this.label2.Location = new System.Drawing.Point(93, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 7;
@@ -76,7 +76,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 67);
+            this.label1.Location = new System.Drawing.Point(93, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 6;
@@ -92,19 +92,21 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::GimnasioTech.Properties.Resources.Lock_2_50px;
-            this.pictureBox2.Location = new System.Drawing.Point(30, 104);
+            this.pictureBox2.BackgroundImage = global::GimnasioTech.Properties.Resources.Lock_2_35px;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox2.Location = new System.Drawing.Point(51, 99);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox2.Size = new System.Drawing.Size(35, 36);
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::GimnasioTech.Properties.Resources.User_50px;
-            this.pictureBox1.Location = new System.Drawing.Point(31, 44);
+            this.pictureBox1.BackgroundImage = global::GimnasioTech.Properties.Resources.User_35px;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Location = new System.Drawing.Point(51, 50);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.Size = new System.Drawing.Size(36, 36);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 

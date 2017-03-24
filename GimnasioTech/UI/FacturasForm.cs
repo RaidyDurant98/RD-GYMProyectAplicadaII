@@ -24,7 +24,6 @@ namespace GimnasioTech.UI
         {
             RecibidomaskedTextBox.Enabled = false;
             CantidadnumericUpDown.Enabled = false;
-            LlenarComboClientes();
         }
 
         private void Limpiar()
@@ -33,7 +32,8 @@ namespace GimnasioTech.UI
             Factura = new Entidades.Facturas();
 
             FacturaIdmaskedTextBox.Clear();
-            NombresClientescomboBox.Text = null;
+            ClienteIdmaskedTextBox.Clear();
+            NombreClientetextBox.Clear();
             MontotextBox.Clear();
             FechadateTimePicker.Value = DateTime.Now;
             ProductoIdmaskedTextBox.Clear();
@@ -43,11 +43,12 @@ namespace GimnasioTech.UI
             PreciotextBox.Clear();
             DevueltatextBox.Clear();
             RecibidomaskedTextBox.Clear();
-            ClienteerrorProvider.Clear();
+            NombreClienteerrorProvider.Clear();
             CantidaderrorProvider.Clear();
             ProductoerrorProvider.Clear();
             RecibidoerrorProvider.Clear();
             GriderrorProvider.Clear();
+            ClienteIderrorProvider.Clear();
 
             RecibidomaskedTextBox.Enabled = false;
             CantidadnumericUpDown.Enabled = false;
@@ -57,9 +58,9 @@ namespace GimnasioTech.UI
         {
             bool interruptor = true;
 
-            if (string.IsNullOrEmpty(NombresClientescomboBox.Text))
+            if (string.IsNullOrEmpty(NombreClientetextBox.Text))
             {
-                ClienteerrorProvider.SetError(NombresClientescomboBox, "Por favor llenar el campo.");
+                NombreClienteerrorProvider.SetError(NombreClientetextBox, "Debe de elegir un cliente.");
                 interruptor = false;
             }
             if (ProductodataGridView.DataSource == null)
@@ -76,20 +77,9 @@ namespace GimnasioTech.UI
             return interruptor;
         }
 
-        private void LlenarComboClientes()
-        {
-            List<Entidades.Clientes> lista = BLL.ClientesBLL.GetListAll();
-            NombresClientescomboBox.DataSource = lista;
-            NombresClientescomboBox.DisplayMember = "Nombres";
-            NombresClientescomboBox.ValueMember = "ClienteId";
-
-            if (NombresClientescomboBox.Items.Count > 0)
-                NombresClientescomboBox.SelectedIndex = -1;
-        }
-
         private Entidades.Facturas LlenarCampos()
         {
-            Factura.NombreCliente = NombresClientescomboBox.Text;
+            Factura.NombreCliente = NombreClientetextBox.Text;
             Factura.FacturaId = Utilidades.TOINT(FacturaIdmaskedTextBox.Text);
             Factura.Monto = Utilidades.TOINT(MontotextBox.Text);
             Factura.Fecha = FechadateTimePicker.Value;
@@ -156,7 +146,7 @@ namespace GimnasioTech.UI
 
                 if (factura != null)
                 {
-                    NombresClientescomboBox.Text = factura.NombreCliente;
+                    NombreClientetextBox.Text = factura.NombreCliente;
                     FechadateTimePicker.Value = factura.Fecha;
                     MontotextBox.Text = factura.Monto.ToString();
                     RecibidomaskedTextBox.Text = factura.DineroPagado.ToString();
@@ -186,16 +176,17 @@ namespace GimnasioTech.UI
 
         private void AgregarProducto()
         {
-            if (ProductoIdmaskedTextBox.Text != null)
+            if (!string.IsNullOrEmpty(DescripcionProductotextBox.Text))
             {
                 if (CantidadnumericUpDown.Value != 0)
                 {
                     Factura.AgregarDetalle(Detalle.Producto, CantidadnumericUpDown.Value);
                     LlenarDataGrid(Factura);
 
+                    CantidadnumericUpDown.Enabled = false;
+                    DescripcionProductotextBox.Clear();
                     PreciotextBox.Clear();
                     CalculoMonto();
-
                 }
                 else
                 {
@@ -275,20 +266,24 @@ namespace GimnasioTech.UI
 
                 if (Detalle.Producto != null)
                 {
+                    ProductoIdmaskedTextBox.Clear();
                     DescripcionProductotextBox.Text = Detalle.Producto.Descripcion;
                     PreciotextBox.Text = Detalle.Producto.Precio.ToString();
-                    CantidadnumericUpDown.Enabled = true;
+                    CantidadnumericUpDown.Enabled = true;                   
                     CantidadnumericUpDown.Focus();
                 }
                 else
                 {
                     ProductoerrorProvider.SetError(ProductoIdmaskedTextBox, "No existe un producto con ese id.");
+                    DescripcionProductotextBox.Clear();
+                    CantidadnumericUpDown.Enabled = false;
                     ProductoIdmaskedTextBox.Focus();
                 }
             }
             else
             {
                 ProductoerrorProvider.SetError(ProductoIdmaskedTextBox, "Digite el id de un producto.");
+                DescripcionProductotextBox.Clear();
                 ProductoIdmaskedTextBox.Focus();
             }
         }
@@ -318,11 +313,6 @@ namespace GimnasioTech.UI
         private void CantidadnumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             CantidaderrorProvider.Clear();
-        }
-
-        private void NombresClientescomboBox_TextChanged(object sender, EventArgs e)
-        {
-            ClienteerrorProvider.Clear();
         }
 
         private void ProductodataGridView_SelectionChanged(object sender, EventArgs e)
@@ -359,6 +349,50 @@ namespace GimnasioTech.UI
         private void ProductoIdmaskedTextBox_TextChanged(object sender, EventArgs e)
         {
             ProductoerrorProvider.Clear();
+        }
+
+        private void BuscarClientebutton_Click(object sender, EventArgs e)
+        {
+            BuscarCliente();
+        }
+
+        private void BuscarCliente()
+        {
+            if (!string.IsNullOrEmpty(ClienteIdmaskedTextBox.Text))
+            {
+                int id = Utilidades.TOINT(ClienteIdmaskedTextBox.Text);
+                Entidades.Clientes cliente = new Entidades.Clientes();
+
+                cliente = BLL.ClientesBLL.Buscar(p => p.ClienteId == id);
+
+                if (cliente != null)
+                {
+                    NombreClientetextBox.Text = cliente.Nombres;
+                    ProductoIdmaskedTextBox.Focus();
+                }
+                else
+                {
+                    ClienteIderrorProvider.SetError(ClienteIdmaskedTextBox, "No existe un cliente con ese id.");
+                    NombreClientetextBox.Clear();
+                    ClienteIdmaskedTextBox.Focus();
+                }
+            }
+            else
+            {
+                ClienteIderrorProvider.SetError(ClienteIdmaskedTextBox, "Digite el id de un cliente.");
+                NombreClientetextBox.Clear();
+                ClienteIdmaskedTextBox.Focus();
+            }
+        }
+
+        private void ClienteIdmaskedTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ClienteIderrorProvider.Clear();
+        }
+
+        private void ClienteIdmaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            BuscarCliente();
         }
     }
 }
