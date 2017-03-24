@@ -16,7 +16,14 @@ namespace BLL
             {
                 try
                 {
-                    return context.Guardar(factura);
+                    if (Buscar(p => p.FacturaId == factura.FacturaId) == null)
+                    {
+                        return context.Guardar(factura);
+                    }
+                    else
+                    {
+                        return context.Modificar(factura);
+                    }
                 }
                 catch (Exception)
                 {

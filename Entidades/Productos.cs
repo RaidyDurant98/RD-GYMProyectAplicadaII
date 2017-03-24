@@ -33,6 +33,8 @@ namespace Entidades
             this.Precio = precio;
             this.FechaIngreso = fechaIngreso;
             this.FechaVencimiento = fechaVencimiento;
+
+            Relacion = new HashSet<FacturasProductos>();
         }
     }
 }

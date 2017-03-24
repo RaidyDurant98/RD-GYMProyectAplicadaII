@@ -62,6 +62,9 @@ namespace GimnasioTech
 
                 var producto = new Entidades.Productos(1, "Proteina", 5, 400, 500, DateTime.Now, DateTime.Now);
                 ProductosBLL.Guardar(producto);
+
+                var p = new Entidades.Productos(2, "Vitamina", 4, 30, 40, DateTime.Now, DateTime.Now);
+                ProductosBLL.Guardar(p);
             }
             else
             {

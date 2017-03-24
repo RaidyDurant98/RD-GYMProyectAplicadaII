@@ -197,8 +197,6 @@ namespace GimnasioTech.UI
 
         private void AgregarProducto()
         {
-            //Detalle.Producto.Cantidad = ExistenciaProducto();
-
             if (ProductocomboBox.SelectedItem != null)
             {
                 if (CantidadnumericUpDown.Value != 0)
@@ -206,7 +204,9 @@ namespace GimnasioTech.UI
                     Factura.AgregarDetalle(Detalle.Producto, CantidadnumericUpDown.Value);
                     LlenarDataGrid(Factura);
 
+                    PreciotextBox.Clear();
                     CalculoMonto();
+                    
                 }
                 else
                 {
@@ -357,11 +357,6 @@ namespace GimnasioTech.UI
             if ((Keys)e.KeyChar == Keys.Enter)
             {
                 CalcularDevuelta();
-
-                if (DevueltatextBox.Text != null)
-                {
-                    Guardarbutton.Focus();
-                }
             }
         }
 

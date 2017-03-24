@@ -20,7 +20,7 @@ namespace Entidades
 
         public FacturasProductos()
         {
-            this.Producto = new Productos();
+
         }
 
         public FacturasProductos(int productoId, string descripcion,decimal precio, decimal cantidad)
