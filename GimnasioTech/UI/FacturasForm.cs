@@ -25,7 +25,6 @@ namespace GimnasioTech.UI
             RecibidomaskedTextBox.Enabled = false;
             CantidadnumericUpDown.Enabled = false;
             LlenarComboClientes();
-            LlenarComboProductos();
         }
 
         private void Limpiar()
@@ -37,7 +36,8 @@ namespace GimnasioTech.UI
             NombresClientescomboBox.Text = null;
             MontotextBox.Clear();
             FechadateTimePicker.Value = DateTime.Now;
-            ProductocomboBox.Text = null;
+            ProductoIdmaskedTextBox.Clear();
+            DescripcionProductotextBox.Clear();
             ProductodataGridView.DataSource = null;
             CantidadnumericUpDown.Value = 0;
             PreciotextBox.Clear();
@@ -85,17 +85,6 @@ namespace GimnasioTech.UI
 
             if (NombresClientescomboBox.Items.Count > 0)
                 NombresClientescomboBox.SelectedIndex = -1;
-        }
-
-        private void LlenarComboProductos()
-        {
-            List<Entidades.Productos> lista = BLL.ProductosBLL.GetListAll();
-            ProductocomboBox.DataSource = lista;
-            ProductocomboBox.DisplayMember = "Descripcion";
-            ProductocomboBox.ValueMember = "ProductoId";
-
-            if (ProductocomboBox.Items.Count > 0)
-                ProductocomboBox.SelectedIndex = -1;
         }
 
         private Entidades.Facturas LlenarCampos()
@@ -197,7 +186,7 @@ namespace GimnasioTech.UI
 
         private void AgregarProducto()
         {
-            if (ProductocomboBox.SelectedItem != null)
+            if (ProductoIdmaskedTextBox.Text != null)
             {
                 if (CantidadnumericUpDown.Value != 0)
                 {
@@ -206,7 +195,7 @@ namespace GimnasioTech.UI
 
                     PreciotextBox.Clear();
                     CalculoMonto();
-                    
+
                 }
                 else
                 {
@@ -216,7 +205,7 @@ namespace GimnasioTech.UI
             }
             else
             {
-                ProductoerrorProvider.SetError(ProductocomboBox, "Eliga un producto.");
+                ProductoerrorProvider.SetError(ProductoIdmaskedTextBox, "Busque un producto para poder agregar.");
             }
         }
 
@@ -239,7 +228,7 @@ namespace GimnasioTech.UI
                     MessageBox.Show("El dinero no es suficiente para cubrir su comprar.");
                     RecibidomaskedTextBox.Clear();
                     RecibidomaskedTextBox.Focus();
-                    
+
                 }
                 else
                 {
@@ -278,36 +267,35 @@ namespace GimnasioTech.UI
 
         private void BuscarProducto()
         {
-            int id = Convert.ToInt32(ProductocomboBox.SelectedValue);
-
-            Detalle.Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == id);
-
-            if (ProductocomboBox.SelectedItem != null)
+            if (!string.IsNullOrEmpty(ProductoIdmaskedTextBox.Text))
             {
+                int id = Utilidades.TOINT(ProductoIdmaskedTextBox.Text);
+
+                Detalle.Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == id);
+
                 if (Detalle.Producto != null)
                 {
+                    DescripcionProductotextBox.Text = Detalle.Producto.Descripcion;
                     PreciotextBox.Text = Detalle.Producto.Precio.ToString();
                     CantidadnumericUpDown.Enabled = true;
                     CantidadnumericUpDown.Focus();
                 }
+                else
+                {
+                    ProductoerrorProvider.SetError(ProductoIdmaskedTextBox, "No existe un producto con ese id.");
+                    ProductoIdmaskedTextBox.Focus();
+                }
             }
             else
             {
-                ProductoerrorProvider.SetError(ProductocomboBox, "Eliga un producto.");
+                ProductoerrorProvider.SetError(ProductoIdmaskedTextBox, "Digite el id de un producto.");
+                ProductoIdmaskedTextBox.Focus();
             }
         }
 
         private void BuscarProductobutton_Click(object sender, EventArgs e)
         {
             BuscarProducto();
-        }
-
-        private void ProductocomboBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Keys)e.KeyChar == Keys.Enter)
-            {
-                BuscarProducto();
-            }
         }
 
         private void FacturaIdmaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -330,11 +318,6 @@ namespace GimnasioTech.UI
         private void CantidadnumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             CantidaderrorProvider.Clear();
-        }
-
-        private void ProductocomboBox_TextChanged(object sender, EventArgs e)
-        {
-            ProductoerrorProvider.Clear();
         }
 
         private void NombresClientescomboBox_TextChanged(object sender, EventArgs e)
@@ -363,6 +346,19 @@ namespace GimnasioTech.UI
         private void RecibidomaskedTextBox_TextChanged(object sender, EventArgs e)
         {
             RecibidoerrorProvider.Clear();
+        }
+
+        private void ProductoIdmaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                BuscarProducto();
+            }
+        }
+
+        private void ProductoIdmaskedTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ProductoerrorProvider.Clear();
         }
     }
 }
