@@ -11,6 +11,8 @@ namespace GimnasioTech.UI.Consultas
 {
     public partial class UsuariosConsultaForm : Form
     {
+        public List<Entidades.Usuarios> Lista { get; set; }
+
         public UsuariosConsultaForm()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace GimnasioTech.UI.Consultas
         {
             if (FiltrarcomboBox.SelectedIndex == 0)
             {
-                ConsultadataGridView.DataSource = BLL.UsuariosBLL.GetListAll();
+                Lista= BLL.UsuariosBLL.GetListAll();
             }
             else if (FiltrarcomboBox.SelectedIndex != 0)
             {
@@ -37,19 +39,21 @@ namespace GimnasioTech.UI.Consultas
                 {
                     if (FiltrarcomboBox.SelectedIndex == 2)
                     {
-                        ConsultadataGridView.DataSource = BLL.UsuariosBLL.GetList(p => p.Nombres ==FiltrartextBox.Text);
+                       Lista = BLL.UsuariosBLL.GetList(p => p.Nombres ==FiltrartextBox.Text);
                     }
                     if (FiltrarcomboBox.SelectedIndex == 3)
                     {
-                        ConsultadataGridView.DataSource = BLL.UsuariosBLL.GetList(p => p.Cargo == FiltrartextBox.Text);
+                        Lista = BLL.UsuariosBLL.GetList(p => p.Cargo == FiltrartextBox.Text);
                     }
                     if (FiltrarcomboBox.SelectedIndex == 1)
                     {
                         int id = Utilidades.TOINT(FiltrartextBox.Text);
-                        ConsultadataGridView.DataSource = BLL.UsuariosBLL.GetList(p => p.UsuarioId == id);
+                        Lista = BLL.UsuariosBLL.GetList(p => p.UsuarioId == id);
                     }
                 }
             }
+
+            ConsultadataGridView.DataSource = Lista;
         }
 
         private void FiltrarcomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,6 +93,12 @@ namespace GimnasioTech.UI.Consultas
 
                 Filtrar();
             }
+        }
+
+        private void Imprimibutton_Click(object sender, EventArgs e)
+        {
+            new UI.Reportes.UsuariosReporteForm(Lista).Show();
+            new UI.Reportes.UsuariosReporteForm(Lista).Activate();
         }
     }
 }

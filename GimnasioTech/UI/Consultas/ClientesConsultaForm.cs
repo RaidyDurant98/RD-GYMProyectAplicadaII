@@ -11,6 +11,8 @@ namespace GimnasioTech.UI.Consultas
 {
     public partial class ClientesConsultaForm : Form
     {
+        public List<Entidades.Clientes> Lista { get; set; }
+
         public ClientesConsultaForm()
         {
             InitializeComponent();
@@ -27,11 +29,11 @@ namespace GimnasioTech.UI.Consultas
         {
             if (ConsultarcomboBox.SelectedIndex == 0)
             {
-                ConsultadataGridView.DataSource = BLL.ClientesBLL.GetListAll();
+                Lista = BLL.ClientesBLL.GetListAll();
             }
             if (ConsultarcomboBox.SelectedIndex == 4)
             {
-                ConsultadataGridView.DataSource = BLL.ClientesBLL.GetList(p => p.FechaInscripcion >= DesdedateTimePicker.Value.Date && p.FechaInscripcion <= HastadateTimePicker.Value.Date);
+                Lista = BLL.ClientesBLL.GetList(p => p.FechaInscripcion >= DesdedateTimePicker.Value.Date && p.FechaInscripcion <= HastadateTimePicker.Value.Date);
             }
             else if (ConsultarcomboBox.SelectedIndex != 0 && ConsultarcomboBox.SelectedIndex != 3)
             {
@@ -43,23 +45,25 @@ namespace GimnasioTech.UI.Consultas
                 {
                     if (ConsultarcomboBox.SelectedIndex == 2)
                     {
-                        ConsultadataGridView.DataSource = BLL.ClientesBLL.GetList(p => p.Nombres == ConsultartextBox.Text);
+                        Lista = BLL.ClientesBLL.GetList(p => p.Nombres == ConsultartextBox.Text);
                     }
                     if (ConsultarcomboBox.SelectedIndex == 3)
                     {
-                        ConsultadataGridView.DataSource = BLL.ClientesBLL.GetList(p => p.Sexo == ConsultartextBox.Text);
+                        Lista = BLL.ClientesBLL.GetList(p => p.Sexo == ConsultartextBox.Text);
                     }
                     if (ConsultarcomboBox.SelectedIndex == 5)
                     {
-                        ConsultadataGridView.DataSource = BLL.ClientesBLL.GetList(p => p.Direccion == ConsultartextBox.Text);
+                        Lista = BLL.ClientesBLL.GetList(p => p.Direccion == ConsultartextBox.Text);
                     }
                     if (ConsultarcomboBox.SelectedIndex == 1)
                     {
                         int id = Utilidades.TOINT(ConsultartextBox.Text);
-                        ConsultadataGridView.DataSource = BLL.ClientesBLL.GetList(p => p.ClienteId == id);
+                        Lista = BLL.ClientesBLL.GetList(p => p.ClienteId == id);
                     }
                 }
             }
+
+            ConsultadataGridView.DataSource = Lista;
         }
 
         private void ConsultarcomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -122,6 +126,12 @@ namespace GimnasioTech.UI.Consultas
             {
                 Filtro();
             }
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            new UI.Reportes.ClientesReporteForm(Lista).Show();
+            new UI.Reportes.ClientesReporteForm(Lista).Activate();
         }
     }
 }

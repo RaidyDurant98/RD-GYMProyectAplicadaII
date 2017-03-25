@@ -90,6 +90,7 @@
             this.Imprimibutton.Text = "Imprimir";
             this.Imprimibutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Imprimibutton.UseVisualStyleBackColor = true;
+            this.Imprimibutton.Click += new System.EventHandler(this.Imprimibutton_Click);
             // 
             // Filtrarbutton
             // 
