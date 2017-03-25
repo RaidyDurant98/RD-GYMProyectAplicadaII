@@ -34,7 +34,6 @@ Fecha date,
 Monto decimal,
 Devuelta decimal,
 DineroPagado decimal,
-ProductoId int
 );
 
 create table FacturasProductos(

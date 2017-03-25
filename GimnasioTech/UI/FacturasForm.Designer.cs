@@ -38,6 +38,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.MontotextBox = new System.Windows.Forms.TextBox();
             this.ProductosgroupBox = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.DescripcionProductotextBox = new System.Windows.Forms.TextBox();
+            this.ProductoIdmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.BuscarProductobutton = new System.Windows.Forms.Button();
@@ -58,10 +62,6 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.ProductoIdmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.DescripcionProductotextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.NombreClientetextBox = new System.Windows.Forms.TextBox();
             this.ClienteIdmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -182,6 +182,46 @@
             this.ProductosgroupBox.TabIndex = 38;
             this.ProductosgroupBox.TabStop = false;
             this.ProductosgroupBox.Text = "Productos";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(181, 34);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 13);
+            this.label9.TabIndex = 40;
+            this.label9.Text = "Descripcion:";
+            // 
+            // DescripcionProductotextBox
+            // 
+            this.DescripcionProductotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DescripcionProductotextBox.Enabled = false;
+            this.DescripcionProductotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescripcionProductotextBox.Location = new System.Drawing.Point(253, 31);
+            this.DescripcionProductotextBox.Name = "DescripcionProductotextBox";
+            this.DescripcionProductotextBox.Size = new System.Drawing.Size(117, 21);
+            this.DescripcionProductotextBox.TabIndex = 39;
+            // 
+            // ProductoIdmaskedTextBox
+            // 
+            this.ProductoIdmaskedTextBox.Location = new System.Drawing.Point(77, 32);
+            this.ProductoIdmaskedTextBox.Mask = "99999";
+            this.ProductoIdmaskedTextBox.Name = "ProductoIdmaskedTextBox";
+            this.ProductoIdmaskedTextBox.Size = new System.Drawing.Size(40, 20);
+            this.ProductoIdmaskedTextBox.TabIndex = 38;
+            this.ProductoIdmaskedTextBox.ValidatingType = typeof(int);
+            this.ProductoIdmaskedTextBox.TextChanged += new System.EventHandler(this.ProductoIdmaskedTextBox_TextChanged);
+            this.ProductoIdmaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductoIdmaskedTextBox_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "Producto Id:";
             // 
             // label8
             // 
@@ -384,46 +424,6 @@
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // ProductoIdmaskedTextBox
-            // 
-            this.ProductoIdmaskedTextBox.Location = new System.Drawing.Point(77, 32);
-            this.ProductoIdmaskedTextBox.Mask = "99999";
-            this.ProductoIdmaskedTextBox.Name = "ProductoIdmaskedTextBox";
-            this.ProductoIdmaskedTextBox.Size = new System.Drawing.Size(40, 20);
-            this.ProductoIdmaskedTextBox.TabIndex = 38;
-            this.ProductoIdmaskedTextBox.ValidatingType = typeof(int);
-            this.ProductoIdmaskedTextBox.TextChanged += new System.EventHandler(this.ProductoIdmaskedTextBox_TextChanged);
-            this.ProductoIdmaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductoIdmaskedTextBox_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 37;
-            this.label3.Text = "Producto Id:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(181, 34);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 13);
-            this.label9.TabIndex = 40;
-            this.label9.Text = "Descripcion:";
-            // 
-            // DescripcionProductotextBox
-            // 
-            this.DescripcionProductotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DescripcionProductotextBox.Enabled = false;
-            this.DescripcionProductotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescripcionProductotextBox.Location = new System.Drawing.Point(253, 31);
-            this.DescripcionProductotextBox.Name = "DescripcionProductotextBox";
-            this.DescripcionProductotextBox.Size = new System.Drawing.Size(117, 21);
-            this.DescripcionProductotextBox.TabIndex = 39;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -443,6 +443,7 @@
             this.NombreClientetextBox.Name = "NombreClientetextBox";
             this.NombreClientetextBox.Size = new System.Drawing.Size(136, 21);
             this.NombreClientetextBox.TabIndex = 46;
+            this.NombreClientetextBox.TextChanged += new System.EventHandler(this.NombreClientetextBox_TextChanged);
             // 
             // ClienteIdmaskedTextBox
             // 

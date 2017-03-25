@@ -13,6 +13,7 @@ namespace GimnasioTech.UI
     {
         Entidades.FacturasProductos Detalle = null;
         Entidades.Facturas Factura = null;
+        //int[] ProductoId;
 
         public FacturasForm()
         {
@@ -28,6 +29,7 @@ namespace GimnasioTech.UI
 
         private void Limpiar()
         {
+            //ProductoId = new int[10];
             Detalle = new Entidades.FacturasProductos();
             Factura = new Entidades.Facturas();
 
@@ -132,7 +134,7 @@ namespace GimnasioTech.UI
         }
 
         private void BuscarFactura()
-        {
+        {          
             if (string.IsNullOrEmpty(FacturaIdmaskedTextBox.Text))
             {
                 MessageBox.Show("Por favor insertar el id que desea buscar.");
@@ -165,11 +167,25 @@ namespace GimnasioTech.UI
 
         private void ExistenciaProducto(decimal existencia)
         {
-            Entidades.Productos producto = new Entidades.Productos();
+            /* (Factura.Relacion.Count() > 1)
+            {
+                for (int i = 0; i < Factura.Relacion.Count(); i++)
+                {
+                    Detalle.Producto = BLL.ProductosBLL.BuscarOtro(ProductoId[i]);
+                    Detalle.Producto.Cantidad -= existencia;
+                    BLL.ProductosBLL.Modificar(Detalle.Producto);
+                }
+            }
+            else
+            {*/
+            if (Detalle.Producto != null)
+            {
+                Detalle.Producto = BLL.ProductosBLL.BuscarOtro(Utilidades.TOINT(ProductoIdmaskedTextBox.Text));
+                Detalle.Producto.Cantidad -= existencia;
+                BLL.ProductosBLL.Modificar(Detalle.Producto);
+            }
 
-            producto = BLL.ProductosBLL.BuscarOtro(Utilidades.TOINT(ProductoIdmaskedTextBox.Text));
-            producto.Cantidad -= existencia;
-            BLL.ProductosBLL.Modificar(producto);
+            //}
         }
 
         private void Agregarbutton_Click(object sender, EventArgs e)
@@ -179,17 +195,47 @@ namespace GimnasioTech.UI
 
         private void AgregarProducto()
         {
+            //int i = 0;
             if (!string.IsNullOrEmpty(DescripcionProductotextBox.Text))
             {
-                if (CantidadnumericUpDown.Value != 0)
+                /*while (i <= Factura.Relacion.Count())
                 {
-                    Factura.AgregarDetalle(Detalle.Producto, CantidadnumericUpDown.Value);
-                    LlenarDataGrid(Factura);
+                    ProductoId[i] = Utilidades.TOINT(ProductoIdmaskedTextBox.Text);
 
-                    CantidadnumericUpDown.Enabled = false;
-                    DescripcionProductotextBox.Clear();
-                    PreciotextBox.Clear();
-                    CalculoMonto();
+                    for (int j = 1; j < Factura.Relacion.Count()+1; j++)
+                    {
+                        ProductoId[j] = Utilidades.TOINT(ProductoIdmaskedTextBox.Text);
+                    }
+                    ++i;
+                }*/
+
+                if (CantidadnumericUpDown.Value != 0)
+                {                   
+                    if (Detalle.Producto.Cantidad >= CantidadnumericUpDown.Value)
+                    {
+                        Factura.AgregarDetalle(Detalle.Producto, CantidadnumericUpDown.Value);
+                        LlenarDataGrid(Factura);
+
+                        CantidadnumericUpDown.Enabled = false;
+                        CalculoMonto();
+                    }
+                    else
+                    {
+                        if (Detalle.Producto.Cantidad <= 0)
+                        {
+                            MessageBox.Show("No queda producto de ese tipo");
+                            ProductoIdmaskedTextBox.Clear();
+                            DescripcionProductotextBox.Clear();
+                            CantidadnumericUpDown.Text = "0";
+
+                            ProductoIdmaskedTextBox.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show("La cantidad excede la existencia, se cuenta con (" + Detalle.Producto.Cantidad + ") " + Detalle.Producto.Descripcion + ".");
+                            CantidadnumericUpDown.Focus();
+                        }
+                    }
                 }
                 else
                 {
@@ -201,6 +247,8 @@ namespace GimnasioTech.UI
             {
                 ProductoerrorProvider.SetError(ProductoIdmaskedTextBox, "Busque un producto para poder agregar.");
             }
+
+            ClienteIdmaskedTextBox.Clear();
         }
 
         private void CalculoMonto()
@@ -277,16 +325,18 @@ namespace GimnasioTech.UI
                 }
                 else
                 {
+                    ProductoIdmaskedTextBox.Clear();
                     ProductoerrorProvider.SetError(ProductoIdmaskedTextBox, "No existe un producto con ese id.");
                     DescripcionProductotextBox.Clear();
+                    PreciotextBox.Clear();
                     CantidadnumericUpDown.Enabled = false;
                     ProductoIdmaskedTextBox.Focus();
                 }
             }
             else
             {
-                ProductoerrorProvider.SetError(ProductoIdmaskedTextBox, "Digite el id de un producto.");
                 DescripcionProductotextBox.Clear();
+                ProductoerrorProvider.SetError(ProductoIdmaskedTextBox, "Digite el id de un producto.");                
                 ProductoIdmaskedTextBox.Focus();
             }
         }
@@ -309,7 +359,7 @@ namespace GimnasioTech.UI
             if ((Keys)e.KeyChar == Keys.Enter)
             {
                 AgregarProducto();
-                CantidadnumericUpDown.Text = null;
+                ClienteIdmaskedTextBox.Clear();
             }
         }
 
@@ -351,6 +401,9 @@ namespace GimnasioTech.UI
 
         private void ProductoIdmaskedTextBox_TextChanged(object sender, EventArgs e)
         {
+            CantidadnumericUpDown.Text = "0";
+            DescripcionProductotextBox.Clear();
+            PreciotextBox.Clear();
             ProductoerrorProvider.Clear();
         }
 
@@ -375,8 +428,9 @@ namespace GimnasioTech.UI
                 }
                 else
                 {
-                    ClienteIderrorProvider.SetError(ClienteIdmaskedTextBox, "No existe un cliente con ese id.");
+                    ClienteIdmaskedTextBox.Clear();
                     NombreClientetextBox.Clear();
+                    ClienteIderrorProvider.SetError(ClienteIdmaskedTextBox, "No existe un cliente con ese id.");                                   
                     ClienteIdmaskedTextBox.Focus();
                 }
             }
@@ -396,6 +450,11 @@ namespace GimnasioTech.UI
         private void ClienteIdmaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             BuscarCliente();
+        }
+
+        private void NombreClientetextBox_TextChanged(object sender, EventArgs e)
+        {
+            NombreClienteerrorProvider.Clear();
         }
     }
 }
