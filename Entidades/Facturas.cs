@@ -22,10 +22,5 @@ namespace Entidades
         {
             this.Relacion = new HashSet<FacturasProductos>();
         }
-
-        public void AgregarDetalle(Productos producto, decimal cantidad)
-        {
-            this.Relacion.Add(new FacturasProductos(producto.ProductoId, producto.Descripcion, producto.Precio, cantidad));
-        }
     }
 }

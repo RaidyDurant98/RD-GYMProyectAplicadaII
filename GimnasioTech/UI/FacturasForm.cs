@@ -13,6 +13,7 @@ namespace GimnasioTech.UI
     {
         Entidades.FacturasProductos Detalle = null;
         Entidades.Facturas Factura = null;
+        int id;
 
         public FacturasForm()
         {
@@ -52,6 +53,9 @@ namespace GimnasioTech.UI
 
             RecibidomaskedTextBox.Enabled = false;
             CantidadnumericUpDown.Enabled = false;
+            Agregarbutton.Enabled = true;
+            BuscarProductobutton.Enabled = true;
+            ProductoIdmaskedTextBox.Enabled = true;
         }
 
         private bool Validar()
@@ -133,6 +137,10 @@ namespace GimnasioTech.UI
 
         private void BuscarFactura()
         {
+            ProductoIdmaskedTextBox.Enabled = false;
+            Agregarbutton.Enabled = false;
+            BuscarProductobutton.Enabled = false;
+
             if (string.IsNullOrEmpty(FacturaIdmaskedTextBox.Text))
             {
                 MessageBox.Show("Por favor insertar el id que desea buscar.");
@@ -167,8 +175,7 @@ namespace GimnasioTech.UI
         {
             foreach (DataGridViewRow producto in ProductodataGridView.Rows)
             {
-                int id;
-                id = Convert.ToInt32(producto.Cells[2].Value);
+                int id = Convert.ToInt32(producto.Cells[2].Value);
                 cantidad = Convert.ToDecimal(producto.Cells[5].Value);
 
                 Detalle.Producto = BLL.ProductosBLL.BuscarOtro(id);
@@ -189,13 +196,27 @@ namespace GimnasioTech.UI
                 if (CantidadnumericUpDown.Value != 0)
                 {
                     if (Detalle.Producto.Cantidad >= CantidadnumericUpDown.Value)
-                    {
-                        Factura.AgregarDetalle(Detalle.Producto, CantidadnumericUpDown.Value);
-                        LlenarDataGrid(Factura);
+                    {                        
+                        if (Factura.Relacion.Count() == 0 || id != Utilidades.TOINT(ProductoIdmaskedTextBox.Text))
+                        {
+                            Factura.Relacion.Add(new Entidades.FacturasProductos(Detalle.Producto.ProductoId, Detalle.Producto.Descripcion, Detalle.Producto.Precio, CantidadnumericUpDown.Value));
+                            LlenarDataGrid(Factura);
 
-                        CantidadnumericUpDown.Enabled = false;
-                        CalculoMonto();
-                        ProductoIdmaskedTextBox.Clear();
+                            CantidadnumericUpDown.Enabled = false;
+                            CalculoMonto();
+                            ProductoIdmaskedTextBox.Clear();
+
+                            id = Detalle.Producto.ProductoId;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Este producto ya esta agregado en la factura.");
+                            DescripcionProductotextBox.Clear();
+                            PreciotextBox.Clear();
+                            CantidadnumericUpDown.Text = "0";
+                            CantidadnumericUpDown.Enabled = false;
+                            ProductoIdmaskedTextBox.Focus();
+                        }
                     }
                     else
                     {
