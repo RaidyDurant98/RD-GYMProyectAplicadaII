@@ -29,11 +29,11 @@ namespace GimnasioTech.UI.Consultas
         {
             if (ConsultarcomboBox.SelectedIndex == 0)
             {
-                ConsultadataGridView.DataSource = BLL.ProductosBLL.GetListAll();
+                Lista = BLL.ProductosBLL.GetListAll();
             }
             if (ConsultarcomboBox.SelectedIndex == 3)
             {
-                ConsultadataGridView.DataSource = BLL.ProductosBLL.GetList(p => p.FechaIngreso >= DesdedateTimePicker.Value.Date && p.FechaIngreso <= HastadateTimePicker.Value.Date);
+                Lista = BLL.ProductosBLL.GetList(p => p.FechaIngreso >= DesdedateTimePicker.Value.Date && p.FechaIngreso <= HastadateTimePicker.Value.Date);
 
             }
             else if (ConsultarcomboBox.SelectedIndex != 0 && ConsultarcomboBox.SelectedIndex != 3)
@@ -46,15 +46,17 @@ namespace GimnasioTech.UI.Consultas
                 {
                     if (ConsultarcomboBox.SelectedIndex == 2)
                     {
-                        ConsultadataGridView.DataSource = BLL.ProductosBLL.GetList(p => p.Descripcion == ConsultartextBox.Text);
+                        Lista = BLL.ProductosBLL.GetList(p => p.Descripcion == ConsultartextBox.Text);
                     }
                     if (ConsultarcomboBox.SelectedIndex == 1)
                     {
                         int id = Utilidades.TOINT(ConsultartextBox.Text);
-                        ConsultadataGridView.DataSource = BLL.ProductosBLL.GetList(p => p.ProductoId == id);
+                        Lista = BLL.ProductosBLL.GetList(p => p.ProductoId == id);
                     }
                 }
             }
+
+            ConsultadataGridView.DataSource = Lista;
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
@@ -137,7 +139,7 @@ namespace GimnasioTech.UI.Consultas
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
             new UI.Reportes.ProductosReporteForm(Lista).Show();
-            //new UI.Reportes.ProductosReporteForm(Lista).Activate();
+            new UI.Reportes.ProductosReporteForm(Lista).Activate();
         }
     }
 }

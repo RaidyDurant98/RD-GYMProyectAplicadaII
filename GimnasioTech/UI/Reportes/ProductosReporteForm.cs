@@ -20,13 +20,15 @@ namespace GimnasioTech.UI.Reportes
             Lista = lista;
         }
 
-        private void ProductosReporteForm_Load_1(object sender, EventArgs e)
+        private void ProductosReporteForm_Load(object sender, EventArgs e)
         {
-            foreach (var producto in Lista)
-            {
-                ProductosBindingSource.Add(producto);
-            }
-            this.reportViewer1.RefreshReport();
+            this.ProductosreportViewer.Reset();
+            this.ProductosreportViewer.ProcessingMode = ProcessingMode.Local;
+            this.ProductosreportViewer.LocalReport.ReportPath = @"C:\Users\raidy\Desktop\UCNE\PROGRAMACION APLICADA I\ProyectoMejor\RD-GYM - copia\GimnasioTech\UI\Reportes\ProductosReport.rdlc";
+
+            ReportDataSource source = new ReportDataSource("ProductoDataSet", Lista);
+            this.ProductosreportViewer.LocalReport.DataSources.Add(source);
+            this.ProductosreportViewer.RefreshReport();
         }
     }
 }

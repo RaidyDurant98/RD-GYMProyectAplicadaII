@@ -163,6 +163,11 @@
       <DependentUpon>UsuariosReporteForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
+    <Compile Include="UI\Reportes\_RD_GYMDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_RD_GYMDbDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UI\Consultas\ClientesConsultaForm.resx">
       <DependentUpon>ClientesConsultaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +231,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="UI\Reportes\_RD_GYMDbDataSet.xsc">
+      <DependentUpon>_RD_GYMDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UI\Reportes\_RD_GYMDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_RD_GYMDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UI\Reportes\_RD_GYMDbDataSet.xss">
+      <DependentUpon>_RD_GYMDbDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\RD-GYMDb.mdf">
