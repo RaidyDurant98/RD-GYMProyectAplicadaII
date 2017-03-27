@@ -13,8 +13,6 @@ namespace GimnasioTech.UI
     {
         Entidades.FacturasProductos Detalle = null;
         Entidades.Facturas Factura = null;
-        List<Entidades.Productos> Producto = null;
-        int id;
 
         public FacturasForm()
         {
@@ -33,7 +31,6 @@ namespace GimnasioTech.UI
         {
             Detalle = new Entidades.FacturasProductos();
             Factura = new Entidades.Facturas();
-            Producto = new List<Entidades.Productos>();
 
             FacturaIdmaskedTextBox.Clear();
             ClienteIdmaskedTextBox.Clear();
@@ -261,16 +258,16 @@ namespace GimnasioTech.UI
                 {
                     if (Detalle.Producto.Cantidad >= CantidadnumericUpDown.Value)
                     {
-                        bool agregado = false;
+                        bool productoAgregado = false;
                         foreach (var producto in Factura.Relacion)
                         {
                             if (Detalle.Producto.ProductoId == producto.ProductoId)
                             {
-                                agregado = true;
+                                productoAgregado = true;
                                 break;
                             }
                         }                                       
-                        if (!agregado)
+                        if (!productoAgregado)
                         {
                             Factura.Relacion.Add(new Entidades.FacturasProductos(Detalle.Producto.ProductoId, Detalle.Producto.Descripcion, Detalle.Producto.Precio, CantidadnumericUpDown.Value));
                             LlenarDataGrid(Factura);
@@ -278,8 +275,6 @@ namespace GimnasioTech.UI
                             CantidadnumericUpDown.Enabled = false;
                             CalculoMonto();
                             ProductoIdmaskedTextBox.Clear();
-
-                            id = Detalle.Producto.ProductoId;
                         }
                         else
                         {

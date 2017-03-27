@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ProductosreportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // ProductosreportViewer
+            // reportViewer1
             // 
-            this.ProductosreportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductosreportViewer.Location = new System.Drawing.Point(0, 0);
-            this.ProductosreportViewer.Name = "ProductosreportViewer";
-            this.ProductosreportViewer.Size = new System.Drawing.Size(736, 294);
-            this.ProductosreportViewer.TabIndex = 0;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GimnasioTech.UI.Reportes.ProductosReport.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(736, 294);
+            this.reportViewer1.TabIndex = 0;
             // 
             // ProductosReporteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 294);
-            this.Controls.Add(this.ProductosreportViewer);
+            this.Controls.Add(this.reportViewer1);
             this.Name = "ProductosReporteForm";
-            this.Text = "Reporte de productos";
-            this.Load += new System.EventHandler(this.ProductosReporteForm_Load);
+            this.Load += new System.EventHandler(this.ProductosReporteForm_Load_1);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer ProductosreportViewer;
+        private System.Windows.Forms.BindingSource ProductosBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

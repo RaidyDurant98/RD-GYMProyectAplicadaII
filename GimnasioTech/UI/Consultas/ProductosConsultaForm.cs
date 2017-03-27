@@ -127,7 +127,7 @@ namespace GimnasioTech.UI.Consultas
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
             new UI.Reportes.ProductosReporteForm(Lista).Show();
-            new UI.Reportes.ProductosReporteForm(Lista).Activate();
+            //new UI.Reportes.ProductosReporteForm(Lista).Activate();
         }
     }
 }
