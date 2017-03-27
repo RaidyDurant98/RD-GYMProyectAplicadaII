@@ -26,7 +26,6 @@ namespace GimnasioTech.UI.Registros
             CostotextBox.Clear();
             PreciotextBox.Clear();
             fechaIngresoDateTimePicker.Value = DateTime.Today;
-            fechaVencimientoDateTimePicker.Value = DateTime.Today;
 
             descripcionTextBox.Focus();
         }
@@ -69,7 +68,6 @@ namespace GimnasioTech.UI.Registros
             producto.Costo = Utilidades.TOINT(CostotextBox.Text);
             producto.Precio = Utilidades.TOINT(PreciotextBox.Text);
             producto.FechaIngreso = fechaIngresoDateTimePicker.Value;
-            producto.FechaVencimiento = fechaVencimientoDateTimePicker.Value;
 
             return producto;
         }
@@ -152,7 +150,6 @@ namespace GimnasioTech.UI.Registros
                     CostotextBox.Text = producto.Costo.ToString();
                     PreciotextBox.Text = producto.Precio.ToString();
                     fechaIngresoDateTimePicker.Value = producto.FechaIngreso;
-                    fechaVencimientoDateTimePicker.Value = producto.FechaVencimiento;
                 }
                 else
                 {

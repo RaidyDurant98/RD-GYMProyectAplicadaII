@@ -23,29 +23,18 @@ namespace GimnasioTech.UI.Consultas
             HastadateTimePicker.Enabled = false;
         }
 
-        private void OcultarColumna()
-        {
-            this.ConsultadataGridView.Columns["Relacion"].Visible = false;
-        }
-
         private void Filtro()
         {
             if (ConsultarcomboBox.SelectedIndex == 0)
             {
                 ConsultadataGridView.DataSource = BLL.ProductosBLL.GetListAll();
-                OcultarColumna();
             }
             if (ConsultarcomboBox.SelectedIndex == 3)
             {
                 ConsultadataGridView.DataSource = BLL.ProductosBLL.GetList(p => p.FechaIngreso >= DesdedateTimePicker.Value.Date && p.FechaIngreso <= HastadateTimePicker.Value.Date);
-                OcultarColumna();
+
             }
-            if (ConsultarcomboBox.SelectedIndex == 4)
-            {
-                ConsultadataGridView.DataSource = BLL.ProductosBLL.GetList(p => p.FechaVencimiento >= DesdedateTimePicker.Value.Date && p.FechaVencimiento <= HastadateTimePicker.Value.Date);
-                OcultarColumna();
-            }
-            else if (ConsultarcomboBox.SelectedIndex != 0 && ConsultarcomboBox.SelectedIndex != 3 && ConsultarcomboBox.SelectedIndex != 4)
+            else if (ConsultarcomboBox.SelectedIndex != 0 && ConsultarcomboBox.SelectedIndex != 3)
             {
                 if (string.IsNullOrEmpty(ConsultartextBox.Text))
                 {
@@ -56,13 +45,11 @@ namespace GimnasioTech.UI.Consultas
                     if (ConsultarcomboBox.SelectedIndex == 2)
                     {
                         ConsultadataGridView.DataSource = BLL.ProductosBLL.GetList(p => p.Descripcion == ConsultartextBox.Text);
-                        OcultarColumna();
                     }
                     if (ConsultarcomboBox.SelectedIndex == 1)
                     {
                         int id = Utilidades.TOINT(ConsultartextBox.Text);
                         ConsultadataGridView.DataSource = BLL.ProductosBLL.GetList(p => p.ProductoId == id);
-                        OcultarColumna();
                     }
                 }
             }
@@ -84,7 +71,7 @@ namespace GimnasioTech.UI.Consultas
                 HastadateTimePicker.Enabled = false;
                 Filtro();
             }
-            else if (ConsultarcomboBox.SelectedIndex == 2 || ConsultarcomboBox.SelectedIndex == 3)
+            else if (ConsultarcomboBox.SelectedIndex == 3)
             {
                 ConsultartextBox.Enabled = false;
                 DesdedateTimePicker.Enabled = true;

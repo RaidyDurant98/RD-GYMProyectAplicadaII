@@ -82,6 +82,12 @@
     <Compile Include="UI\Consultas\ClientesConsultaForm.Designer.cs">
       <DependentUpon>ClientesConsultaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\FacturasConsultaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\FacturasConsultaForm.Designer.cs">
+      <DependentUpon>FacturasConsultaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\ProductosConsultaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,12 @@
     <Compile Include="UI\Reportes\ClientesReporteForm.Designer.cs">
       <DependentUpon>ClientesReporteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\FacturasReporteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\FacturasReporteForm.Designer.cs">
+      <DependentUpon>FacturasReporteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Reportes\UsuariosReporteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +164,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Consultas\ClientesConsultaForm.resx">
       <DependentUpon>ClientesConsultaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\FacturasConsultaForm.resx">
+      <DependentUpon>FacturasConsultaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\ProductosConsultaForm.resx">
       <DependentUpon>ProductosConsultaForm.cs</DependentUpon>
@@ -185,6 +200,10 @@
     <EmbeddedResource Include="UI\Reportes\ClientesReport.rdlc" />
     <EmbeddedResource Include="UI\Reportes\ClientesReporteForm.resx">
       <DependentUpon>ClientesReporteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\FacturasReport.rdlc" />
+    <EmbeddedResource Include="UI\Reportes\FacturasReporteForm.resx">
+      <DependentUpon>FacturasReporteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\UsuariosReport.rdlc" />
     <EmbeddedResource Include="UI\Reportes\UsuariosReporteForm.resx">
@@ -222,6 +241,8 @@
       <DependentUpon>RD-GYMDb.mdf</DependentUpon>
     </Content>
     <Content Include="DataBase\Scripts.sql" />
+    <None Include="Resources\Bill_32px.png" />
+    <None Include="Resources\Calculator_25px.png" />
     <None Include="Resources\Lock 2_32px.png" />
     <None Include="Resources\Gender Neutral User_32px.png" />
     <None Include="Resources\User_35px.png" />

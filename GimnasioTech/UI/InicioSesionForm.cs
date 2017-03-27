@@ -60,10 +60,10 @@ namespace GimnasioTech
                 var cliente = new Entidades.Clientes(1, "Raidy Duran Garcia", "Masculino", DateTime.Now, "San Francisco de Macoris", "8096739368", "Raidy@outlook.es");
                 ClientesBLL.Guardar(cliente);
 
-                var producto = new Entidades.Productos(1, "Proteina", 5, 400, 500, DateTime.Now, DateTime.Now);
+                var producto = new Entidades.Productos(1, "Proteina", 5, 400, 500, DateTime.Now);
                 ProductosBLL.Guardar(producto);
 
-                var p = new Entidades.Productos(2, "Vitamina", 4, 30, 40, DateTime.Now, DateTime.Now);
+                var p = new Entidades.Productos(2, "Vitamina", 4, 30, 40, DateTime.Now);
                 ProductosBLL.Guardar(p);
             }
             else

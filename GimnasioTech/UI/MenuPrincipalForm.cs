@@ -25,6 +25,8 @@ namespace GimnasioTech.UI
 
         public UI.FacturasForm factura { get; set; }
 
+        public UI.Consultas.FacturasConsultaForm consultaFactura { get; set; }
+
         public MenuPrincipalForm()
         {
             InitializeComponent();
@@ -138,6 +140,17 @@ namespace GimnasioTech.UI
 
             factura = new UI.FacturasForm();
             factura.Show();
+        }
+
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (consultaFactura != null)
+            {
+                consultaFactura.Close();
+            }
+
+            consultaFactura = new UI.Consultas.FacturasConsultaForm();
+            consultaFactura.Show();
         }
     }
 }

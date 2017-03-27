@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturasForm));
             this.SaldogroupBox = new System.Windows.Forms.GroupBox();
+            this.Devueltabutton = new System.Windows.Forms.Button();
             this.RecibidomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,15 +59,17 @@
             this.ProductoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.RecibidoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.GriderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.NombreClientetextBox = new System.Windows.Forms.TextBox();
+            this.ClienteIdmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.ClienteIderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BuscarClientebutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.NombreClientetextBox = new System.Windows.Forms.TextBox();
-            this.ClienteIdmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.BuscarClientebutton = new System.Windows.Forms.Button();
-            this.ClienteIderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.FacturaIderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.DevueltaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.SaldogroupBox.SuspendLayout();
             this.ProductosgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
@@ -77,12 +80,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.RecibidoerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GriderrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIderrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FacturaIderrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DevueltaerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // SaldogroupBox
             // 
             this.SaldogroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaldogroupBox.Controls.Add(this.Devueltabutton);
             this.SaldogroupBox.Controls.Add(this.RecibidomaskedTextBox);
             this.SaldogroupBox.Controls.Add(this.label6);
             this.SaldogroupBox.Controls.Add(this.label7);
@@ -95,6 +101,19 @@
             this.SaldogroupBox.TabIndex = 43;
             this.SaldogroupBox.TabStop = false;
             this.SaldogroupBox.Text = "Dinero";
+            // 
+            // Devueltabutton
+            // 
+            this.Devueltabutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Devueltabutton.Image = global::GimnasioTech.Properties.Resources.Calculator_25px;
+            this.Devueltabutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Devueltabutton.Location = new System.Drawing.Point(199, 46);
+            this.Devueltabutton.Name = "Devueltabutton";
+            this.Devueltabutton.Size = new System.Drawing.Size(40, 32);
+            this.Devueltabutton.TabIndex = 45;
+            this.Devueltabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Devueltabutton.UseVisualStyleBackColor = true;
+            this.Devueltabutton.Click += new System.EventHandler(this.Devueltabutton_Click);
             // 
             // RecibidomaskedTextBox
             // 
@@ -121,7 +140,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(186, 58);
+            this.label7.Location = new System.Drawing.Point(245, 58);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 12;
@@ -133,9 +152,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DevueltatextBox.Enabled = false;
             this.DevueltatextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.DevueltatextBox.Location = new System.Drawing.Point(242, 50);
+            this.DevueltatextBox.Location = new System.Drawing.Point(304, 50);
             this.DevueltatextBox.Name = "DevueltatextBox";
-            this.DevueltatextBox.Size = new System.Drawing.Size(238, 26);
+            this.DevueltatextBox.Size = new System.Drawing.Size(176, 26);
             this.DevueltatextBox.TabIndex = 14;
             // 
             // label5
@@ -321,6 +340,7 @@
             this.FacturaIdmaskedTextBox.Size = new System.Drawing.Size(40, 20);
             this.FacturaIdmaskedTextBox.TabIndex = 35;
             this.FacturaIdmaskedTextBox.ValidatingType = typeof(int);
+            this.FacturaIdmaskedTextBox.TextChanged += new System.EventHandler(this.FacturaIdmaskedTextBox_TextChanged);
             this.FacturaIdmaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FacturaIdmaskedTextBox_KeyPress);
             // 
             // label2
@@ -360,6 +380,55 @@
             // GriderrorProvider
             // 
             this.GriderrorProvider.ContainerControl = this;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(192, 58);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 13);
+            this.label10.TabIndex = 47;
+            this.label10.Text = "Nombre:";
+            // 
+            // NombreClientetextBox
+            // 
+            this.NombreClientetextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NombreClientetextBox.Enabled = false;
+            this.NombreClientetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombreClientetextBox.Location = new System.Drawing.Point(245, 55);
+            this.NombreClientetextBox.Name = "NombreClientetextBox";
+            this.NombreClientetextBox.Size = new System.Drawing.Size(136, 21);
+            this.NombreClientetextBox.TabIndex = 46;
+            this.NombreClientetextBox.TextChanged += new System.EventHandler(this.NombreClientetextBox_TextChanged);
+            // 
+            // ClienteIdmaskedTextBox
+            // 
+            this.ClienteIdmaskedTextBox.Location = new System.Drawing.Point(88, 56);
+            this.ClienteIdmaskedTextBox.Mask = "99999";
+            this.ClienteIdmaskedTextBox.Name = "ClienteIdmaskedTextBox";
+            this.ClienteIdmaskedTextBox.Size = new System.Drawing.Size(40, 20);
+            this.ClienteIdmaskedTextBox.TabIndex = 45;
+            this.ClienteIdmaskedTextBox.ValidatingType = typeof(int);
+            this.ClienteIdmaskedTextBox.TextChanged += new System.EventHandler(this.ClienteIdmaskedTextBox_TextChanged);
+            this.ClienteIdmaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClienteIdmaskedTextBox_KeyPress);
+            // 
+            // ClienteIderrorProvider
+            // 
+            this.ClienteIderrorProvider.ContainerControl = this;
+            // 
+            // BuscarClientebutton
+            // 
+            this.BuscarClientebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BuscarClientebutton.Image = global::GimnasioTech.Properties.Resources.Search_25px1;
+            this.BuscarClientebutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BuscarClientebutton.Location = new System.Drawing.Point(146, 47);
+            this.BuscarClientebutton.Name = "BuscarClientebutton";
+            this.BuscarClientebutton.Size = new System.Drawing.Size(40, 32);
+            this.BuscarClientebutton.TabIndex = 44;
+            this.BuscarClientebutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarClientebutton.UseVisualStyleBackColor = true;
+            this.BuscarClientebutton.Click += new System.EventHandler(this.BuscarClientebutton_Click);
             // 
             // Buscarbutton
             // 
@@ -424,54 +493,13 @@
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // label10
+            // FacturaIderrorProvider
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(192, 58);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(47, 13);
-            this.label10.TabIndex = 47;
-            this.label10.Text = "Nombre:";
+            this.FacturaIderrorProvider.ContainerControl = this;
             // 
-            // NombreClientetextBox
+            // DevueltaerrorProvider
             // 
-            this.NombreClientetextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.NombreClientetextBox.Enabled = false;
-            this.NombreClientetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreClientetextBox.Location = new System.Drawing.Point(245, 55);
-            this.NombreClientetextBox.Name = "NombreClientetextBox";
-            this.NombreClientetextBox.Size = new System.Drawing.Size(136, 21);
-            this.NombreClientetextBox.TabIndex = 46;
-            this.NombreClientetextBox.TextChanged += new System.EventHandler(this.NombreClientetextBox_TextChanged);
-            // 
-            // ClienteIdmaskedTextBox
-            // 
-            this.ClienteIdmaskedTextBox.Location = new System.Drawing.Point(88, 56);
-            this.ClienteIdmaskedTextBox.Mask = "99999";
-            this.ClienteIdmaskedTextBox.Name = "ClienteIdmaskedTextBox";
-            this.ClienteIdmaskedTextBox.Size = new System.Drawing.Size(40, 20);
-            this.ClienteIdmaskedTextBox.TabIndex = 45;
-            this.ClienteIdmaskedTextBox.ValidatingType = typeof(int);
-            this.ClienteIdmaskedTextBox.TextChanged += new System.EventHandler(this.ClienteIdmaskedTextBox_TextChanged);
-            this.ClienteIdmaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClienteIdmaskedTextBox_KeyPress);
-            // 
-            // BuscarClientebutton
-            // 
-            this.BuscarClientebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BuscarClientebutton.Image = global::GimnasioTech.Properties.Resources.Search_25px1;
-            this.BuscarClientebutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BuscarClientebutton.Location = new System.Drawing.Point(146, 47);
-            this.BuscarClientebutton.Name = "BuscarClientebutton";
-            this.BuscarClientebutton.Size = new System.Drawing.Size(40, 32);
-            this.BuscarClientebutton.TabIndex = 44;
-            this.BuscarClientebutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BuscarClientebutton.UseVisualStyleBackColor = true;
-            this.BuscarClientebutton.Click += new System.EventHandler(this.BuscarClientebutton_Click);
-            // 
-            // ClienteIderrorProvider
-            // 
-            this.ClienteIderrorProvider.ContainerControl = this;
+            this.DevueltaerrorProvider.ContainerControl = this;
             // 
             // FacturasForm
             // 
@@ -508,6 +536,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.RecibidoerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GriderrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIderrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FacturaIderrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DevueltaerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -552,5 +582,8 @@
         private System.Windows.Forms.MaskedTextBox ClienteIdmaskedTextBox;
         private System.Windows.Forms.Button BuscarClientebutton;
         private System.Windows.Forms.ErrorProvider ClienteIderrorProvider;
+        private System.Windows.Forms.Button Devueltabutton;
+        private System.Windows.Forms.ErrorProvider FacturaIderrorProvider;
+        private System.Windows.Forms.ErrorProvider DevueltaerrorProvider;
     }
 }

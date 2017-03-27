@@ -35,7 +35,6 @@
             System.Windows.Forms.Label costoLabel;
             System.Windows.Forms.Label precioLabel;
             System.Windows.Forms.Label fechaIngresoLabel;
-            System.Windows.Forms.Label fechaVenciminetoLabel;
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.CostotextBox = new System.Windows.Forms.TextBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
@@ -46,7 +45,6 @@
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.cantidadNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.fechaIngresoDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.fechaVencimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DescripcionerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.CostoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.PrecioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -57,7 +55,6 @@
             costoLabel = new System.Windows.Forms.Label();
             precioLabel = new System.Windows.Forms.Label();
             fechaIngresoLabel = new System.Windows.Forms.Label();
-            fechaVenciminetoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DescripcionerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostoerrorProvider)).BeginInit();
@@ -119,21 +116,12 @@
             fechaIngresoLabel.TabIndex = 42;
             fechaIngresoLabel.Text = "Fecha Ingreso:";
             // 
-            // fechaVenciminetoLabel
-            // 
-            fechaVenciminetoLabel.AutoSize = true;
-            fechaVenciminetoLabel.Location = new System.Drawing.Point(49, 200);
-            fechaVenciminetoLabel.Name = "fechaVenciminetoLabel";
-            fechaVenciminetoLabel.Size = new System.Drawing.Size(101, 13);
-            fechaVenciminetoLabel.TabIndex = 44;
-            fechaVenciminetoLabel.Text = "Fecha Vencimiento:";
-            // 
             // PreciotextBox
             // 
             this.PreciotextBox.Location = new System.Drawing.Point(156, 144);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.Size = new System.Drawing.Size(200, 20);
-            this.PreciotextBox.TabIndex = 51;
+            this.PreciotextBox.TabIndex = 4;
             this.PreciotextBox.TextChanged += new System.EventHandler(this.PreciotextBox_TextChanged);
             this.PreciotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PreciotextBox_KeyPress);
             // 
@@ -142,7 +130,7 @@
             this.CostotextBox.Location = new System.Drawing.Point(156, 118);
             this.CostotextBox.Name = "CostotextBox";
             this.CostotextBox.Size = new System.Drawing.Size(200, 20);
-            this.CostotextBox.TabIndex = 50;
+            this.CostotextBox.TabIndex = 3;
             this.CostotextBox.TextChanged += new System.EventHandler(this.CostotextBox_TextChanged);
             this.CostotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostotextBox_KeyPress);
             // 
@@ -153,7 +141,7 @@
             this.Buscarbutton.Location = new System.Drawing.Point(200, 26);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 32);
-            this.Buscarbutton.TabIndex = 49;
+            this.Buscarbutton.TabIndex = 8;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
@@ -166,7 +154,7 @@
             this.Eliminarbutton.Location = new System.Drawing.Point(237, 317);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 32);
-            this.Eliminarbutton.TabIndex = 48;
+            this.Eliminarbutton.TabIndex = 10;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -179,7 +167,7 @@
             this.Guardarbutton.Location = new System.Drawing.Point(156, 317);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 32);
-            this.Guardarbutton.TabIndex = 47;
+            this.Guardarbutton.TabIndex = 7;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
@@ -192,7 +180,7 @@
             this.Nuevobutton.Location = new System.Drawing.Point(75, 317);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 32);
-            this.Nuevobutton.TabIndex = 46;
+            this.Nuevobutton.TabIndex = 9;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
@@ -204,7 +192,7 @@
             this.productoIdMaskedTextBox.Mask = "99999";
             this.productoIdMaskedTextBox.Name = "productoIdMaskedTextBox";
             this.productoIdMaskedTextBox.Size = new System.Drawing.Size(38, 20);
-            this.productoIdMaskedTextBox.TabIndex = 35;
+            this.productoIdMaskedTextBox.TabIndex = 0;
             this.productoIdMaskedTextBox.ValidatingType = typeof(int);
             this.productoIdMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productoIdMaskedTextBox_KeyPress);
             // 
@@ -213,7 +201,7 @@
             this.descripcionTextBox.Location = new System.Drawing.Point(156, 66);
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(200, 20);
-            this.descripcionTextBox.TabIndex = 37;
+            this.descripcionTextBox.TabIndex = 1;
             this.descripcionTextBox.TextChanged += new System.EventHandler(this.descripcionTextBox_TextChanged);
             // 
             // cantidadNumericUpDown
@@ -221,7 +209,7 @@
             this.cantidadNumericUpDown.Location = new System.Drawing.Point(156, 92);
             this.cantidadNumericUpDown.Name = "cantidadNumericUpDown";
             this.cantidadNumericUpDown.Size = new System.Drawing.Size(200, 20);
-            this.cantidadNumericUpDown.TabIndex = 39;
+            this.cantidadNumericUpDown.TabIndex = 2;
             this.cantidadNumericUpDown.ValueChanged += new System.EventHandler(this.cantidadNumericUpDown_ValueChanged);
             // 
             // fechaIngresoDateTimePicker
@@ -231,16 +219,7 @@
             this.fechaIngresoDateTimePicker.Location = new System.Drawing.Point(156, 170);
             this.fechaIngresoDateTimePicker.Name = "fechaIngresoDateTimePicker";
             this.fechaIngresoDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.fechaIngresoDateTimePicker.TabIndex = 43;
-            // 
-            // fechaVencimientoDateTimePicker
-            // 
-            this.fechaVencimientoDateTimePicker.CustomFormat = "yyyy/MM/dd";
-            this.fechaVencimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fechaVencimientoDateTimePicker.Location = new System.Drawing.Point(156, 196);
-            this.fechaVencimientoDateTimePicker.Name = "fechaVencimientoDateTimePicker";
-            this.fechaVencimientoDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.fechaVencimientoDateTimePicker.TabIndex = 45;
+            this.fechaIngresoDateTimePicker.TabIndex = 5;
             // 
             // DescripcionerrorProvider
             // 
@@ -279,8 +258,6 @@
             this.Controls.Add(precioLabel);
             this.Controls.Add(fechaIngresoLabel);
             this.Controls.Add(this.fechaIngresoDateTimePicker);
-            this.Controls.Add(fechaVenciminetoLabel);
-            this.Controls.Add(this.fechaVencimientoDateTimePicker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ProductosRegistroForm";
@@ -308,7 +285,6 @@
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.NumericUpDown cantidadNumericUpDown;
         private System.Windows.Forms.DateTimePicker fechaIngresoDateTimePicker;
-        private System.Windows.Forms.DateTimePicker fechaVencimientoDateTimePicker;
         private System.Windows.Forms.ErrorProvider DescripcionerrorProvider;
         private System.Windows.Forms.ErrorProvider CostoerrorProvider;
         private System.Windows.Forms.ErrorProvider PrecioerrorProvider;

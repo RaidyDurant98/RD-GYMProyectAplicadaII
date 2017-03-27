@@ -15,16 +15,13 @@ namespace Entidades
         public decimal Costo { get; set; }
         public decimal Precio { get; set; }
         public DateTime FechaIngreso { get; set; }
-        public DateTime FechaVencimiento { get; set; }
-
-        public virtual ICollection<FacturasProductos> Relacion { get; set; }
 
         public Productos()
         {
-            Relacion = new HashSet<FacturasProductos>();
+            
         }
 
-        public Productos(int productoId, string descripcion, int cantidad, decimal costo, decimal precio, DateTime fechaIngreso, DateTime fechaVencimiento)
+        public Productos(int productoId, string descripcion, int cantidad, decimal costo, decimal precio, DateTime fechaIngreso)
         {
             this.ProductoId = productoId;
             this.Descripcion = descripcion;
@@ -32,9 +29,6 @@ namespace Entidades
             this.Costo = costo;
             this.Precio = precio;
             this.FechaIngreso = fechaIngreso;
-            this.FechaVencimiento = fechaVencimiento;
-
-            Relacion = new HashSet<FacturasProductos>();
         }
     }
 }

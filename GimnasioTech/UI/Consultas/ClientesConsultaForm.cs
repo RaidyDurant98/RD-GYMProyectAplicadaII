@@ -35,7 +35,7 @@ namespace GimnasioTech.UI.Consultas
             {
                 Lista = BLL.ClientesBLL.GetList(p => p.FechaInscripcion >= DesdedateTimePicker.Value.Date && p.FechaInscripcion <= HastadateTimePicker.Value.Date);
             }
-            else if (ConsultarcomboBox.SelectedIndex != 0 && ConsultarcomboBox.SelectedIndex != 3)
+            else if (ConsultarcomboBox.SelectedIndex != 0 && ConsultarcomboBox.SelectedIndex != 4)
             {
                 if (string.IsNullOrEmpty(ConsultartextBox.Text))
                 {

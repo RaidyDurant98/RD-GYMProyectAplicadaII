@@ -141,7 +141,7 @@
             this.EmailtextBox.Location = new System.Drawing.Point(153, 203);
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(200, 20);
-            this.EmailtextBox.TabIndex = 48;
+            this.EmailtextBox.TabIndex = 6;
             this.EmailtextBox.TextChanged += new System.EventHandler(this.EmailtextBox_TextChanged);
             // 
             // clienteIdMaskedTextBox
@@ -150,7 +150,7 @@
             this.clienteIdMaskedTextBox.Mask = "99999";
             this.clienteIdMaskedTextBox.Name = "clienteIdMaskedTextBox";
             this.clienteIdMaskedTextBox.Size = new System.Drawing.Size(39, 20);
-            this.clienteIdMaskedTextBox.TabIndex = 32;
+            this.clienteIdMaskedTextBox.TabIndex = 0;
             this.clienteIdMaskedTextBox.ValidatingType = typeof(int);
             this.clienteIdMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clienteIdMaskedTextBox_KeyPress);
             // 
@@ -159,7 +159,7 @@
             this.nombresTextBox.Location = new System.Drawing.Point(153, 72);
             this.nombresTextBox.Name = "nombresTextBox";
             this.nombresTextBox.Size = new System.Drawing.Size(200, 20);
-            this.nombresTextBox.TabIndex = 34;
+            this.nombresTextBox.TabIndex = 1;
             this.nombresTextBox.TextChanged += new System.EventHandler(this.nombresTextBox_TextChanged);
             // 
             // sexoComboBox
@@ -172,7 +172,7 @@
             this.sexoComboBox.Location = new System.Drawing.Point(153, 98);
             this.sexoComboBox.Name = "sexoComboBox";
             this.sexoComboBox.Size = new System.Drawing.Size(200, 21);
-            this.sexoComboBox.TabIndex = 36;
+            this.sexoComboBox.TabIndex = 2;
             this.sexoComboBox.TextChanged += new System.EventHandler(this.sexoComboBox_TextChanged);
             // 
             // fechaInscripcionDateTimePicker
@@ -182,14 +182,14 @@
             this.fechaInscripcionDateTimePicker.Location = new System.Drawing.Point(153, 125);
             this.fechaInscripcionDateTimePicker.Name = "fechaInscripcionDateTimePicker";
             this.fechaInscripcionDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.fechaInscripcionDateTimePicker.TabIndex = 38;
+            this.fechaInscripcionDateTimePicker.TabIndex = 3;
             // 
             // direccionTextBox
             // 
             this.direccionTextBox.Location = new System.Drawing.Point(153, 151);
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(200, 20);
-            this.direccionTextBox.TabIndex = 40;
+            this.direccionTextBox.TabIndex = 4;
             this.direccionTextBox.TextChanged += new System.EventHandler(this.direccionTextBox_TextChanged);
             // 
             // numeroCelularMaskedTextBox
@@ -198,7 +198,7 @@
             this.numeroCelularMaskedTextBox.Mask = "000-000-0000";
             this.numeroCelularMaskedTextBox.Name = "numeroCelularMaskedTextBox";
             this.numeroCelularMaskedTextBox.Size = new System.Drawing.Size(200, 20);
-            this.numeroCelularMaskedTextBox.TabIndex = 42;
+            this.numeroCelularMaskedTextBox.TabIndex = 5;
             this.numeroCelularMaskedTextBox.TextChanged += new System.EventHandler(this.numeroCelularMaskedTextBox_TextChanged);
             // 
             // Buscarbutton
@@ -210,7 +210,7 @@
             this.Buscarbutton.Location = new System.Drawing.Point(198, 35);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 32);
-            this.Buscarbutton.TabIndex = 46;
+            this.Buscarbutton.TabIndex = 8;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
@@ -225,7 +225,7 @@
             this.Eliminarbutton.Location = new System.Drawing.Point(244, 317);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 32);
-            this.Eliminarbutton.TabIndex = 45;
+            this.Eliminarbutton.TabIndex = 9;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -240,7 +240,7 @@
             this.Guardarbutton.Location = new System.Drawing.Point(163, 317);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 32);
-            this.Guardarbutton.TabIndex = 44;
+            this.Guardarbutton.TabIndex = 7;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
@@ -255,7 +255,7 @@
             this.Nuevobutton.Location = new System.Drawing.Point(82, 317);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 32);
-            this.Nuevobutton.TabIndex = 43;
+            this.Nuevobutton.TabIndex = 10;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;

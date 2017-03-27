@@ -50,6 +50,8 @@ namespace GimnasioTech.UI
             RecibidoerrorProvider.Clear();
             GriderrorProvider.Clear();
             ClienteIderrorProvider.Clear();
+            FacturaIderrorProvider.Clear();
+            DevueltaerrorProvider.Clear();
 
             RecibidomaskedTextBox.Enabled = false;
             CantidadnumericUpDown.Enabled = false;
@@ -75,6 +77,11 @@ namespace GimnasioTech.UI
             if (string.IsNullOrEmpty(RecibidomaskedTextBox.Text))
             {
                 RecibidoerrorProvider.SetError(RecibidomaskedTextBox, "Por favor llenar el campo.");
+                interruptor = false;
+            }
+            if (string.IsNullOrEmpty(DevueltatextBox.Text))
+            {
+                DevueltaerrorProvider.SetError(DevueltatextBox, "Por favor llenar el campo.");
                 interruptor = false;
             }
 
@@ -135,6 +142,61 @@ namespace GimnasioTech.UI
             BuscarFactura();
         }
 
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(FacturaIdmaskedTextBox.Text))
+            {
+                MessageBox.Show("Por favor insertar el id de la factura que desea eliminar.");
+            }
+            else
+            {
+                VerificarExistenciaFactura();
+
+                if (Factura != null)
+                {
+                    DialogResult eliminar = MessageBox.Show("¿Seguro desea eliminar la factura seleccionada?", "¡Advertencia!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (eliminar == DialogResult.Yes)
+                    {
+                        int id = Utilidades.TOINT(FacturaIdmaskedTextBox.Text);
+
+                        if (BLL.FacturasBLL.Eliminar(BLL.FacturasBLL.Buscar(p => p.FacturaId == id)))
+                        {
+                            Limpiar();
+                            MessageBox.Show("Factura eliminada con exito.");
+                        }
+                        else
+                            MessageBox.Show("No se pudo eliminar la factura.");
+                    }
+                }
+                else
+                {
+                    FacturaIderrorProvider.SetError(FacturaIdmaskedTextBox, "No existe factura con ese id.");
+                    FacturaIdmaskedTextBox.Focus();
+                }
+            }
+        }
+
+        private void BuscarProductobutton_Click(object sender, EventArgs e)
+        {
+            BuscarProducto();
+        }
+
+        private void BuscarClientebutton_Click(object sender, EventArgs e)
+        {
+            BuscarCliente();
+        }
+
+        private void Devueltabutton_Click(object sender, EventArgs e)
+        {
+            CalcularDevuelta();
+        }
+
+        private void VerificarExistenciaFactura()
+        {
+            int id = Utilidades.TOINT(FacturaIdmaskedTextBox.Text);
+            Factura = BLL.FacturasBLL.Buscar(p => p.FacturaId == id);
+        }
+
         private void BuscarFactura()
         {
             ProductoIdmaskedTextBox.Enabled = false;
@@ -148,20 +210,17 @@ namespace GimnasioTech.UI
             }
             else
             {
-                Entidades.Facturas factura = new Entidades.Facturas();
-                int id = Utilidades.TOINT(FacturaIdmaskedTextBox.Text);
+                VerificarExistenciaFactura();
 
-                factura = BLL.FacturasBLL.Buscar(p => p.FacturaId == id);
-
-                if (factura != null)
+                if (Factura != null)
                 {
-                    NombreClientetextBox.Text = factura.NombreCliente;
-                    FechadateTimePicker.Value = factura.Fecha;
-                    MontotextBox.Text = factura.Monto.ToString();
-                    RecibidomaskedTextBox.Text = factura.DineroPagado.ToString();
-                    DevueltatextBox.Text = factura.Devuelta.ToString();
+                    NombreClientetextBox.Text = Factura.NombreCliente;
+                    FechadateTimePicker.Value = Factura.Fecha;
+                    MontotextBox.Text = Factura.Monto.ToString();
+                    RecibidomaskedTextBox.Text = Factura.DineroPagado.ToString();
+                    DevueltatextBox.Text = Factura.Devuelta.ToString();
 
-                    LlenarDataGrid(factura);
+                    LlenarDataGrid(Factura);
                 }
                 else
                 {
@@ -260,6 +319,7 @@ namespace GimnasioTech.UI
 
         private void CalcularDevuelta()
         {
+            DevueltaerrorProvider.Clear();
             Factura.DineroPagado = Utilidades.TOINT(RecibidomaskedTextBox.Text);
             Factura.Monto = Utilidades.TOINT(MontotextBox.Text);
 
@@ -270,7 +330,6 @@ namespace GimnasioTech.UI
                     MessageBox.Show("El dinero no es suficiente para cubrir su comprar.");
                     RecibidomaskedTextBox.Clear();
                     RecibidomaskedTextBox.Focus();
-
                 }
                 else
                 {
@@ -282,31 +341,6 @@ namespace GimnasioTech.UI
             {
                 RecibidoerrorProvider.SetError(RecibidomaskedTextBox, "Digite la cantidad de dinero pagada.");
                 RecibidomaskedTextBox.Focus();
-            }
-        }
-
-        private void Eliminarbutton_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(FacturaIdmaskedTextBox.Text))
-            {
-                MessageBox.Show("Por favor insertar el id de la factura que desea eliminar.");
-                FacturaIdmaskedTextBox.Clear();
-            }
-            else
-            {
-                DialogResult eliminar = MessageBox.Show("¿Seguro desea eliminar la factura seleccionada?", "¡Advertencia!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (eliminar == DialogResult.Yes)
-                {
-                    int id = Utilidades.TOINT(FacturaIdmaskedTextBox.Text);
-
-                    if (BLL.FacturasBLL.Eliminar(BLL.FacturasBLL.Buscar(p => p.FacturaId == id)))
-                    {
-                        Limpiar();
-                        MessageBox.Show("Factura eliminada con exito.");
-                    }
-                    else
-                        MessageBox.Show("No se pudo eliminar la factura.");
-                }
             }
         }
 
@@ -343,16 +377,12 @@ namespace GimnasioTech.UI
             }
         }
 
-        private void BuscarProductobutton_Click(object sender, EventArgs e)
-        {
-            BuscarProducto();
-        }
-
         private void FacturaIdmaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((Keys)e.KeyChar == Keys.Enter)
             {
                 BuscarFactura();
+                FacturaIderrorProvider.Clear();
             }
         }
 
@@ -409,11 +439,6 @@ namespace GimnasioTech.UI
             ProductoerrorProvider.Clear();
         }
 
-        private void BuscarClientebutton_Click(object sender, EventArgs e)
-        {
-            BuscarCliente();
-        }
-
         private void BuscarCliente()
         {
             if (!string.IsNullOrEmpty(ClienteIdmaskedTextBox.Text))
@@ -457,6 +482,11 @@ namespace GimnasioTech.UI
         private void NombreClientetextBox_TextChanged(object sender, EventArgs e)
         {
             NombreClienteerrorProvider.Clear();
+        }
+
+        private void FacturaIdmaskedTextBox_TextChanged(object sender, EventArgs e)
+        {
+            FacturaIderrorProvider.Clear();
         }
     }
 }

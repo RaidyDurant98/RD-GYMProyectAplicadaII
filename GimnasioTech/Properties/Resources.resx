@@ -139,11 +139,17 @@
   <data name="Inspection_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inspection_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Gender_Neutral_User_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gender Neutral User_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Plus_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Checked_User_Male_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Checked User Male_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lock_2_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lock 2_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Key_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Key_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,16 +163,16 @@
   <data name="Print_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Print_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Gender_Neutral_User_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Gender Neutral User_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="New_Product_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\New Product_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Calculator_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Calculator_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logout_Rounded_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logout Rounded_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lock_2_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lock 2_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="New_Product_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New Product_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bill_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bill_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -127,7 +127,7 @@
             this.CargoscomboBox.Location = new System.Drawing.Point(156, 182);
             this.CargoscomboBox.Name = "CargoscomboBox";
             this.CargoscomboBox.Size = new System.Drawing.Size(200, 21);
-            this.CargoscomboBox.TabIndex = 49;
+            this.CargoscomboBox.TabIndex = 5;
             this.CargoscomboBox.TextChanged += new System.EventHandler(this.CargoscomboBox_TextChanged);
             // 
             // Buscarbutton
@@ -188,7 +188,7 @@
             this.usuarioIdMaskedTextBox.Mask = "99999";
             this.usuarioIdMaskedTextBox.Name = "usuarioIdMaskedTextBox";
             this.usuarioIdMaskedTextBox.Size = new System.Drawing.Size(37, 20);
-            this.usuarioIdMaskedTextBox.TabIndex = 35;
+            this.usuarioIdMaskedTextBox.TabIndex = 0;
             this.usuarioIdMaskedTextBox.ValidatingType = typeof(int);
             this.usuarioIdMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usuarioIdMaskedTextBox_KeyPress);
             // 
@@ -197,7 +197,7 @@
             this.nombresTextBox.Location = new System.Drawing.Point(156, 75);
             this.nombresTextBox.Name = "nombresTextBox";
             this.nombresTextBox.Size = new System.Drawing.Size(200, 20);
-            this.nombresTextBox.TabIndex = 37;
+            this.nombresTextBox.TabIndex = 1;
             this.nombresTextBox.TextChanged += new System.EventHandler(this.nombresTextBox_TextChanged);
             // 
             // nombreUsuarioTextBox
@@ -205,7 +205,7 @@
             this.nombreUsuarioTextBox.Location = new System.Drawing.Point(156, 104);
             this.nombreUsuarioTextBox.Name = "nombreUsuarioTextBox";
             this.nombreUsuarioTextBox.Size = new System.Drawing.Size(200, 20);
-            this.nombreUsuarioTextBox.TabIndex = 39;
+            this.nombreUsuarioTextBox.TabIndex = 2;
             this.nombreUsuarioTextBox.TextChanged += new System.EventHandler(this.nombreUsuarioTextBox_TextChanged);
             // 
             // claveTextBox
@@ -213,7 +213,7 @@
             this.claveTextBox.Location = new System.Drawing.Point(156, 130);
             this.claveTextBox.Name = "claveTextBox";
             this.claveTextBox.Size = new System.Drawing.Size(200, 20);
-            this.claveTextBox.TabIndex = 41;
+            this.claveTextBox.TabIndex = 3;
             this.claveTextBox.TextChanged += new System.EventHandler(this.claveTextBox_TextChanged);
             // 
             // NombreserrorProvider
@@ -241,7 +241,7 @@
             this.confirmarClaveTextBox.Location = new System.Drawing.Point(156, 156);
             this.confirmarClaveTextBox.Name = "confirmarClaveTextBox";
             this.confirmarClaveTextBox.Size = new System.Drawing.Size(200, 20);
-            this.confirmarClaveTextBox.TabIndex = 50;
+            this.confirmarClaveTextBox.TabIndex = 4;
             this.confirmarClaveTextBox.TextChanged += new System.EventHandler(this.confirmarClaveTextBox_TextChanged);
             // 
             // UsuariosRegistroForm

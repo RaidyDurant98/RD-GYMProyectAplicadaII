@@ -101,8 +101,7 @@
             "Todo",
             "Id",
             "Descripcion",
-            "Fecha ingreso",
-            "Fecha vencimiento"});
+            "Fecha ingreso"});
             this.ConsultarcomboBox.Location = new System.Drawing.Point(59, 36);
             this.ConsultarcomboBox.Name = "ConsultarcomboBox";
             this.ConsultarcomboBox.Size = new System.Drawing.Size(121, 21);
