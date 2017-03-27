@@ -15,7 +15,6 @@ Cantidad decimal,
 Costo decimal,
 Precio decimal,
 FechaIngreso date,
-FechaVencimiento date
 );
 
 create table Usuarios(
