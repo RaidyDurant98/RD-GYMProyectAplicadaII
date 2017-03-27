@@ -417,9 +417,9 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>ProductosDataSet</DataSetName>
-        <Top>1.87537cm</Top>
-        <Left>0.79058cm</Left>
+        <DataSetName>ProductoDataSet</DataSetName>
+        <Top>1.90182cm</Top>
+        <Left>1.0287cm</Left>
         <Height>1.2cm</Height>
         <Width>15cm</Width>
         <Style>
@@ -429,49 +429,15 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.91667in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>
   <Page>
     <PageHeader>
-      <Height>1.25828cm</Height>
+      <Height>1.34937cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
-      <ReportItems>
-        <Textbox Name="Textbox13">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Reporte de productos</Value>
-                  <Style>
-                    <FontFamily>Arial Black</FontFamily>
-                    <FontSize>11pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox13</rd:DefaultName>
-          <Top>0.28787cm</Top>
-          <Left>5.79057cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
@@ -504,11 +470,11 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>9844664e-3ca1-4c37-ba24-64740392f704</rd:DataSourceID>
+      <rd:DataSourceID>74bbcaf7-503e-44fd-993b-5c03ed7adfdf</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="ProductosDataSet">
+    <DataSet Name="ProductoDataSet">
       <Query>
         <DataSourceName>ID_RD_GYMDbDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -538,14 +504,10 @@
           <DataField>FechaIngreso</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="FechaVencimiento">
-          <DataField>FechaVencimiento</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>_RD_GYMDbDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\raidy\Desktop\UCNE\PROGRAMACION APLICADA I\ProyectoMejor\RD-GYM\GimnasioTech\UI\Reportes\_RD_GYMDbDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\raidy\Desktop\UCNE\PROGRAMACION APLICADA I\ProyectoMejor\RD-GYM - copia\GimnasioTech\UI\Reportes\_RD_GYMDbDataSet.xsd</rd:SchemaPath>
         <rd:TableName>Productos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -554,5 +516,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>b31678a6-0fe9-4a76-b0ca-14ea428a0d43</rd:ReportID>
+  <rd:ReportID>c8c631da-53f0-4937-8fdb-752ac293b22d</rd:ReportID>
 </Report>

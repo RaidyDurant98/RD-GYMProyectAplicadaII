@@ -68,6 +68,8 @@ namespace GimnasioTech.UI.Consultas
             else
             {
                 FiltrartextBox.Enabled = true;
+                ConsultadataGridView.DataSource = null;
+                FiltrartextBox.Clear();
                 FiltrartextBox.Focus();
             }
         }

@@ -24,8 +24,8 @@ namespace GimnasioTech.UI.Reportes
         {
             this.ProductosreportViewer.Reset();
             this.ProductosreportViewer.ProcessingMode = ProcessingMode.Local;
-            this.ProductosreportViewer.LocalReport.ReportPath = @"C:\Users\raidy\Desktop\UCNE\PROGRAMACION APLICADA I\ProyectoMejor\RD-GYM\GimnasioTech\UI\Reportes\ProductosReport.rdlc";           
-            ReportDataSource source = new ReportDataSource("ProductosDataSet", Lista);
+            this.ProductosreportViewer.LocalReport.ReportPath = @"C:\Users\raidy\Desktop\UCNE\PROGRAMACION APLICADA I\ProyectoMejor\RD-GYM - copia\GimnasioTech\UI\Reportes\ProductosReport.rdlc";           
+            ReportDataSource source = new ReportDataSource("ProductoDataSet", Lista);
             this.ProductosreportViewer.LocalReport.DataSources.Add(source);
             this.ProductosreportViewer.RefreshReport();
         }
