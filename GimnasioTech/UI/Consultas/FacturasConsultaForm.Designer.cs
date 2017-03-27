@@ -101,7 +101,8 @@
             "Todo",
             "Id",
             "Nombre cliente",
-            "Fecha"});
+            "Fecha",
+            "Nombre usuario"});
             this.ConsultarcomboBox.Location = new System.Drawing.Point(59, 32);
             this.ConsultarcomboBox.Name = "ConsultarcomboBox";
             this.ConsultarcomboBox.Size = new System.Drawing.Size(121, 21);

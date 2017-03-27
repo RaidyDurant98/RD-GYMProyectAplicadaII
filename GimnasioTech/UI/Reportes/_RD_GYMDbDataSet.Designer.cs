@@ -782,6 +782,8 @@ namespace GimnasioTech.UI.Reportes {
             
             private global::System.Data.DataColumn columnDineroPagado;
             
+            private global::System.Data.DataColumn columnNombreUsuario;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public FacturasDataTable() {
@@ -865,6 +867,14 @@ namespace GimnasioTech.UI.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NombreUsuarioColumn {
+                get {
+                    return this.columnNombreUsuario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -900,7 +910,7 @@ namespace GimnasioTech.UI.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FacturasRow AddFacturasRow(string NombreCliente, System.DateTime Fecha, decimal Monto, decimal Devuelta, decimal DineroPagado) {
+            public FacturasRow AddFacturasRow(string NombreCliente, System.DateTime Fecha, decimal Monto, decimal Devuelta, decimal DineroPagado, string NombreUsuario) {
                 FacturasRow rowFacturasRow = ((FacturasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -908,7 +918,8 @@ namespace GimnasioTech.UI.Reportes {
                         Fecha,
                         Monto,
                         Devuelta,
-                        DineroPagado};
+                        DineroPagado,
+                        NombreUsuario};
                 rowFacturasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFacturasRow);
                 return rowFacturasRow;
@@ -944,6 +955,7 @@ namespace GimnasioTech.UI.Reportes {
                 this.columnMonto = base.Columns["Monto"];
                 this.columnDevuelta = base.Columns["Devuelta"];
                 this.columnDineroPagado = base.Columns["DineroPagado"];
+                this.columnNombreUsuario = base.Columns["NombreUsuario"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -961,6 +973,8 @@ namespace GimnasioTech.UI.Reportes {
                 base.Columns.Add(this.columnDevuelta);
                 this.columnDineroPagado = new global::System.Data.DataColumn("DineroPagado", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDineroPagado);
+                this.columnNombreUsuario = new global::System.Data.DataColumn("NombreUsuario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreUsuario);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnFacturaId}, true));
                 this.columnFacturaId.AutoIncrement = true;
@@ -970,6 +984,7 @@ namespace GimnasioTech.UI.Reportes {
                 this.columnFacturaId.ReadOnly = true;
                 this.columnFacturaId.Unique = true;
                 this.columnNombreCliente.MaxLength = 80;
+                this.columnNombreUsuario.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1448,8 +1463,6 @@ namespace GimnasioTech.UI.Reportes {
             
             private global::System.Data.DataColumn columnFechaIngreso;
             
-            private global::System.Data.DataColumn columnFechaVencimiento;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProductosDataTable() {
@@ -1533,14 +1546,6 @@ namespace GimnasioTech.UI.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FechaVencimientoColumn {
-                get {
-                    return this.columnFechaVencimiento;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1576,7 +1581,7 @@ namespace GimnasioTech.UI.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProductosRow AddProductosRow(string Descripcion, decimal Cantidad, decimal Costo, decimal Precio, System.DateTime FechaIngreso, System.DateTime FechaVencimiento) {
+            public ProductosRow AddProductosRow(string Descripcion, decimal Cantidad, decimal Costo, decimal Precio, System.DateTime FechaIngreso) {
                 ProductosRow rowProductosRow = ((ProductosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1584,8 +1589,7 @@ namespace GimnasioTech.UI.Reportes {
                         Cantidad,
                         Costo,
                         Precio,
-                        FechaIngreso,
-                        FechaVencimiento};
+                        FechaIngreso};
                 rowProductosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProductosRow);
                 return rowProductosRow;
@@ -1621,7 +1625,6 @@ namespace GimnasioTech.UI.Reportes {
                 this.columnCosto = base.Columns["Costo"];
                 this.columnPrecio = base.Columns["Precio"];
                 this.columnFechaIngreso = base.Columns["FechaIngreso"];
-                this.columnFechaVencimiento = base.Columns["FechaVencimiento"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1639,8 +1642,6 @@ namespace GimnasioTech.UI.Reportes {
                 base.Columns.Add(this.columnPrecio);
                 this.columnFechaIngreso = new global::System.Data.DataColumn("FechaIngreso", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFechaIngreso);
-                this.columnFechaVencimiento = new global::System.Data.DataColumn("FechaVencimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFechaVencimiento);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnProductoId}, true));
                 this.columnProductoId.AutoIncrement = true;
@@ -2414,6 +2415,22 @@ namespace GimnasioTech.UI.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NombreUsuario {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturas.NombreUsuarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NombreUsuario\' in table \'Facturas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturas.NombreUsuarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNombreClienteNull() {
                 return this.IsNull(this.tableFacturas.NombreClienteColumn);
             }
@@ -2470,6 +2487,18 @@ namespace GimnasioTech.UI.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDineroPagadoNull() {
                 this[this.tableFacturas.DineroPagadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNombreUsuarioNull() {
+                return this.IsNull(this.tableFacturas.NombreUsuarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNombreUsuarioNull() {
+                this[this.tableFacturas.NombreUsuarioColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2746,22 +2775,6 @@ namespace GimnasioTech.UI.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime FechaVencimiento {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableProductos.FechaVencimientoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FechaVencimiento\' in table \'Productos\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableProductos.FechaVencimientoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDescripcionNull() {
                 return this.IsNull(this.tableProductos.DescripcionColumn);
             }
@@ -2818,18 +2831,6 @@ namespace GimnasioTech.UI.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetFechaIngresoNull() {
                 this[this.tableProductos.FechaIngresoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFechaVencimientoNull() {
-                return this.IsNull(this.tableProductos.FechaVencimientoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFechaVencimientoNull() {
-                this[this.tableProductos.FechaVencimientoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3798,10 +3799,11 @@ SELECT ClienteId, Nombres, Sexo, FechaInscripcion, Direccion, NumeroCelular, Ema
             tableMapping.ColumnMappings.Add("Monto", "Monto");
             tableMapping.ColumnMappings.Add("Devuelta", "Devuelta");
             tableMapping.ColumnMappings.Add("DineroPagado", "DineroPagado");
+            tableMapping.ColumnMappings.Add("NombreUsuario", "NombreUsuario");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Facturas] WHERE (([FacturaId] = @Original_FacturaId) AND ((@IsNull_NombreCliente = 1 AND [NombreCliente] IS NULL) OR ([NombreCliente] = @Original_NombreCliente)) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_Monto = 1 AND [Monto] IS NULL) OR ([Monto] = @Original_Monto)) AND ((@IsNull_Devuelta = 1 AND [Devuelta] IS NULL) OR ([Devuelta] = @Original_Devuelta)) AND ((@IsNull_DineroPagado = 1 AND [DineroPagado] IS NULL) OR ([DineroPagado] = @Original_DineroPagado)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Facturas] WHERE (([FacturaId] = @Original_FacturaId) AND ((@IsNull_NombreCliente = 1 AND [NombreCliente] IS NULL) OR ([NombreCliente] = @Original_NombreCliente)) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_Monto = 1 AND [Monto] IS NULL) OR ([Monto] = @Original_Monto)) AND ((@IsNull_Devuelta = 1 AND [Devuelta] IS NULL) OR ([Devuelta] = @Original_Devuelta)) AND ((@IsNull_DineroPagado = 1 AND [DineroPagado] IS NULL) OR ([DineroPagado] = @Original_DineroPagado)) AND ((@IsNull_NombreUsuario = 1 AND [NombreUsuario] IS NULL) OR ([NombreUsuario] = @Original_NombreUsuario)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FacturaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FacturaId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NombreCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreCliente", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3814,26 +3816,30 @@ SELECT ClienteId, Nombres, Sexo, FechaInscripcion, Direccion, NumeroCelular, Ema
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Devuelta", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Devuelta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DineroPagado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DineroPagado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DineroPagado", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DineroPagado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NombreUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreUsuario", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreUsuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreUsuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Facturas] ([NombreCliente], [Fecha], [Monto], [Devuelta], [DineroPagado]) VALUES (@NombreCliente, @Fecha, @Monto, @Devuelta, @DineroPagado);
-SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado FROM Facturas WHERE (FacturaId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Facturas] ([NombreCliente], [Fecha], [Monto], [Devuelta], [DineroPagado], [NombreUsuario]) VALUES (@NombreCliente, @Fecha, @Monto, @Devuelta, @DineroPagado, @NombreUsuario);
+SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado, NombreUsuario FROM Facturas WHERE (FacturaId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreCliente", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Monto", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Monto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Devuelta", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Devuelta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DineroPagado", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DineroPagado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreUsuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Facturas] SET [NombreCliente] = @NombreCliente, [Fecha] = @Fecha, [Monto] = @Monto, [Devuelta] = @Devuelta, [DineroPagado] = @DineroPagado WHERE (([FacturaId] = @Original_FacturaId) AND ((@IsNull_NombreCliente = 1 AND [NombreCliente] IS NULL) OR ([NombreCliente] = @Original_NombreCliente)) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_Monto = 1 AND [Monto] IS NULL) OR ([Monto] = @Original_Monto)) AND ((@IsNull_Devuelta = 1 AND [Devuelta] IS NULL) OR ([Devuelta] = @Original_Devuelta)) AND ((@IsNull_DineroPagado = 1 AND [DineroPagado] IS NULL) OR ([DineroPagado] = @Original_DineroPagado)));
-SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado FROM Facturas WHERE (FacturaId = @FacturaId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Facturas] SET [NombreCliente] = @NombreCliente, [Fecha] = @Fecha, [Monto] = @Monto, [Devuelta] = @Devuelta, [DineroPagado] = @DineroPagado, [NombreUsuario] = @NombreUsuario WHERE (([FacturaId] = @Original_FacturaId) AND ((@IsNull_NombreCliente = 1 AND [NombreCliente] IS NULL) OR ([NombreCliente] = @Original_NombreCliente)) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_Monto = 1 AND [Monto] IS NULL) OR ([Monto] = @Original_Monto)) AND ((@IsNull_Devuelta = 1 AND [Devuelta] IS NULL) OR ([Devuelta] = @Original_Devuelta)) AND ((@IsNull_DineroPagado = 1 AND [DineroPagado] IS NULL) OR ([DineroPagado] = @Original_DineroPagado)) AND ((@IsNull_NombreUsuario = 1 AND [NombreUsuario] IS NULL) OR ([NombreUsuario] = @Original_NombreUsuario)));
+SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado, NombreUsuario FROM Facturas WHERE (FacturaId = @FacturaId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreCliente", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Monto", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Monto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Devuelta", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Devuelta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DineroPagado", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DineroPagado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreUsuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FacturaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FacturaId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NombreCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreCliente", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreCliente", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreCliente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3845,6 +3851,8 @@ SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado FROM Factu
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Devuelta", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Devuelta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DineroPagado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DineroPagado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DineroPagado", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DineroPagado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NombreUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreUsuario", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreUsuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreUsuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FacturaId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FacturaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3861,8 +3869,8 @@ SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado FROM Factu
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado FROM dbo.Fa" +
-                "cturas";
+            this._commandCollection[0].CommandText = "SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado, NombreUsua" +
+                "rio FROM dbo.Facturas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3923,7 +3931,7 @@ SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado FROM Factu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_FacturaId, string Original_NombreCliente, global::System.Nullable<global::System.DateTime> Original_Fecha, global::System.Nullable<decimal> Original_Monto, global::System.Nullable<decimal> Original_Devuelta, global::System.Nullable<decimal> Original_DineroPagado) {
+        public virtual int Delete(int Original_FacturaId, string Original_NombreCliente, global::System.Nullable<global::System.DateTime> Original_Fecha, global::System.Nullable<decimal> Original_Monto, global::System.Nullable<decimal> Original_Devuelta, global::System.Nullable<decimal> Original_DineroPagado, string Original_NombreUsuario) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_FacturaId));
             if ((Original_NombreCliente == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -3965,6 +3973,14 @@ SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado FROM Factu
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
+            if ((Original_NombreUsuario == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_NombreUsuario));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3985,7 +4001,7 @@ SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado FROM Factu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string NombreCliente, global::System.Nullable<global::System.DateTime> Fecha, global::System.Nullable<decimal> Monto, global::System.Nullable<decimal> Devuelta, global::System.Nullable<decimal> DineroPagado) {
+        public virtual int Insert(string NombreCliente, global::System.Nullable<global::System.DateTime> Fecha, global::System.Nullable<decimal> Monto, global::System.Nullable<decimal> Devuelta, global::System.Nullable<decimal> DineroPagado, string NombreUsuario) {
             if ((NombreCliente == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4016,6 +4032,12 @@ SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado FROM Factu
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            if ((NombreUsuario == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(NombreUsuario));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4036,7 +4058,7 @@ SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado FROM Factu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NombreCliente, global::System.Nullable<global::System.DateTime> Fecha, global::System.Nullable<decimal> Monto, global::System.Nullable<decimal> Devuelta, global::System.Nullable<decimal> DineroPagado, int Original_FacturaId, string Original_NombreCliente, global::System.Nullable<global::System.DateTime> Original_Fecha, global::System.Nullable<decimal> Original_Monto, global::System.Nullable<decimal> Original_Devuelta, global::System.Nullable<decimal> Original_DineroPagado, int FacturaId) {
+        public virtual int Update(string NombreCliente, global::System.Nullable<global::System.DateTime> Fecha, global::System.Nullable<decimal> Monto, global::System.Nullable<decimal> Devuelta, global::System.Nullable<decimal> DineroPagado, string NombreUsuario, int Original_FacturaId, string Original_NombreCliente, global::System.Nullable<global::System.DateTime> Original_Fecha, global::System.Nullable<decimal> Original_Monto, global::System.Nullable<decimal> Original_Devuelta, global::System.Nullable<decimal> Original_DineroPagado, string Original_NombreUsuario, int FacturaId) {
             if ((NombreCliente == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4067,48 +4089,62 @@ SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado FROM Factu
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_FacturaId));
-            if ((Original_NombreCliente == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            if ((NombreUsuario == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_NombreCliente));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(NombreUsuario));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_FacturaId));
+            if ((Original_NombreCliente == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_NombreCliente));
             }
             if ((Original_Fecha.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Fecha.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_Fecha.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_Monto.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_Monto.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_Monto.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_Devuelta.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_Devuelta.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_Devuelta.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_DineroPagado.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Original_DineroPagado.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(Original_DineroPagado.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(FacturaId));
+            if ((Original_NombreUsuario == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_NombreUsuario));
+            }
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(FacturaId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4129,8 +4165,8 @@ SELECT FacturaId, NombreCliente, Fecha, Monto, Devuelta, DineroPagado FROM Factu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NombreCliente, global::System.Nullable<global::System.DateTime> Fecha, global::System.Nullable<decimal> Monto, global::System.Nullable<decimal> Devuelta, global::System.Nullable<decimal> DineroPagado, int Original_FacturaId, string Original_NombreCliente, global::System.Nullable<global::System.DateTime> Original_Fecha, global::System.Nullable<decimal> Original_Monto, global::System.Nullable<decimal> Original_Devuelta, global::System.Nullable<decimal> Original_DineroPagado) {
-            return this.Update(NombreCliente, Fecha, Monto, Devuelta, DineroPagado, Original_FacturaId, Original_NombreCliente, Original_Fecha, Original_Monto, Original_Devuelta, Original_DineroPagado, Original_FacturaId);
+        public virtual int Update(string NombreCliente, global::System.Nullable<global::System.DateTime> Fecha, global::System.Nullable<decimal> Monto, global::System.Nullable<decimal> Devuelta, global::System.Nullable<decimal> DineroPagado, string NombreUsuario, int Original_FacturaId, string Original_NombreCliente, global::System.Nullable<global::System.DateTime> Original_Fecha, global::System.Nullable<decimal> Original_Monto, global::System.Nullable<decimal> Original_Devuelta, global::System.Nullable<decimal> Original_DineroPagado, string Original_NombreUsuario) {
+            return this.Update(NombreCliente, Fecha, Monto, Devuelta, DineroPagado, NombreUsuario, Original_FacturaId, Original_NombreCliente, Original_Fecha, Original_Monto, Original_Devuelta, Original_DineroPagado, Original_NombreUsuario, Original_FacturaId);
         }
     }
     
@@ -4724,11 +4760,10 @@ SELECT Id, ProductoId, FacturaId, Descripcion, Precio, Cantidad FROM FacturasPro
             tableMapping.ColumnMappings.Add("Costo", "Costo");
             tableMapping.ColumnMappings.Add("Precio", "Precio");
             tableMapping.ColumnMappings.Add("FechaIngreso", "FechaIngreso");
-            tableMapping.ColumnMappings.Add("FechaVencimiento", "FechaVencimiento");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Productos] WHERE (([ProductoId] = @Original_ProductoId) AND ((@IsNull_Descripcion = 1 AND [Descripcion] IS NULL) OR ([Descripcion] = @Original_Descripcion)) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_Costo = 1 AND [Costo] IS NULL) OR ([Costo] = @Original_Costo)) AND ((@IsNull_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND ((@IsNull_FechaIngreso = 1 AND [FechaIngreso] IS NULL) OR ([FechaIngreso] = @Original_FechaIngreso)) AND ((@IsNull_FechaVencimiento = 1 AND [FechaVencimiento] IS NULL) OR ([FechaVencimiento] = @Original_FechaVencimiento)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Productos] WHERE (([ProductoId] = @Original_ProductoId) AND ((@IsNull_Descripcion = 1 AND [Descripcion] IS NULL) OR ([Descripcion] = @Original_Descripcion)) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_Costo = 1 AND [Costo] IS NULL) OR ([Costo] = @Original_Costo)) AND ((@IsNull_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND ((@IsNull_FechaIngreso = 1 AND [FechaIngreso] IS NULL) OR ([FechaIngreso] = @Original_FechaIngreso)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProductoId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProductoId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Descripcion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -4741,30 +4776,26 @@ SELECT Id, ProductoId, FacturaId, Descripcion, Precio, Cantidad FROM FacturasPro
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Precio", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Precio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FechaIngreso", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaIngreso", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaIngreso", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaIngreso", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FechaVencimiento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaVencimiento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaVencimiento", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaVencimiento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Productos] ([Descripcion], [Cantidad], [Costo], [Precio], [FechaIngreso], [FechaVencimiento]) VALUES (@Descripcion, @Cantidad, @Costo, @Precio, @FechaIngreso, @FechaVencimiento);
-SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso, FechaVencimiento FROM Productos WHERE (ProductoId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Productos] ([Descripcion], [Cantidad], [Costo], [Precio], [FechaIngreso]) VALUES (@Descripcion, @Cantidad, @Costo, @Precio, @FechaIngreso);
+SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso FROM Productos WHERE (ProductoId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cantidad", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Costo", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Costo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaIngreso", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaIngreso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaVencimiento", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaVencimiento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Productos] SET [Descripcion] = @Descripcion, [Cantidad] = @Cantidad, [Costo] = @Costo, [Precio] = @Precio, [FechaIngreso] = @FechaIngreso, [FechaVencimiento] = @FechaVencimiento WHERE (([ProductoId] = @Original_ProductoId) AND ((@IsNull_Descripcion = 1 AND [Descripcion] IS NULL) OR ([Descripcion] = @Original_Descripcion)) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_Costo = 1 AND [Costo] IS NULL) OR ([Costo] = @Original_Costo)) AND ((@IsNull_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND ((@IsNull_FechaIngreso = 1 AND [FechaIngreso] IS NULL) OR ([FechaIngreso] = @Original_FechaIngreso)) AND ((@IsNull_FechaVencimiento = 1 AND [FechaVencimiento] IS NULL) OR ([FechaVencimiento] = @Original_FechaVencimiento)));
-SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso, FechaVencimiento FROM Productos WHERE (ProductoId = @ProductoId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Productos] SET [Descripcion] = @Descripcion, [Cantidad] = @Cantidad, [Costo] = @Costo, [Precio] = @Precio, [FechaIngreso] = @FechaIngreso WHERE (([ProductoId] = @Original_ProductoId) AND ((@IsNull_Descripcion = 1 AND [Descripcion] IS NULL) OR ([Descripcion] = @Original_Descripcion)) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_Costo = 1 AND [Costo] IS NULL) OR ([Costo] = @Original_Costo)) AND ((@IsNull_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND ((@IsNull_FechaIngreso = 1 AND [FechaIngreso] IS NULL) OR ([FechaIngreso] = @Original_FechaIngreso)));
+SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso FROM Productos WHERE (ProductoId = @ProductoId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cantidad", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Costo", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Costo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaIngreso", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaIngreso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaVencimiento", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaVencimiento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProductoId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProductoId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Descripcion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4776,8 +4807,6 @@ SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso, FechaVenc
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Precio", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Precio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FechaIngreso", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaIngreso", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaIngreso", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaIngreso", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FechaVencimiento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaVencimiento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaVencimiento", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaVencimiento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProductoId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProductoId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4794,8 +4823,8 @@ SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso, FechaVenc
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso, FechaVenci" +
-                "miento FROM dbo.Productos";
+            this._commandCollection[0].CommandText = "SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso FROM dbo.Pr" +
+                "oductos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4856,7 +4885,7 @@ SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso, FechaVenc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ProductoId, string Original_Descripcion, global::System.Nullable<decimal> Original_Cantidad, global::System.Nullable<decimal> Original_Costo, global::System.Nullable<decimal> Original_Precio, global::System.Nullable<global::System.DateTime> Original_FechaIngreso, global::System.Nullable<global::System.DateTime> Original_FechaVencimiento) {
+        public virtual int Delete(int Original_ProductoId, string Original_Descripcion, global::System.Nullable<decimal> Original_Cantidad, global::System.Nullable<decimal> Original_Costo, global::System.Nullable<decimal> Original_Precio, global::System.Nullable<global::System.DateTime> Original_FechaIngreso) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ProductoId));
             if ((Original_Descripcion == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -4898,14 +4927,6 @@ SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso, FechaVenc
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_FechaVencimiento.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_FechaVencimiento.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4926,7 +4947,7 @@ SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso, FechaVenc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Descripcion, global::System.Nullable<decimal> Cantidad, global::System.Nullable<decimal> Costo, global::System.Nullable<decimal> Precio, global::System.Nullable<global::System.DateTime> FechaIngreso, global::System.Nullable<global::System.DateTime> FechaVencimiento) {
+        public virtual int Insert(string Descripcion, global::System.Nullable<decimal> Cantidad, global::System.Nullable<decimal> Costo, global::System.Nullable<decimal> Precio, global::System.Nullable<global::System.DateTime> FechaIngreso) {
             if ((Descripcion == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4957,12 +4978,6 @@ SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso, FechaVenc
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((FechaVencimiento.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(FechaVencimiento.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4983,7 +4998,7 @@ SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso, FechaVenc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Descripcion, global::System.Nullable<decimal> Cantidad, global::System.Nullable<decimal> Costo, global::System.Nullable<decimal> Precio, global::System.Nullable<global::System.DateTime> FechaIngreso, global::System.Nullable<global::System.DateTime> FechaVencimiento, int Original_ProductoId, string Original_Descripcion, global::System.Nullable<decimal> Original_Cantidad, global::System.Nullable<decimal> Original_Costo, global::System.Nullable<decimal> Original_Precio, global::System.Nullable<global::System.DateTime> Original_FechaIngreso, global::System.Nullable<global::System.DateTime> Original_FechaVencimiento, int ProductoId) {
+        public virtual int Update(string Descripcion, global::System.Nullable<decimal> Cantidad, global::System.Nullable<decimal> Costo, global::System.Nullable<decimal> Precio, global::System.Nullable<global::System.DateTime> FechaIngreso, int Original_ProductoId, string Original_Descripcion, global::System.Nullable<decimal> Original_Cantidad, global::System.Nullable<decimal> Original_Costo, global::System.Nullable<decimal> Original_Precio, global::System.Nullable<global::System.DateTime> Original_FechaIngreso, int ProductoId) {
             if ((Descripcion == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -5014,62 +5029,48 @@ SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso, FechaVenc
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((FechaVencimiento.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(FechaVencimiento.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ProductoId));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ProductoId));
             if ((Original_Descripcion == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Descripcion));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Descripcion));
             }
             if ((Original_Cantidad.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_Cantidad.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_Cantidad.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((Original_Costo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_Costo.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_Costo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Original_Precio.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_Precio.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_Precio.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_FechaIngreso.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_FechaIngreso.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_FechaIngreso.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((Original_FechaVencimiento.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_FechaVencimiento.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(ProductoId));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(ProductoId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5090,8 +5091,8 @@ SELECT ProductoId, Descripcion, Cantidad, Costo, Precio, FechaIngreso, FechaVenc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Descripcion, global::System.Nullable<decimal> Cantidad, global::System.Nullable<decimal> Costo, global::System.Nullable<decimal> Precio, global::System.Nullable<global::System.DateTime> FechaIngreso, global::System.Nullable<global::System.DateTime> FechaVencimiento, int Original_ProductoId, string Original_Descripcion, global::System.Nullable<decimal> Original_Cantidad, global::System.Nullable<decimal> Original_Costo, global::System.Nullable<decimal> Original_Precio, global::System.Nullable<global::System.DateTime> Original_FechaIngreso, global::System.Nullable<global::System.DateTime> Original_FechaVencimiento) {
-            return this.Update(Descripcion, Cantidad, Costo, Precio, FechaIngreso, FechaVencimiento, Original_ProductoId, Original_Descripcion, Original_Cantidad, Original_Costo, Original_Precio, Original_FechaIngreso, Original_FechaVencimiento, Original_ProductoId);
+        public virtual int Update(string Descripcion, global::System.Nullable<decimal> Cantidad, global::System.Nullable<decimal> Costo, global::System.Nullable<decimal> Precio, global::System.Nullable<global::System.DateTime> FechaIngreso, int Original_ProductoId, string Original_Descripcion, global::System.Nullable<decimal> Original_Cantidad, global::System.Nullable<decimal> Original_Costo, global::System.Nullable<decimal> Original_Precio, global::System.Nullable<global::System.DateTime> Original_FechaIngreso) {
+            return this.Update(Descripcion, Cantidad, Costo, Precio, FechaIngreso, Original_ProductoId, Original_Descripcion, Original_Cantidad, Original_Costo, Original_Precio, Original_FechaIngreso, Original_ProductoId);
         }
     }
     

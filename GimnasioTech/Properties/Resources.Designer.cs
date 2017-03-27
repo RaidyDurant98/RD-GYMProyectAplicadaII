@@ -63,9 +63,29 @@ namespace GimnasioTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_25px {
+            get {
+                object obj = ResourceManager.GetObject("Add_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Add_User_Male_32px {
             get {
                 object obj = ResourceManager.GetObject("Add_User_Male_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap b994e4378507f5624aa90ae7778ded86 {
+            get {
+                object obj = ResourceManager.GetObject("b994e4378507f5624aa90ae7778ded86", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

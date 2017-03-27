@@ -47,7 +47,7 @@
             // 
             // ClavetextBox
             // 
-            this.ClavetextBox.Location = new System.Drawing.Point(157, 113);
+            this.ClavetextBox.Location = new System.Drawing.Point(157, 108);
             this.ClavetextBox.Name = "ClavetextBox";
             this.ClavetextBox.PasswordChar = '*';
             this.ClavetextBox.Size = new System.Drawing.Size(128, 20);
@@ -57,7 +57,7 @@
             // 
             // UsuariotextBox
             // 
-            this.UsuariotextBox.Location = new System.Drawing.Point(157, 78);
+            this.UsuariotextBox.Location = new System.Drawing.Point(157, 70);
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.Size = new System.Drawing.Size(128, 20);
             this.UsuariotextBox.TabIndex = 8;
@@ -67,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(92, 116);
+            this.label2.Location = new System.Drawing.Point(92, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 7;
@@ -76,7 +76,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(92, 81);
+            this.label1.Location = new System.Drawing.Point(92, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 6;
@@ -94,7 +94,7 @@
             // 
             this.pictureBox2.BackgroundImage = global::GimnasioTech.Properties.Resources.Lock_2_32px;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Location = new System.Drawing.Point(50, 101);
+            this.pictureBox2.Location = new System.Drawing.Point(50, 96);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -105,7 +105,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::GimnasioTech.Properties.Resources.Gender_Neutral_User_32px;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 66);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 58);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -142,6 +142,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackgroundImage = global::GimnasioTech.Properties.Resources.b994e4378507f5624aa90ae7778ded86;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(343, 300);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox2);

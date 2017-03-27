@@ -53,6 +53,10 @@ namespace GimnasioTech.UI.Consultas
                         int id = Utilidades.TOINT(ConsultartextBox.Text);
                         Lista = BLL.FacturasBLL.GetList(p => p.FacturaId == id);
                     }
+                    if (ConsultarcomboBox.SelectedIndex == 4)
+                    {
+                        Lista = BLL.FacturasBLL.GetList(p => p.NombreUsuario == ConsultartextBox.Text);
+                    }
                 }
             }
 

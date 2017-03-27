@@ -13,6 +13,7 @@ namespace GimnasioTech.UI
     {
         Entidades.FacturasProductos Detalle = null;
         Entidades.Facturas Factura = null;
+        List<Entidades.Productos> Producto = null;
         int id;
 
         public FacturasForm()
@@ -32,6 +33,7 @@ namespace GimnasioTech.UI
         {
             Detalle = new Entidades.FacturasProductos();
             Factura = new Entidades.Facturas();
+            Producto = new List<Entidades.Productos>();
 
             FacturaIdmaskedTextBox.Clear();
             ClienteIdmaskedTextBox.Clear();
@@ -258,8 +260,17 @@ namespace GimnasioTech.UI
                 if (CantidadnumericUpDown.Value != 0)
                 {
                     if (Detalle.Producto.Cantidad >= CantidadnumericUpDown.Value)
-                    {                        
-                        if (Factura.Relacion.Count() == 0 || id != Utilidades.TOINT(ProductoIdmaskedTextBox.Text))
+                    {
+                        bool agregado = false;
+                        foreach (var producto in Factura.Relacion)
+                        {
+                            if (Detalle.Producto.ProductoId == producto.ProductoId)
+                            {
+                                agregado = true;
+                                break;
+                            }
+                        }                                       
+                        if (!agregado)
                         {
                             Factura.Relacion.Add(new Entidades.FacturasProductos(Detalle.Producto.ProductoId, Detalle.Producto.Descripcion, Detalle.Producto.Precio, CantidadnumericUpDown.Value));
                             LlenarDataGrid(Factura);
@@ -495,6 +506,11 @@ namespace GimnasioTech.UI
         private void FacturaIdmaskedTextBox_TextChanged(object sender, EventArgs e)
         {
             FacturaIderrorProvider.Clear();
+        }
+
+        private void RegistroClientebutton_Click(object sender, EventArgs e)
+        {
+            new UI.Registros.ClientesRegistroForm().Show();
         }
     }
 }
