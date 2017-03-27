@@ -33,6 +33,7 @@ Fecha date,
 Monto decimal,
 Devuelta decimal,
 DineroPagado decimal,
+NombreUsuario varchar(50)
 );
 
 create table FacturasProductos(

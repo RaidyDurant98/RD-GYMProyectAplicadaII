@@ -11,6 +11,8 @@ namespace GimnasioTech.UI.Consultas
 {
     public partial class ProductosConsultaForm : Form
     {
+        public List<Entidades.Productos> Lista { get; set; }
+
         public ProductosConsultaForm()
         {
             InitializeComponent();
@@ -120,6 +122,12 @@ namespace GimnasioTech.UI.Consultas
             {
                 Filtro();
             }
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            new UI.Reportes.ProductosReporteForm(Lista).Show();
+            new UI.Reportes.ProductosReporteForm(Lista).Activate();
         }
     }
 }

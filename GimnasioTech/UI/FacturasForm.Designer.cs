@@ -70,6 +70,8 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.FacturaIderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.DevueltaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.NombreUsuariolabel = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.SaldogroupBox.SuspendLayout();
             this.ProductosgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
@@ -452,7 +454,7 @@
             this.Eliminarbutton.Image = global::GimnasioTech.Properties.Resources.Delete_25px1;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Eliminarbutton.Location = new System.Drawing.Point(173, 445);
+            this.Eliminarbutton.Location = new System.Drawing.Point(169, 406);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 32);
             this.Eliminarbutton.TabIndex = 41;
@@ -468,7 +470,7 @@
             this.Guardarbutton.Image = global::GimnasioTech.Properties.Resources.Save_50px;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guardarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Guardarbutton.Location = new System.Drawing.Point(92, 445);
+            this.Guardarbutton.Location = new System.Drawing.Point(88, 406);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 32);
             this.Guardarbutton.TabIndex = 40;
@@ -484,7 +486,7 @@
             this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Nuevobutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Nuevobutton.Location = new System.Drawing.Point(11, 445);
+            this.Nuevobutton.Location = new System.Drawing.Point(7, 406);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 32);
             this.Nuevobutton.TabIndex = 39;
@@ -501,11 +503,33 @@
             // 
             this.DevueltaerrorProvider.ContainerControl = this;
             // 
+            // NombreUsuariolabel
+            // 
+            this.NombreUsuariolabel.AutoSize = true;
+            this.NombreUsuariolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombreUsuariolabel.Location = new System.Drawing.Point(70, 464);
+            this.NombreUsuariolabel.Name = "NombreUsuariolabel";
+            this.NombreUsuariolabel.Size = new System.Drawing.Size(95, 13);
+            this.NombreUsuariolabel.TabIndex = 51;
+            this.NombreUsuariolabel.Text = "Nombre usuario";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(4, 464);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 13);
+            this.label11.TabIndex = 50;
+            this.label11.Text = "Le atendio:";
+            // 
             // FacturasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 496);
+            this.Controls.Add(this.NombreUsuariolabel);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.NombreClientetextBox);
             this.Controls.Add(this.ClienteIdmaskedTextBox);
@@ -585,5 +609,7 @@
         private System.Windows.Forms.Button Devueltabutton;
         private System.Windows.Forms.ErrorProvider FacturaIderrorProvider;
         private System.Windows.Forms.ErrorProvider DevueltaerrorProvider;
+        private System.Windows.Forms.Label NombreUsuariolabel;
+        private System.Windows.Forms.Label label11;
     }
 }

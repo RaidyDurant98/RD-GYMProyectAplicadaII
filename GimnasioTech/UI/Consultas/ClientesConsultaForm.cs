@@ -133,5 +133,10 @@ namespace GimnasioTech.UI.Consultas
             new UI.Reportes.ClientesReporteForm(Lista).Show();
             new UI.Reportes.ClientesReporteForm(Lista).Activate();
         }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            Filtro();
+        }
     }
 }

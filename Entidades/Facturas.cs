@@ -11,6 +11,7 @@ namespace Entidades
         [Key]
         public int FacturaId { get; set; }
         public string NombreCliente { get; set; }
+        public string NombreUsuario { get; set; }
         public DateTime Fecha { get; set; }
         public decimal Monto { get; set; }
         public decimal DineroPagado { get; set; }

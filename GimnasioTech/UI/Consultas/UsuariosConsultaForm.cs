@@ -27,7 +27,7 @@ namespace GimnasioTech.UI.Consultas
         {
             if (FiltrarcomboBox.SelectedIndex == 0)
             {
-                Lista= BLL.UsuariosBLL.GetListAll();
+                Lista = BLL.UsuariosBLL.GetListAll();
             }
             else if (FiltrarcomboBox.SelectedIndex != 0)
             {

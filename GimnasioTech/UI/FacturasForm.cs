@@ -19,6 +19,7 @@ namespace GimnasioTech.UI
         {
             InitializeComponent();
             Limpiar();
+            LlenarLabel();
         }
 
         private void FacturasForm_Load(object sender, EventArgs e)
@@ -91,6 +92,7 @@ namespace GimnasioTech.UI
         private Entidades.Facturas LlenarCampos()
         {
             Factura.NombreCliente = NombreClientetextBox.Text;
+            Factura.NombreUsuario = NombreUsuariolabel.Text;
             Factura.FacturaId = Utilidades.TOINT(FacturaIdmaskedTextBox.Text);
             Factura.Monto = Utilidades.TOINT(MontotextBox.Text);
             Factura.Fecha = FechadateTimePicker.Value;
@@ -215,6 +217,7 @@ namespace GimnasioTech.UI
                 if (Factura != null)
                 {
                     NombreClientetextBox.Text = Factura.NombreCliente;
+                    NombreUsuariolabel.Text = Factura.NombreUsuario;
                     FechadateTimePicker.Value = Factura.Fecha;
                     MontotextBox.Text = Factura.Monto.ToString();
                     RecibidomaskedTextBox.Text = Factura.DineroPagado.ToString();
@@ -375,6 +378,11 @@ namespace GimnasioTech.UI
                 ProductoerrorProvider.SetError(ProductoIdmaskedTextBox, "Digite el id de un producto.");
                 ProductoIdmaskedTextBox.Focus();
             }
+        }
+
+        private void LlenarLabel()
+        {
+            NombreUsuariolabel.Text = InicioSesionForm.GetUsuario().Nombres;
         }
 
         private void FacturaIdmaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)

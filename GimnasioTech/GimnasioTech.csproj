@@ -150,6 +150,12 @@
     <Compile Include="UI\Reportes\FacturasReporteForm.Designer.cs">
       <DependentUpon>FacturasReporteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\ProductosReporteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ProductosReporteForm.Designer.cs">
+      <DependentUpon>ProductosReporteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Reportes\UsuariosReporteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,10 @@
     <EmbeddedResource Include="UI\Reportes\FacturasReport.rdlc" />
     <EmbeddedResource Include="UI\Reportes\FacturasReporteForm.resx">
       <DependentUpon>FacturasReporteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ProductosReport.rdlc" />
+    <EmbeddedResource Include="UI\Reportes\ProductosReporteForm.resx">
+      <DependentUpon>ProductosReporteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\UsuariosReport.rdlc" />
     <EmbeddedResource Include="UI\Reportes\UsuariosReporteForm.resx">
