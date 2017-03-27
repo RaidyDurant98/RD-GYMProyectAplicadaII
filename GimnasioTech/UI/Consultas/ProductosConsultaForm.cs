@@ -66,6 +66,8 @@ namespace GimnasioTech.UI.Consultas
         {
             if (ConsultarcomboBox.SelectedIndex == 0)
             {
+                DesdedateTimePicker.Value = DateTime.Now;
+                HastadateTimePicker.Value = DateTime.Now;
                 ConsultartextBox.Clear();
                 CampoVacioerrorProvider.Clear();
                 ConsultartextBox.Enabled = false;
@@ -75,7 +77,11 @@ namespace GimnasioTech.UI.Consultas
             }
             else if (ConsultarcomboBox.SelectedIndex == 3)
             {
+                DesdedateTimePicker.Value = DateTime.Now;
+                HastadateTimePicker.Value = DateTime.Now;
                 ConsultartextBox.Enabled = false;
+                ConsultartextBox.Clear();
+                ConsultadataGridView.DataSource = null;
                 DesdedateTimePicker.Enabled = true;
                 DesdedateTimePicker.Focus();
                 HastadateTimePicker.Enabled = true;
@@ -83,6 +89,10 @@ namespace GimnasioTech.UI.Consultas
             }
             else
             {
+                DesdedateTimePicker.Value = DateTime.Now;
+                HastadateTimePicker.Value = DateTime.Now;
+                ConsultartextBox.Clear();
+                ConsultadataGridView.DataSource = null;
                 DesdedateTimePicker.Enabled = false;
                 HastadateTimePicker.Enabled = false;
                 ConsultartextBox.Enabled = true;

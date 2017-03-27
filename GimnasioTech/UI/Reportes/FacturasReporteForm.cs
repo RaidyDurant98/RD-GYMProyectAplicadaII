@@ -24,7 +24,7 @@ namespace GimnasioTech.UI.Reportes
         {
             this.FacturareportViewer.Reset();
             this.FacturareportViewer.ProcessingMode = ProcessingMode.Local;
-            this.FacturareportViewer.LocalReport.ReportPath = @"C:\Users\raidy\Desktop\UCNE\PROGRAMACION APLICADA I\ProyectoMejor\RD-GYM\GimnasioTech\UI\Reportes\FacturasReport.rdlc";
+            this.FacturareportViewer.LocalReport.ReportPath = @"C:\Users\raidy\Desktop\UCNE\PROGRAMACION APLICADA I\ProyectoMejor\RD-GYM - copia\GimnasioTech\UI\Reportes\FacturasReport.rdlc";
 
             ReportDataSource source = new ReportDataSource("FacturasDataSet", Lista);
             this.FacturareportViewer.LocalReport.DataSources.Add(source);
