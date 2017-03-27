@@ -30,6 +30,7 @@ namespace GimnasioTech.UI
         public MenuPrincipalForm()
         {
             InitializeComponent();
+            LlenarLabel();
         }
 
         private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -100,6 +101,38 @@ namespace GimnasioTech.UI
 
         private void CambiarusuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (registroUsuario != null)
+            {
+                registroUsuario.Close();
+            }
+            if (registroCliente != null)
+            {
+                registroCliente.Close();
+            }
+            if (registroProducto != null)
+            {
+                registroProducto.Close();
+            }
+            if (consultaUsuario != null)
+            {
+                consultaUsuario.Close();
+            }
+            if (consultaProducto != null)
+            {
+                consultaProducto.Close();
+            }
+            if (consultaFactura != null)
+            {
+                consultaFactura.Close();
+            }
+            if (consultaCliente != null)
+            {
+                consultaCliente.Close();
+            }
+            if (factura != null)
+            {
+                factura.Close();
+            }
             this.Hide();
             new InicioSesionForm().Show();
         }
@@ -124,6 +157,12 @@ namespace GimnasioTech.UI
             {
                 usuariosToolStripMenuItem1.Enabled = true;
             }
+        }
+
+        private void LlenarLabel()
+        {
+            NombreUsuariolabel.Text = InicioSesionForm.GetUsuario().Nombres;
+            Cargolabel.Text = InicioSesionForm.GetUsuario().Cargo;
         }
 
         private void MenuPrincipalForm_VisibleChanged(object sender, EventArgs e)

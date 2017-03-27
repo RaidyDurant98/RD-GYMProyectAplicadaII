@@ -44,6 +44,8 @@
             this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NombreUsuariolabel = new System.Windows.Forms.Label();
+            this.Cargolabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,7 +109,7 @@
             // 
             this.usuariosToolStripMenuItem1.Image = global::GimnasioTech.Properties.Resources.Add_User_Male_32px;
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
             // 
@@ -115,7 +117,7 @@
             // 
             this.clientesToolStripMenuItem.Image = global::GimnasioTech.Properties.Resources.Add_User_Male_32px;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -123,7 +125,7 @@
             // 
             this.productosToolStripMenuItem.Image = global::GimnasioTech.Properties.Resources.New_Product_32px;
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
@@ -142,7 +144,7 @@
             // 
             this.clientesToolStripMenuItem1.Image = global::GimnasioTech.Properties.Resources.Checked_User_Male_32px;
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.clientesToolStripMenuItem1.Text = "Usuarios";
             this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
@@ -150,7 +152,7 @@
             // 
             this.usuariosToolStripMenuItem.Image = global::GimnasioTech.Properties.Resources.Checked_User_Male_32px;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.usuariosToolStripMenuItem.Text = "Clientes";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -158,7 +160,7 @@
             // 
             this.productosToolStripMenuItem1.Image = global::GimnasioTech.Properties.Resources.Inspection_32px;
             this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
-            this.productosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.productosToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.productosToolStripMenuItem1.Text = "Productos";
             this.productosToolStripMenuItem1.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
             // 
@@ -166,7 +168,7 @@
             // 
             this.facturasToolStripMenuItem.Image = global::GimnasioTech.Properties.Resources.Bill_32px;
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.facturasToolStripMenuItem.Text = "Facturas";
             this.facturasToolStripMenuItem.Click += new System.EventHandler(this.facturasToolStripMenuItem_Click);
             // 
@@ -183,11 +185,35 @@
             this.ayudarToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudarToolStripMenuItem.Text = "Ayuda";
             // 
+            // NombreUsuariolabel
+            // 
+            this.NombreUsuariolabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.NombreUsuariolabel.AutoSize = true;
+            this.NombreUsuariolabel.Font = new System.Drawing.Font("French Script MT", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombreUsuariolabel.Location = new System.Drawing.Point(12, 317);
+            this.NombreUsuariolabel.Name = "NombreUsuariolabel";
+            this.NombreUsuariolabel.Size = new System.Drawing.Size(141, 27);
+            this.NombreUsuariolabel.TabIndex = 2;
+            this.NombreUsuariolabel.Text = "Nombre usuario";
+            // 
+            // Cargolabel
+            // 
+            this.Cargolabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Cargolabel.AutoSize = true;
+            this.Cargolabel.Font = new System.Drawing.Font("French Script MT", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cargolabel.Location = new System.Drawing.Point(12, 346);
+            this.Cargolabel.Name = "Cargolabel";
+            this.Cargolabel.Size = new System.Drawing.Size(58, 27);
+            this.Cargolabel.TabIndex = 3;
+            this.Cargolabel.Text = "Cargo";
+            // 
             // MenuPrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 376);
+            this.Controls.Add(this.Cargolabel);
+            this.Controls.Add(this.NombreUsuariolabel);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MenuPrincipalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -220,5 +246,7 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
+        private System.Windows.Forms.Label NombreUsuariolabel;
+        private System.Windows.Forms.Label Cargolabel;
     }
 }

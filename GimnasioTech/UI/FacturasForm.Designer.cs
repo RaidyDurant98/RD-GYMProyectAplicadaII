@@ -107,7 +107,7 @@
             this.Devueltabutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Devueltabutton.Image = global::GimnasioTech.Properties.Resources.Calculator_25px;
             this.Devueltabutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Devueltabutton.Location = new System.Drawing.Point(199, 46);
+            this.Devueltabutton.Location = new System.Drawing.Point(190, 46);
             this.Devueltabutton.Name = "Devueltabutton";
             this.Devueltabutton.Size = new System.Drawing.Size(40, 32);
             this.Devueltabutton.TabIndex = 45;
@@ -140,7 +140,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(245, 58);
+            this.label7.Location = new System.Drawing.Point(236, 58);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 12;
@@ -152,9 +152,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DevueltatextBox.Enabled = false;
             this.DevueltatextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.DevueltatextBox.Location = new System.Drawing.Point(304, 50);
+            this.DevueltatextBox.Location = new System.Drawing.Point(295, 50);
             this.DevueltatextBox.Name = "DevueltatextBox";
-            this.DevueltatextBox.Size = new System.Drawing.Size(176, 26);
+            this.DevueltatextBox.Size = new System.Drawing.Size(185, 26);
             this.DevueltatextBox.TabIndex = 14;
             // 
             // label5
