@@ -153,14 +153,11 @@ namespace GimnasioTech.UI
                     if (eliminar == DialogResult.Yes)
                     {
                         int id = Utilidades.TOINT(FacturaIdmaskedTextBox.Text);
-                      
+
                         if (BLL.FacturasBLL.Eliminar(BLL.FacturasBLL.Buscar(p => p.FacturaId == id)))
                         {
-                            foreach (DataGridViewRow producto in ProductodataGridView.Rows)
-                            {
-                                AumentarExistenciaProducto(Convert.ToDecimal(producto.Cells[5].Value));
-                                break;
-                            }
+                            AumentarExistenciaProducto(CantidadnumericUpDown.Value);
+
                             Limpiar();
                             MessageBox.Show("Factura eliminada con exito.");
                         }
@@ -245,6 +242,7 @@ namespace GimnasioTech.UI
             foreach (DataGridViewRow producto in ProductodataGridView.Rows)
             {
                 int id = Convert.ToInt32(producto.Cells[2].Value);
+                cantidad = Convert.ToDecimal(producto.Cells[5].Value);
 
                 Detalle.Producto = BLL.ProductosBLL.BuscarOtro(id);
                 Detalle.Producto.Cantidad += cantidad;
@@ -273,7 +271,7 @@ namespace GimnasioTech.UI
                                 productoAgregado = true;
                                 break;
                             }
-                        }                                       
+                        }
                         if (!productoAgregado)
                         {
                             Factura.Relacion.Add(new Entidades.FacturasProductos(Detalle.Producto.ProductoId, Detalle.Producto.Descripcion, Detalle.Producto.Precio, CantidadnumericUpDown.Value));
@@ -330,7 +328,7 @@ namespace GimnasioTech.UI
             decimal monto = 0;
             foreach (DataGridViewRow producto in ProductodataGridView.Rows)
             {
-               monto  += Convert.ToDecimal(producto.Cells[4].Value) * Convert.ToDecimal(producto.Cells[5].Value);              
+                monto += Convert.ToDecimal(producto.Cells[4].Value) * Convert.ToDecimal(producto.Cells[5].Value);
             }
 
             Factura.Monto = monto;
