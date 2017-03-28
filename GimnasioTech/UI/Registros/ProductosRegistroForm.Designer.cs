@@ -199,6 +199,7 @@
             // descripcionTextBox
             // 
             this.descripcionTextBox.Location = new System.Drawing.Point(156, 66);
+            this.descripcionTextBox.MaxLength = 250;
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(200, 20);
             this.descripcionTextBox.TabIndex = 1;

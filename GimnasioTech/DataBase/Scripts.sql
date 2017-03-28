@@ -29,7 +29,7 @@ Cargo varchar(60)
 create table Facturas(
 FacturaId int identity(1,1) primary key,
 NombreCliente varchar(80),
-Fecha date,
+Fecha datetime,
 Monto decimal,
 Devuelta decimal,
 DineroPagado decimal,

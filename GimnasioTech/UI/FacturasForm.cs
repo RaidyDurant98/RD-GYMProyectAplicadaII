@@ -52,12 +52,6 @@ namespace GimnasioTech.UI
             ClienteIderrorProvider.Clear();
             FacturaIderrorProvider.Clear();
             DevueltaerrorProvider.Clear();
-
-            RecibidomaskedTextBox.Enabled = false;
-            CantidadnumericUpDown.Enabled = false;
-            Agregarbutton.Enabled = true;
-            BuscarProductobutton.Enabled = true;
-            ProductoIdmaskedTextBox.Enabled = true;
         }
 
         private bool Validar()
@@ -124,7 +118,7 @@ namespace GimnasioTech.UI
 
                 if (BLL.FacturasBLL.Guardar(Factura))
                 {
-                    ExistenciaProducto(CantidadnumericUpDown.Value);
+                    ReducirExistenciaProducto(CantidadnumericUpDown.Value);
                     MessageBox.Show("Guardado con exito.");
                     Limpiar();
                 }
@@ -132,7 +126,7 @@ namespace GimnasioTech.UI
                     MessageBox.Show("Error! no se pudo guardar.");
             }
 
-            if (string.IsNullOrEmpty(RecibidomaskedTextBox.Text))
+            if (!string.IsNullOrEmpty(RecibidomaskedTextBox.Text))
             {
                 RecibidomaskedTextBox.Focus();
             }
@@ -159,9 +153,14 @@ namespace GimnasioTech.UI
                     if (eliminar == DialogResult.Yes)
                     {
                         int id = Utilidades.TOINT(FacturaIdmaskedTextBox.Text);
-
+                      
                         if (BLL.FacturasBLL.Eliminar(BLL.FacturasBLL.Buscar(p => p.FacturaId == id)))
                         {
+                            foreach (DataGridViewRow producto in ProductodataGridView.Rows)
+                            {
+                                AumentarExistenciaProducto(Convert.ToDecimal(producto.Cells[5].Value));
+                                break;
+                            }
                             Limpiar();
                             MessageBox.Show("Factura eliminada con exito.");
                         }
@@ -200,10 +199,6 @@ namespace GimnasioTech.UI
 
         private void BuscarFactura()
         {
-            ProductoIdmaskedTextBox.Enabled = false;
-            Agregarbutton.Enabled = false;
-            BuscarProductobutton.Enabled = false;
-
             if (string.IsNullOrEmpty(FacturaIdmaskedTextBox.Text))
             {
                 MessageBox.Show("Por favor insertar el id que desea buscar.");
@@ -232,7 +227,7 @@ namespace GimnasioTech.UI
             }
         }
 
-        private void ExistenciaProducto(decimal cantidad)
+        private void ReducirExistenciaProducto(decimal cantidad)
         {
             foreach (DataGridViewRow producto in ProductodataGridView.Rows)
             {
@@ -241,6 +236,18 @@ namespace GimnasioTech.UI
 
                 Detalle.Producto = BLL.ProductosBLL.BuscarOtro(id);
                 Detalle.Producto.Cantidad -= cantidad;
+                BLL.ProductosBLL.Modificar(Detalle.Producto);
+            }
+        }
+
+        private void AumentarExistenciaProducto(decimal cantidad)
+        {
+            foreach (DataGridViewRow producto in ProductodataGridView.Rows)
+            {
+                int id = Convert.ToInt32(producto.Cells[2].Value);
+
+                Detalle.Producto = BLL.ProductosBLL.BuscarOtro(id);
+                Detalle.Producto.Cantidad += cantidad;
                 BLL.ProductosBLL.Modificar(Detalle.Producto);
             }
         }
@@ -320,7 +327,13 @@ namespace GimnasioTech.UI
 
         private void CalculoMonto()
         {
-            Factura.Monto += Detalle.Producto.Precio * CantidadnumericUpDown.Value;
+            decimal monto = 0;
+            foreach (DataGridViewRow producto in ProductodataGridView.Rows)
+            {
+               monto  += Convert.ToDecimal(producto.Cells[4].Value) * Convert.ToDecimal(producto.Cells[5].Value);              
+            }
+
+            Factura.Monto = monto;
             MontotextBox.Text = Factura.Monto.ToString();
 
             RecibidomaskedTextBox.Focus();
@@ -422,6 +435,7 @@ namespace GimnasioTech.UI
         private void MontotextBox_TextChanged(object sender, EventArgs e)
         {
             RecibidomaskedTextBox.Enabled = true;
+            DevueltatextBox.Clear();
         }
 
         private void RecibidomaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -506,6 +520,11 @@ namespace GimnasioTech.UI
         private void RegistroClientebutton_Click(object sender, EventArgs e)
         {
             new UI.Registros.ClientesRegistroForm().Show();
+        }
+
+        private void ProductodataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            CalculoMonto();
         }
     }
 }

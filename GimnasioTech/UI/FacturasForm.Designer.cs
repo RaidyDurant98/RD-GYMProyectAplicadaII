@@ -221,6 +221,7 @@
             this.DescripcionProductotextBox.Enabled = false;
             this.DescripcionProductotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DescripcionProductotextBox.Location = new System.Drawing.Point(253, 31);
+            this.DescripcionProductotextBox.MaxLength = 80;
             this.DescripcionProductotextBox.Name = "DescripcionProductotextBox";
             this.DescripcionProductotextBox.Size = new System.Drawing.Size(117, 21);
             this.DescripcionProductotextBox.TabIndex = 39;
@@ -284,6 +285,7 @@
             this.PreciotextBox.Enabled = false;
             this.PreciotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PreciotextBox.Location = new System.Drawing.Point(419, 26);
+            this.PreciotextBox.MaxLength = 80;
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.Size = new System.Drawing.Size(80, 26);
             this.PreciotextBox.TabIndex = 10;
@@ -323,16 +325,17 @@
             this.ProductodataGridView.Name = "ProductodataGridView";
             this.ProductodataGridView.Size = new System.Drawing.Size(717, 212);
             this.ProductodataGridView.TabIndex = 0;
+            this.ProductodataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductodataGridView_CellValueChanged);
             this.ProductodataGridView.SelectionChanged += new System.EventHandler(this.ProductodataGridView_SelectionChanged);
             // 
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FechadateTimePicker.CustomFormat = "yyyy/MM/dd";
+            this.FechadateTimePicker.CustomFormat = "yyyy/MM/dd          HH:mm:ss";
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(629, 29);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(566, 29);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(121, 20);
+            this.FechadateTimePicker.Size = new System.Drawing.Size(168, 20);
             this.FechadateTimePicker.TabIndex = 37;
             // 
             // FacturaIdmaskedTextBox
@@ -400,6 +403,7 @@
             this.NombreClientetextBox.Enabled = false;
             this.NombreClientetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NombreClientetextBox.Location = new System.Drawing.Point(245, 55);
+            this.NombreClientetextBox.MaxLength = 80;
             this.NombreClientetextBox.Name = "NombreClientetextBox";
             this.NombreClientetextBox.Size = new System.Drawing.Size(136, 21);
             this.NombreClientetextBox.TabIndex = 46;

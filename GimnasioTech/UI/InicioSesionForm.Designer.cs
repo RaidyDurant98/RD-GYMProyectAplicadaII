@@ -48,6 +48,7 @@
             // ClavetextBox
             // 
             this.ClavetextBox.Location = new System.Drawing.Point(157, 108);
+            this.ClavetextBox.MaxLength = 50;
             this.ClavetextBox.Name = "ClavetextBox";
             this.ClavetextBox.PasswordChar = '*';
             this.ClavetextBox.Size = new System.Drawing.Size(128, 20);
@@ -58,6 +59,7 @@
             // UsuariotextBox
             // 
             this.UsuariotextBox.Location = new System.Drawing.Point(157, 70);
+            this.UsuariotextBox.MaxLength = 50;
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.Size = new System.Drawing.Size(128, 20);
             this.UsuariotextBox.TabIndex = 8;
