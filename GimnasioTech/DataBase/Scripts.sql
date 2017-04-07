@@ -2,7 +2,7 @@
 ClienteId int identity(1,1) primary key,
 Nombres varchar(80),
 Sexo varchar(100),
-FechaInscripcion date,
+FechaInscripcion datetime,
 Direccion varchar(255),
 NumeroCelular varchar(12),
 Email varchar(255)
@@ -14,7 +14,7 @@ Descripcion varchar(250),
 Cantidad decimal,
 Costo decimal,
 Precio decimal,
-FechaIngreso date,
+FechaIngreso datetime,
 );
 
 create table Usuarios(

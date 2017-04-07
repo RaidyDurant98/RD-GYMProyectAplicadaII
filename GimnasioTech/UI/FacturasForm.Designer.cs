@@ -65,14 +65,14 @@
             this.ClienteIderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.FacturaIderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.DevueltaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.NombreUsuariolabel = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.BuscarClientebutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.RegistroClientebutton = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.NombreUsuariolabel = new System.Windows.Forms.Label();
             this.SaldogroupBox.SuspendLayout();
             this.ProductosgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
@@ -432,28 +432,6 @@
             // 
             this.DevueltaerrorProvider.ContainerControl = this;
             // 
-            // NombreUsuariolabel
-            // 
-            this.NombreUsuariolabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.NombreUsuariolabel.AutoSize = true;
-            this.NombreUsuariolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreUsuariolabel.Location = new System.Drawing.Point(70, 464);
-            this.NombreUsuariolabel.Name = "NombreUsuariolabel";
-            this.NombreUsuariolabel.Size = new System.Drawing.Size(95, 13);
-            this.NombreUsuariolabel.TabIndex = 51;
-            this.NombreUsuariolabel.Text = "Nombre usuario";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(4, 464);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 13);
-            this.label11.TabIndex = 50;
-            this.label11.Text = "Le atendio:";
-            // 
             // BuscarClientebutton
             // 
             this.BuscarClientebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -534,13 +512,35 @@
             // 
             this.RegistroClientebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RegistroClientebutton.Image = global::GimnasioTech.Properties.Resources.Plus_50px;
-            this.RegistroClientebutton.Location = new System.Drawing.Point(390, 47);
+            this.RegistroClientebutton.Location = new System.Drawing.Point(399, 48);
             this.RegistroClientebutton.Name = "RegistroClientebutton";
             this.RegistroClientebutton.Size = new System.Drawing.Size(38, 32);
             this.RegistroClientebutton.TabIndex = 53;
             this.RegistroClientebutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RegistroClientebutton.UseVisualStyleBackColor = true;
             this.RegistroClientebutton.Click += new System.EventHandler(this.RegistroClientebutton_Click);
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(4, 464);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 13);
+            this.label11.TabIndex = 50;
+            this.label11.Text = "Le atendio:";
+            // 
+            // NombreUsuariolabel
+            // 
+            this.NombreUsuariolabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.NombreUsuariolabel.AutoSize = true;
+            this.NombreUsuariolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombreUsuariolabel.Location = new System.Drawing.Point(70, 464);
+            this.NombreUsuariolabel.Name = "NombreUsuariolabel";
+            this.NombreUsuariolabel.Size = new System.Drawing.Size(95, 13);
+            this.NombreUsuariolabel.TabIndex = 51;
+            this.NombreUsuariolabel.Text = "Nombre usuario";
             // 
             // FacturasForm
             // 
@@ -629,8 +629,8 @@
         private System.Windows.Forms.Button Devueltabutton;
         private System.Windows.Forms.ErrorProvider FacturaIderrorProvider;
         private System.Windows.Forms.ErrorProvider DevueltaerrorProvider;
+        private System.Windows.Forms.Button RegistroClientebutton;
         private System.Windows.Forms.Label NombreUsuariolabel;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button RegistroClientebutton;
     }
 }

@@ -203,6 +203,16 @@ namespace GimnasioTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Money_Bag_25px {
+            get {
+                object obj = ResourceManager.GetObject("Money Bag_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap New_File_25px {
             get {
                 object obj = ResourceManager.GetObject("New_File_25px", resourceCulture);

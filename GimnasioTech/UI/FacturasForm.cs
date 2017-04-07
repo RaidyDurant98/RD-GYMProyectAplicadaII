@@ -52,6 +52,10 @@ namespace GimnasioTech.UI
             ClienteIderrorProvider.Clear();
             FacturaIderrorProvider.Clear();
             DevueltaerrorProvider.Clear();
+
+            ClienteIdmaskedTextBox.Enabled = true;
+            ProductoIdmaskedTextBox.Enabled = true;
+            FechadateTimePicker.Enabled = true;
         }
 
         private bool Validar()
@@ -108,6 +112,7 @@ namespace GimnasioTech.UI
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
+            RecibidomaskedTextBox.Enabled = false;
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -121,6 +126,7 @@ namespace GimnasioTech.UI
                     ReducirExistenciaProducto(CantidadnumericUpDown.Value);
                     MessageBox.Show("Guardado con exito.");
                     Limpiar();
+                    RecibidomaskedTextBox.Enabled = false;
                 }
                 else
                     MessageBox.Show("Error! no se pudo guardar.");
@@ -159,7 +165,7 @@ namespace GimnasioTech.UI
                             AumentarExistenciaProducto(CantidadnumericUpDown.Value);
 
                             Limpiar();
-                            MessageBox.Show("Factura eliminada con exito.");
+                            RecibidomaskedTextBox.Enabled = false;
                         }
                         else
                             MessageBox.Show("No se pudo eliminar la factura.");
@@ -222,6 +228,12 @@ namespace GimnasioTech.UI
                     Limpiar();
                 }
             }
+
+            ClienteIdmaskedTextBox.Enabled = false;
+            ProductoIdmaskedTextBox.Enabled = false;
+            RecibidomaskedTextBox.Enabled = false;
+            ProductodataGridView.Enabled = false;
+            FechadateTimePicker.Enabled = false;
         }
 
         private void ReducirExistenciaProducto(decimal cantidad)
@@ -274,7 +286,7 @@ namespace GimnasioTech.UI
                         }
                         if (!productoAgregado)
                         {
-                            Factura.Relacion.Add(new Entidades.FacturasProductos(Detalle.Producto.ProductoId, Detalle.Producto.Descripcion, Detalle.Producto.Precio, CantidadnumericUpDown.Value));
+                            Factura.Relacion.Add(new Entidades.FacturasProductos(Factura.FacturaId, Detalle.Producto.ProductoId, Detalle.Producto.Descripcion, Detalle.Producto.Precio, CantidadnumericUpDown.Value));
                             LlenarDataGrid(Factura);
 
                             CantidadnumericUpDown.Enabled = false;

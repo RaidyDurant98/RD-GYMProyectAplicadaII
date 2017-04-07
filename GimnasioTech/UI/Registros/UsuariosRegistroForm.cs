@@ -135,7 +135,6 @@ namespace GimnasioTech.UI.Registros
                         if (UsuariosBLL.Eliminar(UsuariosBLL.Buscar(p => p.UsuarioId == id)))
                         {
                             Limpiar();
-                            MessageBox.Show("Usuario eliminado con exito.");
                         }
                         else
                             MessageBox.Show("No se pudo eliminar el usuario.");

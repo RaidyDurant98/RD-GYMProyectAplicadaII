@@ -121,7 +121,6 @@ namespace GimnasioTech.UI.Registros
                     if (ProductosBLL.Eliminar(ProductosBLL.Buscar(p => p.ProductoId == id)))
                     {
                         Limpiar();
-                        MessageBox.Show("Cliente eliminado con exito.");
                     }
                     else
                         MessageBox.Show("No se pudo eliminar el cliente.");
