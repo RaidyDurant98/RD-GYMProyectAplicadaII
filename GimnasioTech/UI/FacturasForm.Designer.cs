@@ -73,6 +73,8 @@
             this.RegistroClientebutton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.NombreUsuariolabel = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.ComentariotextBox = new System.Windows.Forms.TextBox();
             this.SaldogroupBox.SuspendLayout();
             this.ProductosgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
@@ -98,7 +100,7 @@
             this.SaldogroupBox.Controls.Add(this.DevueltatextBox);
             this.SaldogroupBox.Controls.Add(this.label5);
             this.SaldogroupBox.Controls.Add(this.MontotextBox);
-            this.SaldogroupBox.Location = new System.Drawing.Point(254, 384);
+            this.SaldogroupBox.Location = new System.Drawing.Point(254, 450);
             this.SaldogroupBox.Name = "SaldogroupBox";
             this.SaldogroupBox.Size = new System.Drawing.Size(496, 93);
             this.SaldogroupBox.TabIndex = 43;
@@ -198,9 +200,9 @@
             this.ProductosgroupBox.Controls.Add(this.CantidadnumericUpDown);
             this.ProductosgroupBox.Controls.Add(this.Agregarbutton);
             this.ProductosgroupBox.Controls.Add(this.ProductodataGridView);
-            this.ProductosgroupBox.Location = new System.Drawing.Point(11, 81);
+            this.ProductosgroupBox.Location = new System.Drawing.Point(11, 152);
             this.ProductosgroupBox.Name = "ProductosgroupBox";
-            this.ProductosgroupBox.Size = new System.Drawing.Size(739, 279);
+            this.ProductosgroupBox.Size = new System.Drawing.Size(739, 274);
             this.ProductosgroupBox.TabIndex = 38;
             this.ProductosgroupBox.TabStop = false;
             this.ProductosgroupBox.Text = "Productos";
@@ -323,7 +325,7 @@
             this.ProductodataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductodataGridView.Location = new System.Drawing.Point(6, 61);
             this.ProductodataGridView.Name = "ProductodataGridView";
-            this.ProductodataGridView.Size = new System.Drawing.Size(717, 212);
+            this.ProductodataGridView.Size = new System.Drawing.Size(717, 207);
             this.ProductodataGridView.TabIndex = 0;
             this.ProductodataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductodataGridView_CellValueChanged);
             this.ProductodataGridView.SelectionChanged += new System.EventHandler(this.ProductodataGridView_SelectionChanged);
@@ -467,7 +469,7 @@
             this.Eliminarbutton.Image = global::GimnasioTech.Properties.Resources.Delete_25px1;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Eliminarbutton.Location = new System.Drawing.Point(169, 406);
+            this.Eliminarbutton.Location = new System.Drawing.Point(169, 472);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 32);
             this.Eliminarbutton.TabIndex = 41;
@@ -483,7 +485,7 @@
             this.Guardarbutton.Image = global::GimnasioTech.Properties.Resources.Save_50px;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guardarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Guardarbutton.Location = new System.Drawing.Point(88, 406);
+            this.Guardarbutton.Location = new System.Drawing.Point(88, 472);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 32);
             this.Guardarbutton.TabIndex = 40;
@@ -499,7 +501,7 @@
             this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Nuevobutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Nuevobutton.Location = new System.Drawing.Point(7, 406);
+            this.Nuevobutton.Location = new System.Drawing.Point(7, 472);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 32);
             this.Nuevobutton.TabIndex = 39;
@@ -525,7 +527,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(4, 464);
+            this.label11.Location = new System.Drawing.Point(4, 530);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(71, 13);
             this.label11.TabIndex = 50;
@@ -536,18 +538,45 @@
             this.NombreUsuariolabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.NombreUsuariolabel.AutoSize = true;
             this.NombreUsuariolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreUsuariolabel.Location = new System.Drawing.Point(70, 464);
+            this.NombreUsuariolabel.Location = new System.Drawing.Point(70, 530);
             this.NombreUsuariolabel.Name = "NombreUsuariolabel";
             this.NombreUsuariolabel.Size = new System.Drawing.Size(95, 13);
             this.NombreUsuariolabel.TabIndex = 51;
             this.NombreUsuariolabel.Text = "Nombre usuario";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(8, 110);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(63, 13);
+            this.label12.TabIndex = 92;
+            this.label12.Text = "Comentario:";
+            // 
+            // ComentariotextBox
+            // 
+            this.ComentariotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComentariotextBox.Location = new System.Drawing.Point(88, 86);
+            this.ComentariotextBox.MaxLength = 255;
+            this.ComentariotextBox.Multiline = true;
+            this.ComentariotextBox.Name = "ComentariotextBox";
+            this.ComentariotextBox.Size = new System.Drawing.Size(293, 60);
+            this.ComentariotextBox.TabIndex = 91;
             // 
             // FacturasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(759, 496);
+            this.ClientSize = new System.Drawing.Size(759, 562);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.ComentariotextBox);
             this.Controls.Add(this.RegistroClientebutton);
             this.Controls.Add(this.NombreUsuariolabel);
             this.Controls.Add(this.label11);
@@ -634,5 +663,7 @@
         private System.Windows.Forms.Button RegistroClientebutton;
         private System.Windows.Forms.Label NombreUsuariolabel;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox ComentariotextBox;
     }
 }

@@ -44,6 +44,7 @@ namespace GimnasioTech.UI
             PreciotextBox.Clear();
             DevueltatextBox.Clear();
             RecibidomaskedTextBox.Clear();
+            ComentariotextBox.Clear();
             NombreClienteerrorProvider.Clear();
             CantidaderrorProvider.Clear();
             ProductoerrorProvider.Clear();
@@ -56,6 +57,7 @@ namespace GimnasioTech.UI
             ClienteIdmaskedTextBox.Enabled = true;
             ProductoIdmaskedTextBox.Enabled = true;
             FechadateTimePicker.Enabled = true;
+            ComentariotextBox.Enabled = true;
         }
 
         private bool Validar()
@@ -95,6 +97,7 @@ namespace GimnasioTech.UI
             Factura.Fecha = FechadateTimePicker.Value;
             Factura.DineroPagado = Utilidades.TOINT(RecibidomaskedTextBox.Text);
             Factura.Devuelta = Utilidades.TOINT(DevueltatextBox.Text);
+            Factura.Comentario = ComentariotextBox.Text;
 
             return Factura;
         }
@@ -219,6 +222,7 @@ namespace GimnasioTech.UI
                     MontotextBox.Text = Factura.Monto.ToString();
                     RecibidomaskedTextBox.Text = Factura.DineroPagado.ToString();
                     DevueltatextBox.Text = Factura.Devuelta.ToString();
+                    ComentariotextBox.Text = Factura.Comentario;
 
                     LlenarDataGrid(Factura);
                 }
@@ -234,6 +238,7 @@ namespace GimnasioTech.UI
             RecibidomaskedTextBox.Enabled = false;
             ProductodataGridView.Enabled = false;
             FechadateTimePicker.Enabled = false;
+            ComentariotextBox.Enabled = false;
         }
 
         private void ReducirExistenciaProducto(decimal cantidad)

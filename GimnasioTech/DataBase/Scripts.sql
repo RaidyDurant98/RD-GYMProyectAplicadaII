@@ -33,7 +33,8 @@ Fecha datetime,
 Monto decimal,
 Devuelta decimal,
 DineroPagado decimal,
-NombreUsuario varchar(50)
+NombreUsuario varchar(50),
+Comentario varchar(255)
 );
 
 create table FacturasProductos(

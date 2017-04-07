@@ -16,6 +16,7 @@ namespace Entidades
         public decimal Monto { get; set; }
         public decimal DineroPagado { get; set; }
         public decimal Devuelta { get; set; }
+        public string Comentario { get; set; }
 
         public virtual ICollection<FacturasProductos> Relacion { get; set; }
 
