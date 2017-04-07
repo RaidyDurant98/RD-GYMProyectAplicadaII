@@ -94,8 +94,8 @@ namespace GimnasioTech.UI.Registros
 
                 if (ProductosBLL.Guardar(producto))
                 {
+                    productoIdMaskedTextBox.Text = producto.ProductoId.ToString();
                     MessageBox.Show("Guardado con exito.");
-                    Limpiar();
                 }
                 else
                     MessageBox.Show("Error! no se pudo guardar.");

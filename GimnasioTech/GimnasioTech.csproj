@@ -163,7 +163,7 @@
       <DependentUpon>UsuariosReporteForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
-    <Compile Include="_RD_GYMDbDataSet.Designer.cs">
+    <Compile Include="UI\Reportes\_RD_GYMDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_RD_GYMDbDataSet.xsd</DependentUpon>
@@ -231,15 +231,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="_RD_GYMDbDataSet.xsc">
+    <None Include="UI\Reportes\_RD_GYMDbDataSet.xsc">
       <DependentUpon>_RD_GYMDbDataSet.xsd</DependentUpon>
     </None>
-    <None Include="_RD_GYMDbDataSet.xsd">
+    <None Include="UI\Reportes\_RD_GYMDbDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>_RD_GYMDbDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="_RD_GYMDbDataSet.xss">
+    <None Include="UI\Reportes\_RD_GYMDbDataSet.xss">
       <DependentUpon>_RD_GYMDbDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>

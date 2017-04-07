@@ -102,8 +102,8 @@ namespace GimnasioTech.UI.Registros
                 {
                     if (UsuariosBLL.Guardar(usuario))
                     {
-                        MessageBox.Show("Guardado con exito.");
-                        Limpiar();
+                        usuarioIdMaskedTextBox.Text = usuario.UsuarioId.ToString();
+                        MessageBox.Show("Guardado con exito.");                      
                     }
                     else
                         MessageBox.Show("Error! no se pudo guardar.");

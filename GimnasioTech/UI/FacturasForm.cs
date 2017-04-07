@@ -61,6 +61,8 @@ namespace GimnasioTech.UI
             ComentariotextBox.Enabled = true;
             FormaPagoComboBox.Enabled = true;
             ProductodataGridView.Enabled = true;
+            RecibidomaskedTextBox.Enabled = false;
+            FacturaIdmaskedTextBox.Enabled = true;
         }
 
         private bool Validar()
@@ -138,8 +140,8 @@ namespace GimnasioTech.UI
                         if (BLL.FacturasBLL.Guardar(Factura))
                         {
                             ReducirExistenciaProducto(CantidadnumericUpDown.Value);
-                            MessageBox.Show("Guardado con exito.");
-                            Limpiar();
+                            FacturaIdmaskedTextBox.Text = Factura.FacturaId.ToString();
+                            MessageBox.Show("Guardado con exito.");                           
                             RecibidomaskedTextBox.Enabled = false;
                         }
                         else
@@ -152,9 +154,10 @@ namespace GimnasioTech.UI
 
                     if (BLL.FacturasBLL.Guardar(Factura))
                     {
+                        FacturaIdmaskedTextBox.Text = Factura.FacturaId.ToString();
                         ReducirExistenciaProducto(CantidadnumericUpDown.Value);
                         MessageBox.Show("Guardado con exito.");
-                        Limpiar();
+                        
                         RecibidomaskedTextBox.Enabled = false;
                     }
                     else
@@ -256,6 +259,7 @@ namespace GimnasioTech.UI
                     FechadateTimePicker.Enabled = false;
                     ComentariotextBox.Enabled = false;
                     FormaPagoComboBox.Enabled = false;
+                    FacturaIdmaskedTextBox.Enabled = false;
                 }
                 else
                 {

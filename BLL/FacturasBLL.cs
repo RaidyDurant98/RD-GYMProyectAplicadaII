@@ -31,7 +31,7 @@ namespace BLL
                     throw;
                 }
             }
-        
+
         }
 
         public static bool Eliminar(Facturas factura)

@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace GimnasioTech {
+namespace GimnasioTech.UI.Reportes {
     
     
     /// <summary>
@@ -3257,7 +3257,7 @@ namespace GimnasioTech {
         }
     }
 }
-namespace GimnasioTech._RD_GYMDbDataSetTableAdapters {
+namespace GimnasioTech.UI.Reportes._RD_GYMDbDataSetTableAdapters {
     
     
     /// <summary>

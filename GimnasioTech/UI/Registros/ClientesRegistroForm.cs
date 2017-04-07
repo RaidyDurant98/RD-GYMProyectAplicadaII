@@ -103,8 +103,8 @@ namespace GimnasioTech.UI.Registros
 
                 if (ClientesBLL.Guardar(cliente))
                 {
+                    clienteIdMaskedTextBox.Text = cliente.ClienteId.ToString();
                     MessageBox.Show("Guardado con exito.");
-                    Limpiar();
                 }
                 else
                     MessageBox.Show("Error! no se pudo guardar.");

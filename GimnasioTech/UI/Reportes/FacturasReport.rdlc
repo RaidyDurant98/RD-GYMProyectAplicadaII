@@ -521,7 +521,19 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de clientes</Value>
+                  <Value>Reporte de Facturas</Value>
+                  <Style>
+                    <FontFamily>Arial Black</FontFamily>
+                    <FontSize>11pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value />
                   <Style>
                     <FontFamily>Arial Black</FontFamily>
                     <FontSize>11pt</FontSize>
@@ -535,7 +547,7 @@
           <Top>1.71069cm</Top>
           <Left>6.99338cm</Left>
           <Height>0.83813cm</Height>
-          <Width>4.53729cm</Width>
+          <Width>5.01354cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
