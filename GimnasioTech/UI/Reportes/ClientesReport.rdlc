@@ -483,7 +483,6 @@
         </TablixRowHierarchy>
         <DataSetName>ClientesDataSet</DataSetName>
         <Top>1.92828cm</Top>
-        <Left>0.36062cm</Left>
         <Height>1.2cm</Height>
         <Width>17.5cm</Width>
         <Style>
@@ -495,7 +494,7 @@
       <Line Name="Line1">
         <Top>0.17639cm</Top>
         <Height>0cm</Height>
-        <Width>18.19321cm</Width>
+        <Width>17.5cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -507,7 +506,7 @@
     <Height>2.5625in</Height>
     <Style />
   </Body>
-  <Width>7.19554in</Width>
+  <Width>6.88976in</Width>
   <Page>
     <PageHeader>
       <Height>2.8575cm</Height>
@@ -576,7 +575,7 @@
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
           <Top>0.31432cm</Top>
-          <Left>12.99953cm</Left>
+          <Left>13.92844cm</Left>
           <Height>0.6cm</Height>
           <Width>2.96236cm</Width>
           <ZIndex>2</ZIndex>
@@ -606,7 +605,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>0.31432cm</Top>
-          <Left>12.07062cm</Left>
+          <Left>12.99953cm</Left>
           <Height>0.6cm</Height>
           <Width>1.35224cm</Width>
           <ZIndex>3</ZIndex>
@@ -754,7 +753,7 @@
         <Line Name="Line2">
           <Top>0.17639cm</Top>
           <Height>0cm</Height>
-          <Width>18.19321cm</Width>
+          <Width>17.5cm</Width>
           <ZIndex>4</ZIndex>
           <Style>
             <Border>

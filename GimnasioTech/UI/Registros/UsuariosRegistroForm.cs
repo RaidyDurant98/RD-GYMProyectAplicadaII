@@ -26,6 +26,12 @@ namespace GimnasioTech.UI.Registros
             claveTextBox.Clear();
             confirmarClaveTextBox.Clear();
             CargoscomboBox.Text = null;
+
+            NombreserrorProvider.Clear();
+            NombreUsuarioerrorProvider.Clear();
+            ClaveerrorProvider.Clear();
+            confirmarClaveTextBox.Clear();
+            CargoerrorProvider.Clear();
         }
 
         private bool Validar()

@@ -252,6 +252,8 @@
       <DependentUpon>RD-GYMDb.mdf</DependentUpon>
     </Content>
     <Content Include="DataBase\Scripts.sql" />
+    <None Include="Resources\onlinelogomaker-021817-0900-8601.jpg" />
+    <None Include="Resources\descarga.jpg" />
     <None Include="Resources\Money Bag_25px.png" />
     <None Include="Resources\b994e4378507f5624aa90ae7778ded86.jpg" />
     <None Include="Resources\Add_25px.png" />

@@ -36,6 +36,7 @@
             System.Windows.Forms.Label fechaInscripcionLabel;
             System.Windows.Forms.Label direccionLabel;
             System.Windows.Forms.Label numeroCelularLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesRegistroForm));
             this.EmailtextBox = new System.Windows.Forms.TextBox();
             this.clienteIdMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.nombresTextBox = new System.Windows.Forms.TextBox();
@@ -166,6 +167,7 @@
             // 
             // sexoComboBox
             // 
+            this.sexoComboBox.BackColor = System.Drawing.SystemColors.Window;
             this.sexoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sexoComboBox.FormattingEnabled = true;
             this.sexoComboBox.Items.AddRange(new object[] {
@@ -225,7 +227,7 @@
             this.Eliminarbutton.Image = global::GimnasioTech.Properties.Resources.Delete_25px1;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Eliminarbutton.Location = new System.Drawing.Point(244, 317);
+            this.Eliminarbutton.Location = new System.Drawing.Point(244, 284);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 32);
             this.Eliminarbutton.TabIndex = 9;
@@ -240,7 +242,7 @@
             this.Guardarbutton.Image = global::GimnasioTech.Properties.Resources.Save_50px;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guardarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Guardarbutton.Location = new System.Drawing.Point(163, 317);
+            this.Guardarbutton.Location = new System.Drawing.Point(163, 284);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 32);
             this.Guardarbutton.TabIndex = 7;
@@ -255,7 +257,7 @@
             this.Nuevobutton.Image = global::GimnasioTech.Properties.Resources.New_File_25px;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Nuevobutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Nuevobutton.Location = new System.Drawing.Point(82, 317);
+            this.Nuevobutton.Location = new System.Drawing.Point(82, 284);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 32);
             this.Nuevobutton.TabIndex = 10;
@@ -288,7 +290,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 384);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(405, 347);
             this.Controls.Add(this.EmailtextBox);
             this.Controls.Add(label1);
             this.Controls.Add(this.Buscarbutton);
@@ -308,6 +311,7 @@
             this.Controls.Add(numeroCelularLabel);
             this.Controls.Add(this.numeroCelularMaskedTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ClientesRegistroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

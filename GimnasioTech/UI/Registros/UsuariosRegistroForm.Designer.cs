@@ -35,6 +35,7 @@
             System.Windows.Forms.Label nombreUsuarioLabel;
             System.Windows.Forms.Label claveLabel;
             System.Windows.Forms.Label confirmarClaveLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosRegistroForm));
             this.CargoscomboBox = new System.Windows.Forms.ComboBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
@@ -147,7 +148,7 @@
             // 
             this.Eliminarbutton.Image = global::GimnasioTech.Properties.Resources.Delete_25px1;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(250, 317);
+            this.Eliminarbutton.Location = new System.Drawing.Point(247, 273);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 32);
             this.Eliminarbutton.TabIndex = 46;
@@ -160,7 +161,7 @@
             // 
             this.Guardarbutton.Image = global::GimnasioTech.Properties.Resources.Save_50px;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(169, 317);
+            this.Guardarbutton.Location = new System.Drawing.Point(166, 273);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 32);
             this.Guardarbutton.TabIndex = 45;
@@ -173,7 +174,7 @@
             // 
             this.Nuevobutton.Image = global::GimnasioTech.Properties.Resources.New_File_25px;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(88, 317);
+            this.Nuevobutton.Location = new System.Drawing.Point(85, 273);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 32);
             this.Nuevobutton.TabIndex = 44;
@@ -248,7 +249,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 384);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(405, 347);
             this.Controls.Add(this.confirmarClaveTextBox);
             this.Controls.Add(this.CargoscomboBox);
             this.Controls.Add(label1);
@@ -266,6 +268,7 @@
             this.Controls.Add(this.claveTextBox);
             this.Controls.Add(confirmarClaveLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "UsuariosRegistroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

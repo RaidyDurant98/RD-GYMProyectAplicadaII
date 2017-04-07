@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturasConsultaForm));
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.HastadateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -40,6 +41,8 @@
             this.CampoVacioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.Montolabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CampoVacioerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -165,11 +168,35 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
+            // Montolabel
+            // 
+            this.Montolabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Montolabel.AutoSize = true;
+            this.Montolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Montolabel.Location = new System.Drawing.Point(466, 417);
+            this.Montolabel.Name = "Montolabel";
+            this.Montolabel.Size = new System.Drawing.Size(45, 25);
+            this.Montolabel.TabIndex = 41;
+            this.Montolabel.Text = "0.0";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(404, 426);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Ganancia:";
+            // 
             // FacturasConsultaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(582, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Montolabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.HastadateTimePicker);
@@ -180,6 +207,7 @@
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.ConsultartextBox);
             this.Controls.Add(this.ConsultadataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FacturasConsultaForm";
             this.Text = "Consulta de facturas";
             this.Load += new System.EventHandler(this.FacturasConsultaForm_Load);
@@ -203,5 +231,7 @@
         private System.Windows.Forms.TextBox ConsultartextBox;
         private System.Windows.Forms.DataGridView ConsultadataGridView;
         private System.Windows.Forms.ErrorProvider CampoVacioerrorProvider;
+        private System.Windows.Forms.Label Montolabel;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -27,7 +27,10 @@ namespace GimnasioTech.UI.Registros
             PreciotextBox.Clear();
             fechaIngresoDateTimePicker.Value = DateTime.Today;
 
-            descripcionTextBox.Focus();
+            DescripcionerrorProvider.Clear();
+            PrecioerrorProvider.Clear();
+            CostoerrorProvider.Clear();
+            CantidaderrorProvider.Clear();
         }
 
         private bool Validar()
@@ -162,7 +165,6 @@ namespace GimnasioTech.UI.Registros
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
@@ -172,7 +174,6 @@ namespace GimnasioTech.UI.Registros
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }

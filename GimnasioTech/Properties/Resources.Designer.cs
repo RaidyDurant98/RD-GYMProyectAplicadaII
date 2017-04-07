@@ -143,6 +143,16 @@ namespace GimnasioTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap descarga {
+            get {
+                object obj = ResourceManager.GetObject("descarga", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Gender_Neutral_User_32px {
             get {
                 object obj = ResourceManager.GetObject("Gender_Neutral_User_32px", resourceCulture);
@@ -226,6 +236,16 @@ namespace GimnasioTech.Properties {
         internal static System.Drawing.Bitmap New_Product_32px {
             get {
                 object obj = ResourceManager.GetObject("New_Product_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap onlinelogomaker_021817_0900_8601 {
+            get {
+                object obj = ResourceManager.GetObject("onlinelogomaker-021817-0900-8601", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

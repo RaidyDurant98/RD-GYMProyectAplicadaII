@@ -16,6 +16,7 @@ namespace GimnasioTech.UI.Consultas
         public FacturasConsultaForm()
         {
             InitializeComponent();
+           
         }
 
         private void FacturasConsultaForm_Load(object sender, EventArgs e)
@@ -33,7 +34,18 @@ namespace GimnasioTech.UI.Consultas
             }
             if (ConsultarcomboBox.SelectedIndex == 3)
             {
-                Lista = BLL.FacturasBLL.GetList(p => p.Fecha >= DesdedateTimePicker.Value.Date && p.Fecha <= HastadateTimePicker.Value.Date);
+                if (DesdedateTimePicker.Value.Date > HastadateTimePicker.Value.Date)
+                {
+                    CampoVacioerrorProvider.SetError(DesdedateTimePicker, "La fecha no puede ser mayor que el rango maximo.");
+                }
+                else if(HastadateTimePicker.Value.Date < DesdedateTimePicker.Value.Date)
+                {
+                    CampoVacioerrorProvider.SetError(DesdedateTimePicker, "La fecha no puede ser menor que el rango minimo.");
+                }
+                else
+                {
+                    Lista = BLL.FacturasBLL.GetList(p => p.Fecha >= DesdedateTimePicker.Value.Date && p.Fecha <= HastadateTimePicker.Value.Date);
+                }               
             }
             else if (ConsultarcomboBox.SelectedIndex != 0 && ConsultarcomboBox.SelectedIndex != 3)
             {
@@ -62,6 +74,7 @@ namespace GimnasioTech.UI.Consultas
 
             ConsultadataGridView.DataSource = Lista;
             this.ConsultadataGridView.Columns["Relacion"].Visible = false;
+            LlenarLabel();
         }
 
         private void ConsultarcomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,6 +88,7 @@ namespace GimnasioTech.UI.Consultas
                 ConsultartextBox.Enabled = false;
                 DesdedateTimePicker.Enabled = false;
                 HastadateTimePicker.Enabled = false;
+                Montolabel.Text = "0.0";
                 Filtro();
             }
             else if (ConsultarcomboBox.SelectedIndex == 3)
@@ -88,6 +102,7 @@ namespace GimnasioTech.UI.Consultas
                 DesdedateTimePicker.Focus();
                 HastadateTimePicker.Enabled = true;
                 ConsultartextBox.Enabled = false;
+                Montolabel.Text = "0.0";
             }
             else
             {
@@ -99,6 +114,7 @@ namespace GimnasioTech.UI.Consultas
                 HastadateTimePicker.Enabled = false;
                 ConsultartextBox.Enabled = true;
                 ConsultartextBox.Focus();
+                Montolabel.Text = "0.0";
             }
         }
 
@@ -145,6 +161,17 @@ namespace GimnasioTech.UI.Consultas
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             Filtro();
+        }
+
+        private void LlenarLabel()
+        {
+            decimal monto = 0;
+            foreach (DataGridViewRow producto in ConsultadataGridView.Rows)
+            {
+                monto += Convert.ToDecimal(producto.Cells[4].Value);
+            }
+
+            Montolabel.Text = monto.ToString();
         }
     }
 }

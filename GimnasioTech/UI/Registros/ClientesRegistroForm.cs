@@ -27,6 +27,12 @@ namespace GimnasioTech.UI.Registros
             direccionTextBox.Clear();
             numeroCelularMaskedTextBox.Clear();
             EmailtextBox.Clear();
+
+            NombreerrorProvider.Clear();
+            SexoerrorProvider.Clear();
+            DireccionerrorProvider.Clear();
+            NumeroCelularerrorProvider.Clear();
+            EmailerrorProvider.Clear();
         }
 
         private bool Validar()
