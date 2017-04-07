@@ -75,6 +75,9 @@
             this.NombreUsuariolabel = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.ComentariotextBox = new System.Windows.Forms.TextBox();
+            this.FormaPagoComboBox = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.FormaPagoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.SaldogroupBox.SuspendLayout();
             this.ProductosgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
@@ -87,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIderrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaIderrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DevueltaerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FormaPagoerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // SaldogroupBox
@@ -562,12 +566,48 @@
             // 
             this.ComentariotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComentariotextBox.Location = new System.Drawing.Point(88, 86);
+            this.ComentariotextBox.Location = new System.Drawing.Point(88, 91);
             this.ComentariotextBox.MaxLength = 255;
             this.ComentariotextBox.Multiline = true;
             this.ComentariotextBox.Name = "ComentariotextBox";
-            this.ComentariotextBox.Size = new System.Drawing.Size(293, 60);
+            this.ComentariotextBox.Size = new System.Drawing.Size(293, 55);
             this.ComentariotextBox.TabIndex = 91;
+            // 
+            // FormaPagoComboBox
+            // 
+            this.FormaPagoComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FormaPagoComboBox.BackColor = System.Drawing.SystemColors.Window;
+            this.FormaPagoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FormaPagoComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.FormaPagoComboBox.FormattingEnabled = true;
+            this.FormaPagoComboBox.Items.AddRange(new object[] {
+            "Contado",
+            "Credito"});
+            this.FormaPagoComboBox.Location = new System.Drawing.Point(539, 107);
+            this.FormaPagoComboBox.Name = "FormaPagoComboBox";
+            this.FormaPagoComboBox.Size = new System.Drawing.Size(195, 23);
+            this.FormaPagoComboBox.TabIndex = 98;
+            this.FormaPagoComboBox.SelectedIndexChanged += new System.EventHandler(this.FormaPagoComboBox_SelectedIndexChanged);
+            this.FormaPagoComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FormaPagoComboBox_KeyPress);
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(451, 110);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(81, 13);
+            this.label13.TabIndex = 97;
+            this.label13.Text = "Forma de pago:";
+            // 
+            // FormaPagoerrorProvider
+            // 
+            this.FormaPagoerrorProvider.ContainerControl = this;
             // 
             // FacturasForm
             // 
@@ -575,6 +615,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(759, 562);
+            this.Controls.Add(this.FormaPagoComboBox);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.ComentariotextBox);
             this.Controls.Add(this.RegistroClientebutton);
@@ -613,6 +655,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIderrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaIderrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DevueltaerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FormaPagoerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -665,5 +708,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox ComentariotextBox;
+        private System.Windows.Forms.ComboBox FormaPagoComboBox;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ErrorProvider FormaPagoerrorProvider;
     }
 }

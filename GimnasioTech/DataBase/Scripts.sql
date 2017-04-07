@@ -34,7 +34,8 @@ Monto decimal,
 Devuelta decimal,
 DineroPagado decimal,
 NombreUsuario varchar(50),
-Comentario varchar(255)
+Comentario varchar(255),
+FormaPago varchar(40)
 );
 
 create table FacturasProductos(

@@ -53,11 +53,14 @@ namespace GimnasioTech.UI
             ClienteIderrorProvider.Clear();
             FacturaIderrorProvider.Clear();
             DevueltaerrorProvider.Clear();
+            FormaPagoComboBox.Text = null;
 
             ClienteIdmaskedTextBox.Enabled = true;
             ProductoIdmaskedTextBox.Enabled = true;
             FechadateTimePicker.Enabled = true;
             ComentariotextBox.Enabled = true;
+            FormaPagoComboBox.Enabled = true;
+            ProductodataGridView.Enabled = true;
         }
 
         private bool Validar()
@@ -74,14 +77,9 @@ namespace GimnasioTech.UI
                 GriderrorProvider.SetError(ProductodataGridView, "Por favor llenar el campo.");
                 interruptor = false;
             }
-            if (string.IsNullOrEmpty(RecibidomaskedTextBox.Text))
+            if (string.IsNullOrEmpty(FormaPagoComboBox.Text))
             {
-                RecibidoerrorProvider.SetError(RecibidomaskedTextBox, "Por favor llenar el campo.");
-                interruptor = false;
-            }
-            if (string.IsNullOrEmpty(DevueltatextBox.Text))
-            {
-                DevueltaerrorProvider.SetError(DevueltatextBox, "Por favor llenar el campo.");
+                FormaPagoerrorProvider.SetError(FormaPagoComboBox, "Por favor Elija la forma de pago.");
                 interruptor = false;
             }
 
@@ -98,6 +96,7 @@ namespace GimnasioTech.UI
             Factura.DineroPagado = Utilidades.TOINT(RecibidomaskedTextBox.Text);
             Factura.Devuelta = Utilidades.TOINT(DevueltatextBox.Text);
             Factura.Comentario = ComentariotextBox.Text;
+            Factura.FormaPago = FormaPagoComboBox.Text;
 
             return Factura;
         }
@@ -122,22 +121,45 @@ namespace GimnasioTech.UI
         {
             if (Validar())
             {
-                Factura = LlenarCampos();
-
-                if (BLL.FacturasBLL.Guardar(Factura))
+                if (FormaPagoComboBox.Text == "Contado")
                 {
-                    ReducirExistenciaProducto(CantidadnumericUpDown.Value);
-                    MessageBox.Show("Guardado con exito.");
-                    Limpiar();
-                    RecibidomaskedTextBox.Enabled = false;
-                }
-                else
-                    MessageBox.Show("Error! no se pudo guardar.");
-            }
+                    if (string.IsNullOrEmpty(RecibidomaskedTextBox.Text))
+                    {
+                        RecibidoerrorProvider.SetError(RecibidomaskedTextBox, "Por favor llenar el campo.");
+                    }
+                    else if (string.IsNullOrEmpty(DevueltatextBox.Text))
+                    {
+                        DevueltaerrorProvider.SetError(DevueltatextBox, "Por favor llenar el campo.");
+                    }
+                    else
+                    {
+                        Factura = LlenarCampos();
 
-            if (!string.IsNullOrEmpty(RecibidomaskedTextBox.Text))
-            {
-                RecibidomaskedTextBox.Focus();
+                        if (BLL.FacturasBLL.Guardar(Factura))
+                        {
+                            ReducirExistenciaProducto(CantidadnumericUpDown.Value);
+                            MessageBox.Show("Guardado con exito.");
+                            Limpiar();
+                            RecibidomaskedTextBox.Enabled = false;
+                        }
+                        else
+                            MessageBox.Show("Error! no se pudo guardar.");
+                    }
+                }
+                else if(FormaPagoComboBox.Text == "Credito")
+                {
+                    Factura = LlenarCampos();
+
+                    if (BLL.FacturasBLL.Guardar(Factura))
+                    {
+                        ReducirExistenciaProducto(CantidadnumericUpDown.Value);
+                        MessageBox.Show("Guardado con exito.");
+                        Limpiar();
+                        RecibidomaskedTextBox.Enabled = false;
+                    }
+                    else
+                        MessageBox.Show("Error! no se pudo guardar.");
+                }
             }
         }
 
@@ -223,8 +245,17 @@ namespace GimnasioTech.UI
                     RecibidomaskedTextBox.Text = Factura.DineroPagado.ToString();
                     DevueltatextBox.Text = Factura.Devuelta.ToString();
                     ComentariotextBox.Text = Factura.Comentario;
+                    FormaPagoComboBox.Text = Factura.FormaPago;
 
                     LlenarDataGrid(Factura);
+
+                    ClienteIdmaskedTextBox.Enabled = false;
+                    ProductoIdmaskedTextBox.Enabled = false;
+                    RecibidomaskedTextBox.Enabled = false;
+                    ProductodataGridView.Enabled = false;
+                    FechadateTimePicker.Enabled = false;
+                    ComentariotextBox.Enabled = false;
+                    FormaPagoComboBox.Enabled = false;
                 }
                 else
                 {
@@ -232,13 +263,6 @@ namespace GimnasioTech.UI
                     Limpiar();
                 }
             }
-
-            ClienteIdmaskedTextBox.Enabled = false;
-            ProductoIdmaskedTextBox.Enabled = false;
-            RecibidomaskedTextBox.Enabled = false;
-            ProductodataGridView.Enabled = false;
-            FechadateTimePicker.Enabled = false;
-            ComentariotextBox.Enabled = false;
         }
 
         private void ReducirExistenciaProducto(decimal cantidad)
@@ -349,9 +373,7 @@ namespace GimnasioTech.UI
             }
 
             Factura.Monto = monto;
-            MontotextBox.Text = Factura.Monto.ToString();
-
-            RecibidomaskedTextBox.Focus();
+            MontotextBox.Text = Factura.Monto.ToString();       
         }
 
         private void CalcularDevuelta()
@@ -449,7 +471,11 @@ namespace GimnasioTech.UI
 
         private void MontotextBox_TextChanged(object sender, EventArgs e)
         {
-            RecibidomaskedTextBox.Enabled = true;
+            if (FormaPagoComboBox.Text == "Contado" || FormaPagoComboBox.Text == "")
+            {               
+                RecibidomaskedTextBox.Enabled = true;
+                RecibidomaskedTextBox.Focus();
+            }
             DevueltatextBox.Clear();
         }
 
@@ -494,7 +520,7 @@ namespace GimnasioTech.UI
                 if (cliente != null)
                 {
                     NombreClientetextBox.Text = cliente.Nombres;
-                    ProductoIdmaskedTextBox.Focus();
+                    FormaPagoComboBox.Focus();
                 }
                 else
                 {
@@ -540,6 +566,26 @@ namespace GimnasioTech.UI
         private void ProductodataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             CalculoMonto();
+        }
+
+        private void FormaPagoComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ProductoIdmaskedTextBox.Focus();
+        }
+
+        private void FormaPagoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FormaPagoerrorProvider.Clear();
+            if (FormaPagoComboBox.Text == "Credito")
+            {
+                RecibidomaskedTextBox.Clear();
+                DevueltatextBox.Clear();
+                RecibidomaskedTextBox.Enabled = false;
+            }
+            if (FormaPagoComboBox.Text == "Contado")
+            {
+                RecibidomaskedTextBox.Enabled = true;
+            }
         }
     }
 }
