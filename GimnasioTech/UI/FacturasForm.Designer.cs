@@ -300,6 +300,11 @@
             // 
             this.CantidadnumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CantidadnumericUpDown.Location = new System.Drawing.Point(572, 31);
+            this.CantidadnumericUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(54, 20);
             this.CantidadnumericUpDown.TabIndex = 9;

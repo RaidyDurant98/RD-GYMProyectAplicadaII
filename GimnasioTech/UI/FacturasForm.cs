@@ -63,6 +63,7 @@ namespace GimnasioTech.UI
             ProductodataGridView.Enabled = true;
             RecibidomaskedTextBox.Enabled = false;
             FacturaIdmaskedTextBox.Enabled = true;
+            CantidadnumericUpDown.Enabled = false;
         }
 
         private bool Validar()

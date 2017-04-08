@@ -209,6 +209,11 @@
             // cantidadNumericUpDown
             // 
             this.cantidadNumericUpDown.Location = new System.Drawing.Point(156, 92);
+            this.cantidadNumericUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.cantidadNumericUpDown.Name = "cantidadNumericUpDown";
             this.cantidadNumericUpDown.Size = new System.Drawing.Size(200, 20);
             this.cantidadNumericUpDown.TabIndex = 2;
