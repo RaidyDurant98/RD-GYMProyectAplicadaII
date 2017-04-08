@@ -120,6 +120,7 @@
             // PreciotextBox
             // 
             this.PreciotextBox.Location = new System.Drawing.Point(156, 144);
+            this.PreciotextBox.MaxLength = 7;
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.Size = new System.Drawing.Size(200, 20);
             this.PreciotextBox.TabIndex = 4;
@@ -129,6 +130,7 @@
             // CostotextBox
             // 
             this.CostotextBox.Location = new System.Drawing.Point(156, 118);
+            this.CostotextBox.MaxLength = 7;
             this.CostotextBox.Name = "CostotextBox";
             this.CostotextBox.Size = new System.Drawing.Size(200, 20);
             this.CostotextBox.TabIndex = 3;

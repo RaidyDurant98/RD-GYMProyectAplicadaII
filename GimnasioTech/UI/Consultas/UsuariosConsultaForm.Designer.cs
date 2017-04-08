@@ -112,6 +112,7 @@
             this.FiltrartextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FiltrartextBox.Location = new System.Drawing.Point(202, 36);
+            this.FiltrartextBox.MaxLength = 80;
             this.FiltrartextBox.Name = "FiltrartextBox";
             this.FiltrartextBox.Size = new System.Drawing.Size(274, 20);
             this.FiltrartextBox.TabIndex = 20;

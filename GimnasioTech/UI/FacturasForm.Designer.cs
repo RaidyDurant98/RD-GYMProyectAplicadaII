@@ -107,7 +107,7 @@
             this.SaldogroupBox.Location = new System.Drawing.Point(254, 450);
             this.SaldogroupBox.Name = "SaldogroupBox";
             this.SaldogroupBox.Size = new System.Drawing.Size(496, 93);
-            this.SaldogroupBox.TabIndex = 43;
+            this.SaldogroupBox.TabIndex = 4;
             this.SaldogroupBox.TabStop = false;
             this.SaldogroupBox.Text = "Dinero";
             // 
@@ -119,7 +119,7 @@
             this.Devueltabutton.Location = new System.Drawing.Point(190, 46);
             this.Devueltabutton.Name = "Devueltabutton";
             this.Devueltabutton.Size = new System.Drawing.Size(40, 32);
-            this.Devueltabutton.TabIndex = 45;
+            this.Devueltabutton.TabIndex = 1;
             this.Devueltabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Devueltabutton.UseVisualStyleBackColor = true;
             this.Devueltabutton.Click += new System.EventHandler(this.Devueltabutton_Click);
@@ -128,10 +128,10 @@
             // 
             this.RecibidomaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.RecibidomaskedTextBox.Location = new System.Drawing.Point(69, 50);
-            this.RecibidomaskedTextBox.Mask = "999999999999";
+            this.RecibidomaskedTextBox.Mask = "999999999";
             this.RecibidomaskedTextBox.Name = "RecibidomaskedTextBox";
-            this.RecibidomaskedTextBox.Size = new System.Drawing.Size(100, 26);
-            this.RecibidomaskedTextBox.TabIndex = 44;
+            this.RecibidomaskedTextBox.Size = new System.Drawing.Size(95, 26);
+            this.RecibidomaskedTextBox.TabIndex = 0;
             this.RecibidomaskedTextBox.TextChanged += new System.EventHandler(this.RecibidomaskedTextBox_TextChanged);
             this.RecibidomaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RecibidomaskedTextBox_KeyPress);
             // 
@@ -183,6 +183,7 @@
             this.MontotextBox.Enabled = false;
             this.MontotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.MontotextBox.Location = new System.Drawing.Point(159, 14);
+            this.MontotextBox.MaxLength = 9;
             this.MontotextBox.Name = "MontotextBox";
             this.MontotextBox.Size = new System.Drawing.Size(238, 26);
             this.MontotextBox.TabIndex = 10;
@@ -207,7 +208,7 @@
             this.ProductosgroupBox.Location = new System.Drawing.Point(11, 152);
             this.ProductosgroupBox.Name = "ProductosgroupBox";
             this.ProductosgroupBox.Size = new System.Drawing.Size(739, 274);
-            this.ProductosgroupBox.TabIndex = 38;
+            this.ProductosgroupBox.TabIndex = 3;
             this.ProductosgroupBox.TabStop = false;
             this.ProductosgroupBox.Text = "Productos";
             // 
@@ -249,7 +250,7 @@
             this.label3.Location = new System.Drawing.Point(6, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 37;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Producto Id:";
             // 
             // label8
@@ -307,7 +308,7 @@
             0});
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(54, 20);
-            this.CantidadnumericUpDown.TabIndex = 9;
+            this.CantidadnumericUpDown.TabIndex = 1;
             this.CantidadnumericUpDown.ValueChanged += new System.EventHandler(this.CantidadnumericUpDown_ValueChanged);
             this.CantidadnumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadnumericUpDown_KeyPress);
             // 
@@ -319,7 +320,7 @@
             this.Agregarbutton.Location = new System.Drawing.Point(648, 20);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(75, 32);
-            this.Agregarbutton.TabIndex = 8;
+            this.Agregarbutton.TabIndex = 2;
             this.Agregarbutton.Text = "Agregar";
             this.Agregarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Agregarbutton.UseVisualStyleBackColor = true;
@@ -335,7 +336,7 @@
             this.ProductodataGridView.Location = new System.Drawing.Point(6, 61);
             this.ProductodataGridView.Name = "ProductodataGridView";
             this.ProductodataGridView.Size = new System.Drawing.Size(717, 207);
-            this.ProductodataGridView.TabIndex = 0;
+            this.ProductodataGridView.TabIndex = 5;
             this.ProductodataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductodataGridView_CellValueChanged);
             this.ProductodataGridView.SelectionChanged += new System.EventHandler(this.ProductodataGridView_SelectionChanged);
             // 
@@ -344,14 +345,14 @@
             this.FechadateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FechadateTimePicker.CustomFormat = "yyyy/MM/dd          ";
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(635, 29);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(635, 16);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(99, 20);
             this.FechadateTimePicker.TabIndex = 37;
             // 
             // FacturaIdmaskedTextBox
             // 
-            this.FacturaIdmaskedTextBox.Location = new System.Drawing.Point(88, 26);
+            this.FacturaIdmaskedTextBox.Location = new System.Drawing.Point(88, 16);
             this.FacturaIdmaskedTextBox.Mask = "99999";
             this.FacturaIdmaskedTextBox.Name = "FacturaIdmaskedTextBox";
             this.FacturaIdmaskedTextBox.Size = new System.Drawing.Size(40, 20);
@@ -363,7 +364,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 57);
+            this.label2.Location = new System.Drawing.Point(8, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 34;
@@ -372,7 +373,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 29);
+            this.label1.Location = new System.Drawing.Point(8, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 33;
@@ -401,7 +402,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(192, 58);
+            this.label10.Location = new System.Drawing.Point(192, 48);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 13);
             this.label10.TabIndex = 47;
@@ -413,7 +414,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NombreClientetextBox.Enabled = false;
             this.NombreClientetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreClientetextBox.Location = new System.Drawing.Point(245, 55);
+            this.NombreClientetextBox.Location = new System.Drawing.Point(245, 45);
             this.NombreClientetextBox.MaxLength = 80;
             this.NombreClientetextBox.Name = "NombreClientetextBox";
             this.NombreClientetextBox.Size = new System.Drawing.Size(136, 21);
@@ -422,11 +423,11 @@
             // 
             // ClienteIdmaskedTextBox
             // 
-            this.ClienteIdmaskedTextBox.Location = new System.Drawing.Point(88, 56);
+            this.ClienteIdmaskedTextBox.Location = new System.Drawing.Point(88, 46);
             this.ClienteIdmaskedTextBox.Mask = "99999";
             this.ClienteIdmaskedTextBox.Name = "ClienteIdmaskedTextBox";
             this.ClienteIdmaskedTextBox.Size = new System.Drawing.Size(40, 20);
-            this.ClienteIdmaskedTextBox.TabIndex = 45;
+            this.ClienteIdmaskedTextBox.TabIndex = 0;
             this.ClienteIdmaskedTextBox.ValidatingType = typeof(int);
             this.ClienteIdmaskedTextBox.TextChanged += new System.EventHandler(this.ClienteIdmaskedTextBox_TextChanged);
             this.ClienteIdmaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClienteIdmaskedTextBox_KeyPress);
@@ -448,7 +449,7 @@
             this.BuscarClientebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BuscarClientebutton.Image = global::GimnasioTech.Properties.Resources.Search_25px1;
             this.BuscarClientebutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BuscarClientebutton.Location = new System.Drawing.Point(146, 47);
+            this.BuscarClientebutton.Location = new System.Drawing.Point(146, 37);
             this.BuscarClientebutton.Name = "BuscarClientebutton";
             this.BuscarClientebutton.Size = new System.Drawing.Size(40, 32);
             this.BuscarClientebutton.TabIndex = 44;
@@ -462,10 +463,10 @@
             this.Buscarbutton.Image = global::GimnasioTech.Properties.Resources.Search_25px1;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Buscarbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Buscarbutton.Location = new System.Drawing.Point(143, 14);
+            this.Buscarbutton.Location = new System.Drawing.Point(143, 4);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 32);
-            this.Buscarbutton.TabIndex = 42;
+            this.Buscarbutton.TabIndex = 8;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
@@ -481,7 +482,7 @@
             this.Eliminarbutton.Location = new System.Drawing.Point(169, 472);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 32);
-            this.Eliminarbutton.TabIndex = 41;
+            this.Eliminarbutton.TabIndex = 6;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -497,7 +498,7 @@
             this.Guardarbutton.Location = new System.Drawing.Point(88, 472);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 32);
-            this.Guardarbutton.TabIndex = 40;
+            this.Guardarbutton.TabIndex = 5;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
@@ -513,7 +514,7 @@
             this.Nuevobutton.Location = new System.Drawing.Point(7, 472);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 32);
-            this.Nuevobutton.TabIndex = 39;
+            this.Nuevobutton.TabIndex = 7;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
@@ -523,7 +524,7 @@
             // 
             this.RegistroClientebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RegistroClientebutton.Image = global::GimnasioTech.Properties.Resources.Plus_50px;
-            this.RegistroClientebutton.Location = new System.Drawing.Point(399, 48);
+            this.RegistroClientebutton.Location = new System.Drawing.Point(399, 38);
             this.RegistroClientebutton.Name = "RegistroClientebutton";
             this.RegistroClientebutton.Size = new System.Drawing.Size(38, 32);
             this.RegistroClientebutton.TabIndex = 53;
@@ -571,12 +572,12 @@
             // 
             this.ComentariotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComentariotextBox.Location = new System.Drawing.Point(88, 91);
+            this.ComentariotextBox.Location = new System.Drawing.Point(88, 72);
             this.ComentariotextBox.MaxLength = 255;
             this.ComentariotextBox.Multiline = true;
             this.ComentariotextBox.Name = "ComentariotextBox";
-            this.ComentariotextBox.Size = new System.Drawing.Size(293, 55);
-            this.ComentariotextBox.TabIndex = 91;
+            this.ComentariotextBox.Size = new System.Drawing.Size(293, 82);
+            this.ComentariotextBox.TabIndex = 1;
             // 
             // FormaPagoComboBox
             // 
@@ -591,7 +592,7 @@
             this.FormaPagoComboBox.Location = new System.Drawing.Point(539, 107);
             this.FormaPagoComboBox.Name = "FormaPagoComboBox";
             this.FormaPagoComboBox.Size = new System.Drawing.Size(195, 23);
-            this.FormaPagoComboBox.TabIndex = 98;
+            this.FormaPagoComboBox.TabIndex = 2;
             this.FormaPagoComboBox.SelectedIndexChanged += new System.EventHandler(this.FormaPagoComboBox_SelectedIndexChanged);
             this.FormaPagoComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FormaPagoComboBox_KeyPress);
             // 

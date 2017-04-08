@@ -171,8 +171,6 @@ namespace GimnasioTech.UI.Registros
                 {
                     nombresTextBox.Text = usuario.Nombres;
                     nombreUsuarioTextBox.Text = usuario.NombreUsuario;
-                    claveTextBox.Text = usuario.Clave;
-                    confirmarClaveTextBox.Text = usuario.ConfirmarClave;
                     CargoscomboBox.Text = usuario.Cargo;
                 }
                 else

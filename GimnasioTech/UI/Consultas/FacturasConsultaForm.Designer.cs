@@ -117,6 +117,7 @@
             this.ConsultartextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ConsultartextBox.Location = new System.Drawing.Point(202, 32);
+            this.ConsultartextBox.MaxLength = 80;
             this.ConsultartextBox.Name = "ConsultartextBox";
             this.ConsultartextBox.Size = new System.Drawing.Size(274, 20);
             this.ConsultartextBox.TabIndex = 32;

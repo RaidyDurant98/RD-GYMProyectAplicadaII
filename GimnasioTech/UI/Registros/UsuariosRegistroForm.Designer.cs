@@ -196,6 +196,7 @@
             // nombresTextBox
             // 
             this.nombresTextBox.Location = new System.Drawing.Point(156, 75);
+            this.nombresTextBox.MaxLength = 80;
             this.nombresTextBox.Name = "nombresTextBox";
             this.nombresTextBox.Size = new System.Drawing.Size(200, 20);
             this.nombresTextBox.TabIndex = 1;
@@ -204,6 +205,7 @@
             // nombreUsuarioTextBox
             // 
             this.nombreUsuarioTextBox.Location = new System.Drawing.Point(156, 104);
+            this.nombreUsuarioTextBox.MaxLength = 80;
             this.nombreUsuarioTextBox.Name = "nombreUsuarioTextBox";
             this.nombreUsuarioTextBox.Size = new System.Drawing.Size(200, 20);
             this.nombreUsuarioTextBox.TabIndex = 2;
@@ -212,7 +214,9 @@
             // claveTextBox
             // 
             this.claveTextBox.Location = new System.Drawing.Point(156, 130);
+            this.claveTextBox.MaxLength = 40;
             this.claveTextBox.Name = "claveTextBox";
+            this.claveTextBox.PasswordChar = '*';
             this.claveTextBox.Size = new System.Drawing.Size(200, 20);
             this.claveTextBox.TabIndex = 3;
             this.claveTextBox.TextChanged += new System.EventHandler(this.claveTextBox_TextChanged);
@@ -240,7 +244,9 @@
             // confirmarClaveTextBox
             // 
             this.confirmarClaveTextBox.Location = new System.Drawing.Point(156, 156);
+            this.confirmarClaveTextBox.MaxLength = 40;
             this.confirmarClaveTextBox.Name = "confirmarClaveTextBox";
+            this.confirmarClaveTextBox.PasswordChar = '*';
             this.confirmarClaveTextBox.Size = new System.Drawing.Size(200, 20);
             this.confirmarClaveTextBox.TabIndex = 4;
             this.confirmarClaveTextBox.TextChanged += new System.EventHandler(this.confirmarClaveTextBox_TextChanged);

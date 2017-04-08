@@ -238,6 +238,7 @@ namespace GimnasioTech.UI
             }
             else
             {
+                
                 VerificarExistenciaFactura();
 
                 if (Factura != null)
