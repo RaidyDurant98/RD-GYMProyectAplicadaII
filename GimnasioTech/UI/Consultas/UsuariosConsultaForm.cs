@@ -52,8 +52,9 @@ namespace GimnasioTech.UI.Consultas
                     }
                 }
             }
-
             ConsultadataGridView.DataSource = Lista;
+            this.ConsultadataGridView.Columns["Clave"].Visible = false;
+            this.ConsultadataGridView.Columns["ConfirmarClave"].Visible = false;
         }
 
         private void FiltrarcomboBox_SelectedIndexChanged(object sender, EventArgs e)
