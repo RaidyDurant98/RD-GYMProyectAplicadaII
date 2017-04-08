@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace GimnasioTech.UI.Registros
@@ -91,23 +92,21 @@ namespace GimnasioTech.UI.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Clientes cliente = new Clientes();
-
-            if (!Validar())
+            if (Validar())
             {
-                MessageBox.Show("Por favor llenar los campos vacios.");
-            }
-            else
-            {
+                Clientes cliente = new Clientes();
                 cliente = LlenarCampos();
 
-                if (ClientesBLL.Guardar(cliente))
+                if (validarEmail())
                 {
-                    clienteIdMaskedTextBox.Text = cliente.ClienteId.ToString();
-                    MessageBox.Show("Guardado con exito.");
+                    if (ClientesBLL.Guardar(cliente))
+                    {
+                        clienteIdMaskedTextBox.Text = cliente.ClienteId.ToString();
+                        MessageBox.Show("Guardado con exito.");
+                    }
+                    else
+                        MessageBox.Show("Error! no se pudo guardar.");
                 }
-                else
-                    MessageBox.Show("Error! no se pudo guardar.");
             }
         }
 
@@ -202,6 +201,28 @@ namespace GimnasioTech.UI.Registros
         private void EmailtextBox_TextChanged(object sender, EventArgs e)
         {
             EmailerrorProvider.Clear();
+        }
+
+        private bool validarEmail()
+        {
+            bool interruptor = true;
+            Regex regEmail = new Regex(@"^(([^<>()[\]\\.,;:\s@\""]+"
+                           + @"(\.[^<>()[\]\\.,;:\s@\""]+)*)|(\"".+\""))@"
+                           + @"((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}"
+                           + @"\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+"
+                           + @"[a-zA-Z]{2,}))$",
+                           RegexOptions.Compiled);
+
+            if (EmailtextBox.Text != "")
+            {
+                if (!regEmail.IsMatch(EmailtextBox.Text))
+                {
+                    EmailerrorProvider.SetError(EmailtextBox, "El email ingresado no es valido.");
+                    interruptor = false;
+                }
+            }
+
+            return interruptor;
         }
     }
 }

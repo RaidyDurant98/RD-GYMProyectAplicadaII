@@ -589,7 +589,7 @@
             this.FormaPagoComboBox.Items.AddRange(new object[] {
             "Contado",
             "Credito"});
-            this.FormaPagoComboBox.Location = new System.Drawing.Point(539, 107);
+            this.FormaPagoComboBox.Location = new System.Drawing.Point(539, 105);
             this.FormaPagoComboBox.Name = "FormaPagoComboBox";
             this.FormaPagoComboBox.Size = new System.Drawing.Size(195, 23);
             this.FormaPagoComboBox.TabIndex = 2;

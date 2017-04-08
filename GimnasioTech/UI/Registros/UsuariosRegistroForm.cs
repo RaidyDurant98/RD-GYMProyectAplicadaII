@@ -90,30 +90,35 @@ namespace GimnasioTech.UI.Registros
         {
             Usuarios usuario = new Usuarios();
 
-            if (!Validar())
-            {
-                MessageBox.Show("Por favor llenar los campos vacios.");
-            }
-            else
+            if (Validar())
             {
                 usuario = LlenarCampos();
 
-                if (claveTextBox.Text == confirmarClaveTextBox.Text)
+                if (usuario.UsuarioId != 0 || UsuariosBLL.Buscar(p => p.NombreUsuario == nombreUsuarioTextBox.Text) == null)
                 {
-                    if (UsuariosBLL.Guardar(usuario))
+                    if (claveTextBox.Text == confirmarClaveTextBox.Text)
                     {
-                        usuarioIdMaskedTextBox.Text = usuario.UsuarioId.ToString();
-                        MessageBox.Show("Guardado con exito.");                      
+                        if (UsuariosBLL.Guardar(usuario))
+                        {
+                            usuarioIdMaskedTextBox.Text = usuario.UsuarioId.ToString();
+                            MessageBox.Show("Guardado con exito.");
+                        }
+                        else
+                            MessageBox.Show("Error! no se pudo guardar.");
                     }
                     else
-                        MessageBox.Show("Error! no se pudo guardar.");
+                    {
+                        MessageBox.Show("La clave de confirmacion es incorrecta.");
+                        confirmarClaveTextBox.Clear();
+                        confirmarClaveTextBox.Focus();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("La clave de confirmacion es incorrecta.");
-                    confirmarClaveTextBox.Clear();
-                    confirmarClaveTextBox.Focus();
+                    NombreUsuarioerrorProvider.SetError(nombreUsuarioTextBox, "Ya existe un usuario con ese nombre.");
+                    nombreUsuarioTextBox.Focus();
                 }
+
             }
         }
 
@@ -171,6 +176,8 @@ namespace GimnasioTech.UI.Registros
                 {
                     nombresTextBox.Text = usuario.Nombres;
                     nombreUsuarioTextBox.Text = usuario.NombreUsuario;
+                    claveTextBox.Text = usuario.Clave;
+                    confirmarClaveTextBox.Text = usuario.ConfirmarClave;
                     CargoscomboBox.Text = usuario.Cargo;
                 }
                 else
