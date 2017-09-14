@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GimnasioTech", "GimnasioTech\GimnasioTech.csproj", "{413C1615-0FE5-49C8-A45C-29769782C8BF}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{07F16BF6-4C8A-4D27-8185-1412C0564CF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{FE9F3427-DF52-4320-ACDA-8EFD8E021C3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GimnacioTechWeb", "GimnacioTechWeb\GimnacioTechWeb.csproj", "{16F6A70B-B8E5-4FC6-A0D3-308B4BD49EA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{FE9F3427-DF52-4320-ACDA-8EFD8E021C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE9F3427-DF52-4320-ACDA-8EFD8E021C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE9F3427-DF52-4320-ACDA-8EFD8E021C3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16F6A70B-B8E5-4FC6-A0D3-308B4BD49EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16F6A70B-B8E5-4FC6-A0D3-308B4BD49EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16F6A70B-B8E5-4FC6-A0D3-308B4BD49EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16F6A70B-B8E5-4FC6-A0D3-308B4BD49EA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
