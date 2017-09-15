@@ -38,14 +38,26 @@
         </div>
     </header>
 
-    <form id="form1" runat="server">
-        <div class="container-fluid">
-            <div class="container">
-                  <asp:GridView ID="UsuariosConsultaGridView" runat="server"></asp:GridView>                     
-            </div>
-            <div>
-                <asp:Button ID="UsuarioConsultaButton" runat="server" CssClass="btn btn-info" Text="Buscar" OnClick="UsuarioConsultaButton_Click"/>
-            </div>
+    <form id="form1" runat="server" class="form-inline" role="form">
+        <asp:Label ID="FiltroLabel" runat="server" Text="Campos a Filtrar:"></asp:Label>
+        <asp:DropDownList ID="FiltrarDropDownList" runat="server" class="form-control">
+            <asp:ListItem>Todo</asp:ListItem>
+            <asp:ListItem>ID</asp:ListItem>
+            <asp:ListItem>Nombres</asp:ListItem>
+            <asp:ListItem>Nombre de Usuario</asp:ListItem>
+            <asp:ListItem>Fecha Ingreso</asp:ListItem>
+            <asp:ListItem>Cargo Usuario</asp:ListItem>
+        </asp:DropDownList>
+        <asp:TextBox ID="FiltroTextBox" runat="server" class="form-control"></asp:TextBox>
+        <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-info" Text="Filtrar" OnClick="FiltroButton_Click" />
+
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <asp:GridView ID="UsuariosConsultaGridView" runat="server">
+                    </asp:GridView>  
+                </table>
+            </div>                              
         </div>
     </form>
 </body>

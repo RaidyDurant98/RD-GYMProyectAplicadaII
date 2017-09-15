@@ -22,6 +22,42 @@ namespace GimnacioTechWeb.Consultas {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// FiltroLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FiltroLabel;
+        
+        /// <summary>
+        /// FiltrarDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList FiltrarDropDownList;
+        
+        /// <summary>
+        /// FiltroTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox FiltroTextBox;
+        
+        /// <summary>
+        /// FiltroButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button FiltroButton;
+        
+        /// <summary>
         /// UsuariosConsultaGridView control.
         /// </summary>
         /// <remarks>
@@ -29,14 +65,5 @@ namespace GimnacioTechWeb.Consultas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView UsuariosConsultaGridView;
-        
-        /// <summary>
-        /// UsuarioConsultaButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UsuarioConsultaButton;
     }
 }

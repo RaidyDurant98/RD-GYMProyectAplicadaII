@@ -58,6 +58,13 @@
         </div>
 
         <div>
+            <asp:Label ID="Label1" runat="server" Text="Fecha:"></asp:Label>
+        </div>
+        <div>
+            <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+        </div>
+
+        <div>
             <br />
             <asp:Button ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />
         </div>
