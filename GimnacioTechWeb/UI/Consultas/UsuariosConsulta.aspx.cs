@@ -14,7 +14,12 @@ namespace GimnacioTechWeb.Consultas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                Lista = BLL.UsuariosBLL.GetListAll();
+                UsuariosConsultaGridView.DataSource = Lista;
+                UsuariosConsultaGridView.DataBind();
+            }
         }
 
         public UsuariosConsulta()
@@ -38,10 +43,10 @@ namespace GimnacioTechWeb.Consultas
                 {
                     Lista = BLL.UsuariosBLL.GetList(p => p.NombreUsuario == FiltroTextBox.Text);
                 }
-                /*if (FiltrarDropDownList.SelectedIndex == 4)
+                if (FiltrarDropDownList.SelectedIndex == 4)
                 {
-                    Lista = BLL.UsuariosBLL.GetList(p => p.Nombres == FiltroTextBox.Text);
-                }*/
+                    Lista = BLL.UsuariosBLL.GetList(p => p.FechaIngreso >= Convert.ToDateTime(FechaDesdeTextBox.Text) && p.FechaIngreso <= Convert.ToDateTime(FechaHastaTextBox.Text));
+                }
                 if (FiltrarDropDownList.SelectedIndex == 5)
                 {
                     Lista = BLL.UsuariosBLL.GetList(p => p.Cargo == FiltroTextBox.Text);

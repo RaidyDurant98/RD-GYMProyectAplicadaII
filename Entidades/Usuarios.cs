@@ -15,10 +15,11 @@ namespace Entidades
         public string Clave { get; set; }
         public string ConfirmarClave { get; set; }
         public string Cargo { get; set; }
+        public DateTime FechaIngreso { get; set; }
 
         public Usuarios()
         {
-
+            
         }
 
         public Usuarios(int usuarioId, string nombres, string nombreUsuario, string clave, string confirmarClave, string cargo)
@@ -29,6 +30,7 @@ namespace Entidades
             this.Clave = clave;
             this.ConfirmarClave = confirmarClave;
             this.Cargo = cargo;
+            this.FechaIngreso = FechaIngreso;
         }
     }
 }

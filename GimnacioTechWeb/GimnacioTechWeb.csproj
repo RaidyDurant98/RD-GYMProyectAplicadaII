@@ -76,8 +76,8 @@
   <ItemGroup>
     <Content Include="UI\Consultas\ClientesConsulta.aspx" />
     <Content Include="UI\Consultas\UsuariosConsulta.aspx" />
-    <Content Include="UI\Formularios\ClientesForm.aspx" />
-    <Content Include="UI\Formularios\UsuariosForm.aspx" />
+    <Content Include="UI\Registros\ClientesForm.aspx" />
+    <Content Include="UI\Registros\UsuariosForm.aspx" />
     <Content Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -109,18 +109,18 @@
     <Compile Include="UI\Consultas\UsuariosConsulta.aspx.designer.cs">
       <DependentUpon>UsuariosConsulta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UI\Formularios\ClientesForm.aspx.cs">
+    <Compile Include="UI\Registros\ClientesForm.aspx.cs">
       <DependentUpon>ClientesForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UI\Formularios\ClientesForm.aspx.designer.cs">
+    <Compile Include="UI\Registros\ClientesForm.aspx.designer.cs">
       <DependentUpon>ClientesForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UI\Formularios\UsuariosForm.aspx.cs">
+    <Compile Include="UI\Registros\UsuariosForm.aspx.cs">
       <DependentUpon>UsuariosForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UI\Formularios\UsuariosForm.aspx.designer.cs">
+    <Compile Include="UI\Registros\UsuariosForm.aspx.designer.cs">
       <DependentUpon>UsuariosForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">

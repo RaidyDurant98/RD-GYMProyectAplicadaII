@@ -58,6 +58,42 @@ namespace GimnacioTechWeb.Consultas {
         protected global::System.Web.UI.WebControls.Button FiltroButton;
         
         /// <summary>
+        /// DesdeLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DesdeLabel;
+        
+        /// <summary>
+        /// FechaDesdeTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox FechaDesdeTextBox;
+        
+        /// <summary>
+        /// HastaLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label HastaLabel;
+        
+        /// <summary>
+        /// FechaHastaTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox FechaHastaTextBox;
+        
+        /// <summary>
         /// UsuariosConsultaGridView control.
         /// </summary>
         /// <remarks>
