@@ -1,5 +1,4 @@
-﻿using Microsoft.Reporting.WinForms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,13 +21,7 @@ namespace GimnasioTech.UI.Reportes
 
         private void FacturasReporteForm_Load(object sender, EventArgs e)
         {
-            this.FacturareportViewer.Reset();
-            this.FacturareportViewer.ProcessingMode = ProcessingMode.Local;
-            this.FacturareportViewer.LocalReport.ReportPath = @"C:\Users\raidy\Desktop\UCNE\PROGRAMACION APLICADA I\ProyectoMejor\RD-GYM\GimnasioTech\UI\Reportes\FacturasReport.rdlc";
 
-            ReportDataSource source = new ReportDataSource("FacturasDataSet", Lista);
-            this.FacturareportViewer.LocalReport.DataSources.Add(source);
-            this.FacturareportViewer.RefreshReport();
         }
     }
 }

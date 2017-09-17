@@ -1,5 +1,4 @@
-﻿using Microsoft.Reporting.WinForms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,13 +21,7 @@ namespace GimnasioTech.UI.Reportes
 
         private void UsuariosReporteForm_Load(object sender, EventArgs e)
         {
-            this.UsuariosreportViewer.Reset();
-            this.UsuariosreportViewer.ProcessingMode = ProcessingMode.Local;
-            this.UsuariosreportViewer.LocalReport.ReportPath = @"C:\Users\raidy\Desktop\UCNE\PROGRAMACION APLICADA I\ProyectoMejor\RD-GYM\GimnasioTech\UI\Reportes\UsuariosReport.rdlc";
 
-            ReportDataSource source = new ReportDataSource("UsuariosDataSet", Lista);
-            this.UsuariosreportViewer.LocalReport.DataSources.Add(source);
-            this.UsuariosreportViewer.RefreshReport();
         }
     }
 }

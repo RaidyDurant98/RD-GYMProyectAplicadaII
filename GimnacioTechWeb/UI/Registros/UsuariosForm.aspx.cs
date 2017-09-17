@@ -14,7 +14,7 @@ namespace GimnacioTechWeb.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Limpiar()
@@ -48,7 +48,10 @@ namespace GimnacioTechWeb.Formularios
         {
             Usuarios usuario = new Usuarios();
             usuario = LlenarCampos();
-            UsuariosBLL.Guardar(usuario);
+            if (UsuariosBLL.Guardar(usuario))
+            {
+                UsuarioIdTextBox.Text = Convert.ToString(usuario.UsuarioId);
+            }
         }
 
         protected void NuevoButton_Click(object sender, EventArgs e)
@@ -68,7 +71,7 @@ namespace GimnacioTechWeb.Formularios
                 NombreUsuarioTextBox.Text = usuario.NombreUsuario;
                 ClaveTextBox.Text = usuario.Clave;
                 ConfirmarClaveTextBox.Text = usuario.ConfirmarClave;
-                FechaIngresoTextBox.Text = Convert.ToString(usuario.FechaIngreso.Date);
+                FechaIngresoTextBox.Text = Convert.ToString(usuario.FechaIngreso);
                 CargoDropDownList.Text = usuario.Cargo;               
             }
         }

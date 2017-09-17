@@ -45,7 +45,7 @@ namespace GimnacioTechWeb.Consultas
                 }
                 if (FiltrarDropDownList.SelectedIndex == 4)
                 {
-                    Lista = BLL.UsuariosBLL.GetList(p => p.FechaIngreso >= Convert.ToDateTime(FechaDesdeTextBox.Text) && p.FechaIngreso <= Convert.ToDateTime(FechaHastaTextBox.Text));
+                    Lista = BLL.UsuariosBLL.GetList(p => p.FechaIngreso.Date >= Convert.ToDateTime(FechaDesdeTextBox.Text) && p.FechaIngreso.Date <= Convert.ToDateTime(FechaHastaTextBox.Text));
                 }
                 if (FiltrarDropDownList.SelectedIndex == 5)
                 {
