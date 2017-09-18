@@ -75,7 +75,7 @@ namespace GimnasioTech.UI.Registros
             usuario.Nombres = nombresTextBox.Text;
             usuario.NombreUsuario = nombreUsuarioTextBox.Text;
             usuario.Clave = claveTextBox.Text;
-            usuario.ConfirmarClave = confirmarClaveTextBox.Text;
+            //usuario.ConfirmarClave = confirmarClaveTextBox.Text;
             usuario.Cargo = CargoscomboBox.Text;
 
             return usuario;
@@ -176,8 +176,8 @@ namespace GimnasioTech.UI.Registros
                 {
                     nombresTextBox.Text = usuario.Nombres;
                     nombreUsuarioTextBox.Text = usuario.NombreUsuario;
-                    claveTextBox.Text = usuario.Clave;
-                    confirmarClaveTextBox.Text = usuario.ConfirmarClave;
+                    //claveTextBox.Text = usuario.Clave;
+                    //confirmarClaveTextBox.Text = usuario.ConfirmarClave;
                     CargoscomboBox.Text = usuario.Cargo;
                 }
                 else

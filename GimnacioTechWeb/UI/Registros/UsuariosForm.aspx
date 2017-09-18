@@ -106,6 +106,7 @@
                 <div class="form-group">
                     <asp:Label ID="CargoLabel" runat="server" Text="Cargo:"></asp:Label>
                     <asp:DropDownList ID="CargoDropDownList" runat="server" CssClass="form-control text-center">
+                        <asp:ListItem></asp:ListItem>
                         <asp:ListItem>Usuario</asp:ListItem>
                         <asp:ListItem>Administrador</asp:ListItem>
                     </asp:DropDownList>

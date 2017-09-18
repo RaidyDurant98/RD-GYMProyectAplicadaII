@@ -74,7 +74,7 @@ namespace GimnacioTechWeb.Formularios
             usuario.Nombres = NombresTextBox.Text;
             usuario.NombreUsuario = NombreUsuarioTextBox.Text;
             usuario.Clave = ClaveTextBox.Text;
-            usuario.ConfirmarClave = ConfirmarClaveTextBox.Text;
+            //usuario.ConfirmarClave = ConfirmarClaveTextBox.Text;
             usuario.Cargo = CargoDropDownList.Text;
             usuario.FechaIngreso = Convert.ToDateTime(FechaIngresoTextBox.Text);
 
@@ -99,8 +99,8 @@ namespace GimnacioTechWeb.Formularios
 
                     NombresTextBox.Text = usuario.Nombres;
                     NombreUsuarioTextBox.Text = usuario.NombreUsuario;
-                    ClaveTextBox.Text = usuario.Clave;
-                    ConfirmarClaveTextBox.Text = usuario.ConfirmarClave;
+                    //ClaveTextBox.Text = usuario.Clave;
+                    //ConfirmarClaveTextBox.Text = usuario.ConfirmarClave;
                     FechaIngresoTextBox.Text = usuario.FechaIngreso.ToShortDateString();
                     CargoDropDownList.Text = usuario.Cargo;
                 }
