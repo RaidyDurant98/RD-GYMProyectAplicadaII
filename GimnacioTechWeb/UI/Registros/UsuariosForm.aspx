@@ -126,7 +126,7 @@
             <br />
             <!--Alertas-->
             <asp:Panel CssClass="alert alert-success text-center" ID="AlertSuccessPanel" role="alert" runat="server">
-                <asp:Label CssClass="alert alert-success" ID="AlertSuccessLabel" runat="server" Text=""></asp:Label>
+                <asp:Label ID="AlertSuccessLabel" runat="server" Text=""></asp:Label>
             </asp:Panel>
             <asp:Panel CssClass="alert alert-info text-center" ID="AlertInfoPanel" role="alert" runat="server">
                 <asp:Label ID="AlertInfoLabel" runat="server" Text=""></asp:Label>

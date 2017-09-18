@@ -101,7 +101,7 @@ namespace GimnacioTechWeb.Formularios
                     NombreUsuarioTextBox.Text = usuario.NombreUsuario;
                     ClaveTextBox.Text = usuario.Clave;
                     ConfirmarClaveTextBox.Text = usuario.ConfirmarClave;
-                    FechaIngresoTextBox.Text = usuario.FechaIngreso.ToString();
+                    FechaIngresoTextBox.Text = usuario.FechaIngreso.ToShortDateString();
                     CargoDropDownList.Text = usuario.Cargo;
                 }
                 else
@@ -168,7 +168,7 @@ namespace GimnacioTechWeb.Formularios
         {
             if (string.IsNullOrEmpty(UsuarioIdTextBox.Text))
             {
-                AlertInfoLabel.Text = "Ingresar id del cliente que desea eliminar";
+                AlertInfoLabel.Text = "Ingresar el id del usuario que desea eliminar.";
                 AlertInfoPanel.Visible = true;
             }
             else
