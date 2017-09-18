@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-   
+    
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <title>Registro de Usuario</title>
@@ -54,8 +54,14 @@
                         <a class="dropdown-item" href="#">Consulta</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Factura</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="FacturanavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Factura
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="FacturanavbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Registro</a>
+                        <a class="dropdown-item" href="#">Consulta</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -100,8 +106,8 @@
                 <div class="form-group">
                     <asp:Label ID="CargoLabel" runat="server" Text="Cargo:"></asp:Label>
                     <asp:DropDownList ID="CargoDropDownList" runat="server" CssClass="form-control text-center">
+                        <asp:ListItem>Usuario</asp:ListItem>
                         <asp:ListItem>Administrador</asp:ListItem>
-                        <asp:ListItem>Empleado</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <!--Fecha-->
@@ -113,10 +119,25 @@
                 <div class="text-center">
                     <asp:Button ID="NuevoButton" runat="server" CssClass="btn btn-secondary" Text="Nuevo" OnClick="NuevoButton_Click" />
                     <asp:Button ID="GuardarButton" runat="server" CssClass="btn btn-secondary" Text="Guardar" OnClick="GuardarButton_Click" />
-                    <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Eliminar" OnClick="EliminarButton_Click" />
+                    <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Eliminar" OnClick="EliminarButton_Click"/>
                 </div>
             </form>
-        </div>
-    </div>    
+
+            <br />
+            <!--Alertas-->
+            <asp:Panel CssClass="alert alert-success text-center" ID="AlertSuccessPanel" role="alert" runat="server">
+                <asp:Label CssClass="alert alert-success" ID="AlertSuccessLabel" runat="server" Text=""></asp:Label>
+            </asp:Panel>
+            <asp:Panel CssClass="alert alert-info text-center" ID="AlertInfoPanel" role="alert" runat="server">
+                <asp:Label ID="AlertInfoLabel" runat="server" Text=""></asp:Label>
+            </asp:Panel>
+            <asp:Panel CssClass="alert alert-danger text-center" ID="AlertDangerPanel" role="alert" runat="server">
+                <asp:Label ID="AlertDangerLabel" runat="server" Text=""></asp:Label>
+            </asp:Panel>
+            <asp:Panel CssClass="alert alert-Warnig text-center" ID="AlertWarningPanel" role="alert" runat="server">
+                <asp:Label ID="AlertWarningLabel" runat="server" Text=""></asp:Label>
+            </asp:Panel>
+        </div> <!--Col formulario-->
+    </div> <!--Contenedor-->
 </body>
 </html>
