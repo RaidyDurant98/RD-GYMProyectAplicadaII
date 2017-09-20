@@ -16,7 +16,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Registro de Usuario</title>
+    <title>Registro de Usuarios</title>
 </head>
 <body>
     <!--Menu -->
@@ -72,18 +72,19 @@
 
     <div class="container-fluid">
         <div class="page-header col-12">
-            <h1>Registro de Usuario</h1>
+            <h1>Registro de Usuarios</h1>
+            <br />
         </div>
         <!--Formulario-->
         <div class="col-12 col-sm-8 col-md-6 col-lg-5">
             <form id="form1" runat="server">
+                <div class="float-right">
+                    <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-secondary" Text="Buscar" OnClick="BuscarButton_Click" />
+                </div>
                 <!--Usuario Id-->
                 <div class="form-group">
                     <asp:Label ID="UsuarioIdLabel" runat="server" Text="Usuario Id:"></asp:Label>
-                    <div class="form-inline">
-                        <asp:TextBox ID="UsuarioIdTextBox" runat="server" CssClass="form-control text-center col-8 col-sm-9 col-xl-10" autocomplete="off"></asp:TextBox>
-                        <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-secondary col-4 col-sm-3 col-xl-2" Text="Buscar" OnClick="BuscarButton_Click" />
-                    </div>
+                    <asp:TextBox ID="UsuarioIdTextBox" runat="server" CssClass="form-control text-center" autocomplete="off"></asp:TextBox>
                 </div>
                 <!--Nombres-->
                 <div class="form-group">

@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" ></script>
 
-    <title>Consulta de Usuario</title>
+    <title>Consulta de Usuarios</title>
 </head>
 <body>
     <nav class="navbar bg-secondary navbar-expand-lg navbar-light">
@@ -59,38 +59,56 @@
     </nav>
 
     <div class="container-fluid">
-        <div class="page-header">
-            <h1>Consulta de Usuario</h1>
+        <div class="page-header text-center">
+            <h1>Consulta de Usuarios</h1>
+            <br />
         </div>
-        <form id="form1" runat="server" class="form-inline" role="form">
-            <asp:Label ID="FiltroLabel" runat="server" Text="Campos a Filtrar:"></asp:Label>
-            <asp:DropDownList ID="FiltrarDropDownList" runat="server" CssClass="form-control">
-                <asp:ListItem>Todo</asp:ListItem>
-                <asp:ListItem>ID</asp:ListItem>
-                <asp:ListItem>Nombres</asp:ListItem>
-                <asp:ListItem>Nombre de Usuario</asp:ListItem>
-                <asp:ListItem>Fecha Ingreso</asp:ListItem>
-                <asp:ListItem>Cargo Usuario</asp:ListItem>
-            </asp:DropDownList>
-            <asp:TextBox ID="FiltroTextBox" runat="server" CssClass="form-control"></asp:TextBox>
-            <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-secondary" Text="Filtrar" OnClick="FiltroButton_Click" />
 
-            <div class="container-fluid">
-                <div class="text-center">
-                    <asp:Label ID="DesdeLabel" runat="server" Text="Desde:"></asp:Label>
-                    <asp:TextBox type="date" CssClass="form-control" ID="FechaDesdeTextBox" runat="server"></asp:TextBox>
-                    <asp:Label ID="HastaLabel" runat="server" Text="Hasta:"></asp:Label>
-                    <asp:TextBox type="date" CssClass="form-control" ID="FechaHastaTextBox" runat="server"></asp:TextBox>
+        <form id="form1" runat="server" role="form">
+            <div class ="container">
+                <div class="row">
+                    <div class="col-12 col-sm-5">
+                        <asp:DropDownList ID="FiltrarDropDownList" runat="server" CssClass="form-control ">
+                            <asp:ListItem>Todo</asp:ListItem>
+                            <asp:ListItem>ID</asp:ListItem>
+                            <asp:ListItem>Nombres</asp:ListItem>
+                            <asp:ListItem>Nombre de Usuario</asp:ListItem>
+                            <asp:ListItem>Fecha Ingreso</asp:ListItem>
+                            <asp:ListItem>Cargo Usuario</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                    <div class="col-12 col-sm-7">
+                        <asp:TextBox ID="FiltroTextBox" runat="server" CssClass="form-control text-center" autoComplete="off"></asp:TextBox> 
+                    </div>           
+                </div>    
+                <!--<div class="container">-->
+                    <div class="row">
+                        <div class="form-group col-12 col-sm-6">
+                            <asp:Label ID="DesdeLabel" runat="server" Text="Desde:" CssClass=""></asp:Label>
+                            <asp:TextBox type="date" CssClass="form-control" ID="FechaDesdeTextBox" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="form-group col-12 col-sm-6">
+                            <asp:Label ID="HastaLabel" runat="server" Text="Hasta:"></asp:Label>
+                            <asp:TextBox type="date" CssClass="form-control" ID="FechaHastaTextBox" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+                <!--</div>-->
+            </div><!--Container-->
+
+            <div class="col-12 col-sm-12 col-md-12">
+                <div class="float-right">
+                    <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-secondary" Text="Filtrar" OnClick="FiltroButton_Click" />
                 </div>
-            </div>
-
-            <div class="container">
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <asp:GridView ID="UsuariosConsultaGridView" runat="server">
-                        </asp:GridView>  
-                    </table>
-                </div>                              
+                <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="UsuariosConsultaGridView" runat="server" AutoGenerateColumns="False" GridLines="Horizontal">
+                    <HeaderStyle CssClass="bg-secondary"/>     
+                    <Columns>
+                        <asp:BoundField DataField="UsuarioId" HeaderText="Usuario Id"/>
+                        <asp:BoundField DataField="Nombres" HeaderText="Nombres"/>
+                        <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre Usuario"/>
+                        <asp:BoundField DataField="FechaIngreso" HeaderText="Fecha Ingreso"/>
+                        <asp:ButtonField ButtonType="Button" ControlStyle-CssClass="btn btn-secondary" Text="Eliminar" />
+                    </Columns>
+                </asp:GridView> 
             </div>
         </form>
     </div>
