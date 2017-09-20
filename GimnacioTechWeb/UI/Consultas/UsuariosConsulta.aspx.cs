@@ -1,6 +1,7 @@
 ﻿using GimnasioTech;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,9 +12,12 @@ namespace GimnacioTechWeb.Consultas
     public partial class UsuariosConsulta : System.Web.UI.Page
     {
         public List<Entidades.Usuarios> Lista { get; set; }
+        public Entidades.Usuarios Usuario;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario = new Entidades.Usuarios();
+
             if (!Page.IsPostBack)
             {
                 Lista = BLL.UsuariosBLL.GetListAll();
@@ -64,6 +68,22 @@ namespace GimnacioTechWeb.Consultas
         protected void FiltroButton_Click(object sender, EventArgs e)
         {
             Filtrar();
+        }
+
+        protected void EliminarButton_Click(object sender, EventArgs e)
+        {
+            GridViewRow row = UsuariosConsultaGridView.SelectedRow;
+            int fila = Convert.ToInt32(row);
+
+            string valor = UsuariosConsultaGridView.Rows[fila].Cells[0].Text;
+            int id = Convert.ToInt32(valor);
+
+            Usuario = BLL.UsuariosBLL.Buscar(U => U.UsuarioId == id);
+            BLL.UsuariosBLL.Eliminar(Usuario);
+
+            Lista = BLL.UsuariosBLL.GetListAll();
+            UsuariosConsultaGridView.DataSource = Lista;
+            UsuariosConsultaGridView.DataBind();
         }
     }
 }

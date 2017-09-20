@@ -79,7 +79,7 @@
                     </div>
                     <div class="col-12 col-sm-7">
                         <asp:TextBox ID="FiltroTextBox" runat="server" CssClass="form-control text-center" autoComplete="off"></asp:TextBox> 
-                    </div>           
+                    </div>
                 </div>    
                 <!--<div class="container">-->
                     <div class="row">
@@ -95,21 +95,34 @@
                 <!--</div>-->
             </div><!--Container-->
 
-            <div class="col-12 col-sm-12 col-md-12">
-                <div class="float-right">
-                    <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-secondary" Text="Filtrar" OnClick="FiltroButton_Click" />
+            <div class="container">
+                <div class="col-12 col-sm-12 col-md-12">
+                    <div class="float-right">
+                        <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-secondary" Text="Filtrar" OnClick="FiltroButton_Click" />
+                    </div>
+                    <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="UsuariosConsultaGridView" runat="server" AutoGenerateColumns="False" GridLines="Horizontal">
+                        <HeaderStyle CssClass="bg-secondary"/>     
+                        <Columns>
+                            <asp:BoundField DataField="UsuarioId" HeaderText="Usuario Id"/>
+                            <asp:BoundField DataField="Nombres" HeaderText="Nombres"/>
+                            <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre Usuario"/>
+                            <asp:BoundField DataField="Cargo" HeaderText="Gargo"/>
+                            <asp:BoundField DataField="FechaIngreso" HeaderText="Fecha Ingreso"/>                           
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" CssClass="btn btn-secondary" OnClick="EliminarButton_Click"/>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:Button ID="ModificarButton" runat="server" Text="Modificar" CssClass="btn btn-secondary"/>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView> 
                 </div>
-                <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="UsuariosConsultaGridView" runat="server" AutoGenerateColumns="False" GridLines="Horizontal">
-                    <HeaderStyle CssClass="bg-secondary"/>     
-                    <Columns>
-                        <asp:BoundField DataField="UsuarioId" HeaderText="Usuario Id"/>
-                        <asp:BoundField DataField="Nombres" HeaderText="Nombres"/>
-                        <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre Usuario"/>
-                        <asp:BoundField DataField="FechaIngreso" HeaderText="Fecha Ingreso"/>
-                        <asp:ButtonField ButtonType="Button" ControlStyle-CssClass="btn btn-secondary" Text="Eliminar" />
-                    </Columns>
-                </asp:GridView> 
             </div>
+
         </form>
     </div>
 </body>
