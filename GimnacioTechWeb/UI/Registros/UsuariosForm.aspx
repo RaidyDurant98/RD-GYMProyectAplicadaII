@@ -11,6 +11,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     
+    <!--Inclusión de scripts-->
+    <script src="../../Scripts/Scripts.js"></script>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <title>Registro de Usuario</title>
@@ -114,19 +117,39 @@
                 <!--Fecha-->
                 <div class="form-group">
                     <asp:Label ID="FechaIngresoLabel" runat="server" Text="Fecha Ingreso:"></asp:Label>
-                    <asp:TextBox type="date" ID="FechaIngresoTextBox" runat="server" CssClass="form-control text-center"></asp:TextBox>
+                    <asp:TextBox TextMode="Date" ID="FechaIngresoTextBox" runat="server" CssClass="form-control text-center"></asp:TextBox>
                 </div>
                 <!--Botones-->
                 <div class="text-center">
                     <asp:Button ID="NuevoButton" runat="server" CssClass="btn btn-secondary" Text="Nuevo" OnClick="NuevoButton_Click" />
                     <asp:Button ID="GuardarButton" runat="server" CssClass="btn btn-secondary" Text="Guardar" OnClick="GuardarButton_Click" />
-                    <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Eliminar" OnClick="EliminarButton_Click"/>
+                    <asp:Button ID="EnviarAlModalButton" CssClass="btn btn-secondary" runat="server" Text="Eliminar" OnClick="EnviarAlModalButton_Click" />
+                </div>
+                <!--Modal de confirmacion de eliminar-->
+                <div class="modal" id="ModalEliminar">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content ">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Atencion!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Esta seguro de eliminar este usuario?</p>
+                      </div>
+                      <div class="modal-footer">
+                        <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="EliminarButton_Click"/>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
             </form>
 
             <br />
             <!--Alertas-->
-            <asp:Panel CssClass="alert alert-success text-center" ID="AlertSuccessPanel" role="alert" runat="server">
+            <asp:Panel CssClass="alert alert-success text-center" ID="AlertSuccessPanel"  role="alert" runat="server">
                 <asp:Label ID="AlertSuccessLabel" runat="server" Text=""></asp:Label>
             </asp:Panel>
             <asp:Panel CssClass="alert alert-info text-center" ID="AlertInfoPanel" role="alert" runat="server">

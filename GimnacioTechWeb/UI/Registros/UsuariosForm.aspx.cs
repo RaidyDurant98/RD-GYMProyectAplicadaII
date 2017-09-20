@@ -166,13 +166,6 @@ namespace GimnacioTechWeb.Formularios
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(UsuarioIdTextBox.Text))
-            {
-                AlertInfoLabel.Text = "Ingresar el id del usuario que desea eliminar.";
-                AlertInfoPanel.Visible = true;
-            }
-            else
-            {
                 int id = Utilidades.TOINT(UsuarioIdTextBox.Text);
 
                 if (UsuariosBLL.Eliminar(UsuariosBLL.Buscar(p => p.UsuarioId == id)))
@@ -186,6 +179,18 @@ namespace GimnacioTechWeb.Formularios
                     AlertDangerLabel.Text = "No se puedo eliminar el usuario.";
                     AlertDangerPanel.Visible = true;
                 }
+        }
+
+        protected void EnviarAlModalButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(UsuarioIdTextBox.Text))
+            {
+                AlertInfoLabel.Text = "Ingresar el id del usuario que desea eliminar.";
+                AlertInfoPanel.Visible = true;
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
             }
         }
     }

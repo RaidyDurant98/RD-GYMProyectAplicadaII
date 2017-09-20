@@ -89,13 +89,10 @@
                     <table class="table table-hover">
                         <asp:GridView ID="UsuariosConsultaGridView" runat="server">
                         </asp:GridView>  
-                        <asp:Table runat="server"></asp:Table>
                     </table>
                 </div>                              
             </div>
         </form>
     </div>
-
-
 </body>
 </html>
