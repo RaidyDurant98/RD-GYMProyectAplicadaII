@@ -118,7 +118,7 @@
                 <!--Fecha-->
                 <div class="form-group">
                     <asp:Label ID="FechaIngresoLabel" runat="server" Text="Fecha Ingreso:"></asp:Label>
-                    <asp:TextBox TextMode="Date" ID="FechaIngresoTextBox" runat="server" CssClass="form-control text-center"></asp:TextBox>
+                    <asp:TextBox TextMode="DateTime" ID="FechaIngresoTextBox" runat="server" CssClass="form-control text-center"></asp:TextBox>
                 </div>
                 <!--Botones-->
                 <div class="text-center">

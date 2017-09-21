@@ -101,7 +101,7 @@ namespace GimnacioTechWeb.Formularios
                     NombreUsuarioTextBox.Text = usuario.NombreUsuario;
                     //ClaveTextBox.Text = usuario.Clave;
                     //ConfirmarClaveTextBox.Text = usuario.ConfirmarClave;
-                    FechaIngresoTextBox.Text = usuario.FechaIngreso.ToShortDateString();
+                    FechaIngresoTextBox.Text = usuario.FechaIngreso.ToString("d"); 
                     CargoDropDownList.Text = usuario.Cargo;
                 }
                 else
