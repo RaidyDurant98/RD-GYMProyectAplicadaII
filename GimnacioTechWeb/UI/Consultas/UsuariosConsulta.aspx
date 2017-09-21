@@ -14,7 +14,7 @@
     <title>Consulta de Usuarios</title>
 </head>
 <body>
-    <nav class="navbar bg-secondary navbar-expand-lg navbar-dark navba">
+    <nav class="navbar bg-secondary navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="#">RD-GYM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
