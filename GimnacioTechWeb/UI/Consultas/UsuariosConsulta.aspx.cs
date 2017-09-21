@@ -82,7 +82,7 @@ namespace GimnacioTechWeb.Consultas
                 AlertInfoLabel.Text = "Por favor digite el dato que desea filtrar.";
                 AlertInfoPanel.Visible = true;
             }
-            else if(FiltrarDropDownList.SelectedIndex == 4 && string.IsNullOrEmpty(FechaDesdeTextBox.Text) && string.IsNullOrEmpty(FechaHastaTextBox.Text))
+            else if(FiltrarDropDownList.SelectedIndex == 4 && string.IsNullOrEmpty(FechaDesdeTextBox.Text) || string.IsNullOrEmpty(FechaHastaTextBox.Text))
             {
                 UsuariosConsultaGridView.DataBind();
                 AlertInfoLabel.Text = "Por favor eliga el rango de fecha que desea filtrar.";
