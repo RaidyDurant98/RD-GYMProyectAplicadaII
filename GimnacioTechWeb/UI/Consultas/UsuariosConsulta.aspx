@@ -122,8 +122,9 @@
                         <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-secondary" Text="Filtrar" OnClick="FiltroButton_Click" />
                     </div>
                     <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="UsuariosConsultaGridView" runat="server" 
-                        AutoGenerateColumns="False" GridLines="Horizontal" OnSelectedIndexChanged="UsuariosConsultaGridView_SelectedIndexChanged" DataKeyNames="UsuarioId,Nombres">
-                        <HeaderStyle CssClass="bg-secondary"/>     
+                        AutoGenerateColumns="False" GridLines="Horizontal" OnSelectedIndexChanged="UsuariosConsultaGridView_SelectedIndexChanged" DataKeyNames="UsuarioId,Nombres" ShowFooter="true">
+                        <HeaderStyle CssClass="bg-secondary"/>
+                        <FooterStyle CssClass="bg-secondary"/>
                         <Columns>
                             <asp:BoundField DataField="UsuarioId" HeaderText="Usuario Id"/>
                             <asp:BoundField DataField="Nombres" HeaderText="Nombres"/>

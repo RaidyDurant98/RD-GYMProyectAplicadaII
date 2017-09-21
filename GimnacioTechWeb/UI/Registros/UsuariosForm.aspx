@@ -110,7 +110,6 @@
                 <div class="form-group">
                     <asp:Label ID="CargoLabel" runat="server" Text="Cargo:"></asp:Label>
                     <asp:DropDownList ID="CargoDropDownList" runat="server" CssClass="form-control text-center">
-                        <asp:ListItem></asp:ListItem>
                         <asp:ListItem>Usuario</asp:ListItem>
                         <asp:ListItem>Administrador</asp:ListItem>
                     </asp:DropDownList>
@@ -118,7 +117,7 @@
                 <!--Fecha-->
                 <div class="form-group">
                     <asp:Label ID="FechaIngresoLabel" runat="server" Text="Fecha Ingreso:"></asp:Label>
-                    <asp:TextBox TextMode="DateTime" ID="FechaIngresoTextBox" runat="server" CssClass="form-control text-center"></asp:TextBox>
+                    <asp:TextBox type="Date" ID="FechaIngresoTextBox" runat="server" CssClass="form-control text-center"></asp:TextBox>
                 </div>
                 <!--Botones-->
                 <div class="text-center">
@@ -130,7 +129,7 @@
                 <div class="modal" id="ModalEliminar">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content ">
-                      <div class="modal-header">
+                      <div class="modal-header bg-secondary">
                         <h5 class="modal-title">¡Atencion!</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>

@@ -12,8 +12,11 @@ namespace GimnacioTechWeb.Formularios
 {
     public partial class UsuariosForm : System.Web.UI.Page
     {
+        public Usuarios usuario;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            usuario = new Usuarios();
             AlertSuccessPanel.Visible = false;
             AlertInfoPanel.Visible = false;
             AlertDangerPanel.Visible = false;
@@ -68,8 +71,6 @@ namespace GimnacioTechWeb.Formularios
 
         private Usuarios LlenarCampos()
         {
-            Usuarios usuario = new Usuarios();
-
             usuario.UsuarioId = Utilidades.TOINT(UsuarioIdTextBox.Text);
             usuario.Nombres = NombresTextBox.Text;
             usuario.NombreUsuario = NombreUsuarioTextBox.Text;
@@ -91,7 +92,6 @@ namespace GimnacioTechWeb.Formularios
             else
             {
                 int id = Utilidades.TOINT(UsuarioIdTextBox.Text);
-                Usuarios usuario = new Usuarios();
 
                 usuario = UsuariosBLL.Buscar(p => p.UsuarioId == id);
 
@@ -101,7 +101,7 @@ namespace GimnacioTechWeb.Formularios
                     NombreUsuarioTextBox.Text = usuario.NombreUsuario;
                     //ClaveTextBox.Text = usuario.Clave;
                     //ConfirmarClaveTextBox.Text = usuario.ConfirmarClave;
-                    FechaIngresoTextBox.Text = usuario.FechaIngreso.ToString("d"); 
+                    FechaIngresoTextBox.Text = (usuario.FechaIngreso.Year +"/"+ usuario.FechaIngreso.Month +"/"+ usuario.FechaIngreso.Day); 
                     CargoDropDownList.Text = usuario.Cargo;
                 }
                 else
@@ -116,7 +116,6 @@ namespace GimnacioTechWeb.Formularios
         {
             if (Validar())
             {
-                Usuarios usuario = new Usuarios();
                 usuario = LlenarCampos();
 
                 if(usuario.UsuarioId != 0 || UsuariosBLL.Buscar(p => p.NombreUsuario == NombreUsuarioTextBox.Text) == null)
