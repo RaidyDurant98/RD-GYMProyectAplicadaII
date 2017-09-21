@@ -43,6 +43,14 @@ namespace GimnacioTechWeb.Consultas
             UsuariosConsultaGridView.DataBind();
         }
 
+        private void BotonImprimirVisible()
+        {
+            if (Lista.Count() != 0)
+            {
+                ImprimirButton.Visible = true;
+            }
+        }
+
         public UsuariosConsulta()
         {
 
@@ -104,20 +112,14 @@ namespace GimnacioTechWeb.Consultas
                 else
                 {
                     Filtrar();
-                    if (Lista.Count() != 0)
-                    {
-                        ImprimirButton.Visible = true;
-                    }
+                    BotonImprimirVisible();
                 }
             }
             else
             {
                 ImprimirButton.Visible = false;
                 Filtrar();
-                if (Lista.Count() != 0)
-                {
-                    ImprimirButton.Visible = true;
-                }
+                BotonImprimirVisible();
             }
         }
 
@@ -148,6 +150,7 @@ namespace GimnacioTechWeb.Consultas
 
             Lista = BLL.UsuariosBLL.GetListAll();
             CargarListaUsuario();
+            BotonImprimirVisible();
         }
 
         protected void EnviarAlModalButton_Click(object sender, EventArgs e)
