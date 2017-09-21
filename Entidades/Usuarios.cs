@@ -21,7 +21,7 @@ namespace Entidades
             
         }
 
-        public Usuarios(int usuarioId, string nombres, string nombreUsuario, string clave, string cargo)
+        public Usuarios(int usuarioId, string nombres, string nombreUsuario, string clave, string cargo, DateTime FechaIngreso)
         {
             this.UsuarioId = usuarioId;
             this.Nombres = nombres;

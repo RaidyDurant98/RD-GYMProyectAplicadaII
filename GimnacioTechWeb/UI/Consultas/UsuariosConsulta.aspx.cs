@@ -18,6 +18,8 @@ namespace GimnacioTechWeb.Consultas
         {
             Usuario = new Entidades.Usuarios();
             AlertInfoPanel.Visible = false;
+            AlertSuccessPanel.Visible = false;
+            AlertDangerPanel.Visible = false;
 
             if (!Page.IsPostBack)
             {
@@ -55,7 +57,9 @@ namespace GimnacioTechWeb.Consultas
                 }
                 if (FiltrarDropDownList.SelectedIndex == 4)
                 {
-                    Lista = BLL.UsuariosBLL.GetList(p => p.FechaIngreso >= Convert.ToDateTime(FechaDesdeTextBox.Text) && p.FechaIngreso <= Convert.ToDateTime(FechaHastaTextBox.Text));
+                    DateTime FechaDesde = Convert.ToDateTime(FechaDesdeTextBox.Text);
+                    DateTime FechaHasta = Convert.ToDateTime(FechaHastaTextBox.Text);
+                    Lista = BLL.UsuariosBLL.GetList(p => p.FechaIngreso >= FechaDesde.Date && p.FechaIngreso <= FechaHasta.Date);
                 }
                 if (FiltrarDropDownList.SelectedIndex == 5)
                 {
@@ -75,7 +79,13 @@ namespace GimnacioTechWeb.Consultas
             if (string.IsNullOrEmpty(FiltroTextBox.Text) && FiltrarDropDownList.SelectedIndex != 0 && FiltrarDropDownList.SelectedIndex != 4)
             {
                 UsuariosConsultaGridView.DataBind();
-                AlertInfoLabel.Text = "Por favor digite el dato a filtrar.";
+                AlertInfoLabel.Text = "Por favor digite el dato que desea filtrar.";
+                AlertInfoPanel.Visible = true;
+            }
+            else if(FiltrarDropDownList.SelectedIndex == 4 && string.IsNullOrEmpty(FechaDesdeTextBox.Text) && string.IsNullOrEmpty(FechaHastaTextBox.Text))
+            {
+                UsuariosConsultaGridView.DataBind();
+                AlertInfoLabel.Text = "Por favor eliga el rango de fecha que desea filtrar.";
                 AlertInfoPanel.Visible = true;
             }
             else
@@ -98,10 +108,29 @@ namespace GimnacioTechWeb.Consultas
             int id = Convert.ToInt32(UsuariosConsultaGridView.DataKeys[row.RowIndex].Value);
 
             Usuario = BLL.UsuariosBLL.Buscar(U => U.UsuarioId == id);
-            BLL.UsuariosBLL.Eliminar(Usuario);
+            if (BLL.UsuariosBLL.Eliminar(Usuario))
+            {
+                AlertSuccessLabel.Text = "Usuario eliminado con exito.";
+                AlertSuccessPanel.Visible = true;
+            }
+            else
+            {
+                AlertDangerLabel.Text = "No se puedo eliminar el usuario.";
+                AlertDangerPanel.Visible = true;
+            }
 
             Lista = BLL.UsuariosBLL.GetListAll();
             CargarListaUsuario();
+        }
+
+        protected void EnviarAlModalButton_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+        }
+
+        protected void EliminarButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         /*protected void UsuariosConsultaGridView_RowCommand(object sender, GridViewCommandEventArgs e)

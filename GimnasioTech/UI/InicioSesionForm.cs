@@ -54,7 +54,7 @@ namespace GimnasioTech
         {
             if (UsuariotextBox.Text == "Admin" && Usuario == null)
             {
-                Usuario = new Entidades.Usuarios(1, "Raidy Duran Garcia", "Admin", "1234", "Administrador");
+                Usuario = new Entidades.Usuarios(1, "Raidy Duran Garcia", "Admin", "1234", "Administrador", DateTime.Now);
                 UsuariosBLL.Guardar(Usuario);
             }
             else
