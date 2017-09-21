@@ -22,9 +22,14 @@ namespace GimnacioTechWeb.Consultas
             if (!Page.IsPostBack)
             {
                 Lista = BLL.UsuariosBLL.GetListAll();
-                UsuariosConsultaGridView.DataSource = Lista;
-                UsuariosConsultaGridView.DataBind();
+                CargarListaUsuario();
             }
+        }
+
+        private void CargarListaUsuario()
+        {
+            UsuariosConsultaGridView.DataSource = Lista;
+            UsuariosConsultaGridView.DataBind();
         }
 
         public UsuariosConsulta()
@@ -62,8 +67,7 @@ namespace GimnacioTechWeb.Consultas
                     Lista = BLL.UsuariosBLL.GetList(p => p.UsuarioId == id);
                 }
             }
-            UsuariosConsultaGridView.DataSource = Lista;
-            UsuariosConsultaGridView.DataBind();
+            CargarListaUsuario();
         }
 
         protected void FiltroButton_Click(object sender, EventArgs e)
@@ -80,7 +84,43 @@ namespace GimnacioTechWeb.Consultas
             }
         }
 
-        protected void EliminarButton_Click(object sender, EventArgs e)
+        protected void UsuariosConsultaGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //
+            // Se obtiene la fila seleccionada del gridview
+            //
+            GridViewRow row = UsuariosConsultaGridView.SelectedRow;
+
+            //
+            // Obtengo el id de la entidad que se esta editando
+            // en este caso de la entidad Usuario
+            //
+            int id = Convert.ToInt32(UsuariosConsultaGridView.DataKeys[row.RowIndex].Value);
+
+            Usuario = BLL.UsuariosBLL.Buscar(U => U.UsuarioId == id);
+            BLL.UsuariosBLL.Eliminar(Usuario);
+
+            Lista = BLL.UsuariosBLL.GetListAll();
+            CargarListaUsuario();
+        }
+
+        /*protected void UsuariosConsultaGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Select")
+            {
+                //
+                // Se obtiene indice de la row seleccionada
+                //
+                int indice = Convert.ToInt32(e.CommandArgument);
+                //
+                // Obtengo el id de la entidad que se esta editando
+                // en este caso de la entidad Usuario
+                //
+                int id = Convert.ToInt32(UsuariosConsultaGridView.DataKeys[indice].Value);
+            }
+        }*/
+
+        /*protected void EliminarButton_Click(object sender, EventArgs e)
         {
             GridViewRow row = UsuariosConsultaGridView.SelectedRow;
             int fila = Convert.ToInt32(row);
@@ -99,6 +139,6 @@ namespace GimnacioTechWeb.Consultas
         protected void ModificarButton_Click(object sender, EventArgs e)
         {
 
-        }
+        }*/
     }
 }

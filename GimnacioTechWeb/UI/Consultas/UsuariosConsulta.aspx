@@ -111,28 +111,26 @@
                     <div class="float-right">
                         <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-secondary" Text="Filtrar" OnClick="FiltroButton_Click" />
                     </div>
-                    <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="UsuariosConsultaGridView" runat="server" AutoGenerateColumns="False" GridLines="Horizontal">
-                        <HeaderStyle CssClass="bg-secondary DataGridFixedHeader"/>     
+                    <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="UsuariosConsultaGridView" runat="server" 
+                        AutoGenerateColumns="False" GridLines="Horizontal" OnSelectedIndexChanged="UsuariosConsultaGridView_SelectedIndexChanged" DataKeyNames="UsuarioId,Nombres">
+                        <HeaderStyle CssClass="bg-secondary"/>     
                         <Columns>
                             <asp:BoundField DataField="UsuarioId" HeaderText="Usuario Id"/>
                             <asp:BoundField DataField="Nombres" HeaderText="Nombres"/>
                             <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre Usuario"/>
                             <asp:BoundField DataField="Cargo" HeaderText="Cargo"/>
-                            <asp:BoundField DataField="FechaIngreso" HeaderText="Fecha Ingreso"/>                           
+                            <asp:BoundField DataField="FechaIngreso" HeaderText="Fecha Ingreso"/>     
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" CssClass="btn btn-secondary" OnClick="EliminarButton_Click"/>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField>
-                                <ItemTemplate>
-                                    <asp:Button ID="ModificarButton" runat="server" Text="Modificar" CssClass="btn btn-secondary" OnClick= "ModificarButton_Click"/>
+                                    <asp:Button ID="SeleccionButton" runat="server" CommandName="Select" CssClass="btn btn-secondary" Text="Eliminar"/>
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
                     </asp:GridView> 
                 </div>
-            </div>
+            </div><!--Div grid view-->
+
+            
         </form>
     </div>
 </body>
