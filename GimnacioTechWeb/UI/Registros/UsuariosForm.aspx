@@ -80,6 +80,7 @@
             <form id="form1" runat="server">
                 <div class="float-right">
                     <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-secondary" Text="Buscar" OnClick="BuscarButton_Click" />
+                    <br />
                 </div>
                 <!--Usuario Id-->
                 <div class="form-group">

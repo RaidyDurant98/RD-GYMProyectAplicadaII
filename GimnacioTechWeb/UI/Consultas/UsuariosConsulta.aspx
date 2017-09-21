@@ -124,7 +124,6 @@
                     <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="UsuariosConsultaGridView" runat="server" 
                         AutoGenerateColumns="False" GridLines="Horizontal" OnSelectedIndexChanged="UsuariosConsultaGridView_SelectedIndexChanged" DataKeyNames="UsuarioId,Nombres" ShowFooter="true">
                         <HeaderStyle CssClass="bg-secondary"/>
-                        <FooterStyle CssClass="bg-secondary"/>
                         <Columns>
                             <asp:BoundField DataField="UsuarioId" HeaderText="Usuario Id"/>
                             <asp:BoundField DataField="Nombres" HeaderText="Nombres"/>
@@ -138,7 +137,11 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
+                        <FooterStyle CssClass="bg-secondary"/>
                     </asp:GridView> 
+                    <div class="float-left">
+                        <asp:Button ID="ImprimirButton" runat="server" CommandName="Select" CssClass="btn btn-secondary" Text="Imprimir" OnClick="ImprimirButton_Click"/>
+                    </div>
                 </div>
             </div><!--Div grid view-->
 

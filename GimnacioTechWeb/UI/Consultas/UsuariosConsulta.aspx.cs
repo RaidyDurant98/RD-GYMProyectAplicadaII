@@ -26,6 +26,15 @@ namespace GimnacioTechWeb.Consultas
                 Lista = BLL.UsuariosBLL.GetListAll();
                 CargarListaUsuario();
             }
+
+            if (Lista == null || Lista.Count() == 0)
+            {
+                ImprimirButton.Visible = false;
+            }
+            else
+            {
+                ImprimirButton.Visible = true;
+            }
         }
 
         private void CargarListaUsuario()
@@ -81,6 +90,7 @@ namespace GimnacioTechWeb.Consultas
                 UsuariosConsultaGridView.DataBind();
                 AlertInfoLabel.Text = "Por favor digite el dato que desea filtrar.";
                 AlertInfoPanel.Visible = true;
+                ImprimirButton.Visible = false;
             }
             else if(FiltrarDropDownList.SelectedIndex == 4)
             {
@@ -89,11 +99,25 @@ namespace GimnacioTechWeb.Consultas
                     UsuariosConsultaGridView.DataBind();
                     AlertInfoLabel.Text = "Por favor eliga el rango de fecha que desea filtrar.";
                     AlertInfoPanel.Visible = true;
+                    ImprimirButton.Visible = false;
+                }
+                else
+                {
+                    Filtrar();
+                    if (Lista.Count() != 0)
+                    {
+                        ImprimirButton.Visible = true;
+                    }
                 }
             }
             else
             {
+                ImprimirButton.Visible = false;
                 Filtrar();
+                if (Lista.Count() != 0)
+                {
+                    ImprimirButton.Visible = true;
+                }
             }
         }
 
@@ -134,6 +158,11 @@ namespace GimnacioTechWeb.Consultas
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../Reportes/UsuariosReporte.aspx");
         }
 
         /*protected void UsuariosConsultaGridView_RowCommand(object sender, GridViewCommandEventArgs e)

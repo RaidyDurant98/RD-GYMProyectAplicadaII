@@ -148,6 +148,15 @@ namespace GimnacioTechWeb.Consultas {
         protected global::System.Web.UI.WebControls.GridView UsuariosConsultaGridView;
         
         /// <summary>
+        /// ImprimirButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ImprimirButton;
+        
+        /// <summary>
         /// EliminarButton control.
         /// </summary>
         /// <remarks>
