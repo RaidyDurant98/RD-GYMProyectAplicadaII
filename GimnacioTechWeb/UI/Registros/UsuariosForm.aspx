@@ -20,7 +20,7 @@
 </head>
 <body>
     <!--Menu -->
-    <nav class="navbar bg-secondary navbar-expand-lg navbar-light">
+    <nav class="navbar bg-secondary navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="#">RD-GYM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -131,7 +131,7 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content ">
                       <div class="modal-header">
-                        <h5 class="modal-title">Atencion!</h5>
+                        <h5 class="modal-title">¡Atencion!</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>

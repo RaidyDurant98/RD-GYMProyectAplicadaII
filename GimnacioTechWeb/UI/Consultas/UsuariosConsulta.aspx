@@ -14,7 +14,7 @@
     <title>Consulta de Usuarios</title>
 </head>
 <body>
-    <nav class="navbar bg-secondary navbar-expand-lg navbar-light">
+    <nav class="navbar bg-secondary navbar-expand-lg navbar-dark navba">
         <a class="navbar-brand" href="#">RD-GYM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,8 +51,14 @@
                         <a class="dropdown-item" href="#">Consulta</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Factura</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="FacturanavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Factura
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="FacturanavbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Registro</a>
+                        <a class="dropdown-item" href="#">Consulta</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -66,6 +72,7 @@
 
         <form id="form1" runat="server" role="form">
             <div class ="container">
+                <!--DropDowmList y TextBox-->
                 <div class="row">
                     <div class="col-12 col-sm-5">
                         <asp:DropDownList ID="FiltrarDropDownList" runat="server" CssClass="form-control ">
@@ -81,7 +88,7 @@
                         <asp:TextBox ID="FiltroTextBox" runat="server" CssClass="form-control text-center" autoComplete="off"></asp:TextBox> 
                     </div>
                 </div>    
-                <!--<div class="container">-->
+                <!--TextBox Fecha-->
                     <div class="row">
                         <div class="form-group col-12 col-sm-6">
                             <asp:Label ID="DesdeLabel" runat="server" Text="Desde:" CssClass=""></asp:Label>
@@ -92,21 +99,25 @@
                             <asp:TextBox type="date" CssClass="form-control" ID="FechaHastaTextBox" runat="server"></asp:TextBox>
                         </div>
                     </div>
-                <!--</div>-->
             </div><!--Container-->
-
+            <!--GridView-->
             <div class="container">
-                <div class="col-12 col-sm-12 col-md-12">
+                <div class="col-12">
+                    <div class="float-left col-sm-5">
+                        <asp:Panel CssClass="alert alert-info text-center" ID="AlertInfoPanel" role="alert" runat="server">
+                            <asp:Label ID="AlertInfoLabel" runat="server" Text=""></asp:Label>
+                        </asp:Panel>
+                    </div>
                     <div class="float-right">
                         <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-secondary" Text="Filtrar" OnClick="FiltroButton_Click" />
                     </div>
                     <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="UsuariosConsultaGridView" runat="server" AutoGenerateColumns="False" GridLines="Horizontal">
-                        <HeaderStyle CssClass="bg-secondary"/>     
+                        <HeaderStyle CssClass="bg-secondary DataGridFixedHeader"/>     
                         <Columns>
                             <asp:BoundField DataField="UsuarioId" HeaderText="Usuario Id"/>
                             <asp:BoundField DataField="Nombres" HeaderText="Nombres"/>
                             <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre Usuario"/>
-                            <asp:BoundField DataField="Cargo" HeaderText="Gargo"/>
+                            <asp:BoundField DataField="Cargo" HeaderText="Cargo"/>
                             <asp:BoundField DataField="FechaIngreso" HeaderText="Fecha Ingreso"/>                           
                             <asp:TemplateField>
                                 <ItemTemplate>
@@ -115,14 +126,13 @@
                             </asp:TemplateField>
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:Button ID="ModificarButton" runat="server" Text="Modificar" CssClass="btn btn-secondary"/>
+                                    <asp:Button ID="ModificarButton" runat="server" Text="Modificar" CssClass="btn btn-secondary" OnClick= "ModificarButton_Click"/>
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
                     </asp:GridView> 
                 </div>
             </div>
-
         </form>
     </div>
 </body>

@@ -76,6 +76,24 @@ namespace GimnacioTechWeb.Consultas {
         protected global::System.Web.UI.WebControls.TextBox FechaHastaTextBox;
         
         /// <summary>
+        /// AlertInfoPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel AlertInfoPanel;
+        
+        /// <summary>
+        /// AlertInfoLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AlertInfoLabel;
+        
+        /// <summary>
         /// FiltroButton control.
         /// </summary>
         /// <remarks>

@@ -17,6 +17,7 @@ namespace GimnacioTechWeb.Consultas
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario = new Entidades.Usuarios();
+            AlertInfoPanel.Visible = false;
 
             if (!Page.IsPostBack)
             {
@@ -67,7 +68,16 @@ namespace GimnacioTechWeb.Consultas
 
         protected void FiltroButton_Click(object sender, EventArgs e)
         {
-            Filtrar();
+            if (string.IsNullOrEmpty(FiltroTextBox.Text) && FiltrarDropDownList.SelectedIndex != 0 && FiltrarDropDownList.SelectedIndex != 4)
+            {
+                UsuariosConsultaGridView.DataBind();
+                AlertInfoLabel.Text = "Por favor digite el dato a filtrar.";
+                AlertInfoPanel.Visible = true;
+            }
+            else
+            {
+                Filtrar();
+            }
         }
 
         protected void EliminarButton_Click(object sender, EventArgs e)
@@ -84,6 +94,11 @@ namespace GimnacioTechWeb.Consultas
             Lista = BLL.UsuariosBLL.GetListAll();
             UsuariosConsultaGridView.DataSource = Lista;
             UsuariosConsultaGridView.DataBind();
+        }
+
+        protected void ModificarButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
