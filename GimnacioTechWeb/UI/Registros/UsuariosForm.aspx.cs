@@ -195,7 +195,7 @@ namespace GimnacioTechWeb.Formularios
                 }
         }
 
-        protected void EnviarAlModalButton_Click(object sender, EventArgs e)
+        protected void EnviarAlModalEliminarButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(UsuarioIdTextBox.Text))
             {

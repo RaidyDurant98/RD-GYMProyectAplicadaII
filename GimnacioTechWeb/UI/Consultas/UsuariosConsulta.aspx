@@ -133,7 +133,14 @@
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <!--<asp:Button ID="SeleccionButton" runat="server" CommandName="Select" CssClass="btn btn-secondary" Text="Eliminar"/>-->
-                                    <asp:Button ID="EnviarAlModalButton" CommandName="Select" CssClass="btn btn-secondary" runat="server" Text="Eliminar" OnClick="EnviarAlModalButton_Click" />
+                                    <asp:Button ID="EnviarAlModalEliminarButton" CommandName="Select" CssClass="btn btn-secondary" runat="server" 
+                                        Text="Eliminar" OnClick="EnviarAlModalEliminarButton_Click" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:Button ID="EnviarAlModalModificarButton" CommandName="Select" CssClass="btn btn-secondary" runat="server" 
+                                        Text="Modificar"  OnClick="EnviarAlModalModificarButton_Click" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
@@ -160,11 +167,31 @@
                         </div>
                         <div class="modal-footer">
                             <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="EliminarButton_Click"/>
-                            <asp:Button ID="CancelarButton" runat="server" CssClass="btn btn-secondary" Text="No" OnClick="CancelarButton_Click"/>
+                            <asp:Button ID="CancelarEliminacionButton" runat="server" CssClass="btn btn-secondary" Text="No" OnClick="CancelarEliminacionButton_Click"/>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div><!--Modal eliminar-->
+            <!--Modal de confirmacion de modificar-->
+            <div class="modal" id="ModalModificar">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content ">
+                        <div class="modal-header text-center bg-secondary">
+                            <h5 class="modal-title">¡Atencion!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Esta seguro de modificar este usuario?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <asp:Button ID="ModificarButton" runat="server" CssClass="btn btn-secondary" Text="Si"/>
+                            <asp:Button ID="CancelarModificacionButton" runat="server" CssClass="btn btn-secondary" Text="No"/>
+                        </div>
+                    </div>
+                </div>
+            </div><!--Modal modificar-->
         </form>
     </div>
 </body>

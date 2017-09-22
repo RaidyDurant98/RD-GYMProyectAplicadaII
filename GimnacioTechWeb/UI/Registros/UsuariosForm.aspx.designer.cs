@@ -175,13 +175,13 @@ namespace GimnacioTechWeb.Formularios {
         protected global::System.Web.UI.WebControls.Button GuardarButton;
         
         /// <summary>
-        /// EnviarAlModalButton control.
+        /// EnviarAlModalEliminarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EnviarAlModalButton;
+        protected global::System.Web.UI.WebControls.Button EnviarAlModalEliminarButton;
         
         /// <summary>
         /// EliminarButton control.

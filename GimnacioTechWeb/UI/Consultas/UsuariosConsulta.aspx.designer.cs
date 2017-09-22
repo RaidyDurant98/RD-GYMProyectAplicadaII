@@ -166,12 +166,30 @@ namespace GimnacioTechWeb.Consultas {
         protected global::System.Web.UI.WebControls.Button EliminarButton;
         
         /// <summary>
-        /// CancelarButton control.
+        /// CancelarEliminacionButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CancelarButton;
+        protected global::System.Web.UI.WebControls.Button CancelarEliminacionButton;
+        
+        /// <summary>
+        /// ModificarButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ModificarButton;
+        
+        /// <summary>
+        /// CancelarModificacionButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CancelarModificacionButton;
     }
 }

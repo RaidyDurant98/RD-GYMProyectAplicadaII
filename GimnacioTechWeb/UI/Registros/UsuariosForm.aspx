@@ -124,7 +124,7 @@
                 <div class="text-center">
                     <asp:Button ID="NuevoButton" runat="server" CssClass="btn btn-secondary" Text="Nuevo" OnClick="NuevoButton_Click" />
                     <asp:Button ID="GuardarButton" runat="server" CssClass="btn btn-secondary" Text="Guardar" OnClick="GuardarButton_Click" />
-                    <asp:Button ID="EnviarAlModalButton" CssClass="btn btn-secondary" runat="server" Text="Eliminar" OnClick="EnviarAlModalButton_Click" />
+                    <asp:Button ID="EnviarAlModalEliminarButton" CssClass="btn btn-secondary" runat="server" Text="Eliminar" OnClick="EnviarAlModalEliminarButton_Click" />
                 </div>
                 <!--Modal de confirmacion de eliminar-->
                 <div class="modal" id="ModalEliminar">

@@ -144,12 +144,6 @@ namespace GimnacioTechWeb.Consultas
             }
         }
 
-        protected void EnviarAlModalButton_Click(object sender, EventArgs e)
-        {
-            ImprimirButton.Visible = true;
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);          
-        }
-
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
             //
@@ -188,46 +182,20 @@ namespace GimnacioTechWeb.Consultas
             
         }
 
-        protected void CancelarButton_Click(object sender, EventArgs e)
+        protected void EnviarAlModalEliminarButton_Click(object sender, EventArgs e)
+        {
+            ImprimirButton.Visible = true;
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+        }
+
+        protected void CancelarEliminacionButton_Click(object sender, EventArgs e)
         {
             ImprimirButton.Visible = true;
         }
 
-        /*protected void UsuariosConsultaGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void EnviarAlModalModificarButton_Click(object sender, EventArgs e)
         {
-            if (e.CommandName == "Select")
-            {
-                //
-                // Se obtiene indice de la row seleccionada
-                //
-                int indice = Convert.ToInt32(e.CommandArgument);
-                //
-                // Obtengo el id de la entidad que se esta editando
-                // en este caso de la entidad Usuario
-                //
-                int id = Convert.ToInt32(UsuariosConsultaGridView.DataKeys[indice].Value);
-            }
-        }*/
 
-        /*protected void EliminarButton_Click(object sender, EventArgs e)
-        {
-            GridViewRow row = UsuariosConsultaGridView.SelectedRow;
-            int fila = Convert.ToInt32(row);
-
-            string valor = UsuariosConsultaGridView.Rows[fila].Cells[0].Text;
-            int id = Convert.ToInt32(valor);
-
-            Usuario = BLL.UsuariosBLL.Buscar(U => U.UsuarioId == id);
-            BLL.UsuariosBLL.Eliminar(Usuario);
-
-            Lista = BLL.UsuariosBLL.GetListAll();
-            UsuariosConsultaGridView.DataSource = Lista;
-            UsuariosConsultaGridView.DataBind();
         }
-
-        protected void ModificarButton_Click(object sender, EventArgs e)
-        {
-
-        }*/
     }
 }
