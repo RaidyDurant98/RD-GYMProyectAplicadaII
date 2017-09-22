@@ -122,7 +122,7 @@
                         <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-secondary" Text="Filtrar" OnClick="FiltroButton_Click" />
                     </div>
                     <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="UsuariosConsultaGridView" runat="server" 
-                        AutoGenerateColumns="False" GridLines="Horizontal" OnSelectedIndexChanged="UsuariosConsultaGridView_SelectedIndexChanged" DataKeyNames="UsuarioId,Nombres" ShowFooter="true">
+                        AutoGenerateColumns="False" GridLines="Horizontal" DataKeyNames="UsuarioId,Nombres" ShowFooter="true">
                         <HeaderStyle CssClass="bg-secondary"/>
                         <Columns>
                             <asp:BoundField DataField="UsuarioId" HeaderText="Usuario Id"/>
@@ -132,8 +132,8 @@
                             <asp:BoundField DataField="FechaIngreso" DataFormatString="{0:d}" HeaderText="Fecha Ingreso"/>     
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:Button ID="SeleccionButton" runat="server" CommandName="Select" CssClass="btn btn-secondary" Text="Eliminar"/>
-                                    <!--<asp:Button ID="EnviarAlModalButton" CommandName="Select" CssClass="btn btn-secondary" runat="server" Text="Eliminar" OnClick="EnviarAlModalButton_Click" />-->
+                                    <!--<asp:Button ID="SeleccionButton" runat="server" CommandName="Select" CssClass="btn btn-secondary" Text="Eliminar"/>-->
+                                    <asp:Button ID="EnviarAlModalButton" CommandName="Select" CssClass="btn btn-secondary" runat="server" Text="Eliminar" OnClick="EnviarAlModalButton_Click" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
@@ -145,11 +145,11 @@
                 </div>
             </div><!--Div grid view-->
 
-            <!--Modal de confirmacion de eliminar
+            <!--Modal de confirmacion de eliminar-->
             <div class="modal" id="ModalEliminar">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content ">
-                        <div class="modal-header">
+                        <div class="modal-header text-center bg-secondary">
                             <h5 class="modal-title">¡Atencion!</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -160,11 +160,11 @@
                         </div>
                         <div class="modal-footer">
                             <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="EliminarButton_Click"/>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                            <asp:Button ID="CancelarButton" runat="server" CssClass="btn btn-secondary" Text="No" OnClick="CancelarButton_Click"/>
                         </div>
                     </div>
                 </div>
-            </div>-->
+            </div>
         </form>
     </div>
 </body>

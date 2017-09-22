@@ -22,6 +22,30 @@ namespace GimnacioTechWeb.Formularios
             AlertDangerPanel.Visible = false;
         }
 
+        private void AsignarTextoAlertaInfo(string texto)
+        {
+            AlertInfoLabel.Text = texto;
+            AlertInfoPanel.Visible = true;
+        }
+
+        private void AsignarTextoAlertaSuccess(string texto)
+        {
+            AlertSuccessLabel.Text = texto;
+            AlertSuccessPanel.Visible = true;
+        }
+
+        private void AsignarTextoAlertaWarning(string texto)
+        {
+            AlertWarningLabel.Text = texto;
+            AlertWarningPanel.Visible = true;
+        }
+
+        private void AsignarTextoAlertaDanger(string texto)
+        {
+            AlertDangerLabel.Text = texto;
+            AlertDangerPanel.Visible = true;
+        }
+
         private void Limpiar()
         {
             UsuarioIdTextBox.Text = "";
@@ -86,8 +110,7 @@ namespace GimnacioTechWeb.Formularios
         {
             if (string.IsNullOrEmpty(UsuarioIdTextBox.Text))
             {
-                AlertInfoLabel.Text = "Digite el id del usuario que desea buscar.";
-                AlertInfoPanel.Visible = true;
+                AsignarTextoAlertaInfo("Digite el id del usuario que desea buscar.");
             }
             else
             {
@@ -106,8 +129,7 @@ namespace GimnacioTechWeb.Formularios
                 }
                 else
                 {
-                    AlertInfoLabel.Text = "No existe usuario con ese id.";
-                    AlertInfoPanel.Visible = true;
+                    AsignarTextoAlertaInfo("No existe usuario con ese id.");
                 }
             }
         }
@@ -125,31 +147,26 @@ namespace GimnacioTechWeb.Formularios
                         if (UsuariosBLL.Guardar(usuario))
                         {
                             UsuarioIdTextBox.Text = Convert.ToString(usuario.UsuarioId);
-                            AlertSuccessLabel.Text = "Usuario guardado con exito.";
-                            AlertSuccessPanel.Visible = true;
+                            AsignarTextoAlertaSuccess("Usuario guardado con exito.");
                         }
                         else
                         {
-                            AlertDangerLabel.Text = "No se pudo guardar el usuario.";
-                            AlertDangerPanel.Visible = true;
+                            AsignarTextoAlertaDanger("No se pudo guardar el usuario.");
                         }
                     }
                     else
                     {
-                        AlertInfoLabel.Text = "Las clave de confirmacion es incorrecta.";
-                        AlertInfoPanel.Visible = true;
+                        AsignarTextoAlertaInfo("Las clave de confirmacion es incorrecta.");
                     }
                 }
                 else
                 {
-                    AlertInfoLabel.Text = "El Nombre de usuario insertado ya existe.";
-                    AlertInfoPanel.Visible = true;
+                    AsignarTextoAlertaInfo("El Nombre de usuario insertado ya existe.");
                 }
             }
             else
             {
-                AlertInfoLabel.Text = "Favor llenar los campos vacios.";
-                AlertInfoPanel.Visible = true;
+                AsignarTextoAlertaInfo("Favor llenar los campos vacios.");
             }
         }
 
@@ -170,13 +187,11 @@ namespace GimnacioTechWeb.Formularios
                 if (UsuariosBLL.Eliminar(UsuariosBLL.Buscar(p => p.UsuarioId == id)))
                 {
                     Limpiar();
-                    AlertSuccessLabel.Text = "Usuario eliminado con exito.";
-                    AlertSuccessPanel.Visible = true;                  
+                    AsignarTextoAlertaSuccess("Usuario eliminado con exito.");                
                 }
                 else
                 {
-                    AlertDangerLabel.Text = "No se puedo eliminar el usuario.";
-                    AlertDangerPanel.Visible = true;
+                    AsignarTextoAlertaDanger("No se puedo eliminar el usuario.");
                 }
         }
 
@@ -184,8 +199,7 @@ namespace GimnacioTechWeb.Formularios
         {
             if (string.IsNullOrEmpty(UsuarioIdTextBox.Text))
             {
-                AlertInfoLabel.Text = "Ingresar el id del usuario que desea eliminar.";
-                AlertInfoPanel.Visible = true;
+                AsignarTextoAlertaInfo("Ingresar el id del usuario que desea eliminar.");
             }
             else
             {

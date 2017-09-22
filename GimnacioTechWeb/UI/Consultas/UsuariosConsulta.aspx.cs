@@ -14,6 +14,11 @@ namespace GimnacioTechWeb.Consultas
         public List<Entidades.Usuarios> Lista { get; set; }
         public Entidades.Usuarios Usuario;
 
+        public UsuariosConsulta()
+        {
+
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario = new Entidades.Usuarios();
@@ -43,7 +48,7 @@ namespace GimnacioTechWeb.Consultas
             UsuariosConsultaGridView.DataBind();
         }
 
-        private void BotonImprimirVisible()
+        private void BotonImprimirVisibleSiHayListas()
         {
             if (Lista.Count() != 0)
             {
@@ -51,9 +56,22 @@ namespace GimnacioTechWeb.Consultas
             }
         }
 
-        public UsuariosConsulta()
+        private void AsignarTextoAlertaInfo(string texto)
         {
+            AlertInfoLabel.Text = texto;
+            AlertInfoPanel.Visible = true;
+        }
 
+        private void AsignarTextoAlertaSuccess(string texto)
+        {
+            AlertSuccessLabel.Text = texto;
+            AlertSuccessPanel.Visible = true;
+        }
+
+        private void AsignarTextoAlertaDanger(string texto)
+        {
+            AlertDangerLabel.Text = texto;
+            AlertDangerPanel.Visible = true;
         }
 
         private void Filtrar()
@@ -89,6 +107,11 @@ namespace GimnacioTechWeb.Consultas
                 }
             }
             CargarListaUsuario();
+            if(Lista.Count() == 0)
+            {
+                AlertInfoLabel.Text = "No existe usuario.";
+                AlertInfoPanel.Visible = true;
+            }
         }
 
         protected void FiltroButton_Click(object sender, EventArgs e)
@@ -96,8 +119,7 @@ namespace GimnacioTechWeb.Consultas
             if (string.IsNullOrEmpty(FiltroTextBox.Text) && FiltrarDropDownList.SelectedIndex != 0 && FiltrarDropDownList.SelectedIndex != 4)
             {
                 UsuariosConsultaGridView.DataBind();
-                AlertInfoLabel.Text = "Por favor digite el dato que desea filtrar.";
-                AlertInfoPanel.Visible = true;
+                AsignarTextoAlertaInfo("Por favor digite el dato que desea filtrar.");
                 ImprimirButton.Visible = false;
             }
             else if(FiltrarDropDownList.SelectedIndex == 4)
@@ -105,25 +127,30 @@ namespace GimnacioTechWeb.Consultas
                 if (string.IsNullOrEmpty(FechaDesdeTextBox.Text) || string.IsNullOrEmpty(FechaHastaTextBox.Text))
                 {
                     UsuariosConsultaGridView.DataBind();
-                    AlertInfoLabel.Text = "Por favor eliga el rango de fecha que desea filtrar.";
-                    AlertInfoPanel.Visible = true;
+                    AsignarTextoAlertaInfo("Por favor eliga el rango de fecha que desea filtrar.");
                     ImprimirButton.Visible = false;
                 }
                 else
                 {
                     Filtrar();
-                    BotonImprimirVisible();
+                    BotonImprimirVisibleSiHayListas();
                 }
             }
             else
             {
                 ImprimirButton.Visible = false;
                 Filtrar();
-                BotonImprimirVisible();
+                BotonImprimirVisibleSiHayListas();
             }
         }
 
-        protected void UsuariosConsultaGridView_SelectedIndexChanged(object sender, EventArgs e)
+        protected void EnviarAlModalButton_Click(object sender, EventArgs e)
+        {
+            ImprimirButton.Visible = true;
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);          
+        }
+
+        protected void EliminarButton_Click(object sender, EventArgs e)
         {
             //
             // Se obtiene la fila seleccionada del gridview
@@ -139,33 +166,31 @@ namespace GimnacioTechWeb.Consultas
             Usuario = BLL.UsuariosBLL.Buscar(U => U.UsuarioId == id);
             if (BLL.UsuariosBLL.Eliminar(Usuario))
             {
-                AlertSuccessLabel.Text = "Usuario eliminado con exito.";
-                AlertSuccessPanel.Visible = true;
+                FiltroTextBox.Text = "";
+                FiltrarDropDownList.Text = "Todo";
+                FechaDesdeTextBox.Text = "";
+                FechaHastaTextBox.Text = "";
+
+                AsignarTextoAlertaSuccess("Usuario eliminado con exito.");
             }
             else
             {
-                AlertDangerLabel.Text = "No se puedo eliminar el usuario.";
-                AlertDangerPanel.Visible = true;
+                AsignarTextoAlertaDanger("No se puedo eliminar el usuario.");
             }
 
             Lista = BLL.UsuariosBLL.GetListAll();
             CargarListaUsuario();
-            BotonImprimirVisible();
-        }
-
-        protected void EnviarAlModalButton_Click(object sender, EventArgs e)
-        {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
-        }
-
-        protected void EliminarButton_Click(object sender, EventArgs e)
-        {
-
+            BotonImprimirVisibleSiHayListas();
         }
 
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../Reportes/UsuariosReporte.aspx");
+            
+        }
+
+        protected void CancelarButton_Click(object sender, EventArgs e)
+        {
+            ImprimirButton.Visible = true;
         }
 
         /*protected void UsuariosConsultaGridView_RowCommand(object sender, GridViewCommandEventArgs e)
