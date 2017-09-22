@@ -12,19 +12,14 @@ namespace GimnacioTechWeb.Consultas
     public partial class UsuariosConsulta : System.Web.UI.Page
     {
         public List<Entidades.Usuarios> Lista { get; set; }
-        public Entidades.Usuarios Usuario;
-
-        public UsuariosConsulta()
-        {
-
-        }
+        public static Entidades.Usuarios Usuario = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario = new Entidades.Usuarios();
             AlertInfoPanel.Visible = false;
             AlertSuccessPanel.Visible = false;
             AlertDangerPanel.Visible = false;
+            Usuario = null;
 
             if (!Page.IsPostBack)
             {
@@ -171,7 +166,7 @@ namespace GimnacioTechWeb.Consultas
             {
                 AsignarTextoAlertaDanger("No se puedo eliminar el usuario.");
             }
-
+            Usuario = null;
             Lista = BLL.UsuariosBLL.GetListAll();
             CargarListaUsuario();
             BotonImprimirVisibleSiHayListas();
@@ -179,13 +174,13 @@ namespace GimnacioTechWeb.Consultas
 
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
-            
+            ImprimirButton.Visible = true;
         }
 
         protected void EnviarAlModalEliminarButton_Click(object sender, EventArgs e)
         {
             ImprimirButton.Visible = true;
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "#ModalEliminar", "showModalEliminar();", true);
         }
 
         protected void CancelarEliminacionButton_Click(object sender, EventArgs e)
@@ -195,7 +190,30 @@ namespace GimnacioTechWeb.Consultas
 
         protected void EnviarAlModalModificarButton_Click(object sender, EventArgs e)
         {
+            ImprimirButton.Visible = true;
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "#ModalModificar", "showModalModificar();", true);
+        }
 
+        protected void ModificarButton_Click(object sender, EventArgs e)
+        {
+            //
+            // Se obtiene la fila seleccionada del gridview
+            //
+            GridViewRow row = UsuariosConsultaGridView.SelectedRow;
+
+            //
+            // Obtengo el id de la entidad que se esta editando
+            // en este caso de la entidad Usuario
+            //
+            int id = Convert.ToInt32(UsuariosConsultaGridView.DataKeys[row.RowIndex].Value);
+            Usuario = BLL.UsuariosBLL.Buscar(U => U.UsuarioId == id);
+
+            Response.Redirect("../Registros/UsuariosForm.aspx");
+        }
+
+        protected void CancelarModificacionButton_Click(object sender, EventArgs e)
+        {
+            ImprimirButton.Visible = true;
         }
     }
 }

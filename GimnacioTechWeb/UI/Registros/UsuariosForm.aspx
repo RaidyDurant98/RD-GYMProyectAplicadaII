@@ -79,38 +79,38 @@
         <div class="col-12 col-sm-8 col-md-6 col-lg-5">
             <form id="form1" runat="server">
                 <div class="float-right">
-                    <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-secondary" Text="Buscar" OnClick="BuscarButton_Click" />
-                    <br />
+                    <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-secondary" Text="Buscar" OnClick="BuscarButton_Click" />                   
                 </div>
+                <br />
                 <!--Usuario Id-->
                 <div class="form-group">
                     <asp:Label ID="UsuarioIdLabel" runat="server" Text="Usuario Id:"></asp:Label>
-                    <asp:TextBox ID="UsuarioIdTextBox" runat="server" CssClass="form-control text-center" autocomplete="off"></asp:TextBox>
+                    <asp:TextBox ID="UsuarioIdTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
                 </div>
                 <!--Nombres-->
                 <div class="form-group">
                     <asp:Label ID="NombresLabel" runat="server" Text="Nombres:"></asp:Label>
-                    <asp:TextBox ID="NombresTextBox" runat="server" CssClass="form-control text-center" autocomplete="off"></asp:TextBox>
+                    <asp:TextBox ID="NombresTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
                 </div>
                 <!--NombreUsuario-->
                 <div class="form-group">
                     <asp:Label ID="NombreUsuarioLabel" runat="server" Text="Nombre Usuario:"></asp:Label>
-                    <asp:TextBox ID="NombreUsuarioTextBox" runat="server" CssClass="form-control text-center" autocomplete="off"></asp:TextBox>
+                    <asp:TextBox ID="NombreUsuarioTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
                 </div>
                 <!--Clave-->
                 <div class="form-group">
                     <asp:Label ID="ClaveLabel" runat="server" Text="Clave:"></asp:Label>
-                    <asp:TextBox type="Password" ID="ClaveTextBox" runat="server" CssClass="form-control text-center"></asp:TextBox>
+                    <asp:TextBox type="Password" ID="ClaveTextBox" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <!--ConfirmarClave-->
                 <div class="form-group">
                     <asp:Label ID="ConfirmarClaveLabel" runat="server" Text="Confirmar Clave:"></asp:Label>
-                    <asp:TextBox type="Password" ID="ConfirmarClaveTextBox" runat="server" CssClass="form-control text-center"></asp:TextBox>
+                    <asp:TextBox type="Password" ID="ConfirmarClaveTextBox" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <!--Cargo-->
                 <div class="form-group">
                     <asp:Label ID="CargoLabel" runat="server" Text="Cargo:"></asp:Label>
-                    <asp:DropDownList ID="CargoDropDownList" runat="server" CssClass="form-control text-center">
+                    <asp:DropDownList ID="CargoDropDownList" runat="server" CssClass="form-control">
                         <asp:ListItem>Usuario</asp:ListItem>
                         <asp:ListItem>Administrador</asp:ListItem>
                     </asp:DropDownList>
@@ -118,7 +118,7 @@
                 <!--Fecha-->
                 <div class="form-group">
                     <asp:Label ID="FechaIngresoLabel" runat="server" Text="Fecha Ingreso:"></asp:Label>
-                    <asp:TextBox type="Date" ID="FechaIngresoTextBox" runat="server" CssClass="form-control text-center"></asp:TextBox>
+                    <asp:TextBox type="Date" ID="FechaIngresoTextBox" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <!--Botones-->
                 <div class="text-center">

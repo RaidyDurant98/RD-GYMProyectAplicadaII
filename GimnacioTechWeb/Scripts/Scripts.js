@@ -1,10 +1,22 @@
-﻿function showModal() {
+﻿/*Modal Eliminar*/
+function showModalEliminar() {
     $("#ModalEliminar").modal('show');
 }
 
 $(function () {
-    $("#EnviarAlModal").click(function () {
-        showModal();
+    $("#EnviarAlModalEliminar").click(function () {
+        showModalEliminar();
+    });
+});
+
+/*Modal Modificar*/
+function showModalModificar() {
+    $("#ModalModificar").modal('show');
+}
+
+$(function () {
+    $("#EnviarAlModalModificar").click(function () {
+        showModalModificar();
     });
 });
 

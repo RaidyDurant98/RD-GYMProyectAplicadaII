@@ -88,7 +88,7 @@
                         </asp:DropDownList>
                     </div>
                     <div class="col-12 col-sm-7">
-                        <asp:TextBox ID="FiltroTextBox" runat="server" CssClass="form-control text-center" autoComplete="off"></asp:TextBox> 
+                        <asp:TextBox ID="FiltroTextBox" runat="server" CssClass="form-control" autoComplete="off"></asp:TextBox> 
                     </div>
                 </div>    
                 <!--TextBox Fecha-->
@@ -140,7 +140,7 @@
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <asp:Button ID="EnviarAlModalModificarButton" CommandName="Select" CssClass="btn btn-secondary" runat="server" 
-                                        Text="Modificar"  OnClick="EnviarAlModalModificarButton_Click" />
+                                        Text="Modificar"  OnClick="EnviarAlModalModificarButton_Click" />                             
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
@@ -156,7 +156,7 @@
             <div class="modal" id="ModalEliminar">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content ">
-                        <div class="modal-header text-center bg-secondary">
+                        <div class="modal-header bg-secondary">
                             <h5 class="modal-title">¡Atencion!</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -176,7 +176,7 @@
             <div class="modal" id="ModalModificar">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content ">
-                        <div class="modal-header text-center bg-secondary">
+                        <div class="modal-header bg-secondary">
                             <h5 class="modal-title">¡Atencion!</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -186,8 +186,8 @@
                             <p>Esta seguro de modificar este usuario?</p>
                         </div>
                         <div class="modal-footer">
-                            <asp:Button ID="ModificarButton" runat="server" CssClass="btn btn-secondary" Text="Si"/>
-                            <asp:Button ID="CancelarModificacionButton" runat="server" CssClass="btn btn-secondary" Text="No"/>
+                            <asp:Button ID="ModificarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="ModificarButton_Click"/>
+                            <asp:Button ID="CancelarModificacionButton" runat="server" CssClass="btn btn-secondary" Text="No" OnClick="CancelarModificacionButton_Click"/>
                         </div>
                     </div>
                 </div>

@@ -20,6 +20,13 @@ namespace GimnacioTechWeb.Formularios
             AlertSuccessPanel.Visible = false;
             AlertInfoPanel.Visible = false;
             AlertDangerPanel.Visible = false;
+
+             if (Consultas.UsuariosConsulta.Usuario != null)
+            {
+                usuario = Consultas.UsuariosConsulta.Usuario;
+                DatosUsuario();
+                Consultas.UsuariosConsulta.Usuario = null;               
+            }
         }
 
         private void AsignarTextoAlertaInfo(string texto)
@@ -93,6 +100,17 @@ namespace GimnacioTechWeb.Formularios
             return interruptor;
         }
 
+        private void DatosUsuario()
+        {
+            UsuarioIdTextBox.Text = usuario.UsuarioId.ToString();
+            NombresTextBox.Text = usuario.Nombres;
+            NombreUsuarioTextBox.Text = usuario.NombreUsuario;
+            ClaveTextBox.Text = usuario.Clave;
+            ConfirmarClaveTextBox.Text = usuario.Clave;
+            FechaIngresoTextBox.Text = (usuario.FechaIngreso.Year + "/" + usuario.FechaIngreso.Month + "/" + usuario.FechaIngreso.Day);
+            CargoDropDownList.Text = usuario.Cargo;
+        }
+
         private Usuarios LlenarCampos()
         {
             usuario.UsuarioId = Utilidades.TOINT(UsuarioIdTextBox.Text);
@@ -120,12 +138,7 @@ namespace GimnacioTechWeb.Formularios
 
                 if (usuario != null) {
 
-                    NombresTextBox.Text = usuario.Nombres;
-                    NombreUsuarioTextBox.Text = usuario.NombreUsuario;
-                    //ClaveTextBox.Text = usuario.Clave;
-                    //ConfirmarClaveTextBox.Text = usuario.ConfirmarClave;
-                    FechaIngresoTextBox.Text = (usuario.FechaIngreso.Year +"/"+ usuario.FechaIngreso.Month +"/"+ usuario.FechaIngreso.Day); 
-                    CargoDropDownList.Text = usuario.Cargo;
+                    DatosUsuario();
                 }
                 else
                 {
@@ -136,18 +149,20 @@ namespace GimnacioTechWeb.Formularios
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
+            Entidades.Usuarios CompararNombreUsuario = UsuariosBLL.Buscar(p => p.NombreUsuario == NombreUsuarioTextBox.Text);
+
             if (Validar())
             {
-                usuario = LlenarCampos();
-
-                if(usuario.UsuarioId != 0 || UsuariosBLL.Buscar(p => p.NombreUsuario == NombreUsuarioTextBox.Text) == null)
+                if (UsuariosBLL.Buscar(p => p.NombreUsuario == NombreUsuarioTextBox.Text) == null || UsuarioIdTextBox.Text == CompararNombreUsuario.UsuarioId.ToString())
                 {
                     if(ClaveTextBox.Text == ConfirmarClaveTextBox.Text)
                     {
+                        usuario = LlenarCampos();
+
                         if (UsuariosBLL.Guardar(usuario))
                         {
                             UsuarioIdTextBox.Text = Convert.ToString(usuario.UsuarioId);
-                            AsignarTextoAlertaSuccess("Usuario guardado con exito.");
+                            AsignarTextoAlertaSuccess("Usuario guardado con exito.");                         
                         }
                         else
                         {
@@ -203,7 +218,7 @@ namespace GimnacioTechWeb.Formularios
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "#ModalEliminar", "showModalEliminar();", true);
             }
         }
     }
