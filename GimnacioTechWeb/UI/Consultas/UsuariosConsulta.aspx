@@ -11,8 +11,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" ></script>
 
-    <!--Inclusión de scripts-->
+    <!--Inclusión de scripts Personales-->
     <script src="../../Scripts/Scripts.js"></script>
+
+    <!--Inclusión de Style Sheet Personal-->
+    <link rel="stylesheet" href="../../CSS/MyStyles.css"/>
 
     <title>Consulta de Usuarios</title>
 </head>
@@ -118,6 +121,8 @@
                             <asp:Label ID="AlertDangerLabel" runat="server" Text=""></asp:Label>
                         </asp:Panel>
                     </div>
+                    <br />
+                    <br />
                     <div class="float-right">
                         <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-secondary" Text="Filtrar" OnClick="FiltroButton_Click" />
                     </div>

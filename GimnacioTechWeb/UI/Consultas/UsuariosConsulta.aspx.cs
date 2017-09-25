@@ -11,7 +11,7 @@ namespace GimnacioTechWeb.Consultas
 {
     public partial class UsuariosConsulta : System.Web.UI.Page
     {
-        public List<Entidades.Usuarios> Lista { get; set; }
+        public static List<Entidades.Usuarios> Lista { get; set; }
         public static Entidades.Usuarios Usuario = null;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -174,7 +174,7 @@ namespace GimnacioTechWeb.Consultas
 
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
-            ImprimirButton.Visible = true;
+            Response.Redirect("../Reportes/UsuariosReporte.aspx");
         }
 
         protected void EnviarAlModalEliminarButton_Click(object sender, EventArgs e)

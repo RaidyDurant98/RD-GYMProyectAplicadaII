@@ -11,8 +11,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     
-    <!--Inclusión de scripts-->
+    <!--Inclusión de scripts Personales-->
     <script src="../../Scripts/Scripts.js"></script>
+
+    <!--Inclusión de Style Sheet Personal-->
+    <link rel="stylesheet" href="../../CSS/MyStyles.css"/>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
@@ -20,7 +23,7 @@
 </head>
 <body>
     <!--Menu -->
-    <nav class="navbar bg-secondary navbar-expand-lg navbar-dark">
+    <nav id="Navar" class="navbar bg-secondary navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="#">RD-GYM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -111,7 +114,7 @@
                 <div class="form-group">
                     <asp:Label ID="CargoLabel" runat="server" Text="Cargo:"></asp:Label>
                     <asp:DropDownList ID="CargoDropDownList" runat="server" CssClass="form-control">
-                        <asp:ListItem>Usuario</asp:ListItem>
+                        <asp:ListItem Text="Usuario">Usuario</asp:ListItem>
                         <asp:ListItem>Administrador</asp:ListItem>
                     </asp:DropDownList>
                 </div>

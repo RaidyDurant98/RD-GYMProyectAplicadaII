@@ -22,11 +22,11 @@ namespace GimnacioTechWeb.Formularios
             AlertDangerPanel.Visible = false;
 
              if (Consultas.UsuariosConsulta.Usuario != null)
-            {
+             {
                 usuario = Consultas.UsuariosConsulta.Usuario;
                 DatosUsuario();
                 Consultas.UsuariosConsulta.Usuario = null;               
-            }
+             }
         }
 
         private void AsignarTextoAlertaInfo(string texto)
@@ -60,7 +60,7 @@ namespace GimnacioTechWeb.Formularios
             NombreUsuarioTextBox.Text = "";
             ClaveTextBox.Text = "";
             ConfirmarClaveTextBox.Text = "";
-            CargoDropDownList.Text = "";
+            CargoDropDownList.Text = "Usuario";
             FechaIngresoTextBox.Text = "";
 
             AlertSuccessPanel.Visible = false;
