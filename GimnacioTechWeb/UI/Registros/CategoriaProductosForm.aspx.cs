@@ -20,6 +20,13 @@ namespace GimnacioTechWeb.UI.Registros
             AlertSuccessPanel.Visible = false;
             AlertInfoPanel.Visible = false;
             AlertDangerPanel.Visible = false;
+
+            if (Consultas.CategoriaProductosConsulta.Categoria != null)
+            {
+                categoria = Consultas.CategoriaProductosConsulta.Categoria;
+                DatosCategoria();
+                Consultas.CategoriaProductosConsulta.Categoria = null;
+            }
         }
 
         private void AsignarTextoAlertaInfo(string texto)

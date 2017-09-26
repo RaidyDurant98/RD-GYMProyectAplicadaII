@@ -1,8 +1,8 @@
-﻿using System;
+﻿using GimnacioTechWeb.Consultas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace GimnacioTechWeb.UI.Reportes
@@ -19,7 +19,7 @@ namespace GimnacioTechWeb.UI.Reportes
                 UsuariosReportViewer.LocalReport.DataSources.Clear();
 
                 UsuariosReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("UsuariosDataSet",
-                    Consultas.UsuariosConsulta.Lista));
+                    UsuariosConsulta.Lista));
 
                 UsuariosReportViewer.LocalReport.Refresh();
             }

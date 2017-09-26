@@ -114,6 +114,7 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="UI\Consultas\CategoriaProductosConsulta.aspx" />
     <Content Include="UI\Consultas\ClientesConsulta.aspx" />
     <Content Include="UI\Consultas\UsuariosConsulta.aspx" />
     <Content Include="UI\Registros\CategoriaProductosForm.aspx" />
@@ -150,6 +151,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UI\Consultas\CategoriaProductosConsulta.aspx.cs">
+      <DependentUpon>CategoriaProductosConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\CategoriaProductosConsulta.aspx.designer.cs">
+      <DependentUpon>CategoriaProductosConsulta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\ClientesConsulta.aspx.cs">
       <DependentUpon>ClientesConsulta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
