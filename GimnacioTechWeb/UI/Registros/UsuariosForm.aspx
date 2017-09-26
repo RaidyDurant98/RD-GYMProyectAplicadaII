@@ -38,13 +38,22 @@
                         Usuarios
                     </a>
                     <div class="dropdown-menu" aria-labelledby="UsuariosnavbarDropdownMenuLink">
-                        <a class="dropdown-item" href="http://localhost:52411/UI/Registros/UsuariosForm.aspx">Registro</a>
-                        <a class="dropdown-item" href="http://localhost:52411/UI/Consultas/UsuariosConsulta.aspx">Consulta</a>
+                        <a class="dropdown-item" href="UsuariosForm.aspx">Registro</a>
+                        <a class="dropdown-item" href="../Consultas/UsuariosConsulta.aspx">Consulta</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="ClientesnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Clientes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="ClientesnavbarDropdownMenuLink">
+                        <a class="dropdown-item" href="ClientesForm.aspx">Registro</a>
+                        <a class="dropdown-item" href="#">Consulta</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="CategoriaProductonavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categorias de Productos
                     </a>
                     <div class="dropdown-menu" aria-labelledby="ClientesnavbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Registro</a>
