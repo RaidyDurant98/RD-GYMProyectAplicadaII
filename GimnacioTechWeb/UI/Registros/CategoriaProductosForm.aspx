@@ -17,8 +17,7 @@
     <!--Inclusión de Style Sheet Personal-->
     <link rel="stylesheet" href="../../CSS/MyStyles.css"/>
 
-
-    <title>Registro de Categoria de Productos</title>
+    <title>Registro de Categorias</title>
 </head>
 <body>
     <!--Menu -->
@@ -82,14 +81,14 @@
     </nav>
     <div class="container-fluid">
         <div class="page-header col-12">
-            <h1>Registro de Categoria de Productos</h1>
+            <h1>Registro de Categorias</h1>
             <br />
         </div>
         <!--Formulario-->
         <div class="col-12 col-sm-8 col-md-6 col-lg-5">
             <form id="form1" runat="server">
                 <div class="float-right">
-                    <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-secondary" Text="Buscar"/>                   
+                    <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-secondary" Text="Buscar" OnClick="BuscarButton_Click"/>                   
                 </div>
                 <br />
                 <!--Usuario Id-->
@@ -104,9 +103,9 @@
                 </div>
                 <!--Botones-->
                 <div class="text-center">
-                    <asp:Button ID="NuevoButton" runat="server" CssClass="btn btn-secondary" Text="Nuevo"/>
+                    <asp:Button ID="NuevoButton" runat="server" CssClass="btn btn-secondary" Text="Nuevo" OnClick="NuevoButton_Click"/>
                     <asp:Button ID="GuardarButton" runat="server" CssClass="btn btn-secondary" Text="Guardar" OnClick="GuardarButton_Click"/>
-                    <asp:Button ID="EnviarAlModalEliminarButton" CssClass="btn btn-secondary" runat="server" Text="Eliminar"/>
+                    <asp:Button ID="EnviarAlModalEliminarButton" CssClass="btn btn-secondary" runat="server" Text="Eliminar" OnClick="EnviarAlModalEliminarButton_Click"/>
                 </div>
                 <!--Modal de confirmacion de eliminar-->
                 <div class="modal" id="ModalEliminar">
@@ -122,7 +121,7 @@
                         <p>Esta seguro de eliminar este usuario?</p>
                       </div>
                       <div class="modal-footer">
-                        <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si"/>
+                        <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="EliminarButton_Click"/>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                       </div>
                     </div>
@@ -146,5 +145,20 @@
             </asp:Panel>
         </div> <!--Col formulario-->
     </div> <!--Contenedor-->
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <footer>
+        <div class="bg-secondary">
+            <p class="text-center text-white">Raidy Duran Garcia 2015-0249. "Proyecto Final Ap2 RD-GYM".</p>
+        </div>
+    </footer>
+
 </body>
 </html>

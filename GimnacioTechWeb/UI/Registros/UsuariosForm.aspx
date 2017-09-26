@@ -176,5 +176,20 @@
             </asp:Panel>
         </div> <!--Col formulario-->
     </div> <!--Contenedor-->
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <footer>
+        <div class="bg-secondary">
+            <p class="text-center text-white">Raidy Duran Garcia 2015-0249. "Proyecto Final Ap2 RD-GYM".</p>
+        </div>
+    </footer>
+
 </body>
 </html>

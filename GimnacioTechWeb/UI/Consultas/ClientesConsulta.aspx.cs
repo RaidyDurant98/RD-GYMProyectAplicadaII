@@ -104,6 +104,7 @@ namespace GimnacioTechWeb.Consultas
             if (Lista.Count() == 0)
             {
                 AsignarTextoAlertaInfo("No existe Cliente.");
+                ImprimirButton.Visible = false;
             }
         }
 

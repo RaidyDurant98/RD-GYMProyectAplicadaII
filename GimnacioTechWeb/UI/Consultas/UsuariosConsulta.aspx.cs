@@ -104,8 +104,8 @@ namespace GimnacioTechWeb.Consultas
             CargarListaUsuario();
             if(Lista.Count() == 0)
             {
-                AlertInfoLabel.Text = "No existe usuario.";
-                AlertInfoPanel.Visible = true;
+                AsignarTextoAlertaInfo("No existe usuario.");
+                ImprimirButton.Visible = false;
             }
         }
 
