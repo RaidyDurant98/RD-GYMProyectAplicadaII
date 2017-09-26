@@ -53,8 +53,8 @@
                     <a class="nav-link dropdown-toggle" href="#" id="CategoriaProductonavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Categorias de Productos
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="ClientesnavbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Registro</a>
+                    <div class="dropdown-menu" aria-labelledby="CategoriaProductonavbarDropdownMenuLink">
+                        <a class="dropdown-item" href="../Registros/CategoriaProductosForm.aspx">Registro</a>
                         <a class="dropdown-item" href="#">Consulta</a>
                     </div>
                 </li>

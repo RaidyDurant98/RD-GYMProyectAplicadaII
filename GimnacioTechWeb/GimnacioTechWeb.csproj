@@ -116,6 +116,7 @@
     </Content>
     <Content Include="UI\Consultas\ClientesConsulta.aspx" />
     <Content Include="UI\Consultas\UsuariosConsulta.aspx" />
+    <Content Include="UI\Registros\CategoriaProductosForm.aspx" />
     <Content Include="UI\Registros\ClientesForm.aspx" />
     <Content Include="UI\Registros\UsuariosForm.aspx" />
     <Content Include="packages.config" />
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="UI\Consultas\UsuariosConsulta.aspx.designer.cs">
       <DependentUpon>UsuariosConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\CategoriaProductosForm.aspx.cs">
+      <DependentUpon>CategoriaProductosForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\CategoriaProductosForm.aspx.designer.cs">
+      <DependentUpon>CategoriaProductosForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\ClientesForm.aspx.cs">
       <DependentUpon>ClientesForm.aspx</DependentUpon>
