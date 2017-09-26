@@ -21,6 +21,14 @@ namespace GimnacioTechWeb
             AlertSuccessPanel.Visible = false;
             AlertInfoPanel.Visible = false;
             AlertDangerPanel.Visible = false;
+
+
+            if (Consultas.ClientesConsulta.Cliente != null)
+            {
+                cliente = Consultas.ClientesConsulta.Cliente;
+                DatosCliente();
+                Consultas.ClientesConsulta.Cliente = null;
+            }
         }
 
         private void AsignarTextoAlertaInfo(string texto)

@@ -48,7 +48,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="ClientesnavbarDropdownMenuLink">
                         <a class="dropdown-item" href="ClientesForm.aspx">Registro</a>
-                        <a class="dropdown-item" href="#">Consulta</a>
+                        <a class="dropdown-item" href="../Consultas/ClientesConsulta.aspx">Consulta</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

@@ -46,7 +46,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="ClientesnavbarDropdownMenuLink">
                         <a class="dropdown-item" href="../Registros/ClientesForm.aspx">Registro</a>
-                        <a class="dropdown-item" href="#">Consulta</a>
+                        <a class="dropdown-item" href="ClientesConsulta.aspx">Consulta</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -208,6 +208,6 @@
                 </div>
             </div><!--Modal modificar-->
         </form>
-    </div>
+    </div><!---->
 </body>
 </html>
