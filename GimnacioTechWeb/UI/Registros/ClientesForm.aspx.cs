@@ -110,7 +110,7 @@ namespace GimnacioTechWeb
             DireccionTextBox.Text = cliente.Direccion;
             NumeroCelularTextBox.Text = cliente.NumeroCelular;
             EmailTextBox.Text = cliente.Email;
-            FechaInscripcionTextBox.Text = (cliente.FechaInscripcion.Year + "/" + cliente.FechaInscripcion.Month + "/" + cliente.FechaInscripcion.Day);
+            FechaInscripcionTextBox.Text = cliente.FechaInscripcion.ToString("yyyy-MM-dd");
             if (cliente.Sexo == "Masculino")
             {
                 MasculinoRadioButton.Checked = true;
@@ -249,7 +249,7 @@ namespace GimnacioTechWeb
             }
             else
             {
-                AsignarTextoAlertaDanger("No se puedo eliminar el cliente.");
+                AsignarTextoAlertaDanger("No se pudo eliminar el cliente.");
             }
         }
     }

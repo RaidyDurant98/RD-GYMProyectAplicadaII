@@ -104,16 +104,16 @@
                     </div>
                 </div>    
                 <!--TextBox Fecha-->
-                    <div class="row">
-                        <div class="form-group col-12 col-sm-6">
-                            <asp:Label ID="DesdeLabel" runat="server" Text="Desde:" CssClass=""></asp:Label>
-                            <asp:TextBox type="date" CssClass="form-control" ID="FechaDesdeTextBox" runat="server"></asp:TextBox>
-                        </div>
-                        <div class="form-group col-12 col-sm-6">
-                            <asp:Label ID="HastaLabel" runat="server" Text="Hasta:"></asp:Label>
-                            <asp:TextBox type="date" CssClass="form-control" ID="FechaHastaTextBox" runat="server"></asp:TextBox>
-                        </div>
+                <div class="row">
+                    <div class="form-group col-12 col-sm-6">
+                        <asp:Label ID="DesdeLabel" runat="server" Text="Desde:" CssClass=""></asp:Label>
+                        <asp:TextBox type="date" CssClass="form-control" ID="FechaDesdeTextBox" runat="server"></asp:TextBox>
                     </div>
+                    <div class="form-group col-12 col-sm-6">
+                        <asp:Label ID="HastaLabel" runat="server" Text="Hasta:"></asp:Label>
+                        <asp:TextBox type="date" CssClass="form-control" ID="FechaHastaTextBox" runat="server"></asp:TextBox>
+                    </div>
+                </div>
             </div><!--Container-->
             <!--GridView-->
             <div class="container">

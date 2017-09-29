@@ -103,7 +103,7 @@ namespace GimnacioTechWeb.Consultas
             CargarListaCliente();
             if (Lista.Count() == 0)
             {
-                AsignarTextoAlertaInfo("No existe Cliente.");
+                AsignarTextoAlertaInfo("No existe cliente.");
                 ImprimirButton.Visible = false;
             }
         }

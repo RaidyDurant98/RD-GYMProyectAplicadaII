@@ -107,7 +107,7 @@ namespace GimnacioTechWeb.Formularios
             NombreUsuarioTextBox.Text = usuario.NombreUsuario;
             ClaveTextBox.Text = usuario.Clave;
             ConfirmarClaveTextBox.Text = usuario.Clave;
-            FechaIngresoTextBox.Text = (usuario.FechaIngreso.Year + "/" + usuario.FechaIngreso.Month + "/" + usuario.FechaIngreso.Day);
+            FechaIngresoTextBox.Text = usuario.FechaIngreso.ToString("yyyy-MM-dd");
             CargoDropDownList.Text = usuario.Cargo;
         }
 
