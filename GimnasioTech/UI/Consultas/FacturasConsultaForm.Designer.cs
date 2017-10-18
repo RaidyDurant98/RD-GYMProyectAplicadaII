@@ -179,6 +179,7 @@
             this.Montolabel.Size = new System.Drawing.Size(45, 25);
             this.Montolabel.TabIndex = 41;
             this.Montolabel.Text = "0.0";
+            this.Montolabel.Click += new System.EventHandler(this.Montolabel_Click);
             // 
             // label4
             // 

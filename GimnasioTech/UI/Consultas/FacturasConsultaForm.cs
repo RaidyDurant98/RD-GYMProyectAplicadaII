@@ -173,5 +173,10 @@ namespace GimnasioTech.UI.Consultas
 
             Montolabel.Text = monto.ToString();
         }
+
+        private void Montolabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

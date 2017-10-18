@@ -708,9 +708,8 @@
         </TablixRowHierarchy>
         <DataSetName>UsuariosDataSet</DataSetName>
         <Top>0.78821in</Top>
-        <Left>0in</Left>
         <Height>0.75in</Height>
-        <Width>7.09375in</Width>
+        <Width>7.09377in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -726,7 +725,7 @@
               <TextRun>
                 <Value>Reporte de Usuarios</Value>
                 <Style>
-                  <FontFamily>Elephant</FontFamily>
+                  <FontFamily>Arial Black</FontFamily>
                   <FontSize>18pt</FontSize>
                   <Color>DimGray</Color>
                 </Style>
@@ -736,10 +735,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>0.3264in</Top>
-        <Left>2.30952in</Left>
+        <Top>0.31252in</Top>
+        <Left>2.03696in</Left>
         <Height>0.40625in</Height>
-        <Width>2.70958in</Width>
+        <Width>2.97in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border />
@@ -782,9 +781,13 @@
       </Textbox>
     </ReportItems>
     <Height>1.55209in</Height>
-    <Style />
+    <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
+    </Style>
   </Body>
-  <Width>7.09375in</Width>
+  <Width>7.09377in</Width>
   <Page>
     <PageHeader>
       <Height>1.0382in</Height>
@@ -907,7 +910,6 @@
       <ReportItems>
         <Line Name="Line2">
           <Top>0.06944in</Top>
-          <Left>0in</Left>
           <Height>0in</Height>
           <Width>7.09375in</Width>
           <Style>
