@@ -112,5 +112,21 @@ namespace BLL
                 }
             }
         }
+
+        public static bool Autenticar(string nombreUsuario, string clave)
+        {
+            using (var context = new Respository<Usuarios>())
+            {
+                foreach (var usuario in GetList(p => p.UsuarioId > 0))
+                {
+                    if (nombreUsuario == usuario.NombreUsuario && clave == usuario.Clave)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
     }
 }

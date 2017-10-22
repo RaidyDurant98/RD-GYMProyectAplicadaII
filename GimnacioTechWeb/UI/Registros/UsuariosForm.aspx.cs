@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -220,6 +221,11 @@ namespace GimnacioTechWeb.Formularios
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "#ModalEliminar", "showModalEliminar();", true);
             }
+        }
+
+        protected void SingOutButton_Click(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
         }
     }
 }
