@@ -141,6 +141,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="UI\RegistroUsuarios.aspx" />
     <Content Include="UI\Reportes\UsuariosReporte.aspx" />
     <Content Include="_RD_GYMDbDataSet.xsc">
       <DependentUpon>_RD_GYMDbDataSet.xsd</DependentUpon>
@@ -232,6 +233,13 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RegistroUsuarios.aspx.cs">
+      <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\RegistroUsuarios.aspx.designer.cs">
+      <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Reportes\UsuariosReporte.aspx.cs">
       <DependentUpon>UsuariosReporte.aspx</DependentUpon>

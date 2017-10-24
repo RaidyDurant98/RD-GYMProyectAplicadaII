@@ -20,34 +20,47 @@
     <title>Login</title>
 </head>
 <body>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <div class="container">
-        <form id="Loginform" runat="server">
-            <div class="card border-secondary mb-3" style="max-width: 30rem;">
-                <div class="card-header">LOGIN</div>
-                <div class="card-body text-secondary">
-                    <div class="form-group">
-                        <asp:Label ID="Label1" runat="server" Text="Nombre Usuario"></asp:Label>
-                        <asp:TextBox CssClass="form-control" ID="NombreUsuarioTextBox" runat="server"></asp:TextBox>
-                    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3">RD-GYM</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+    </div>
 
-                    <div class="form-group">
-                        <asp:Label ID="Label2" runat="server" Text="Clave"></asp:Label>
-                        <asp:TextBox CssClass="form-control" ID="ClaveTextBox" runat="server"></asp:TextBox>
-                    </div>
+    <div class="text-center">
+        <div class="page-header col-12">
+            <h1>Inicio de sesion</h1>
+            <br />
+        </div>
+    </div>
 
-                    <div class="text-center">
-                        <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-secondary" Text="Login" OnClick="LoginButton_Click" />
+    <form id="Loginform" runat="server">
+        <div class="row">
+            <div class="col-12 col-sm-2 col-md-3 col-lg-4">
+            </div>
+            <div class="col-12 col-sm-8 col-md-6 col-lg-8">
+                <div class="card border-secondary mb-3" style="max-width: 30rem;">
+                    <div class="card-header text-center"></div>
+                    <div class="card-body text-secondary">
+                        <div class="form-group">
+                            <asp:Label ID="Label1" runat="server" Text="Nombre Usuario"></asp:Label>
+                            <asp:TextBox CssClass="form-control" ID="NombreUsuarioTextBox" runat="server"></asp:TextBox>
+                        </div>
+
+                        <div class="form-group">
+                            <asp:Label ID="Label2" runat="server" Text="Clave"></asp:Label>
+                            <asp:TextBox CssClass="form-control" ID="ClaveTextBox" runat="server"></asp:TextBox>
+                        </div>
+
+                        <div class="text-center">
+                            <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-secondary" Text="Login" OnClick="LoginButton_Click" />
+                        </div>
                     </div>
+                    <div class="card-footer text-center"></div>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+        <!--Row-->
+    </form>
 </body>
 </html>
