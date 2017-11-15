@@ -129,6 +129,7 @@
     <Content Include="UI\Consultas\UsuariosConsulta.aspx" />
     <Content Include="UI\Registros\CategoriaProductosForm.aspx" />
     <Content Include="UI\Registros\ClientesForm.aspx" />
+    <Content Include="UI\Registros\ProductosForm.aspx" />
     <Content Include="UI\Registros\UsuariosForm.aspx" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\RD-GYM - Web Deploy.pubxml" />
@@ -218,6 +219,13 @@
     </Compile>
     <Compile Include="UI\Registros\ClientesForm.aspx.designer.cs">
       <DependentUpon>ClientesForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\ProductosForm.aspx.cs">
+      <DependentUpon>ProductosForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\ProductosForm.aspx.designer.cs">
+      <DependentUpon>ProductosForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\UsuariosForm.aspx.cs">
       <DependentUpon>UsuariosForm.aspx</DependentUpon>

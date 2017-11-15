@@ -21,70 +21,70 @@
 </head>
 <body>
     <!--Menu -->
-    <nav id="Navar" class="navbar bg-secondary navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">RD-GYM</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="../Default.aspx">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="UsuariosnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuarios
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="UsuariosnavbarDropdownMenuLink">
-                        <a class="dropdown-item" href="../Registros/UsuariosForm.aspx">Registro</a>
-                        <a class="dropdown-item" href="UsuariosConsulta.aspx">Consulta</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="ClientesnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clientes
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="ClientesnavbarDropdownMenuLink">
-                        <a class="dropdown-item" href="../Registros/ClientesForm.aspx">Registro</a>
-                        <a class="dropdown-item" href="ClientesConsulta.aspx">Consulta</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="CategoriaProductonavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias de Productos
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="CategoriaProductonavbarDropdownMenuLink">
-                        <a class="dropdown-item" href="../Registros/CategoriaProductosForm.aspx">Registro</a>
-                        <a class="dropdown-item" href="CategoriaProductosConsulta.aspx">Consulta</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="ProductosnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="ProductosnavbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Registro</a>
-                        <a class="dropdown-item" href="#">Consulta</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="FacturanavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Factura
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="FacturanavbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Registro</a>
-                        <a class="dropdown-item" href="#">Consulta</a>
-                    </div>
-                </li>
-            </ul>
-            <span class="navbar-text">
-                <asp:Button CssClass="btn btn-outline-dark" ID="SingOutButton" runat="server" Text="Cerrar sesion" OnClick="SingOutButton_Click" />
-            </span>
-        </div>
-    </nav>
+    <form id="CategoriaProductosConsultaform" runat="server" role="form">
+        <nav id="Navar" class="navbar bg-secondary navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">RD-GYM</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Default.aspx">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="UsuariosnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuarios
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="UsuariosnavbarDropdownMenuLink">
+                            <a class="dropdown-item" href="../Registros/UsuariosForm.aspx">Registro</a>
+                            <a class="dropdown-item" href="UsuariosConsulta.aspx">Consulta</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ClientesnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clientes
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="ClientesnavbarDropdownMenuLink">
+                            <a class="dropdown-item" href="../Registros/ClientesForm.aspx">Registro</a>
+                            <a class="dropdown-item" href="ClientesConsulta.aspx">Consulta</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="CategoriaProductonavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias de Productos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="CategoriaProductonavbarDropdownMenuLink">
+                            <a class="dropdown-item" href="../Registros/CategoriaProductosForm.aspx">Registro</a>
+                            <a class="dropdown-item" href="CategoriaProductosConsulta.aspx">Consulta</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ProductosnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="ProductosnavbarDropdownMenuLink">
+                            <a class="dropdown-item" href="../Registros/ProductosForm.aspx">Registro</a>
+                            <a class="dropdown-item" href="#">Consulta</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="FacturanavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Factura
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="FacturanavbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Registro</a>
+                            <a class="dropdown-item" href="#">Consulta</a>
+                        </div>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <asp:Button CssClass="btn btn-outline-dark" ID="SingOutButton" runat="server" Text="Cerrar sesion" OnClick="SingOutButton_Click" />
+                </span>
+            </div>
+        </nav>
 
-    <div class="container-fluid">
-        <div class="page-header text-center">
-            <h1>Consulta de Categorias</h1>
-            <br />
-        </div>
+        <div class="container-fluid">
+            <div class="page-header text-center">
+                <h1>Consulta de Categorias</h1>
+                <br />
+            </div>
 
-        <form id="form1" runat="server" role="form">
             <div class="container">
                 <!--DropDowmList y TextBox-->
                 <div class="row">
@@ -207,7 +207,7 @@
                 </div>
             </div>
             <!--Modal modificar-->
-        </form>
+    </form>
     </div>
     <!---->
 

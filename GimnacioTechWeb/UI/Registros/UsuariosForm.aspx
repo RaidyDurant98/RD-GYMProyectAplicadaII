@@ -22,7 +22,7 @@
     <title>Registro de Usuarios</title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="Usuariosform" runat="server">
         <!--Menu -->
         <nav id="Navar" class="navbar bg-secondary navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="#">RD-GYM</a>
@@ -62,7 +62,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="ProductosnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="ProductosnavbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Registro</a>
+                            <a class="dropdown-item" href="ProductosForm.aspx">Registro</a>
                             <a class="dropdown-item" href="#">Consulta</a>
                         </div>
                     </li>
@@ -157,7 +157,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 <br />
                 <!--Alertas-->

@@ -32,9 +32,9 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="Default.aspx">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="Default.aspx">Inicio <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item dropdown active">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="UsuariosnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuarios
                         </a>
                         <div class="dropdown-menu" aria-labelledby="UsuariosnavbarDropdownMenuLink">
@@ -62,7 +62,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="ProductosnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="ProductosnavbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Registro</a>
+                            <a class="dropdown-item" href="Registros/ProductosForm.aspx">Registro</a>
                             <a class="dropdown-item" href="#">Consulta</a>
                         </div>
                     </li>

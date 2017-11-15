@@ -13,6 +13,15 @@ namespace GimnacioTechWeb {
     public partial class ClientesForm {
         
         /// <summary>
+        /// Clientesform control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm Clientesform;
+        
+        /// <summary>
         /// SingOutButton control.
         /// </summary>
         /// <remarks>
@@ -20,15 +29,6 @@ namespace GimnacioTechWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SingOutButton;
-        
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// BuscarButton control.

@@ -13,6 +13,15 @@ namespace GimnacioTechWeb.UI.Registros {
     public partial class CategoriaProductosForm {
         
         /// <summary>
+        /// CategoriaProductosform control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm CategoriaProductosform;
+        
+        /// <summary>
         /// SingOutButton control.
         /// </summary>
         /// <remarks>
@@ -20,15 +29,6 @@ namespace GimnacioTechWeb.UI.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SingOutButton;
-        
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// BuscarButton control.
