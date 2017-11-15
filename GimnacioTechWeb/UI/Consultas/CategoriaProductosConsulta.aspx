@@ -6,16 +6,16 @@
 <head runat="server">
 
     <!--Inclusión de Bootstrap 4.0.0-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" ></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 
     <!--Inclusión de scripts Personales-->
-    <script src="../../Scripts/Scripts.js"></script>
+    <script src="../../Scripts/MyScripts.js"></script>
 
     <!--Inclusión de Style Sheet Personal-->
-    <link rel="stylesheet" href="../../CSS/MyStyles.css"/>
+    <link rel="stylesheet" href="../../CSS/MyStyles.css" />
 
     <title>Consulta de Categorias</title>
 </head>
@@ -29,11 +29,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../Default.aspx">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="UsuariosnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Usuarios
+                    <a class="nav-link dropdown-toggle" href="#" id="UsuariosnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuarios
                     </a>
                     <div class="dropdown-menu" aria-labelledby="UsuariosnavbarDropdownMenuLink">
                         <a class="dropdown-item" href="../Registros/UsuariosForm.aspx">Registro</a>
@@ -41,8 +40,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="ClientesnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Clientes
+                    <a class="nav-link dropdown-toggle" href="#" id="ClientesnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clientes
                     </a>
                     <div class="dropdown-menu" aria-labelledby="ClientesnavbarDropdownMenuLink">
                         <a class="dropdown-item" href="../Registros/ClientesForm.aspx">Registro</a>
@@ -50,8 +48,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="CategoriaProductonavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorias de Productos
+                    <a class="nav-link dropdown-toggle" href="#" id="CategoriaProductonavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias de Productos
                     </a>
                     <div class="dropdown-menu" aria-labelledby="CategoriaProductonavbarDropdownMenuLink">
                         <a class="dropdown-item" href="../Registros/CategoriaProductosForm.aspx">Registro</a>
@@ -59,8 +56,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="ProductosnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Productos
+                    <a class="nav-link dropdown-toggle" href="#" id="ProductosnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos
                     </a>
                     <div class="dropdown-menu" aria-labelledby="ProductosnavbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Registro</a>
@@ -68,8 +64,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="FacturanavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Factura
+                    <a class="nav-link dropdown-toggle" href="#" id="FacturanavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Factura
                     </a>
                     <div class="dropdown-menu" aria-labelledby="FacturanavbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Registro</a>
@@ -77,6 +72,9 @@
                     </div>
                 </li>
             </ul>
+            <span class="navbar-text">
+                <asp:Button CssClass="btn btn-outline-dark" ID="SingOutButton" runat="server" Text="Cerrar sesion" OnClick="SingOutButton_Click" />
+            </span>
         </div>
     </nav>
 
@@ -87,7 +85,7 @@
         </div>
 
         <form id="form1" runat="server" role="form">
-            <div class ="container">
+            <div class="container">
                 <!--DropDowmList y TextBox-->
                 <div class="row">
                     <div class="col-12 col-sm-5">
@@ -98,10 +96,11 @@
                         </asp:DropDownList>
                     </div>
                     <div class="col-12 col-sm-7">
-                        <asp:TextBox ID="FiltroTextBox" runat="server" CssClass="form-control" autoComplete="off"></asp:TextBox> 
+                        <asp:TextBox ID="FiltroTextBox" runat="server" CssClass="form-control" autoComplete="off"></asp:TextBox>
                     </div>
-                </div>    
-            </div><!--Container-->
+                </div>
+            </div>
+            <!--Container-->
             <br />
             <!--GridView-->
             <div class="container">
@@ -111,7 +110,7 @@
                         <asp:Panel CssClass="alert alert-info text-center" ID="AlertInfoPanel" role="alert" runat="server">
                             <asp:Label ID="AlertInfoLabel" runat="server" Text=""></asp:Label>
                         </asp:Panel>
-                        <asp:Panel CssClass="alert alert-success text-center" ID="AlertSuccessPanel"  role="alert" runat="server">
+                        <asp:Panel CssClass="alert alert-success text-center" ID="AlertSuccessPanel" role="alert" runat="server">
                             <asp:Label ID="AlertSuccessLabel" runat="server" Text=""></asp:Label>
                         </asp:Panel>
                         <asp:Panel CssClass="alert alert-danger text-center" ID="AlertDangerPanel" role="alert" runat="server">
@@ -121,42 +120,50 @@
                     <br />
                     <br />
                     <div class="float-right">
-                        <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-secondary" Text="Filtrar" OnClick="FiltroButton_Click"/>
+                        <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-secondary" Text="Filtrar" OnClick="FiltroButton_Click" />
                     </div>
-                    <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="CategoriasConsultaGridView" runat="server" 
+                    <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="CategoriasConsultaGridView" runat="server"
                         AutoGenerateColumns="False" GridLines="Horizontal" DataKeyNames="CategoriaId,Descripcion" ShowFooter="true">
-                        <HeaderStyle CssClass="bg-secondary"/>
+                        <HeaderStyle CssClass="bg-secondary" />
                         <Columns>
-                            <asp:BoundField DataField="CategoriaId" HeaderText="Categoria Id"/>
-                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion"/> 
-                            <asp:BoundField/><asp:BoundField/>
-                            <asp:BoundField/><asp:BoundField/>
-                            <asp:BoundField/><asp:BoundField/>
-                            <asp:BoundField/><asp:BoundField/>
-                            <asp:BoundField/><asp:BoundField/>
-                            <asp:BoundField/><asp:BoundField/>
-                            <asp:BoundField/><asp:BoundField/>
+                            <asp:BoundField DataField="CategoriaId" HeaderText="Categoria Id" />
+                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
+                            <asp:BoundField />
+                            <asp:BoundField />
+                            <asp:BoundField />
+                            <asp:BoundField />
+                            <asp:BoundField />
+                            <asp:BoundField />
+                            <asp:BoundField />
+                            <asp:BoundField />
+                            <asp:BoundField />
+                            <asp:BoundField />
+                            <asp:BoundField />
+                            <asp:BoundField />
+                            <asp:BoundField />
+                            <asp:BoundField />
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <!--<asp:Button ID="SeleccionButton" runat="server" CommandName="Select" CssClass="btn btn-secondary" Text="Eliminar"/>-->
-                                    <asp:Button ID="EnviarAlModalEliminarButton" CommandName="Select" CssClass="btn btn-secondary" runat="server" 
-                                        Text="Eliminar" OnClick="EnviarAlModalEliminarButton_Click"/>
+                                    <asp:Button ID="EnviarAlModalEliminarButton" CommandName="Select" CssClass="btn btn-secondary" runat="server"
+                                        Text="Eliminar" OnClick="EnviarAlModalEliminarButton_Click" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:Button ID="EnviarAlModalModificarButton" CommandName="Select" CssClass="btn btn-secondary" runat="server" 
-                                        Text="Modificar" OnClick="EnviarAlModalModificarButton_Click"/>                             
+                                    <asp:Button ID="EnviarAlModalModificarButton" CommandName="Select" CssClass="btn btn-secondary" runat="server"
+                                        Text="Modificar" OnClick="EnviarAlModalModificarButton_Click" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
-                        <FooterStyle CssClass="bg-secondary"/>
-                    </asp:GridView> 
+                        <FooterStyle CssClass="bg-secondary" />
+                    </asp:GridView>
                     <div class="float-left">
-                        <asp:Button ID="ImprimirButton" runat="server" CommandName="Select" CssClass="btn btn-secondary" Text="Imprimir" OnClick="ImprimirButton_Click"/>
+                        <asp:Button ID="ImprimirButton" runat="server" CommandName="Select" CssClass="btn btn-secondary" Text="Imprimir" OnClick="ImprimirButton_Click" />
                     </div>
                 </div>
-            </div><!--Div grid view-->
+            </div>
+            <!--Div grid view-->
 
             <!--Modal de confirmacion de eliminar-->
             <div class="modal" id="ModalEliminar">
@@ -172,12 +179,13 @@
                             <p>Esta seguro de eliminar este usuario?</p>
                         </div>
                         <div class="modal-footer">
-                            <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="EliminarButton_Click"/>
-                            <asp:Button ID="CancelarEliminacionButton" runat="server" CssClass="btn btn-secondary" Text="No" OnClick="CancelarEliminacionButton_Click"/>
+                            <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="EliminarButton_Click" />
+                            <asp:Button ID="CancelarEliminacionButton" runat="server" CssClass="btn btn-secondary" Text="No" OnClick="CancelarEliminacionButton_Click" />
                         </div>
                     </div>
                 </div>
-            </div><!--Modal eliminar-->
+            </div>
+            <!--Modal eliminar-->
             <!--Modal de confirmacion de modificar-->
             <div class="modal" id="ModalModificar">
                 <div class="modal-dialog" role="document">
@@ -192,14 +200,16 @@
                             <p>Esta seguro de modificar este usuario?</p>
                         </div>
                         <div class="modal-footer">
-                            <asp:Button ID="ModificarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="ModificarButton_Click"/>
-                            <asp:Button ID="CancelarModificacionButton" runat="server" CssClass="btn btn-secondary" Text="No" OnClick="CancelarModificacionButton_Click"/>
+                            <asp:Button ID="ModificarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="ModificarButton_Click" />
+                            <asp:Button ID="CancelarModificacionButton" runat="server" CssClass="btn btn-secondary" Text="No" OnClick="CancelarModificacionButton_Click" />
                         </div>
                     </div>
                 </div>
-            </div><!--Modal modificar-->
+            </div>
+            <!--Modal modificar-->
         </form>
-    </div><!---->
+    </div>
+    <!---->
 
     <br />
     <br />

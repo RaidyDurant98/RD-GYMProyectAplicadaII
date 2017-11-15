@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 
     <!--Inclusión de scripts Personales-->
-    <script src="../../Scripts/Scripts.js"></script>
+    <script src="../../Scripts/MyScripts.js"></script>
 
     <!--Inclusión de Style Sheet Personal-->
     <link rel="stylesheet" href="../../CSS/MyStyles.css" />
@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../Default.aspx">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle" href="#" id="UsuariosnavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuarios
@@ -75,9 +75,9 @@
                         </div>
                     </li>
                 </ul>
-
-                <asp:Button CssClass="btn btn-outline-success my-2 my-sm-0" ID="SingOutButton" runat="server" Text="Button" OnClick="SingOutButton_Click" />
-
+                <span class="navbar-text">
+                    <asp:Button CssClass="btn btn-outline-dark" ID="SingOutButton" runat="server" Text="Cerrar sesion" OnClick="SingOutButton_Click" />
+                </span>
             </div>
         </nav>
 

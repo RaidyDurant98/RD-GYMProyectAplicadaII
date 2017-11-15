@@ -102,12 +102,15 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstraptheme.min.css" />
+    <Content Include="UI\Default.aspx" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="CSS\MyStyles.css" />
-    <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Login.aspx" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\MyScripts.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -128,20 +131,19 @@
     <Content Include="UI\Registros\ClientesForm.aspx" />
     <Content Include="UI\Registros\UsuariosForm.aspx" />
     <Content Include="packages.config" />
-    <Content Include="Base.Master" />
     <None Include="Properties\PublishProfiles\RD-GYM - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\rdgym - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="UI\Base.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="UI\RegistroUsuarios.aspx" />
     <Content Include="UI\Reportes\UsuariosReporte.aspx" />
     <Content Include="_RD_GYMDbDataSet.xsc">
       <DependentUpon>_RD_GYMDbDataSet.xsd</DependentUpon>
@@ -157,22 +159,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Scripts\Scripts.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base.Master.cs">
-      <DependentUpon>Base.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Base.Master.designer.cs">
-      <DependentUpon>Base.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="UI\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
+    <Compile Include="UI\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
@@ -183,6 +177,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UI\Base.Master.cs">
+      <DependentUpon>Base.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Base.Master.designer.cs">
+      <DependentUpon>Base.Master</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\CategoriaProductosConsulta.aspx.cs">
       <DependentUpon>CategoriaProductosConsulta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -233,13 +234,6 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="UI\RegistroUsuarios.aspx.cs">
-      <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI\RegistroUsuarios.aspx.designer.cs">
-      <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Reportes\UsuariosReporte.aspx.cs">
       <DependentUpon>UsuariosReporte.aspx</DependentUpon>

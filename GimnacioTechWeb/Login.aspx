@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 
     <!--Inclusión de scripts Personales-->
-    <script src="../../Scripts/Scripts.js"></script>
+    <script src="../../Scripts/MyScripts.js"></script>
 
     <!--Inclusión de Style Sheet Personal-->
     <link rel="stylesheet" href="../../CSS/MyStyles.css" />
@@ -33,34 +33,28 @@
             <br />
         </div>
     </div>
-
-    <form id="Loginform" runat="server">
-        <div class="row">
-            <div class="col-12 col-sm-2 col-md-3 col-lg-4">
-            </div>
-            <div class="col-12 col-sm-8 col-md-6 col-lg-8">
-                <div class="card border-secondary mb-3" style="max-width: 30rem;">
-                    <div class="card-header text-center"></div>
-                    <div class="card-body text-secondary">
-                        <div class="form-group">
-                            <asp:Label ID="Label1" runat="server" Text="Nombre Usuario"></asp:Label>
-                            <asp:TextBox CssClass="form-control" ID="NombreUsuarioTextBox" runat="server"></asp:TextBox>
-                        </div>
-
-                        <div class="form-group">
-                            <asp:Label ID="Label2" runat="server" Text="Clave"></asp:Label>
-                            <asp:TextBox CssClass="form-control" ID="ClaveTextBox" runat="server"></asp:TextBox>
-                        </div>
-
-                        <div class="text-center">
-                            <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-secondary" Text="Login" OnClick="LoginButton_Click" />
-                        </div>
+    <div class="text-center">
+        <form id="Loginform" runat="server">
+            <div class="row">
+                <div class="col-12 col-sm-2 col-md-4">
+                </div>
+                <div class="col-12 col-sm-8 col-md-4">
+                    <div class="form-group">
+                        <asp:Label ID="Label1" runat="server" Text="Nombre Usuario"></asp:Label>
+                        <asp:TextBox CssClass="form-control" ID="NombreUsuarioTextBox" runat="server"></asp:TextBox>
                     </div>
-                    <div class="card-footer text-center"></div>
+
+                    <div class="form-group">
+                        <asp:Label ID="Label2" runat="server" Text="Clave"></asp:Label>
+                        <asp:TextBox CssClass="form-control" ID="ClaveTextBox" runat="server"></asp:TextBox>
+                    </div>
+
+                    <div class="text-center">
+                        <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-secondary" Text="Login" OnClick="LoginButton_Click" />
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--Row-->
-    </form>
+        </form>
+    </div>
 </body>
 </html>

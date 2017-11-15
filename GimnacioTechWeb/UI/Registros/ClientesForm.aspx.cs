@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -251,6 +252,12 @@ namespace GimnacioTechWeb
             {
                 AsignarTextoAlertaDanger("No se pudo eliminar el cliente.");
             }
+        }
+
+        protected void SingOutButton_Click(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
+            System.Web.Security.FormsAuthentication.RedirectToLoginPage();
         }
     }
 }

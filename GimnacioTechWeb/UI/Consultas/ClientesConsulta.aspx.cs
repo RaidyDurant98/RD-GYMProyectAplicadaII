@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -213,6 +214,12 @@ namespace GimnacioTechWeb.Consultas
         protected void CancelarModificacionButton_Click(object sender, EventArgs e)
         {
             ImprimirButton.Visible = true;
+        }
+
+        protected void SingOutButton_Click(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
+            System.Web.Security.FormsAuthentication.RedirectToLoginPage();
         }
     }
 }
