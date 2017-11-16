@@ -14,8 +14,15 @@
     <!--Inclusión de scripts Personales-->
     <script src="../../Scripts/MyScripts.js"></script>
 
+    <link href="../../Content/toastr.css" rel="stylesheet" />
+
     <!--Inclusión de Style Sheet Personal-->
     <link rel="stylesheet" href="../../CSS/MyStyles.css" />
+  
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+
+    <script src="../../Scripts/toastr.js"></script>
+    
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 

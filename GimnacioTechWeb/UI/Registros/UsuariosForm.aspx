@@ -13,9 +13,12 @@
 
     <!--Inclusión de scripts Personales-->
     <script src="../../Scripts/MyScripts.js"></script>
-
+    
     <!--Inclusión de Style Sheet Personal-->
     <link rel="stylesheet" href="../../CSS/MyStyles.css" />
+
+    <link href="../../Content/toastr.css" rel="stylesheet" />
+    <script src="../../Scripts/toastr.js"></script>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 

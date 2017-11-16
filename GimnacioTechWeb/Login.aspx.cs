@@ -18,9 +18,16 @@ namespace GimnacioTechWeb
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            if (UsuariosBLL.Autenticar(NombreUsuarioTextBox.Text, ClaveTextBox.Text))
+            if (string.IsNullOrEmpty(NombreUsuarioTextBox.Text) || string.IsNullOrEmpty(ClaveTextBox.Text))
             {
-                FormsAuthentication.RedirectFromLoginPage(NombreUsuarioTextBox.Text, true);             
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor llene todos los campos');", addScriptTags: true);
+            }
+            else
+            {
+                if (UsuariosBLL.Autenticar(NombreUsuarioTextBox.Text, ClaveTextBox.Text))
+                {
+                    FormsAuthentication.RedirectFromLoginPage(NombreUsuarioTextBox.Text, true);
+                }
             }
         }
     }
