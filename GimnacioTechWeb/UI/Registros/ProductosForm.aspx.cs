@@ -21,6 +21,13 @@ namespace GimnacioTechWeb.UI.Registros
             AlertSuccessPanel.Visible = false;
             AlertInfoPanel.Visible = false;
             AlertDangerPanel.Visible = false;
+
+            if (Consultas.ProductosConsulta.Producto != null)
+            {
+                producto = Consultas.ProductosConsulta.Producto;
+                DatosProductos();
+                Consultas.ProductosConsulta.Producto = null;
+            }
         }
 
         private void AsignarTextoAlertaInfo(string texto)
@@ -105,7 +112,7 @@ namespace GimnacioTechWeb.UI.Registros
             producto.ProductoId = Utilidades.TOINT(ProductoIdTextBox.Text);
             producto.Descripcion = DescripcionTextBox.Text;
             producto.Cantidad = Utilidades.TOINT(CantidadTextBox.Text);
-            producto.Costo = Utilidades.TOINT(PrecioTextBox.Text);
+            producto.Costo = Utilidades.TOINT(CostoTextBox.Text);
             producto.Precio = Utilidades.TOINT(PrecioTextBox.Text);
             producto.FechaIngreso = Convert.ToDateTime(FechaIngresoTextBox.Text);
 
@@ -145,6 +152,60 @@ namespace GimnacioTechWeb.UI.Registros
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             BuscarProductos();
+        }
+
+        protected void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        protected void GuardarButton_Click(object sender, EventArgs e)
+        {
+            if (Validar())
+            {
+                producto = LlenarCampos();
+
+                if (ProductosBLL.Guardar(producto))
+                {
+                    ProductoIdTextBox.Text = Convert.ToString(producto.ProductoId);
+                    AsignarTextoAlertaSuccess("Producto guardado con exito.");
+                }
+                else
+                {
+                    AsignarTextoAlertaDanger("No se pudo guardar el Producto.");
+                }
+            }
+            else
+            {
+                AsignarTextoAlertaInfo("Favor llenar los campos vacios.");
+            }
+        }
+
+        protected void EnviarAlModalEliminarButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(ProductoIdTextBox.Text))
+            {
+                AsignarTextoAlertaInfo("Ingresar el id del producto que desea eliminar.");
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "#ModalEliminar", "showModalEliminar();", true);
+            }
+        }
+
+        protected void EliminarButton_Click(object sender, EventArgs e)
+        {
+            int id = Utilidades.TOINT(ProductoIdTextBox.Text);
+
+            if (ProductosBLL.Eliminar(ProductosBLL.Buscar(p => p.ProductoId == id)))
+            {
+                Limpiar();
+                AsignarTextoAlertaSuccess("Producto eliminado con exito.");
+            }
+            else
+            {
+                AsignarTextoAlertaDanger("No se pudo eliminar el producto.");
+            }
         }
     }
 }

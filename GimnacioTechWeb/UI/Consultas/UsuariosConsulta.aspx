@@ -17,13 +17,15 @@
     <!--Inclusión de Style Sheet Personal-->
     <link rel="stylesheet" href="../../CSS/MyStyles.css" />
 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     <title>Consulta de Usuarios</title>
 </head>
 <body>
     <!--Menu -->
     <form id="UsuariosConsultaform" runat="server" role="form">
         <nav id="Navar" class="navbar bg-secondary navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#">RD-GYM</a>
+            <a class="navbar-brand" href="../Default.aspx">RD-GYM</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -61,7 +63,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="ProductosnavbarDropdownMenuLink">
                             <a class="dropdown-item" href="../Registros/ProductosForm.aspx">Registro</a>
-                            <a class="dropdown-item" href="#">Consulta</a>
+                            <a class="dropdown-item" href="ProductosConsulta.aspx">Consulta</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">

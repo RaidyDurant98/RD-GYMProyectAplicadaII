@@ -17,13 +17,15 @@
     <!--Inclusión de Style Sheet Personal-->
     <link rel="stylesheet" href="../../CSS/MyStyles.css" />
 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     <title>Login</title>
 </head>
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-3">RD-GYM</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <p class="lead">Nunca pares, nunca te conformes, hasta que lo bueno sea mejor y lo mejor excelente.</p>
         </div>
     </div>
 
@@ -41,12 +43,12 @@
                 <div class="col-12 col-sm-8 col-md-4">
                     <div class="form-group">
                         <asp:Label ID="Label1" runat="server" Text="Nombre Usuario"></asp:Label>
-                        <asp:TextBox CssClass="form-control" ID="NombreUsuarioTextBox" runat="server"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="NombreUsuarioTextBox" runat="server" AutoComplete="off"></asp:TextBox>
                     </div>
 
                     <div class="form-group">
                         <asp:Label ID="Label2" runat="server" Text="Clave"></asp:Label>
-                        <asp:TextBox CssClass="form-control" ID="ClaveTextBox" runat="server"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="ClaveTextBox" runat="server" AutoComplete="off"></asp:TextBox>
                     </div>
 
                     <div class="text-center">

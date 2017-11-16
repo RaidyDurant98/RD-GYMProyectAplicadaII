@@ -25,7 +25,7 @@
     <form id="Usuariosform" runat="server">
         <!--Menu -->
         <nav id="Navar" class="navbar bg-secondary navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#">RD-GYM</a>
+            <a class="navbar-brand" href="../Default.aspx">RD-GYM</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -63,7 +63,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="ProductosnavbarDropdownMenuLink">
                             <a class="dropdown-item" href="ProductosForm.aspx">Registro</a>
-                            <a class="dropdown-item" href="#">Consulta</a>
+                            <a class="dropdown-item" href="../Consultas/ClientesConsulta.aspx">Consulta</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">

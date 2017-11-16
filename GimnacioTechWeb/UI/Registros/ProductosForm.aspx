@@ -17,13 +17,15 @@
     <!--Inclusión de Style Sheet Personal-->
     <link rel="stylesheet" href="../../CSS/MyStyles.css" />
 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     <title>Registro de Productos</title>
 </head>
 <body>
     <form id="Productosform" runat="server">
         <!--Menu -->
         <nav id="Navar" class="navbar bg-secondary navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#">RD-GYM</a>
+            <a class="navbar-brand" href="../Default.aspx">RD-GYM</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -61,7 +63,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="ProductosnavbarDropdownMenuLink">
                             <a class="dropdown-item" href="ProductosForm.aspx">Registro</a>
-                            <a class="dropdown-item" href="#">Consulta</a>
+                            <a class="dropdown-item" href="../Consultas/ProductosConsulta.aspx">Consulta</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -123,9 +125,9 @@
                 </div>
                 <!--Botones-->
                 <div class="text-center">
-                    <asp:Button ID="NuevoButton" runat="server" CssClass="btn btn-secondary" Text="Nuevo" />
-                    <asp:Button ID="GuardarButton" runat="server" CssClass="btn btn-secondary" Text="Guardar" />
-                    <asp:Button ID="EnviarAlModalEliminarButton" CssClass="btn btn-secondary" runat="server" Text="Eliminar" />
+                    <asp:Button ID="NuevoButton" runat="server" CssClass="btn btn-secondary" Text="Nuevo" OnClick="NuevoButton_Click" />
+                    <asp:Button ID="GuardarButton" runat="server" CssClass="btn btn-secondary" Text="Guardar" OnClick="GuardarButton_Click" />
+                    <asp:Button ID="EnviarAlModalEliminarButton" CssClass="btn btn-secondary" runat="server" Text="Eliminar" OnClick="EnviarAlModalEliminarButton_Click" />
                 </div>
                 <!--Modal de confirmacion de eliminar-->
                 <div class="modal" id="ModalEliminar">
@@ -141,7 +143,7 @@
                                 <p>Esta seguro de eliminar este usuario?</p>
                             </div>
                             <div class="modal-footer">
-                                <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si" />
+                                <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="EliminarButton_Click" />
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                             </div>
                         </div>

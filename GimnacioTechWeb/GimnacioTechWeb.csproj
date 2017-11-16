@@ -102,6 +102,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstraptheme.min.css" />
+    <Content Include="UI\Consultas\ProductosConsulta.aspx" />
     <Content Include="UI\Default.aspx" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="CSS\MyStyles.css" />
@@ -163,6 +164,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\Consultas\ProductosConsulta.aspx.cs">
+      <DependentUpon>ProductosConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\ProductosConsulta.aspx.designer.cs">
+      <DependentUpon>ProductosConsulta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
