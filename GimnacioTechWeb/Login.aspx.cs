@@ -20,13 +20,17 @@ namespace GimnacioTechWeb
         {
             if (string.IsNullOrEmpty(NombreUsuarioTextBox.Text) || string.IsNullOrEmpty(ClaveTextBox.Text))
             {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor llene todos los campos');", addScriptTags: true);
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor llenar los campos vacios.');", addScriptTags: true);
             }
             else
             {
                 if (UsuariosBLL.Autenticar(NombreUsuarioTextBox.Text, ClaveTextBox.Text))
                 {
                     FormsAuthentication.RedirectFromLoginPage(NombreUsuarioTextBox.Text, true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('El nombre de usuario o la clave esta incorrecto(a)');", addScriptTags: true);
                 }
             }
         }

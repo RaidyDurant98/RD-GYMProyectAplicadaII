@@ -163,26 +163,26 @@ namespace GimnacioTechWeb.Formularios
                         if (UsuariosBLL.Guardar(usuario))
                         {
                             UsuarioIdTextBox.Text = Convert.ToString(usuario.UsuarioId);
-                            AsignarTextoAlertaSuccess("Usuario guardado con exito.");                         
+                            ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Usuario guardado con exito');", addScriptTags: true);
                         }
                         else
                         {
-                            AsignarTextoAlertaDanger("No se pudo guardar el usuario.");
+                            ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo guardar el usuario');", addScriptTags: true);
                         }
                     }
                     else
                     {
-                        AsignarTextoAlertaInfo("Las clave de confirmacion es incorrecta.");
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Las clave de confirmacion es incorrecta');", addScriptTags: true);
                     }
                 }
                 else
-                {
-                    AsignarTextoAlertaInfo("El Nombre de usuario insertado ya existe.");
+                {  
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('El Nombre de usuario insertado ya existe');", addScriptTags: true);
                 }
             }
             else
             {
-                AsignarTextoAlertaInfo("Favor llenar los campos vacios.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor llenar los campos vacios.');", addScriptTags: true);
             }
         }
 
