@@ -136,7 +136,6 @@ namespace GimnacioTechWeb
 
                 if (cliente != null)
                 {
-
                     DatosCliente();
                 }
                 else
@@ -180,7 +179,7 @@ namespace GimnacioTechWeb
             if (EmailTextBox.Text != "")
             {
                 if (!regEmail.IsMatch(EmailTextBox.Text))
-                {                  
+                {
                     interruptor = false;
                 }
             }
@@ -235,8 +234,20 @@ namespace GimnacioTechWeb
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "#ModalEliminar", "showModalEliminar();", true);
+                int id = Utilidades.TOINT(ClienteIdTextBox.Text);
+
+                cliente = ClientesBLL.Buscar(p => p.ClienteId == id);
+
+                if (cliente != null)
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "#ModalEliminar", "showModalEliminar();", true);
+                }
+                else
+                {
+                    AsignarTextoAlertaInfo("no existe cliente con ese id.");
+                }
             }
+
         }
 
         protected void EliminarButton_Click(object sender, EventArgs e)

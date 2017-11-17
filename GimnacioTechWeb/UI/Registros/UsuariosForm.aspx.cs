@@ -1,4 +1,4 @@
-﻿ using BLL;
+﻿using BLL;
 using Entidades;
 using GimnasioTech;
 using System;
@@ -18,40 +18,13 @@ namespace GimnacioTechWeb.Formularios
         protected void Page_Load(object sender, EventArgs e)
         {
             usuario = new Usuarios();
-            AlertSuccessPanel.Visible = false;
-            AlertInfoPanel.Visible = false;
-            AlertDangerPanel.Visible = false;
 
-             if (Consultas.UsuariosConsulta.Usuario != null)
-             {
+            if (Consultas.UsuariosConsulta.Usuario != null)
+            {
                 usuario = Consultas.UsuariosConsulta.Usuario;
                 DatosUsuario();
-                Consultas.UsuariosConsulta.Usuario = null;               
-             }
-        }
-
-        private void AsignarTextoAlertaInfo(string texto)
-        {
-            AlertInfoLabel.Text = texto;
-            AlertInfoPanel.Visible = true;
-        }
-
-        private void AsignarTextoAlertaSuccess(string texto)
-        {
-            AlertSuccessLabel.Text = texto;
-            AlertSuccessPanel.Visible = true;
-        }
-
-        private void AsignarTextoAlertaWarning(string texto)
-        {
-            AlertWarningLabel.Text = texto;
-            AlertWarningPanel.Visible = true;
-        }
-
-        private void AsignarTextoAlertaDanger(string texto)
-        {
-            AlertDangerLabel.Text = texto;
-            AlertDangerPanel.Visible = true;
+                Consultas.UsuariosConsulta.Usuario = null;
+            }
         }
 
         private void Limpiar()
@@ -63,10 +36,6 @@ namespace GimnacioTechWeb.Formularios
             ConfirmarClaveTextBox.Text = "";
             CargoDropDownList.Text = "Usuario";
             FechaIngresoTextBox.Text = "";
-
-            AlertSuccessPanel.Visible = false;
-            AlertInfoPanel.Visible = false;
-            AlertDangerPanel.Visible = false;
         }
 
         private bool Validar()
@@ -93,7 +62,7 @@ namespace GimnacioTechWeb.Formularios
             {
                 interruptor = false;
             }
-            if(string.IsNullOrEmpty(FechaIngresoTextBox.Text))
+            if (string.IsNullOrEmpty(FechaIngresoTextBox.Text))
             {
                 interruptor = false;
             }
@@ -129,7 +98,7 @@ namespace GimnacioTechWeb.Formularios
         {
             if (string.IsNullOrEmpty(UsuarioIdTextBox.Text))
             {
-                AsignarTextoAlertaInfo("Digite el id del usuario que desea buscar.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Digite el id del usuario que desea buscar');", addScriptTags: true);
             }
             else
             {
@@ -137,13 +106,14 @@ namespace GimnacioTechWeb.Formularios
 
                 usuario = UsuariosBLL.Buscar(p => p.UsuarioId == id);
 
-                if (usuario != null) {
+                if (usuario != null)
+                {
 
                     DatosUsuario();
                 }
                 else
                 {
-                    AsignarTextoAlertaInfo("No existe usuario con ese id.");
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No existe usuario con ese id');", addScriptTags: true);
                 }
             }
         }
@@ -156,7 +126,7 @@ namespace GimnacioTechWeb.Formularios
             {
                 if (UsuariosBLL.Buscar(p => p.NombreUsuario == NombreUsuarioTextBox.Text) == null || UsuarioIdTextBox.Text == CompararNombreUsuario.UsuarioId.ToString())
                 {
-                    if(ClaveTextBox.Text == ConfirmarClaveTextBox.Text)
+                    if (ClaveTextBox.Text == ConfirmarClaveTextBox.Text)
                     {
                         usuario = LlenarCampos();
 
@@ -176,7 +146,7 @@ namespace GimnacioTechWeb.Formularios
                     }
                 }
                 else
-                {  
+                {
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('El Nombre de usuario insertado ya existe');", addScriptTags: true);
                 }
             }
@@ -198,24 +168,25 @@ namespace GimnacioTechWeb.Formularios
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-                int id = Utilidades.TOINT(UsuarioIdTextBox.Text);
+            int id = Utilidades.TOINT(UsuarioIdTextBox.Text);
 
-                if (UsuariosBLL.Eliminar(UsuariosBLL.Buscar(p => p.UsuarioId == id)))
-                {
-                    Limpiar();
-                    AsignarTextoAlertaSuccess("Usuario eliminado con exito.");                
-                }
-                else
-                {
-                    AsignarTextoAlertaDanger("No se puedo eliminar el usuario.");
-                }
+            if (UsuariosBLL.Eliminar(UsuariosBLL.Buscar(p => p.UsuarioId == id)))
+            {
+                Limpiar();
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Usuario eliminado con exito');", addScriptTags: true);
+
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('No se puedo eliminar el usuario');", addScriptTags: true);
+            }
         }
 
         protected void EnviarAlModalEliminarButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(UsuarioIdTextBox.Text))
             {
-                AsignarTextoAlertaInfo("Ingresar el id del usuario que desea eliminar.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor ingresar el id del usuario que desea eliminar');", addScriptTags: true);
             }
             else
             {
