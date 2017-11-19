@@ -1,4 +1,6 @@
-﻿/*Modal Eliminar*/
+﻿alert("Hello! I am an alert box!!");
+
+/*Modal Eliminar*/
 function showModalEliminar() {
     $("#ModalEliminar").modal('show');
 }
