@@ -18,6 +18,7 @@ namespace GimnacioTechWeb.UI
         protected void SingOutButton_Click(object sender, EventArgs e)
         {
             FormsAuthentication.SignOut();
+            System.Web.Security.FormsAuthentication.RedirectToLoginPage();
         }
     }
 }

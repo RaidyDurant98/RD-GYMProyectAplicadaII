@@ -5,36 +5,45 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-    <!--Inclusión de Bootstrap 4.0.0-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <!--Inclusión de Bootstrap-->
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+
+    <%--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">Esto hay que borrarlo</script>--%>
+    <!--Inclusión de JQuery-->
+    <script src="../../Scripts/jquery-3.2.1.min.js"></script>
+
+    <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js">Esto hay que borrarlo</script>--%>
+    <!--Inclusión de poppers-->
+    <script src="../../Scripts/popper.min.js"></script>
+
+    <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js">Esto hay que borrarlo</script>--%>
+    <!--Inclusión de Bootstrap Js-->
+    <script src="../../Scripts/bootstrap.min.js"></script>
 
     <!--Inclusión de scripts Personales-->
     <script src="../../Scripts/MyScripts.js"></script>
 
-    <!--Inclusión de toast-->
+    <!--Inclusión de CSS toast-->
     <link href="../../Content/toastr.css" rel="stylesheet" />
 
     <!--Inclusión de Style Sheet Personal-->
     <link rel="stylesheet" href="../../CSS/MyStyles.css" />
-  
-    <!--Inclusión de JQuery-->
-    <script src="Scripts/jquery-3.2.1.min.js"></script>
 
-    <!--Inclusión de toast-->
+    <!--Inclusión de JS toast-->
     <script src="../../Scripts/toastr.js"></script>
-    
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <title>Login</title>
 </head>
 <body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-3">RD-GYM</h1>
-            <p class="lead">Nunca pares, nunca te conformes, hasta que lo bueno sea mejor y lo mejor excelente.</p>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid bg-secondary">
+            <div class="container">
+                <h1 class="display-3 text-white">RD-GYM</h1>
+                <p class="lead text-white">Nunca pares, nunca te conformes, hasta que lo bueno sea mejor y lo mejor excelente.</p>
+            </div>
         </div>
     </div>
 
