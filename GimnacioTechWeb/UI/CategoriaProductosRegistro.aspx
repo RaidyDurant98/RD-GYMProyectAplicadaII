@@ -50,22 +50,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <br />
-            <!--Alertas-->
-            <asp:Panel CssClass="alert alert-success text-center" ID="AlertSuccessPanel" role="alert" runat="server">
-                <asp:Label ID="AlertSuccessLabel" runat="server" Text=""></asp:Label>
-            </asp:Panel>
-            <asp:Panel CssClass="alert alert-info text-center" ID="AlertInfoPanel" role="alert" runat="server">
-                <asp:Label ID="AlertInfoLabel" runat="server" Text=""></asp:Label>
-            </asp:Panel>
-            <asp:Panel CssClass="alert alert-danger text-center" ID="AlertDangerPanel" role="alert" runat="server">
-                <asp:Label ID="AlertDangerLabel" runat="server" Text=""></asp:Label>
-            </asp:Panel>
-            <asp:Panel CssClass="alert alert-Warnig text-center" ID="AlertWarningPanel" role="alert" runat="server">
-                <asp:Label ID="AlertWarningLabel" runat="server" Text=""></asp:Label>
-            </asp:Panel>
         </div>
         <!--Col formulario-->
     </div>

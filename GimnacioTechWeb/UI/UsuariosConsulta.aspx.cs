@@ -100,7 +100,7 @@ namespace GimnacioTechWeb.UI
                 if (string.IsNullOrEmpty(FechaDesdeTextBox.Text) || string.IsNullOrEmpty(FechaHastaTextBox.Text))
                 {
                     UsuariosConsultaGridView.DataBind();
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor elija el rango de la fecha');", addScriptTags: true);
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor elige el rango de la fecha');", addScriptTags: true);
                     ImprimirButton.Visible = false;
                 }
                 else

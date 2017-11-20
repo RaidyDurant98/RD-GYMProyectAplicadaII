@@ -15,9 +15,6 @@ namespace GimnacioTechWeb.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            AlertInfoPanel.Visible = false;
-            AlertSuccessPanel.Visible = false;
-            AlertDangerPanel.Visible = false;
             Cliente = null;
 
             if (!Page.IsPostBack)
@@ -48,24 +45,6 @@ namespace GimnacioTechWeb.UI
             {
                 ImprimirButton.Visible = true;
             }
-        }
-
-        private void AsignarTextoAlertaInfo(string texto)
-        {
-            AlertInfoLabel.Text = texto;
-            AlertInfoPanel.Visible = true;
-        }
-
-        private void AsignarTextoAlertaSuccess(string texto)
-        {
-            AlertSuccessLabel.Text = texto;
-            AlertSuccessPanel.Visible = true;
-        }
-
-        private void AsignarTextoAlertaDanger(string texto)
-        {
-            AlertDangerLabel.Text = texto;
-            AlertDangerPanel.Visible = true;
         }
 
         private void Filtrar()
@@ -103,7 +82,7 @@ namespace GimnacioTechWeb.UI
             CargarListaCliente();
             if (Lista.Count() == 0)
             {
-                AsignarTextoAlertaInfo("No existe cliente.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No existe cliente');", addScriptTags: true);
                 ImprimirButton.Visible = false;
             }
         }
@@ -113,7 +92,7 @@ namespace GimnacioTechWeb.UI
             if (string.IsNullOrEmpty(FiltroTextBox.Text) && FiltrarDropDownList.SelectedIndex != 0 && FiltrarDropDownList.SelectedIndex != 4)
             {
                 ClientesConsultaGridView.DataBind();
-                AsignarTextoAlertaInfo("Por favor digite el dato que desea filtrar.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor digite el dato del filtro');", addScriptTags: true);
                 ImprimirButton.Visible = false;
             }
             else if (FiltrarDropDownList.SelectedIndex == 4)
@@ -121,7 +100,7 @@ namespace GimnacioTechWeb.UI
                 if (string.IsNullOrEmpty(FechaDesdeTextBox.Text) || string.IsNullOrEmpty(FechaHastaTextBox.Text))
                 {
                     ClientesConsultaGridView.DataBind();
-                    AsignarTextoAlertaInfo("Por favor eliga el rango de fecha que desea filtrar.");
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor elige el rango de fecha');", addScriptTags: true);
                     ImprimirButton.Visible = false;
                 }
                 else
@@ -159,11 +138,11 @@ namespace GimnacioTechWeb.UI
                 FechaDesdeTextBox.Text = "";
                 FechaHastaTextBox.Text = "";
 
-                AsignarTextoAlertaSuccess("Cliente eliminado con exito.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Cliente eliminado con exito');", addScriptTags: true);
             }
             else
             {
-                AsignarTextoAlertaDanger("No se puedo eliminar el cliente.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar el cliente');", addScriptTags: true);
             }
             Cliente = null;
             Lista = BLL.ClientesBLL.GetListAll();

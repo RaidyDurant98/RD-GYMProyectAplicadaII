@@ -31,60 +31,6 @@ namespace GimnacioTechWeb.UI {
         protected global::System.Web.UI.WebControls.TextBox FiltroTextBox;
         
         /// <summary>
-        /// AlertInfoPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel AlertInfoPanel;
-        
-        /// <summary>
-        /// AlertInfoLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AlertInfoLabel;
-        
-        /// <summary>
-        /// AlertSuccessPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel AlertSuccessPanel;
-        
-        /// <summary>
-        /// AlertSuccessLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AlertSuccessLabel;
-        
-        /// <summary>
-        /// AlertDangerPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel AlertDangerPanel;
-        
-        /// <summary>
-        /// AlertDangerLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AlertDangerLabel;
-        
-        /// <summary>
         /// FiltroButton control.
         /// </summary>
         /// <remarks>

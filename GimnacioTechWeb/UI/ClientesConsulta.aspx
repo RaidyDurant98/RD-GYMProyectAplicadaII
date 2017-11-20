@@ -43,20 +43,6 @@
         <!--GridView-->
         <div class="container">
             <div class="col-12">
-                <!--Alertas-->
-                <div class="float-left col-sm-5">
-                    <asp:Panel CssClass="alert alert-info text-center" ID="AlertInfoPanel" role="alert" runat="server">
-                        <asp:Label ID="AlertInfoLabel" runat="server" Text=""></asp:Label>
-                    </asp:Panel>
-                    <asp:Panel CssClass="alert alert-success text-center" ID="AlertSuccessPanel" role="alert" runat="server">
-                        <asp:Label ID="AlertSuccessLabel" runat="server" Text=""></asp:Label>
-                    </asp:Panel>
-                    <asp:Panel CssClass="alert alert-danger text-center" ID="AlertDangerPanel" role="alert" runat="server">
-                        <asp:Label ID="AlertDangerLabel" runat="server" Text=""></asp:Label>
-                    </asp:Panel>
-                </div>
-                <br />
-                <br />
                 <div class="float-right">
                     <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-secondary" Text="Filtrar" OnClick="FiltroButton_Click" />
                 </div>

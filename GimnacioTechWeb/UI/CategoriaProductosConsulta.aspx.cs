@@ -15,9 +15,6 @@ namespace GimnacioTechWeb.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            AlertInfoPanel.Visible = false;
-            AlertSuccessPanel.Visible = false;
-            AlertDangerPanel.Visible = false;
             Categoria = null;
 
             if (!Page.IsPostBack)
@@ -50,24 +47,6 @@ namespace GimnacioTechWeb.UI
             }
         }
 
-        private void AsignarTextoAlertaInfo(string texto)
-        {
-            AlertInfoLabel.Text = texto;
-            AlertInfoPanel.Visible = true;
-        }
-
-        private void AsignarTextoAlertaSuccess(string texto)
-        {
-            AlertSuccessLabel.Text = texto;
-            AlertSuccessPanel.Visible = true;
-        }
-
-        private void AsignarTextoAlertaDanger(string texto)
-        {
-            AlertDangerLabel.Text = texto;
-            AlertDangerPanel.Visible = true;
-        }
-
         private void Filtrar()
         {
             if (FiltrarDropDownList.SelectedIndex == 0)
@@ -89,7 +68,7 @@ namespace GimnacioTechWeb.UI
             CargarListaCategoria();
             if (Lista.Count() == 0)
             {
-                AsignarTextoAlertaInfo("No existe categoria.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No existe categoria');", addScriptTags: true);
                 ImprimirButton.Visible = false;
             }
         }
@@ -99,7 +78,7 @@ namespace GimnacioTechWeb.UI
             if (string.IsNullOrEmpty(FiltroTextBox.Text) && FiltrarDropDownList.SelectedIndex != 0)
             {
                 CategoriasConsultaGridView.DataBind();
-                AsignarTextoAlertaInfo("Por favor digite el dato que desea filtrar.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor digite el dato a filtrar');", addScriptTags: true);
                 ImprimirButton.Visible = false;
             }
             else
@@ -141,11 +120,11 @@ namespace GimnacioTechWeb.UI
                 FiltroTextBox.Text = "";
                 FiltrarDropDownList.SelectedIndex = 0;
 
-                AsignarTextoAlertaSuccess("Categoria eliminado con exito.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Categoria eliminada con exito');", addScriptTags: true);
             }
             else
             {
-                AsignarTextoAlertaDanger("No se puedo eliminar la categoria.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar la categoria');", addScriptTags: true);
             }
             Categoria = null;
             Lista = BLL.CategoriaProductosBLL.GetListAll();

@@ -17,9 +17,6 @@ namespace GimnacioTechWeb.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             categoria = new CategoriaProductos();
-            AlertSuccessPanel.Visible = false;
-            AlertInfoPanel.Visible = false;
-            AlertDangerPanel.Visible = false;
 
             if (UI.CategoriaProductosConsulta.Categoria != null)
             {
@@ -29,38 +26,10 @@ namespace GimnacioTechWeb.UI
             }
         }
 
-        private void AsignarTextoAlertaInfo(string texto)
-        {
-            AlertInfoLabel.Text = texto;
-            AlertInfoPanel.Visible = true;
-        }
-
-        private void AsignarTextoAlertaSuccess(string texto)
-        {
-            AlertSuccessLabel.Text = texto;
-            AlertSuccessPanel.Visible = true;
-        }
-
-        private void AsignarTextoAlertaWarning(string texto)
-        {
-            AlertWarningLabel.Text = texto;
-            AlertWarningPanel.Visible = true;
-        }
-
-        private void AsignarTextoAlertaDanger(string texto)
-        {
-            AlertDangerLabel.Text = texto;
-            AlertDangerPanel.Visible = true;
-        }
-
         private void Limpiar()
         {
             CategoriaIdTextBox.Text = "";
             DescripcionTextBox.Text = "";
-
-            AlertSuccessPanel.Visible = false;
-            AlertInfoPanel.Visible = false;
-            AlertDangerPanel.Visible = false;
         }
 
         private bool Validar()
@@ -85,7 +54,7 @@ namespace GimnacioTechWeb.UI
         {
             if (string.IsNullOrEmpty(CategoriaIdTextBox.Text))
             {
-                AsignarTextoAlertaInfo("Digite el id de la categoria.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Digite el id de la categoria');", addScriptTags: true);
             }
             else
             {
@@ -99,7 +68,7 @@ namespace GimnacioTechWeb.UI
                 }
                 else
                 {
-                    AsignarTextoAlertaInfo("No existe categoria con ese id.");
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('no existe categoria con ese id');", addScriptTags: true);
                 }
             }
 
@@ -121,16 +90,16 @@ namespace GimnacioTechWeb.UI
                 if (CategoriaProductosBLL.Guardar(LlenarInstanciaCategoria()))
                 {
                     CategoriaIdTextBox.Text = Convert.ToString(categoria.CategoriaId);
-                    AsignarTextoAlertaSuccess("Categoria guardada con exito.");
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Categoria guardada con exito');", addScriptTags: true);
                 }
                 else
                 {
-                    AsignarTextoAlertaDanger("No se pudo guardar la categoria.");
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo guardar la categoria');", addScriptTags: true);
                 }
             }
             else
             {
-                AsignarTextoAlertaInfo("Por favor introducir la descripcion de la categoria");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor llenar los campos vacios');", addScriptTags: true);
             }
         }
 
@@ -162,11 +131,11 @@ namespace GimnacioTechWeb.UI
             if (CategoriaProductosBLL.Eliminar(CategoriaProductosBLL.Buscar(p => p.CategoriaId == id)))
             {
                 Limpiar();
-                AsignarTextoAlertaSuccess("Categoria eliminado con exito.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Categoria eliminada con exito');", addScriptTags: true);
             }
             else
             {
-                AsignarTextoAlertaDanger("No se puedo eliminar la categoria.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No se pudo eliminar la categoria');", addScriptTags: true);
             }
         }
     }
