@@ -171,7 +171,7 @@ namespace GimnacioTechWeb.UI.Registros
         {
             if (VerificarExistenciaUsuario())
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "#ModalEliminar", "showModalEliminar();", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "#ModalEliminar", "showModalEliminar();", true);               
             }
         }
 
@@ -179,15 +179,21 @@ namespace GimnacioTechWeb.UI.Registros
         {
             int id = Utilidades.TOINT(UsuarioIdTextBox.Text);
 
-            if (UsuariosBLL.Eliminar(UsuariosBLL.Buscar(p => p.UsuarioId == id)))
+            if (UsuarioIdTextBox.Text != "1")
             {
-                Limpiar();
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Usuario eliminado con exito');", addScriptTags: true);
-
+                if (UsuariosBLL.Eliminar(UsuariosBLL.Buscar(p => p.UsuarioId == id)))
+                {
+                    Limpiar();
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Usuario eliminado con exito');", addScriptTags: true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('No se puedo eliminar el usuario');", addScriptTags: true);
+                }
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('No se puedo eliminar el usuario');", addScriptTags: true);
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No puede eliminar el usuario maestro');", addScriptTags: true);
             }
         }
     }
