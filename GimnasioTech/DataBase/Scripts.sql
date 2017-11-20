@@ -46,3 +46,8 @@ Descripcion varchar(255),
 Precio decimal,
 Cantidad decimal
 );
+
+create table CategoriaProductos(
+CategoriaId int identity(1,1) primary key,
+Descripcion varchar(255),
+);

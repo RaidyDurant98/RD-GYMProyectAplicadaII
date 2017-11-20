@@ -9,7 +9,7 @@ namespace DAL
 {
     public class RD_GYMDb : DbContext
     {
-        public RD_GYMDb() : base("ConStr")
+        public RD_GYMDb() : base("ConStr1")
         {
 
         }

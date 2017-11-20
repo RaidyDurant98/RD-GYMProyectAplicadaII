@@ -26,12 +26,21 @@ namespace GimnacioTechWeb.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"D:\\UCNE\\PROGRAMACION APLICAD" +
-            "A II\\RD-GYM\\GimnasioTech\\DataBase\\RD-GYMDb.mdf\";Integrated Security=True;Connect" +
-            " Timeout=30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\RD-GYMDb.mdf;" +
+            "Integrated Security=True;Connect Timeout=30")]
         public string ConStr {
             get {
                 return ((string)(this["ConStr"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=RAIDY-PC\\SQLEXPRESS;Initial Catalog=RDGYMDb;Integrated Security=True")]
+        public string ConStr1 {
+            get {
+                return ((string)(this["ConStr1"]));
             }
         }
     }
