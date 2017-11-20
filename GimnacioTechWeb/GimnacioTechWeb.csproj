@@ -110,7 +110,6 @@
     <Content Include="UI\ClientesConsulta.aspx" />
     <Content Include="UI\ClientesRegistro.aspx" />
     <Content Include="UI\Consultas\ProductosConsulta.aspx" />
-    <Content Include="UI\Default.aspx" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="CSS\MyStyles.css" />
     <Content Include="favicon.ico" />
@@ -134,7 +133,7 @@
     <Content Include="UI\Consultas\CategoriaProductosConsulta.aspx" />
     <Content Include="UI\Consultas\ClientesConsulta.aspx" />
     <Content Include="UI\Consultas\UsuariosConsulta.aspx" />
-    <Content Include="UI\DefaultP.aspx" />
+    <Content Include="UI\Default.aspx" />
     <Content Include="UI\ProductosConsulta.aspx" />
     <Content Include="UI\ProductosRegistro.aspx" />
     <Content Include="UI\Registros\CategoriaProductosForm.aspx" />
@@ -210,13 +209,6 @@
     <Compile Include="UI\Consultas\ProductosConsulta.aspx.designer.cs">
       <DependentUpon>ProductosConsulta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UI\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,12 +245,12 @@
     <Compile Include="UI\Consultas\UsuariosConsulta.aspx.designer.cs">
       <DependentUpon>UsuariosConsulta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UI\DefaultP.aspx.cs">
-      <DependentUpon>DefaultP.aspx</DependentUpon>
+    <Compile Include="UI\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UI\DefaultP.aspx.designer.cs">
-      <DependentUpon>DefaultP.aspx</DependentUpon>
+    <Compile Include="UI\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\ProductosConsulta.aspx.cs">
       <DependentUpon>ProductosConsulta.aspx</DependentUpon>

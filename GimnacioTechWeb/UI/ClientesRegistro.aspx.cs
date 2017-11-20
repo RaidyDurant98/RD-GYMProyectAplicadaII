@@ -19,10 +19,6 @@ namespace GimnacioTechWeb.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             cliente = new Clientes();
-            AlertSuccessPanel.Visible = false;
-            AlertInfoPanel.Visible = false;
-            AlertDangerPanel.Visible = false;
-
 
             if (UI.ClientesConsulta.Cliente != null)
             {
@@ -30,30 +26,6 @@ namespace GimnacioTechWeb.UI
                 CargarDatosCliente();
                 UI.ClientesConsulta.Cliente = null;
             }
-        }
-
-        private void AsignarTextoAlertaInfo(string texto)
-        {
-            AlertInfoLabel.Text = texto;
-            AlertInfoPanel.Visible = true;
-        }
-
-        private void AsignarTextoAlertaSuccess(string texto)
-        {
-            AlertSuccessLabel.Text = texto;
-            AlertSuccessPanel.Visible = true;
-        }
-
-        private void AsignarTextoAlertaWarning(string texto)
-        {
-            AlertWarningLabel.Text = texto;
-            AlertWarningPanel.Visible = true;
-        }
-
-        private void AsignarTextoAlertaDanger(string texto)
-        {
-            AlertDangerLabel.Text = texto;
-            AlertDangerPanel.Visible = true;
         }
 
         private void Limpiar()
@@ -66,10 +38,6 @@ namespace GimnacioTechWeb.UI
             FechaInscripcionTextBox.Text = "";
             MasculinoRadioButton.Checked = false;
             FemeninoRadioButton.Checked = false;
-
-            AlertSuccessPanel.Visible = false;
-            AlertInfoPanel.Visible = false;
-            AlertDangerPanel.Visible = false;
         }
 
         private bool Validar()
@@ -126,7 +94,7 @@ namespace GimnacioTechWeb.UI
         {
             if (string.IsNullOrEmpty(ClienteIdTextBox.Text))
             {
-                AsignarTextoAlertaInfo("Digite el id del cliente.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Digite el id del cliente');", addScriptTags: true);
             }
             else
             {
@@ -140,7 +108,7 @@ namespace GimnacioTechWeb.UI
                 }
                 else
                 {
-                    AsignarTextoAlertaInfo("No existe cliente con ese id.");
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No existe cliente con ese id');", addScriptTags: true);
                 }
             }
 
@@ -198,21 +166,21 @@ namespace GimnacioTechWeb.UI
                     if (ClientesBLL.Guardar(LlenarInstanciaClientes()))
                     {
                         ClienteIdTextBox.Text = Convert.ToString(cliente.ClienteId);
-                        AsignarTextoAlertaSuccess("Cliente guardado con exito.");
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Cliente guardado con exito');", addScriptTags: true);
                     }
                     else
                     {
-                        AsignarTextoAlertaDanger("No se pudo guardar el cliente.");
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo guardar el cliente');", addScriptTags: true);
                     }
                 }
                 else
                 {
-                    AsignarTextoAlertaInfo("El email ingresado no es valido.");
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('El email ingresado no es valido');", addScriptTags: true);
                 }
             }
             else
             {
-                AsignarTextoAlertaInfo("Favor llenar los campos vacios.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor llenar los campos vacios');", addScriptTags: true);
             }
         }
 
@@ -244,11 +212,11 @@ namespace GimnacioTechWeb.UI
             if (ClientesBLL.Eliminar(ClientesBLL.Buscar(p => p.ClienteId == id)))
             {
                 Limpiar();
-                AsignarTextoAlertaSuccess("Cliente eliminado con exito.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Cliente eliminado con exito');", addScriptTags: true);
             }
             else
             {
-                AsignarTextoAlertaDanger("No se pudo eliminar el cliente.");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar el cliente');", addScriptTags: true);
             }
         }
     }
