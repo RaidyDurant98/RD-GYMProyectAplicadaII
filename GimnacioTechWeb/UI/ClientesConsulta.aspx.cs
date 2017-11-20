@@ -158,7 +158,7 @@ namespace GimnacioTechWeb.UI
 
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../Reportes/ClientesReporte.aspx");
+            Response.Redirect("Reportes/ClientesReporte.aspx");
         }
 
         protected void EnviarAlModalEliminarButton_Click(object sender, EventArgs e)

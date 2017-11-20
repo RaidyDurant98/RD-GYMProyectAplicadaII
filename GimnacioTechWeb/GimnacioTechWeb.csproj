@@ -159,6 +159,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="UI\Reportes\ClientesReporte.aspx" />
     <Content Include="UI\UsuariosConsulta.aspx" />
     <Content Include="UI\UsuariosRegistro.aspx" />
     <Content Include="UI\Reportes\UsuariosReporte.aspx" />
@@ -308,6 +309,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\ClientesReporte.aspx.cs">
+      <DependentUpon>ClientesReporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ClientesReporte.aspx.designer.cs">
+      <DependentUpon>ClientesReporte.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\UsuariosConsulta.aspx.cs">
       <DependentUpon>UsuariosConsulta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -358,6 +366,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UI\Reportes\ClientesReporte.rdlc" />
     <EmbeddedResource Include="UI\Reportes\UsuariosReporte.rdlc" />
   </ItemGroup>
   <PropertyGroup>

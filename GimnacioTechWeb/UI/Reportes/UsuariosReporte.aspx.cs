@@ -19,7 +19,7 @@ namespace GimnacioTechWeb.UI.Reportes
                 UsuariosReportViewer.LocalReport.DataSources.Clear();
 
                 UsuariosReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("UsuariosDataSet",
-                    UsuariosConsulta.Lista));
+                    UI.UsuariosConsulta.Lista));
 
                 UsuariosReportViewer.LocalReport.Refresh();
             }

@@ -38,7 +38,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Login</title>
+    <title>Inicio de sesion</title>
 </head>
 <body>
     <div class="container">
@@ -59,9 +59,9 @@
     <div class="text-center">
         <form id="Loginform" runat="server">
             <div class="row">
-                <div class="col-12 col-sm-2 col-md-4">
+                <div class="col-12 col-sm-2 col-md-3 col-lg-4">
                 </div>
-                <div class="col-12 col-sm-8 col-md-4">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-4">
                     <div class="form-group">
                         <asp:Label ID="NombreUsuarioLabel" runat="server" Text="Nombre Usuario"></asp:Label>
                         <asp:TextBox CssClass="form-control text-center" ID="NombreUsuarioTextBox" runat="server" AutoComplete="off"></asp:TextBox>
@@ -73,7 +73,7 @@
                     </div>
 
                     <div class="text-center">
-                        <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-secondary" Text="Login" OnClick="LoginButton_Click" />
+                        <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-secondary" Text="Iniciar sesion" OnClick="LoginButton_Click" />
                     </div>
                 </div>
             </div>
