@@ -15,6 +15,7 @@ namespace GimnacioTechWeb.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             Producto = null;
+            Limpiar();
 
             if (!Page.IsPostBack)
             {
@@ -44,6 +45,14 @@ namespace GimnacioTechWeb.UI
             {
                 ImprimirButton.Visible = true;
             }
+        }
+
+        private void Limpiar()
+        {
+            FiltroTextBox.Text = "";
+            FiltrarDropDownList.SelectedIndex = 0;
+            FechaDesdeTextBox.Text = "";
+            FechaHastaTextBox.Text = "";
         }
 
         private void Filtrar()
@@ -119,10 +128,7 @@ namespace GimnacioTechWeb.UI
             Producto = BLL.ProductosBLL.Buscar(U => U.ProductoId == id);
             if (BLL.ProductosBLL.Eliminar(Producto))
             {
-                FiltroTextBox.Text = "";
-                FiltrarDropDownList.SelectedIndex = 0;
-                FechaDesdeTextBox.Text = "";
-                FechaHastaTextBox.Text = "";
+                Limpiar();
 
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('producto eliminado con exito');", addScriptTags: true);
             }

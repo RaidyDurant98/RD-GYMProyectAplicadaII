@@ -16,11 +16,12 @@ namespace GimnacioTechWeb.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             Cliente = null;
+            Limpiar();
 
             if (!Page.IsPostBack)
             {
                 Lista = BLL.ClientesBLL.GetListAll();
-                CargarListaCliente();
+                CargarListaCliente();           
             }
 
             if (Lista == null || Lista.Count() == 0)
@@ -31,6 +32,14 @@ namespace GimnacioTechWeb.UI
             {
                 ImprimirButton.Visible = true;
             }
+        }
+
+        private void Limpiar()
+        {
+            FiltroTextBox.Text = "";
+            FiltrarDropDownList.SelectedIndex = 0;
+            FechaDesdeTextBox.Text = "";
+            FechaHastaTextBox.Text = "";
         }
 
         private void CargarListaCliente()
@@ -133,10 +142,7 @@ namespace GimnacioTechWeb.UI
             Cliente = BLL.ClientesBLL.Buscar(U => U.ClienteId == id);
             if (BLL.ClientesBLL.Eliminar(Cliente))
             {
-                FiltroTextBox.Text = "";
-                FiltrarDropDownList.SelectedIndex = 0;
-                FechaDesdeTextBox.Text = "";
-                FechaHastaTextBox.Text = "";
+                Limpiar();
 
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Cliente eliminado con exito');", addScriptTags: true);
             }

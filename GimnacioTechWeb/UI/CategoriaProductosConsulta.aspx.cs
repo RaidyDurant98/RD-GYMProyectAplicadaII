@@ -16,11 +16,13 @@ namespace GimnacioTechWeb.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             Categoria = null;
+            Limpiar();
 
             if (!Page.IsPostBack)
             {
                 Lista = BLL.CategoriaProductosBLL.GetListAll();
                 CargarListaCategoria();
+                Limpiar();
             }
 
             if (Lista == null || Lista.Count() == 0)
@@ -31,6 +33,12 @@ namespace GimnacioTechWeb.UI
             {
                 ImprimirButton.Visible = true;
             }
+        }
+
+        private void Limpiar()
+        {
+            FiltroTextBox.Text = "";
+            FiltrarDropDownList.SelectedIndex = 0;
         }
 
         private void CargarListaCategoria()
@@ -117,8 +125,7 @@ namespace GimnacioTechWeb.UI
             Categoria = BLL.CategoriaProductosBLL.Buscar(U => U.CategoriaId == id);
             if (BLL.CategoriaProductosBLL.Eliminar(Categoria))
             {
-                FiltroTextBox.Text = "";
-                FiltrarDropDownList.SelectedIndex = 0;
+                Limpiar();
 
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Categoria eliminada con exito');", addScriptTags: true);
             }

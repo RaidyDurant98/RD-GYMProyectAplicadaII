@@ -5,19 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+    <meta charset="utf-8" />
+    <meta lang="es-ES" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="Description" content="RD-GYM" />
+    <meta name="author" content="Raidy Duran Garcia" />
+    <link rel="icon" href="../favicon.ico" />
+
     <!--Inclusión de Bootstrap-->
     <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
 
-    <%--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">Esto hay que borrarlo</script>--%>
     <!--Inclusión de JQuery-->
     <script src="../../Scripts/jquery-3.2.1.min.js"></script>
 
-    <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js">Esto hay que borrarlo</script>--%>
     <!--Inclusión de poppers-->
     <script src="../../Scripts/popper.min.js"></script>
 
-    <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js">Esto hay que borrarlo</script>--%>
     <!--Inclusión de Bootstrap Js-->
     <script src="../../Scripts/bootstrap.min.js"></script>
 
@@ -60,13 +63,13 @@
                 </div>
                 <div class="col-12 col-sm-8 col-md-4">
                     <div class="form-group">
-                        <asp:Label ID="Label1" runat="server" Text="Nombre Usuario"></asp:Label>
-                        <asp:TextBox CssClass="form-control" ID="NombreUsuarioTextBox" runat="server" AutoComplete="off"></asp:TextBox>
+                        <asp:Label ID="NombreUsuarioLabel" runat="server" Text="Nombre Usuario"></asp:Label>
+                        <asp:TextBox CssClass="form-control text-center" ID="NombreUsuarioTextBox" runat="server" AutoComplete="off"></asp:TextBox>
                     </div>
 
                     <div class="form-group">
-                        <asp:Label ID="Label2" runat="server" Text="Clave"></asp:Label>
-                        <asp:TextBox CssClass="form-control" ID="ClaveTextBox" runat="server" AutoComplete="off"></asp:TextBox>
+                        <asp:Label ID="ClaveLabel" runat="server" Text="Clave"></asp:Label>
+                        <asp:TextBox CssClass="form-control text-center" type="password" ID="ClaveTextBox" runat="server" AutoComplete="off"></asp:TextBox>
                     </div>
 
                     <div class="text-center">

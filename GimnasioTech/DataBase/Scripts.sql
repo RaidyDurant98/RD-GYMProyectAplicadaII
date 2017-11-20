@@ -22,18 +22,18 @@ UsuarioId int identity(1,1) primary key,
 Nombres varchar(80),
 NombreUsuario varchar(80),
 Clave varchar(40),
-ConfirmarClave varchar(40),
-Cargo varchar(60)
+Cargo varchar(60),
+FechaIngreso date
 );
 
 create table Facturas(
 FacturaId int identity(1,1) primary key,
 NombreCliente varchar(80),
+NombreUsuario varchar(50),
 Fecha datetime,
 Monto decimal,
-Devuelta decimal,
 DineroPagado decimal,
-NombreUsuario varchar(50),
+Devuelta decimal,
 Comentario varchar(255),
 FormaPago varchar(40)
 );

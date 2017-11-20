@@ -16,6 +16,7 @@ namespace GimnacioTechWeb.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario = null;
+            Limpiar();
 
             if (!Page.IsPostBack)
             {
@@ -31,6 +32,14 @@ namespace GimnacioTechWeb.UI
             {
                 ImprimirButton.Visible = true;
             }
+        }
+
+        private void Limpiar()
+        {
+            FiltroTextBox.Text = "";
+            FiltrarDropDownList.SelectedIndex = 0;
+            FechaDesdeTextBox.Text = "";
+            FechaHastaTextBox.Text = "";
         }
 
         private void CargarListaUsuario()
@@ -133,10 +142,7 @@ namespace GimnacioTechWeb.UI
             Usuario = BLL.UsuariosBLL.Buscar(U => U.UsuarioId == id);
             if (BLL.UsuariosBLL.Eliminar(Usuario))
             {
-                FiltroTextBox.Text = "";
-                FiltrarDropDownList.SelectedIndex = 0;
-                FechaDesdeTextBox.Text = "";
-                FechaHastaTextBox.Text = "";
+                Limpiar();
 
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Usuario eliminado con exito');", addScriptTags: true);
             }

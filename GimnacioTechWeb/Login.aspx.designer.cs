@@ -22,13 +22,13 @@ namespace GimnacioTechWeb {
         protected global::System.Web.UI.HtmlControls.HtmlForm Loginform;
         
         /// <summary>
-        /// Label1 control.
+        /// NombreUsuarioLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label NombreUsuarioLabel;
         
         /// <summary>
         /// NombreUsuarioTextBox control.
@@ -40,13 +40,13 @@ namespace GimnacioTechWeb {
         protected global::System.Web.UI.WebControls.TextBox NombreUsuarioTextBox;
         
         /// <summary>
-        /// Label2 control.
+        /// ClaveLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label ClaveLabel;
         
         /// <summary>
         /// ClaveTextBox control.
