@@ -18,13 +18,13 @@
               <Width>0.79761in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.11086in</Width>
+              <Width>1.23587in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.9333in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.11161in</Width>
+              <Width>0.98661in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.96551in</Width>
@@ -244,7 +244,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value> Celular</Value>
+                              <Value>Celular</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -324,7 +324,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value> Inscripcion</Value>
+                              <Value>Inscripcion</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -608,7 +608,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>FechaInscripcion</rd:DefaultName>
@@ -927,7 +929,7 @@
         <DataSetName>ClientesDataSet</DataSetName>
         <Top>0.82118in</Top>
         <Height>0.75in</Height>
-        <Width>7.08407in</Width>
+        <Width>7.08408in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1119,7 +1121,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1in</Height>
+      <Height>0.36111in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1184,8 +1186,8 @@
     </PageFooter>
     <LeftMargin>0.5in</LeftMargin>
     <RightMargin>0.5in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <TopMargin>0.25in</TopMargin>
+    <BottomMargin>0.25in</BottomMargin>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
