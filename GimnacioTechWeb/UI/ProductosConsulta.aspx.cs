@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GimnasioTech;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +16,6 @@ namespace GimnacioTechWeb.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             Producto = null;
-            Limpiar();
 
             if (!Page.IsPostBack)
             {
@@ -49,8 +49,8 @@ namespace GimnacioTechWeb.UI
 
         private void Limpiar()
         {
-            FiltroTextBox.Text = "";
             FiltrarDropDownList.SelectedIndex = 0;
+            FiltroTextBox.Text = "";
             FechaDesdeTextBox.Text = "";
             FechaHastaTextBox.Text = "";
         }
@@ -65,9 +65,19 @@ namespace GimnacioTechWeb.UI
             {
                 if (FiltrarDropDownList.SelectedIndex == 1)
                 {
-                    Lista = BLL.ProductosBLL.GetList(p => p.Descripcion == FiltroTextBox.Text);
+                    int Id = Utilidades.TOINT(FiltroTextBox.Text);
+                    Lista = BLL.ProductosBLL.GetList(p => p.ProductoId == Id);
                 }
                 if (FiltrarDropDownList.SelectedIndex == 2)
+                {
+                    Lista = BLL.ProductosBLL.GetList(p => p.Descripcion == FiltroTextBox.Text);
+                }
+                if (FiltrarDropDownList.SelectedIndex == 3)
+                {
+                    int Id = Utilidades.TOINT(FiltroTextBox.Text);
+                    Lista = BLL.ProductosBLL.GetList(p => p.CategoriaId == Id);
+                }
+                if (FiltrarDropDownList.SelectedIndex == 4)
                 {
                     DateTime FechaDesde = Convert.ToDateTime(FechaDesdeTextBox.Text);
                     DateTime FechaHasta = Convert.ToDateTime(FechaHastaTextBox.Text);

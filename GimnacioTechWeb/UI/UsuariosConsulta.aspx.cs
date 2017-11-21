@@ -16,7 +16,7 @@ namespace GimnacioTechWeb.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario = null;
-            Limpiar();
+
 
             if (!Page.IsPostBack)
             {
@@ -36,8 +36,8 @@ namespace GimnacioTechWeb.UI
 
         private void Limpiar()
         {
-            FiltroTextBox.Text = "";
             FiltrarDropDownList.SelectedIndex = 0;
+            FiltroTextBox.Text = "";
             FechaDesdeTextBox.Text = "";
             FechaHastaTextBox.Text = "";
         }

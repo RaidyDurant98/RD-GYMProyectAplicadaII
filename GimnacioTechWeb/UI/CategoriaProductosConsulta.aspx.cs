@@ -16,13 +16,11 @@ namespace GimnacioTechWeb.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             Categoria = null;
-            Limpiar();
 
             if (!Page.IsPostBack)
             {
                 Lista = BLL.CategoriaProductosBLL.GetListAll();
                 CargarListaCategoria();
-                Limpiar();
             }
 
             if (Lista == null || Lista.Count() == 0)

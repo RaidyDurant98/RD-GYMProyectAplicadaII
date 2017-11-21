@@ -16,7 +16,6 @@ namespace GimnacioTechWeb.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             Cliente = null;
-            Limpiar();
 
             if (!Page.IsPostBack)
             {

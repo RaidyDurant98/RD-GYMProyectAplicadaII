@@ -14,7 +14,9 @@
                 <div class="col-12 col-sm-5">
                     <asp:DropDownList ID="FiltrarDropDownList" runat="server" CssClass="form-control">
                         <asp:ListItem>Todo</asp:ListItem>
+                        <asp:ListItem>Id</asp:ListItem>
                         <asp:ListItem>Descripcion</asp:ListItem>
+                        <asp:ListItem>Categoria</asp:ListItem>
                         <asp:ListItem>Fecha Ingreso</asp:ListItem>
                     </asp:DropDownList>
                 </div>
@@ -51,6 +53,7 @@
                         <asp:BoundField DataField="Costo" HeaderText="Costo" />
                         <asp:BoundField DataField="precio" HeaderText="precio" />
                         <asp:BoundField DataField="FechaIngreso" DataFormatString="{0:d}" HeaderText="Fecha Ingreso" />
+                        <asp:BoundField DataField="CategoriaId" HeaderText="Categoria"/>
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <asp:Button ID="EnviarAlModalEliminarButton" CommandName="Select" CssClass="btn btn-secondary" runat="server"
