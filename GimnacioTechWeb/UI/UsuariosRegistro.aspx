@@ -18,7 +18,7 @@
             <!--Usuario Id-->
             <div class="form-group">
                 <asp:Label ID="UsuarioIdLabel" runat="server" Text="Usuario Id:"></asp:Label>
-                <asp:TextBox ID="UsuarioIdTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
+                <asp:TextBox type="number" ID="UsuarioIdTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
             </div>
             <!--Nombres-->
             <div class="form-group">

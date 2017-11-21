@@ -15,6 +15,7 @@ Cantidad decimal,
 Costo decimal,
 Precio decimal,
 FechaIngreso date,
+CategoriaId int
 );
 
 create table Usuarios(

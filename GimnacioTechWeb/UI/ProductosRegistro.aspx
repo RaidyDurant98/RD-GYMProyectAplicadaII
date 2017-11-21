@@ -18,7 +18,7 @@
             <!--Producto Id-->
             <div class="form-group">
                 <asp:Label ID="ProductoIdLabel" runat="server" Text="Producto Id:"></asp:Label>
-                <asp:TextBox ID="ProductoIdTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
+                <asp:TextBox type="number" ID="ProductoIdTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
             </div>
             <!--Descripcion-->
             <div class="form-group">
@@ -28,17 +28,22 @@
             <!--Cantidad-->
             <div class="form-group">
                 <asp:Label ID="CantidadLabel" runat="server" Text="Cantidad:"></asp:Label>
-                <asp:TextBox ID="CantidadTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
+                <asp:TextBox type="number" ID="CantidadTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
             </div>
             <!--Costo-->
             <div class="form-group">
                 <asp:Label ID="CostoLabel" runat="server" Text="Costo:"></asp:Label>
-                <asp:TextBox ID="CostoTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="CostoTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
             </div>
             <!--Precio-->
             <div class="form-group">
                 <asp:Label ID="PrecioLabel" runat="server" Text="Precio:"></asp:Label>
-                <asp:TextBox ID="PrecioTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="PrecioTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
+            </div>
+            <!--Categoria-->
+            <div class="form-group">
+                <asp:Label ID="CategoriaLabel" runat="server" Text="Categoria:"></asp:Label>
+                <asp:DropDownList CssClass="form-control" ID="CategoriaDropDownList" runat="server"></asp:DropDownList>
             </div>
             <!--Fecha Ingreso-->
             <div class="form-group">

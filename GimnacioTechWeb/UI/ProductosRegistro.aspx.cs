@@ -18,6 +18,11 @@ namespace GimnacioTechWeb.UI
         {
             producto = new Productos();
 
+            if (!Page.IsPostBack)
+            {
+                LlenarDropCategorias();
+            }
+
             if (UI.ProductosConsulta.Producto != null)
             {
                 producto = UI.ProductosConsulta.Producto;
@@ -35,6 +40,7 @@ namespace GimnacioTechWeb.UI
             CostoTextBox.Text = "";
             PrecioTextBox.Text = "";
             FechaIngresoTextBox.Text = "";
+            CategoriaDropDownList.SelectedIndex = 0;
         }
 
         private bool Validar()
@@ -73,6 +79,7 @@ namespace GimnacioTechWeb.UI
             CostoTextBox.Text = producto.Costo.ToString();
             PrecioTextBox.Text = producto.Precio.ToString();
             FechaIngresoTextBox.Text = producto.FechaIngreso.ToString("yyyy-MM-dd");
+            CategoriaDropDownList.Text = producto.CategoriaId.ToString();
         }
 
         private Productos LlenarInstanciaProducto()
@@ -83,6 +90,7 @@ namespace GimnacioTechWeb.UI
             producto.Costo = Utilidades.TOINT(CostoTextBox.Text);
             producto.Precio = Utilidades.TOINT(PrecioTextBox.Text);
             producto.FechaIngreso = Convert.ToDateTime(FechaIngresoTextBox.Text);
+            producto.CategoriaId = Utilidades.TOINT(CategoriaDropDownList.SelectedValue);
 
             return producto;
         }
@@ -111,6 +119,16 @@ namespace GimnacioTechWeb.UI
             }
 
             return false;
+        }
+
+        private void LlenarDropCategorias()
+        {
+            List<Entidades.CategoriaProductos> Lista = BLL.CategoriaProductosBLL.GetListAll();
+
+            CategoriaDropDownList.DataSource = Lista;
+            CategoriaDropDownList.DataValueField = "CategoriaId";
+            CategoriaDropDownList.DataTextField = "Descripcion";
+            CategoriaDropDownList.DataBind();
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)

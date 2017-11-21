@@ -112,6 +112,24 @@ namespace GimnacioTechWeb.UI {
         protected global::System.Web.UI.WebControls.TextBox PrecioTextBox;
         
         /// <summary>
+        /// CategoriaLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CategoriaLabel;
+        
+        /// <summary>
+        /// CategoriaDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CategoriaDropDownList;
+        
+        /// <summary>
         /// FechaIngresoLabel control.
         /// </summary>
         /// <remarks>

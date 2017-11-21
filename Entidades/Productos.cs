@@ -15,13 +15,14 @@ namespace Entidades
         public decimal Costo { get; set; }
         public decimal Precio { get; set; }
         public DateTime FechaIngreso { get; set; }
+        public int CategoriaId { get; set; }
 
         public Productos()
         {
             
         }
 
-        public Productos(int productoId, string descripcion, int cantidad, decimal costo, decimal precio, DateTime fechaIngreso)
+        public Productos(int productoId, string descripcion, int cantidad, decimal costo, decimal precio, DateTime fechaIngreso, int categoriaId)
         {
             this.ProductoId = productoId;
             this.Descripcion = descripcion;
@@ -29,6 +30,7 @@ namespace Entidades
             this.Costo = costo;
             this.Precio = precio;
             this.FechaIngreso = fechaIngreso;
+            this.CategoriaId = categoriaId;
         }
     }
 }
