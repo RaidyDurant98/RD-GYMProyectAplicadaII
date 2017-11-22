@@ -82,11 +82,20 @@
                         <asp:TextBox type="number" ID="CantidadProductoTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
                     </div>
                     <div class="col-0">
-                        <asp:Button ID="AgregarProductoButton" runat="server" CssClass="btn btn-secondary" />                       
+                        <asp:Button ID="AgregarProductoButton" runat="server" CssClass="btn btn-secondary" OnClick="AgregarProductoButton_Click" />
                     </div>
                 </div>
             </div>
+            <!--Grid Detalle-->
+            <div class="form-group">
+                <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" 
+                    ID="DetalleGridView" runat="server" GridLines="Horizontal" ShowFooter="true">
+                    <HeaderStyle CssClass="bg-secondary text-white" />
+                    <FooterStyle CssClass="bg-secondary" />
+                </asp:GridView>
+            </div>
         </div>
+
         <div class="col-12 col-sm-8 col-md-6 col-lg-5">
             <!--Botones-->
             <div class="text-center">

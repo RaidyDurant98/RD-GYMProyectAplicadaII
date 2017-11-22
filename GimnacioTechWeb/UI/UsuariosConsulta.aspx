@@ -54,6 +54,7 @@
                         <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre Usuario" />
                         <asp:BoundField DataField="Cargo" HeaderText="Cargo" />
                         <asp:BoundField DataField="FechaIngreso" DataFormatString="{0:d}" HeaderText="Fecha Ingreso" />
+                        <!--<asp:CommandField ShowDeleteButton="true" ShowEditButton="true" />-->
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <!--<asp:Button ID="SeleccionButton" runat="server" CommandName="Select" CssClass="btn btn-secondary" Text="Eliminar"/>-->

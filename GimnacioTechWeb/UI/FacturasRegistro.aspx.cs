@@ -1,6 +1,7 @@
 ﻿using GimnasioTech;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,16 +11,35 @@ namespace GimnacioTechWeb.UI
 {
     public partial class FacturasRegistroaspx : System.Web.UI.Page
     {
-        private Entidades.Facturas Factura = null;
+        private Entidades.Facturas Factura = new Entidades.Facturas();
+        DataTable dt = new DataTable();
+        private static List<Entidades.FacturasProductos> listaRelaciones;
+        private static List<Entidades.Productos> listadoProductos = null;
+
+        public static List<Entidades.FacturasProductos> Detalle { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Factura = new Entidades.Facturas();
             FechaFacturaLabel.Text = DateTime.Now.ToString();
+
+            if (!Page.IsPostBack)
+            {
+                dt.Columns.AddRange(new DataColumn[4] {new DataColumn("Producto Id"), new DataColumn("Descripcion"), new DataColumn("Precio"), new DataColumn("Cantidad")});
+                ViewState["Detalle"] = dt;
+
+                listadoProductos = new List<Entidades.Productos>();
+                listaRelaciones = new List<Entidades.FacturasProductos>();
+                Detalle = new List<Entidades.FacturasProductos>();
+
+                Factura = new Entidades.Facturas();
+            }
         }
 
         private void Limpiar()
         {
+            dt.Columns.AddRange(new DataColumn[5] { new DataColumn("Factura Id"), new DataColumn("Producto Id"), new DataColumn("Producto"), new DataColumn("Precio"), new DataColumn("Cantidad") });
+            ViewState["Detalle"] = dt;
+          
             FacturaIdTextBox.Text = "";
             ClienteIdTextBox.Text = "";
             NombreClienteTextBox.Text = "";
@@ -27,7 +47,56 @@ namespace GimnacioTechWeb.UI
             FormaPagoDropDownList.Text = "Contado";
             ProductoIdTextBox.Text = "";
 
-            LimpiarDatosProducto();
+            LimpiarDatosProducto();        
+        }
+
+        public void LlenarRegistro(List<Entidades.FacturasProductos> llenar)
+        {
+            foreach (var li in llenar)
+            {
+                DataTable dt = (DataTable)ViewState["Detalle"];
+                dt.Rows.Add(li.ProductoId, li.Descripcion, li.Precio, li.Cantidad);
+                ViewState["Detalle"] = dt;
+                this.BindGrid();
+            }
+        }
+
+        public void LlenarDatos(Entidades.FacturasProductos detalle)
+        {
+            /*int id = 0;
+
+            if (Factura != null)
+            {
+                id = Factura.FacturaId;
+            }*/
+
+            int cantidad = 0;
+
+            foreach (GridViewRow dr in DetalleGridView.Rows)
+            {
+                Factura.Relacion.Add(new Entidades.FacturasProductos(
+                    Convert.ToInt32(dr.Cells[0].Text), 
+                    Convert.ToString(dr.Cells[1].Text),
+                    Convert.ToDecimal(dr.Cells[2].Text), 
+                    Convert.ToInt32(dr.Cells[3].Text)));
+
+                cantidad =+ 1;
+            }
+
+            //facturaG = new Entidades.Facturas(0, "Anthony", DateTime.Now, "Clente", "Prueba", cantidad, 100);
+        }
+
+        protected void BindGrid()
+        {          
+            DetalleGridView.DataSource = (DataTable)ViewState["Detalle"];
+            DetalleGridView.DataBind();
+        }
+
+        private void RefreshListaRelciones()
+        {
+            DetalleGridView.DataSource = null;
+            DetalleGridView.DataSource = listaRelaciones;
+            DetalleGridView.DataBind();
         }
 
         private void LimpiarDatosProducto()
@@ -50,11 +119,28 @@ namespace GimnacioTechWeb.UI
 
         private void CargarDatosFactura()
         {
+            listaRelaciones = BLL.FacturasProductosBLL.GetList(A => A.FacturaId == Factura.FacturaId);
+
             FacturaIdTextBox.Text = Factura.FacturaId.ToString();
             NombreClienteTextBox.Text = Factura.NombreCliente;
             FechaFacturaLabel.Text = Factura.Fecha.ToString();
             ComentarioTextBox.Text = Factura.Comentario;
             FormaPagoDropDownList.Text = Factura.FormaPago;
+
+            /*if (listaRelaciones.Count != 0)
+            {
+                foreach (var relacion in listaRelaciones)
+                {
+                    listadoProductos.Add(BLL.ProductosBLL.Buscar(A => A.ProductoId == relacion.ProductoId));
+                }
+
+                foreach (var articulo in listadoProductos)
+                {
+                    articulo.ProductoId = BLL.ProductosBLL.Buscar(A => A.ProductoId == articulo.ProductoId).ProductoId;
+                } 
+            }*/
+            RefreshListaRelciones();
+            LlenarRegistro(listaRelaciones);
         }
 
         private bool VerificarExistenciaFactura()
@@ -139,6 +225,9 @@ namespace GimnacioTechWeb.UI
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
+            Entidades.FacturasProductos detalle = new Entidades.FacturasProductos();
+            LlenarDatos(detalle);
+
             if (BLL.FacturasBLL.Guardar(LlenarInstanciaFactura()))
             {
                 FacturaIdTextBox.Text = Convert.ToString(Factura.FacturaId);
@@ -158,7 +247,7 @@ namespace GimnacioTechWeb.UI
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             if (VerificarExistenciaFactura())
-            {
+            {             
                 CargarDatosFactura();
             }
         }
@@ -194,6 +283,23 @@ namespace GimnacioTechWeb.UI
         protected void BuscarProductoButton_Click(object sender, EventArgs e)
         {
             BuscarProducto();
+        }
+
+        protected void AgregarProductoButton_Click(object sender, EventArgs e)
+        {
+            /*int id = Utilidades.TOINT(ProductoIdTextBox.Text);
+            Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == id);
+
+            int id2 = 0;
+            if (Factura != null)
+            {
+                id2 = Factura.FacturaId;
+            }*/
+
+            DataTable dt = (DataTable)ViewState["Detalle"];
+            dt.Rows.Add(Utilidades.TOINT(ProductoIdTextBox.Text), DescripcionProductoTextBox.Text, Utilidades.TODECIMAL(PrecioProductoTextBox.Text), CantidadProductoTextBox.Text.Trim());
+            ViewState["Detalle"] = dt;
+            this.BindGrid();
         }
     }
 }

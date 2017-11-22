@@ -23,9 +23,8 @@ namespace Entidades
 
         }
 
-        public FacturasProductos(int facturaId, int productoId, string descripcion,decimal precio, decimal cantidad)
+        public FacturasProductos(int productoId, string descripcion,decimal precio, decimal cantidad)
         {
-            this.FacturaId = facturaId;
             this.ProductoId = productoId;
             this.Precio = precio;
             this.Descripcion = descripcion;

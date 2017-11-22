@@ -321,7 +321,7 @@ namespace GimnasioTech.UI
                         }
                         if (!productoAgregado)
                         {
-                            Factura.Relacion.Add(new Entidades.FacturasProductos(Factura.FacturaId, Detalle.Producto.ProductoId, Detalle.Producto.Descripcion, Detalle.Producto.Precio, CantidadnumericUpDown.Value));
+                            Factura.Relacion.Add(new Entidades.FacturasProductos(Detalle.Producto.ProductoId, Detalle.Producto.Descripcion, Detalle.Producto.Precio, CantidadnumericUpDown.Value));
                             LlenarDataGrid(Factura);
 
                             CantidadnumericUpDown.Enabled = false;
