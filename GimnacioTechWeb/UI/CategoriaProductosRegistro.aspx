@@ -23,7 +23,7 @@
             <!--Nombres-->
             <div class="form-group">
                 <asp:Label ID="DescripcionLabel" runat="server" Text="Descripcion:"></asp:Label>
-                <asp:TextBox ID="DescripcionTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
+                <asp:TextBox TextMode="MultiLine" ID="DescripcionTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
             </div>
             <!--Botones-->
             <div class="text-center">

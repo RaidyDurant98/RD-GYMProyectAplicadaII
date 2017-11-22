@@ -88,7 +88,7 @@
             </div>
             <!--Grid Detalle-->
             <div class="form-group">
-                <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" 
+                <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None"
                     ID="DetalleGridView" runat="server" GridLines="Horizontal" ShowFooter="true">
                     <HeaderStyle CssClass="bg-secondary text-white" />
                     <FooterStyle CssClass="bg-secondary" />

@@ -14,32 +14,30 @@ namespace GimnacioTechWeb.UI
         private Entidades.Facturas Factura = new Entidades.Facturas();
         DataTable dt = new DataTable();
         private static List<Entidades.FacturasProductos> listaRelaciones;
-        private static List<Entidades.Productos> listadoProductos = null;
-
+        //private static List<Entidades.Productos> listadoProductos = null;
         public static List<Entidades.FacturasProductos> Detalle { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             FechaFacturaLabel.Text = DateTime.Now.ToString();
-
-            if (!Page.IsPostBack)
-            {
-                dt.Columns.AddRange(new DataColumn[4] {new DataColumn("Producto Id"), new DataColumn("Descripcion"), new DataColumn("Precio"), new DataColumn("Cantidad")});
+            //if (!Page.IsPostBack)
+            //{
+                dt.Columns.AddRange(new DataColumn[4] { new DataColumn("Producto Id"), new DataColumn("Descripcion"), new DataColumn("Precio"), new DataColumn("Cantidad") });
                 ViewState["Detalle"] = dt;
 
-                listadoProductos = new List<Entidades.Productos>();
+                //listadoProductos = new List<Entidades.Productos>();
                 listaRelaciones = new List<Entidades.FacturasProductos>();
                 Detalle = new List<Entidades.FacturasProductos>();
 
                 Factura = new Entidades.Facturas();
-            }
+            //}
         }
 
         private void Limpiar()
         {
-            dt.Columns.AddRange(new DataColumn[5] { new DataColumn("Factura Id"), new DataColumn("Producto Id"), new DataColumn("Producto"), new DataColumn("Precio"), new DataColumn("Cantidad") });
-            ViewState["Detalle"] = dt;
-          
+            //dt.Columns.AddRange(new DataColumn[5] { new DataColumn("Factura Id"), new DataColumn("Producto Id"), new DataColumn("Producto"), new DataColumn("Precio"), new DataColumn("Cantidad") });
+            //ViewState["Detalle"] = dt;
+
             FacturaIdTextBox.Text = "";
             ClienteIdTextBox.Text = "";
             NombreClienteTextBox.Text = "";
@@ -47,13 +45,15 @@ namespace GimnacioTechWeb.UI
             FormaPagoDropDownList.Text = "Contado";
             ProductoIdTextBox.Text = "";
 
-            LimpiarDatosProducto();        
+            LimpiarDatosProducto();
+            LimpiarListaRelaciones();
         }
 
         public void LlenarRegistro(List<Entidades.FacturasProductos> llenar)
         {
             foreach (var li in llenar)
             {
+                //Chequear esto
                 DataTable dt = (DataTable)ViewState["Detalle"];
                 dt.Rows.Add(li.ProductoId, li.Descripcion, li.Precio, li.Cantidad);
                 ViewState["Detalle"] = dt;
@@ -70,32 +70,30 @@ namespace GimnacioTechWeb.UI
                 id = Factura.FacturaId;
             }*/
 
-            int cantidad = 0;
+            //int cantidad = 0;
 
             foreach (GridViewRow dr in DetalleGridView.Rows)
             {
                 Factura.Relacion.Add(new Entidades.FacturasProductos(
-                    Convert.ToInt32(dr.Cells[0].Text), 
+                    Convert.ToInt32(dr.Cells[0].Text),
                     Convert.ToString(dr.Cells[1].Text),
-                    Convert.ToDecimal(dr.Cells[2].Text), 
+                    Convert.ToDecimal(dr.Cells[2].Text),
                     Convert.ToInt32(dr.Cells[3].Text)));
 
-                cantidad =+ 1;
+                //cantidad =+ 1;
             }
-
-            //facturaG = new Entidades.Facturas(0, "Anthony", DateTime.Now, "Clente", "Prueba", cantidad, 100);
         }
 
         protected void BindGrid()
-        {          
+        {
             DetalleGridView.DataSource = (DataTable)ViewState["Detalle"];
             DetalleGridView.DataBind();
         }
 
-        private void RefreshListaRelciones()
+        private void LimpiarListaRelaciones()
         {
-            DetalleGridView.DataSource = null;
-            DetalleGridView.DataSource = listaRelaciones;
+            listaRelaciones = new List<Entidades.FacturasProductos>();
+            DetalleGridView.DataSource = (DataTable)ViewState["listaRelaciones"];
             DetalleGridView.DataBind();
         }
 
@@ -119,7 +117,7 @@ namespace GimnacioTechWeb.UI
 
         private void CargarDatosFactura()
         {
-            listaRelaciones = BLL.FacturasProductosBLL.GetList(A => A.FacturaId == Factura.FacturaId);
+
 
             FacturaIdTextBox.Text = Factura.FacturaId.ToString();
             NombreClienteTextBox.Text = Factura.NombreCliente;
@@ -127,19 +125,19 @@ namespace GimnacioTechWeb.UI
             ComentarioTextBox.Text = Factura.Comentario;
             FormaPagoDropDownList.Text = Factura.FormaPago;
 
-            /*if (listaRelaciones.Count != 0)
-            {
-                foreach (var relacion in listaRelaciones)
-                {
-                    listadoProductos.Add(BLL.ProductosBLL.Buscar(A => A.ProductoId == relacion.ProductoId));
-                }
+            //if (listaRelaciones.Count != 0)
+            //{
+            //    foreach (var relacion in listaRelaciones)
+            //    {
+            //        listadoProductos.Add(BLL.ProductosBLL.Buscar(A => A.ProductoId == relacion.ProductoId));
+            //    }
 
-                foreach (var articulo in listadoProductos)
-                {
-                    articulo.ProductoId = BLL.ProductosBLL.Buscar(A => A.ProductoId == articulo.ProductoId).ProductoId;
-                } 
-            }*/
-            RefreshListaRelciones();
+            //    foreach (var articulo in listadoProductos)
+            //    {
+            //        articulo.ProductoId = BLL.ProductosBLL.Buscar(A => A.ProductoId == articulo.ProductoId).ProductoId;
+            //    } 
+            //}
+            listaRelaciones = BLL.FacturasProductosBLL.GetList(A => A.FacturaId == Factura.FacturaId);
             LlenarRegistro(listaRelaciones);
         }
 
@@ -247,7 +245,7 @@ namespace GimnacioTechWeb.UI
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             if (VerificarExistenciaFactura())
-            {             
+            {
                 CargarDatosFactura();
             }
         }
