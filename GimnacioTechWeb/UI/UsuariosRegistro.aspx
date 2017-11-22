@@ -5,12 +5,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
         <div class="page-header col-12">
+            <br />
             <h1>Registro de Usuarios</h1>
             <br />
         </div>
         <!--Formulario-->
         <div class="col-12 col-sm-8 col-md-6 col-lg-5">
-
             <div class="float-right">
                 <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-secondary" Text="Buscar" OnClick="BuscarButton_Click" />
             </div>

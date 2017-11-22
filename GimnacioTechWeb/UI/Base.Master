@@ -93,7 +93,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="FacturanavbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Factura
                         </a>
                         <div class="dropdown-menu" aria-labelledby="FacturanavbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Registro</a>
+                            <a class="dropdown-item" href="FacturasRegistro.aspx">Registro</a>
                             <a class="dropdown-item" href="#">Consulta</a>
                         </div>
                     </li>

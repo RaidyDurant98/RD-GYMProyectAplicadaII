@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
         <div class="page-header col-12">
+            <br />
             <h1>Registro de Productos</h1>
             <br />
         </div>
