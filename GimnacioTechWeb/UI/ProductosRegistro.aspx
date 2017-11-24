@@ -24,7 +24,7 @@
             <!--Descripcion-->
             <div class="form-group">
                 <asp:Label ID="DescripcionLabel" runat="server" Text="Descripcion:"></asp:Label>
-                <asp:TextBox ID="DescripcionTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" runat="server" CssClass="form-control" TextMode="MultiLine" autocomplete="off"></asp:TextBox>
             </div>
             <!--Cantidad-->
             <div class="form-group">

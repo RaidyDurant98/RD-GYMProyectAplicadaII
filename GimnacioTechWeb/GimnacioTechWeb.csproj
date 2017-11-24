@@ -147,8 +147,8 @@
     <Content Include="UI\Registros\ProductosForm.aspx" />
     <Content Include="UI\Registros\UsuariosForm.aspx" />
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\RD-GYM - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\RD-GYM - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\rdgym - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -178,7 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="UI\CategoriaProductosConsulta.aspx.cs">

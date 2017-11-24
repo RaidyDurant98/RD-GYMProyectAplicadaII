@@ -117,8 +117,6 @@ namespace GimnacioTechWeb.UI
 
         private void CargarDatosFactura()
         {
-
-
             FacturaIdTextBox.Text = Factura.FacturaId.ToString();
             NombreClienteTextBox.Text = Factura.NombreCliente;
             FechaFacturaLabel.Text = Factura.Fecha.ToString();

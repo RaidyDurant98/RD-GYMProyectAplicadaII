@@ -15,7 +15,7 @@ namespace GimnacioTechWeb.UI.Reportes
             {
                 ClientesReportViewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
                 ClientesReportViewer.Reset();
-                ClientesReportViewer.LocalReport.ReportPath = Server.MapPath(@"ClientesReporte.rdlc");
+                ClientesReportViewer.LocalReport.ReportPath = @"D:\UCNE\PROGRAMACION APLICADA II\RD-GYM\GimnacioTechWeb\UI\Reportes\ClientesReporte.rdlc";
                 ClientesReportViewer.LocalReport.DataSources.Clear();
 
                 ClientesReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("ClientesDataSet",
