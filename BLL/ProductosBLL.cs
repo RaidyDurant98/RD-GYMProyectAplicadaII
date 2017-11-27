@@ -113,7 +113,7 @@ namespace BLL
             }
         }
 
-        public static Productos BuscarOtro(int id)
+        public static Productos BuscarPorId(int id)
         {
             using (var context = new DAL.Respository<Entidades.Productos>())
             {

@@ -232,6 +232,7 @@ namespace GimnacioTechWeb.UI
 
                 if (BLL.FacturasBLL.Guardar(LlenarInstanciaFactura()))
                 {
+                    ReducirExistenciaProducto();
                     FacturaIdTextBox.Text = Convert.ToString(Factura.FacturaId);
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Factura guardado con exito');", addScriptTags: true);
                 }
@@ -243,6 +244,21 @@ namespace GimnacioTechWeb.UI
             else
             {
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor llenar los campos vacios');", addScriptTags: true);
+            }
+        }
+
+        private void ReducirExistenciaProducto()
+        {
+            decimal cantidadDescontar = 0;
+            Entidades.Productos Producto = new Entidades.Productos();
+            foreach (GridViewRow producto in DetalleGridView.Rows)
+            {
+                int id = Convert.ToInt32(producto.Cells[0].Text);
+                cantidadDescontar = Convert.ToDecimal(producto.Cells[3].Text);
+
+                Producto = BLL.ProductosBLL.BuscarPorId(id);
+                Producto.Cantidad -= cantidadDescontar;
+                BLL.ProductosBLL.Modificar(Producto);
             }
         }
 
