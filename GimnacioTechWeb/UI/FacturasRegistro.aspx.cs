@@ -6,72 +6,84 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace GimnacioTechWeb.UI
 {
-    public partial class FacturasRegistroaspx : System.Web.UI.Page
+    public partial class FacturasRegistro : System.Web.UI.Page
     {
         private Entidades.Facturas Factura = new Entidades.Facturas();
         DataTable dt = new DataTable();
         private static List<Entidades.FacturasProductos> listaRelaciones;
-        //private static List<Entidades.Productos> listadoProductos = null;
         public static List<Entidades.FacturasProductos> Detalle { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             FechaFacturaLabel.Text = DateTime.Now.ToString();
-            //if (!Page.IsPostBack)
-            //{
+
+            if (!Page.IsPostBack)
+            {
                 dt.Columns.AddRange(new DataColumn[4] { new DataColumn("Producto Id"), new DataColumn("Descripcion"), new DataColumn("Precio"), new DataColumn("Cantidad") });
                 ViewState["Detalle"] = dt;
 
-                //listadoProductos = new List<Entidades.Productos>();
                 listaRelaciones = new List<Entidades.FacturasProductos>();
                 Detalle = new List<Entidades.FacturasProductos>();
 
                 Factura = new Entidades.Facturas();
-            //}
+            }
         }
 
         private void Limpiar()
         {
-            //dt.Columns.AddRange(new DataColumn[5] { new DataColumn("Factura Id"), new DataColumn("Producto Id"), new DataColumn("Producto"), new DataColumn("Precio"), new DataColumn("Cantidad") });
-            //ViewState["Detalle"] = dt;
-
             FacturaIdTextBox.Text = "";
             ClienteIdTextBox.Text = "";
             NombreClienteTextBox.Text = "";
             ComentarioTextBox.Text = "";
             FormaPagoDropDownList.Text = "Contado";
             ProductoIdTextBox.Text = "";
+            MontoTextBox.Text = "";
+            DineroPagadoTextBox.Text = "";
+            DevueltaTextBox.Text = "";
 
             LimpiarDatosProducto();
             LimpiarListaRelaciones();
+
+            Response.Redirect("FacturasRegistro.aspx");
         }
 
-        public void LlenarRegistro(List<Entidades.FacturasProductos> llenar)
+        private bool Validar()
         {
-            foreach (var li in llenar)
+            bool interruptor = true;
+
+            if (string.IsNullOrEmpty(NombreClienteTextBox.Text))
             {
-                //Chequear esto
-                DataTable dt = (DataTable)ViewState["Detalle"];
-                dt.Rows.Add(li.ProductoId, li.Descripcion, li.Precio, li.Cantidad);
+                interruptor = false;
+            }
+            if (DetalleGridView.Rows.Count == 0)
+            {
+                interruptor = false;
+            }
+            if (string.IsNullOrEmpty(DevueltaTextBox.Text))
+            {
+                interruptor = false;
+            }
+
+            return interruptor;
+        }
+
+        public void BuscarDatosDetalle(List<Entidades.FacturasProductos> facturaProducto)
+        {
+            foreach (var detalle in facturaProducto)
+            {
+                dt = (DataTable)ViewState["Detalle"];
+                dt.Rows.Add(detalle.ProductoId, detalle.Descripcion, detalle.Precio, detalle.Cantidad);
                 ViewState["Detalle"] = dt;
                 this.BindGrid();
             }
         }
 
-        public void LlenarDatos(Entidades.FacturasProductos detalle)
+        public void GuardarDatosDetalle()
         {
-            /*int id = 0;
-
-            if (Factura != null)
-            {
-                id = Factura.FacturaId;
-            }*/
-
-            //int cantidad = 0;
-
             foreach (GridViewRow dr in DetalleGridView.Rows)
             {
                 Factura.Relacion.Add(new Entidades.FacturasProductos(
@@ -79,8 +91,6 @@ namespace GimnacioTechWeb.UI
                     Convert.ToString(dr.Cells[1].Text),
                     Convert.ToDecimal(dr.Cells[2].Text),
                     Convert.ToInt32(dr.Cells[3].Text)));
-
-                //cantidad =+ 1;
             }
         }
 
@@ -106,11 +116,14 @@ namespace GimnacioTechWeb.UI
 
         private Entidades.Facturas LlenarInstanciaFactura()
         {
-            Factura.FacturaId = Utilidades.TOINT(FacturaIdTextBox.Text);
+            //Factura.FacturaId = Utilidades.TOINT(FacturaIdTextBox.Text);
             Factura.NombreCliente = NombreClienteTextBox.Text;
             Factura.Fecha = Convert.ToDateTime(FechaFacturaLabel.Text);
             Factura.Comentario = ComentarioTextBox.Text;
             Factura.FormaPago = FormaPagoDropDownList.Text;
+            Factura.Monto = Utilidades.TODECIMAL(MontoTextBox.Text);
+            Factura.DineroPagado = Utilidades.TODECIMAL(DineroPagadoTextBox.Text);
+            Factura.Devuelta = Utilidades.TODECIMAL(DevueltaTextBox.Text);
 
             return Factura;
         }
@@ -122,21 +135,12 @@ namespace GimnacioTechWeb.UI
             FechaFacturaLabel.Text = Factura.Fecha.ToString();
             ComentarioTextBox.Text = Factura.Comentario;
             FormaPagoDropDownList.Text = Factura.FormaPago;
+            MontoTextBox.Text = Factura.Monto.ToString();
+            DineroPagadoTextBox.Text = Factura.DineroPagado.ToString();
+            DevueltaTextBox.Text = Factura.Devuelta.ToString();
 
-            //if (listaRelaciones.Count != 0)
-            //{
-            //    foreach (var relacion in listaRelaciones)
-            //    {
-            //        listadoProductos.Add(BLL.ProductosBLL.Buscar(A => A.ProductoId == relacion.ProductoId));
-            //    }
-
-            //    foreach (var articulo in listadoProductos)
-            //    {
-            //        articulo.ProductoId = BLL.ProductosBLL.Buscar(A => A.ProductoId == articulo.ProductoId).ProductoId;
-            //    } 
-            //}
             listaRelaciones = BLL.FacturasProductosBLL.GetList(A => A.FacturaId == Factura.FacturaId);
-            LlenarRegistro(listaRelaciones);
+            BuscarDatosDetalle(listaRelaciones);
         }
 
         private bool VerificarExistenciaFactura()
@@ -159,6 +163,23 @@ namespace GimnacioTechWeb.UI
                 {
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No existe factura con ese id');", addScriptTags: true);
                 }
+            }
+
+            return false;
+        }
+
+        private bool VerificarExistenciaProducto()
+        {
+            int id = Utilidades.TOINT(ProductoIdTextBox.Text);
+            Entidades.Productos Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == id);
+
+            if (Producto != null)
+            {
+                return true;
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No existe producto con ese id');", addScriptTags: true);
             }
 
             return false;
@@ -221,17 +242,24 @@ namespace GimnacioTechWeb.UI
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            Entidades.FacturasProductos detalle = new Entidades.FacturasProductos();
-            LlenarDatos(detalle);
-
-            if (BLL.FacturasBLL.Guardar(LlenarInstanciaFactura()))
+            if (Validar())
             {
-                FacturaIdTextBox.Text = Convert.ToString(Factura.FacturaId);
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Factura guardado con exito');", addScriptTags: true);
+                Factura.FacturaId = Utilidades.TOINT(FacturaIdTextBox.Text);
+                GuardarDatosDetalle();
+
+                if (BLL.FacturasBLL.Guardar(LlenarInstanciaFactura()))
+                {
+                    FacturaIdTextBox.Text = Convert.ToString(Factura.FacturaId);
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Factura guardado con exito');", addScriptTags: true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo guardar la factura');", addScriptTags: true);
+                }
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo guardar la factura');", addScriptTags: true);
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor llenar los campos vacios');", addScriptTags: true);
             }
         }
 
@@ -242,9 +270,16 @@ namespace GimnacioTechWeb.UI
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            if (VerificarExistenciaFactura())
+            if (DetalleGridView.Rows.Count > 0)
             {
-                CargarDatosFactura();
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor limpie la pagina antes de buscar');", addScriptTags: true);
+            }
+            else
+            {
+                if (VerificarExistenciaFactura())
+                {
+                    CargarDatosFactura();
+                }
             }
         }
 
@@ -272,7 +307,7 @@ namespace GimnacioTechWeb.UI
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('No se puedo eliminar la factura');", addScriptTags: true);
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se puedo eliminar la factura');", addScriptTags: true);
             }
         }
 
@@ -281,21 +316,109 @@ namespace GimnacioTechWeb.UI
             BuscarProducto();
         }
 
+        private bool ValidarProductoAgregadoGrid()
+        {
+            int id = Utilidades.TOINT(ProductoIdTextBox.Text);
+            Entidades.Productos Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == id);
+
+            if (Producto != null)
+            {
+                foreach (GridViewRow row in DetalleGridView.Rows)
+                {
+                    if (row.Cells[0].Text == Producto.ProductoId.ToString())
+                    {
+                        return true;
+                    }
+                }
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No existe producto con ese id');", addScriptTags: true);
+            }
+
+            return false;
+        }
+
         protected void AgregarProductoButton_Click(object sender, EventArgs e)
         {
-            /*int id = Utilidades.TOINT(ProductoIdTextBox.Text);
-            Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == id);
-
-            int id2 = 0;
-            if (Factura != null)
+            if (!string.IsNullOrEmpty(DescripcionProductoTextBox.Text))
             {
-                id2 = Factura.FacturaId;
-            }*/
+                if (VerificarExistenciaProducto())
+                {
+                    if (!string.IsNullOrEmpty(CantidadProductoTextBox.Text) && Utilidades.TOINT(CantidadProductoTextBox.Text) > 0)
+                    {
+                        if (!ValidarProductoAgregadoGrid())
+                        {
+                            dt = (DataTable)ViewState["Detalle"];
+                            dt.Rows.Add(Utilidades.TOINT(ProductoIdTextBox.Text), DescripcionProductoTextBox.Text, Utilidades.TODECIMAL(PrecioProductoTextBox.Text), CantidadProductoTextBox.Text);
+                            ViewState["Detalle"] = dt;
+                            this.BindGrid();
+                            CalcularMonto();
+                        }
+                        else
+                        {
+                            ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('El producto ya esta agregado');", addScriptTags: true);
+                        }
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor digite la cantidad');", addScriptTags: true);
+                    }
+                }
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor busque el producto que desea agregar');", addScriptTags: true);
+            }
+        }
 
-            DataTable dt = (DataTable)ViewState["Detalle"];
-            dt.Rows.Add(Utilidades.TOINT(ProductoIdTextBox.Text), DescripcionProductoTextBox.Text, Utilidades.TODECIMAL(PrecioProductoTextBox.Text), CantidadProductoTextBox.Text.Trim());
-            ViewState["Detalle"] = dt;
-            this.BindGrid();
+        private void CalcularMonto()
+        {
+            decimal monto = 0;
+            foreach (GridViewRow producto in DetalleGridView.Rows)
+            {
+                monto += Convert.ToDecimal(producto.Cells[2].Text) * Convert.ToDecimal(producto.Cells[3].Text);
+            }
+
+            Factura.Monto = monto;
+            MontoTextBox.Text = Factura.Monto.ToString();
+            DevueltaTextBox.Text = "";
+        }
+
+        protected void CrearClienteButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ClientesRegistro.aspx");
+        }
+
+        private void CalcularDevuelta()
+        {
+            if (!string.IsNullOrEmpty(DineroPagadoTextBox.Text))
+            {
+                if (Utilidades.TOINT(DineroPagadoTextBox.Text) >= Utilidades.TODECIMAL(MontoTextBox.Text))
+                {
+                    DevueltaTextBox.Text = (Utilidades.TOINT(DineroPagadoTextBox.Text) - Utilidades.TODECIMAL(MontoTextBox.Text)).ToString();
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('El dinero no es suficiente');", addScriptTags: true);
+                }
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor digite la cantidad pagada');", addScriptTags: true);
+            }
+        }
+
+        protected void CalcularDevueltaButton_Click(object sender, EventArgs e)
+        {
+            CalcularDevuelta();
+        }
+
+        protected void ProductoIdTextBox_TextChanged(object sender, EventArgs e)
+        {
+            DescripcionProductoTextBox.Text = "";
+            PrecioProductoTextBox.Text = "";
+            CantidadProductoTextBox.Text = "";
         }
     }
 }

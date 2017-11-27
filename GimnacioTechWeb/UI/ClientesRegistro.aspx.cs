@@ -117,7 +117,7 @@ namespace GimnacioTechWeb.UI
 
         private Clientes LlenarInstanciaClientes()
         {
-            cliente.ClienteId = Utilidades.TOINT(ClienteIdTextBox.Text);
+            //cliente.ClienteId = Utilidades.TOINT(ClienteIdTextBox.Text);
             cliente.Nombres = NombresTextBox.Text;
             cliente.FechaInscripcion = Convert.ToDateTime(FechaInscripcionTextBox.Text); ;
             cliente.Direccion = DireccionTextBox.Text;
@@ -161,6 +161,7 @@ namespace GimnacioTechWeb.UI
         {
             if (Validar())
             {
+                cliente.ClienteId = Utilidades.TOINT(ClienteIdTextBox.Text);
                 if (ValidarEmail())
                 {
                     if (ClientesBLL.Guardar(LlenarInstanciaClientes()))

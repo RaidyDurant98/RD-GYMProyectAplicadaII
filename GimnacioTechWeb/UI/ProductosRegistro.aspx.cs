@@ -84,7 +84,7 @@ namespace GimnacioTechWeb.UI
 
         private Productos LlenarInstanciaProducto()
         {
-            producto.ProductoId = Utilidades.TOINT(ProductoIdTextBox.Text);
+            //producto.ProductoId = Utilidades.TOINT(ProductoIdTextBox.Text);
             producto.Descripcion = DescripcionTextBox.Text;
             producto.Cantidad = Utilidades.TOINT(CantidadTextBox.Text);
             producto.Costo = Utilidades.TOINT(CostoTextBox.Text);
@@ -148,6 +148,7 @@ namespace GimnacioTechWeb.UI
         {
             if (Validar())
             {
+                producto.ProductoId = Utilidades.TOINT(ProductoIdTextBox.Text);
                 if (ProductosBLL.Guardar(LlenarInstanciaProducto()))
                 {
                     ProductoIdTextBox.Text = Convert.ToString(producto.ProductoId);

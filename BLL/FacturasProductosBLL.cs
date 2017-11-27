@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,7 @@ namespace BLL
         {
             using (var repositorio = new Respository<Entidades.FacturasProductos>())
             {
-
                 return repositorio.Guardar(detalle);
-
             }
         }
 
@@ -24,6 +23,22 @@ namespace BLL
             using (var repositorio = new Respository<Entidades.FacturasProductos>())
             {
                 return repositorio.GetList(criterioBusqueda);
+            }
+        }
+
+        public static FacturasProductos Buscar(Expression<Func<FacturasProductos, bool>> criterio)
+        {
+            using (var context = new Respository<FacturasProductos>())
+            {
+                try
+                {
+                    return context.Buscar(criterio);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
             }
         }
     }

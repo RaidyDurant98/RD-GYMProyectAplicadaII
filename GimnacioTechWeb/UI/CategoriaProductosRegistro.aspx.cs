@@ -77,7 +77,7 @@ namespace GimnacioTechWeb.UI
 
         private CategoriaProductos LlenarInstanciaCategoria()
         {
-            categoria.CategoriaId = Utilidades.TOINT(CategoriaIdTextBox.Text);
+            //categoria.CategoriaId = Utilidades.TOINT(CategoriaIdTextBox.Text);
             categoria.Descripcion = DescripcionTextBox.Text;
 
             return categoria;
@@ -87,6 +87,7 @@ namespace GimnacioTechWeb.UI
         {
             if (Validar())
             {
+                categoria.CategoriaId = Utilidades.TOINT(CategoriaIdTextBox.Text);
                 if (CategoriaProductosBLL.Guardar(LlenarInstanciaCategoria()))
                 {
                     CategoriaIdTextBox.Text = Convert.ToString(categoria.CategoriaId);

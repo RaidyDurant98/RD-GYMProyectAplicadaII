@@ -83,7 +83,7 @@ namespace GimnacioTechWeb.UI.Registros
 
         private Usuarios LlenarInstanciaUsuario()
         {
-            usuario.UsuarioId = Utilidades.TOINT(UsuarioIdTextBox.Text);
+            //usuario.UsuarioId = Utilidades.TOINT(UsuarioIdTextBox.Text);
             usuario.Nombres = NombresTextBox.Text;
             usuario.NombreUsuario = NombreUsuarioTextBox.Text;
             usuario.Clave = ClaveTextBox.Text;
@@ -129,6 +129,7 @@ namespace GimnacioTechWeb.UI.Registros
 
             if (Validar())
             {
+                usuario.UsuarioId = Utilidades.TOINT(UsuarioIdTextBox.Text);
                 if (UsuariosBLL.Buscar(p => p.NombreUsuario == NombreUsuarioTextBox.Text) == null || UsuarioIdTextBox.Text == CompararNombreUsuario.UsuarioId.ToString())
                 {
                     if (ClaveTextBox.Text == ConfirmarClaveTextBox.Text)

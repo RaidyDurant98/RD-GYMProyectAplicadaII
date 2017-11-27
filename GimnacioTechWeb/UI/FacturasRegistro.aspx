@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Factura" Language="C#" MasterPageFile="~/UI/Base.Master" AutoEventWireup="true" CodeBehind="FacturasRegistro.aspx.cs" Inherits="GimnacioTechWeb.UI.FacturasRegistroaspx" %>
+﻿<%@ Page Title="Factura" Language="C#" MasterPageFile="~/UI/Base.Master" AutoEventWireup="true" CodeBehind="FacturasRegistro.aspx.cs" Inherits="GimnacioTechWeb.UI.FacturasRegistro" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -42,7 +42,7 @@
                         <asp:TextBox ID="NombreClienteTextBox" runat="server" CssClass="form-control" autocomplete="off" Enabled="False"></asp:TextBox>
                     </div>
                     <div class="col-0">
-                        <asp:Button ID="CrearClienteButton" runat="server" CssClass="btn btn-secondary" />
+                        <asp:Button ID="CrearClienteButton" runat="server" CssClass="btn btn-secondary" OnClick="CrearClienteButton_Click" />
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                 <asp:Label ID="ProductoIdLabel" runat="server" Text="Producto Id:"></asp:Label>
                 <div class="row">
                     <div class="col-10 col-sm-4 col-md-2">
-                        <asp:TextBox type="number" ID="ProductoIdTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
+                        <asp:TextBox type="number" ID="ProductoIdTextBox" runat="server" CssClass="form-control" autocomplete="off" OnTextChanged="ProductoIdTextBox_TextChanged" AutoPostBack="true"></asp:TextBox>
                     </div>
                     <div class="col-0">
                         <asp:Button ID="BuscarProductoButton" runat="server" CssClass="btn btn-secondary" OnClick="BuscarProductoButton_Click" />
@@ -93,6 +93,31 @@
                     <HeaderStyle CssClass="bg-secondary text-white" />
                     <FooterStyle CssClass="bg-secondary" />
                 </asp:GridView>
+            </div>
+            <!--Monto-->
+            <div class="row">
+                <div class="col-12 col-md-8"></div>
+                <div class="col-10 col-md-2">
+                    <div class="form-group">
+                        <asp:Label ID="MontoLabel" runat="server" Text="Monto:"></asp:Label>
+                        <asp:TextBox type="number" ID="MontoTextBox" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-12 col-md-7"></div>
+                    <div class="col-10 col-sm-4 col-md-2">
+                        <asp:TextBox type="number" ID="DineroPagadoTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
+                    </div>
+                    <div class="col-0">
+                        <asp:Button ID="CalcularDevueltaButton" runat="server" CssClass="btn btn-secondary" OnClick="CalcularDevueltaButton_Click" />
+                    </div>
+                    <div class="col-10 col-sm-6 col-md-2">
+                        <asp:TextBox ID="DevueltaTextBox" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
+                    </div>
+                </div>
             </div>
         </div>
 
