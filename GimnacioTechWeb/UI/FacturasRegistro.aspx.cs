@@ -168,23 +168,6 @@ namespace GimnacioTechWeb.UI
             return false;
         }
 
-        private bool VerificarExistenciaProducto()
-        {
-            int id = Utilidades.TOINT(ProductoIdTextBox.Text);
-            Entidades.Productos Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == id);
-
-            if (Producto != null)
-            {
-                return true;
-            }
-            else
-            {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No existe producto con ese id');", addScriptTags: true);
-            }
-
-            return false;
-        }
-
         private void BuscarCliente()
         {
             if (!string.IsNullOrEmpty(ClienteIdTextBox.Text))
@@ -343,27 +326,41 @@ namespace GimnacioTechWeb.UI
         {
             if (!string.IsNullOrEmpty(DescripcionProductoTextBox.Text))
             {
-                if (VerificarExistenciaProducto())
+                int id = Utilidades.TOINT(ProductoIdTextBox.Text);
+                Entidades.Productos Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == id);
+
+                if (Producto != null)
                 {
                     if (!string.IsNullOrEmpty(CantidadProductoTextBox.Text) && Utilidades.TOINT(CantidadProductoTextBox.Text) > 0)
-                    {
-                        if (!ValidarProductoAgregadoGrid())
+                    {                      
+                        if (Producto.Cantidad >= Utilidades.TOINT(CantidadProductoTextBox.Text))
                         {
-                            dt = (DataTable)ViewState["Detalle"];
-                            dt.Rows.Add(Utilidades.TOINT(ProductoIdTextBox.Text), DescripcionProductoTextBox.Text, Utilidades.TODECIMAL(PrecioProductoTextBox.Text), CantidadProductoTextBox.Text);
-                            ViewState["Detalle"] = dt;
-                            this.BindGrid();
-                            CalcularMonto();
+                            if (!ValidarProductoAgregadoGrid())
+                            {
+                                dt = (DataTable)ViewState["Detalle"];
+                                dt.Rows.Add(Utilidades.TOINT(ProductoIdTextBox.Text), DescripcionProductoTextBox.Text, Utilidades.TODECIMAL(PrecioProductoTextBox.Text), CantidadProductoTextBox.Text);
+                                ViewState["Detalle"] = dt;
+                                this.BindGrid();
+                                CalcularMonto();
+                            }
+                            else
+                            {
+                                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('El producto ya esta agregado');", addScriptTags: true);
+                            }
                         }
                         else
                         {
-                            ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('El producto ya esta agregado');", addScriptTags: true);
+                            ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('La cantidad elegida es mayor que la existencia');", addScriptTags: true);
                         }
                     }
                     else
                     {
                         ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor digite la cantidad');", addScriptTags: true);
                     }
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No existe producto con ese id');", addScriptTags: true);
                 }
             }
             else
