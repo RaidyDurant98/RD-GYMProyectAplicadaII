@@ -54,7 +54,7 @@
             <!--Forma de Pago-->
             <div class="form-group">
                 <asp:Label ID="FormaPagoLabel" runat="server" Text="Forma de Pago:"></asp:Label>
-                <asp:DropDownList CssClass="form-control" ID="FormaPagoDropDownList" runat="server">
+                <asp:DropDownList CssClass="form-control" ID="FormaPagoDropDownList" runat="server" OnSelectedIndexChanged="FormaPagoDropDownList_SelectedIndexChanged" AutoPostBack="true">
                     <asp:ListItem>Contado</asp:ListItem>
                     <asp:ListItem>Credito</asp:ListItem>
                 </asp:DropDownList>

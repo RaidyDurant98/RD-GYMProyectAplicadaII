@@ -63,10 +63,14 @@ namespace GimnacioTechWeb.UI
             {
                 interruptor = false;
             }
-            if (string.IsNullOrEmpty(DevueltaTextBox.Text))
+            if (FormaPagoDropDownList.SelectedIndex != 1)
             {
-                interruptor = false;
+                if (string.IsNullOrEmpty(DevueltaTextBox.Text))
+                {
+                    interruptor = false;
+                }
             }
+
 
             return interruptor;
         }
@@ -432,6 +436,18 @@ namespace GimnacioTechWeb.UI
             DescripcionProductoTextBox.Text = "";
             PrecioProductoTextBox.Text = "";
             CantidadProductoTextBox.Text = "";
+        }
+
+        protected void FormaPagoDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (FormaPagoDropDownList.SelectedIndex == 1)
+            {
+                DineroPagadoTextBox.Enabled = false;
+            }
+            else
+            {
+                DineroPagadoTextBox.Enabled = true;
+            }     
         }
     }
 }
