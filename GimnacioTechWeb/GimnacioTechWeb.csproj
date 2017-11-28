@@ -139,6 +139,7 @@
     <Content Include="UI\Consultas\ClientesConsulta.aspx" />
     <Content Include="UI\Consultas\UsuariosConsulta.aspx" />
     <Content Include="UI\Default.aspx" />
+    <Content Include="UI\FacturasConsulta.aspx" />
     <Content Include="UI\FacturasRegistro.aspx" />
     <Content Include="UI\ProductosConsulta.aspx" />
     <Content Include="UI\ProductosRegistro.aspx" />
@@ -260,6 +261,13 @@
     </Compile>
     <Compile Include="UI\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FacturasConsulta.aspx.cs">
+      <DependentUpon>FacturasConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\FacturasConsulta.aspx.designer.cs">
+      <DependentUpon>FacturasConsulta.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\FacturasRegistro.aspx.cs">
       <DependentUpon>FacturasRegistro.aspx</DependentUpon>

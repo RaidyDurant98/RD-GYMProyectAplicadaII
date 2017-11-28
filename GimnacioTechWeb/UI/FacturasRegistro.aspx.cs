@@ -21,6 +21,13 @@ namespace GimnacioTechWeb.UI
         {
             FechaFacturaLabel.Text = DateTime.Now.ToString();
 
+            if (UI.FacturasConsulta.Factura != null)
+            {
+                Factura = UI.FacturasConsulta.Factura;
+                CargarDatosFactura();
+                UI.FacturasConsulta.Factura = null;
+            }
+
             if (!Page.IsPostBack)
             {
                 dt.Columns.AddRange(new DataColumn[4] { new DataColumn("Producto Id"), new DataColumn("Descripcion"), new DataColumn("Precio"), new DataColumn("Cantidad") });
@@ -443,6 +450,9 @@ namespace GimnacioTechWeb.UI
             if (FormaPagoDropDownList.SelectedIndex == 1)
             {
                 DineroPagadoTextBox.Enabled = false;
+                MontoTextBox.Text = "";
+                DineroPagadoTextBox.Text = "";
+                DevueltaTextBox.Text = "";
             }
             else
             {

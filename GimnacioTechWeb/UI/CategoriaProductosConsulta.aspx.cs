@@ -22,15 +22,7 @@ namespace GimnacioTechWeb.UI
                 Lista = BLL.CategoriaProductosBLL.GetListAll();
                 CargarListaCategoria();
             }
-
-            if (Lista == null || Lista.Count() == 0)
-            {
-                ImprimirButton.Visible = false;
-            }
-            else
-            {
-                ImprimirButton.Visible = true;
-            }
+            BotonImprimirVisibleSiHayListas();
         }
 
         private void Limpiar()
@@ -47,7 +39,11 @@ namespace GimnacioTechWeb.UI
 
         private void BotonImprimirVisibleSiHayListas()
         {
-            if (Lista.Count() != 0)
+            if (Lista == null || Lista.Count() == 0)
+            {
+                ImprimirButton.Visible = false;
+            }
+            else
             {
                 ImprimirButton.Visible = true;
             }

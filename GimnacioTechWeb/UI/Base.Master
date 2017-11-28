@@ -12,19 +12,15 @@
     <meta name="author" content="Raidy Duran Garcia">
     <link rel="icon" href="../favicon.ico">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
     <!--Inclusión de Bootstrap-->
     <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
 
-    <%--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">Esto hay que borrarlo</script>--%>
     <!--Inclusión de JQuery-->
     <script src="../../Scripts/jquery-3.2.1.min.js"></script>
 
-    <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js">Esto hay que borrarlo</script>--%>
     <!--Inclusión de poppers-->
     <script src="../../Scripts/popper.min.js"></script>
 
-    <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js">Esto hay que borrarlo</script>--%>
     <!--Inclusión de Bootstrap Js-->
     <script src="../../Scripts/bootstrap.min.js"></script>
 
@@ -94,7 +90,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="FacturanavbarDropdownMenuLink">
                             <a class="dropdown-item" href="FacturasRegistro.aspx">Registro</a>
-                            <a class="dropdown-item" href="#">Consulta</a>
+                            <a class="dropdown-item" href="FacturasConsulta.aspx">Consulta</a>
                         </div>
                     </li>
                 </ul>
