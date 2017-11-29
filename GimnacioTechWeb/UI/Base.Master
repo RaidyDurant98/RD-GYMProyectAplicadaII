@@ -95,7 +95,7 @@
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    <asp:Button CssClass="btn btn-outline-dark" ID="SingOutButton" runat="server" Text="Cerrar sesion" OnClick="SingOutButton_Click" />
+                    <asp:Button CssClass="btn btn-outline-primary" ID="SingOutButton" runat="server" Text="Cerrar sesion" OnClick="SingOutButton_Click" />
                 </span>
             </div>
         </nav>
@@ -111,7 +111,7 @@
     <br />
 
     <footer>
-        <div class="bg-secondary">
+        <div class="bg-primary">
             <p class="text-center text-white">Raidy Duran Garcia 2015-0249. "Proyecto Final Ap2 RD-GYM".</p>
         </div>
     </footer>

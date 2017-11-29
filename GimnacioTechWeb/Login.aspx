@@ -74,7 +74,7 @@
                         </div>
 
                         <div class="text-center">
-                            <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-secondary" Text="Iniciar sesion" OnClick="LoginButton_Click" />
+                            <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-primary" Text="Iniciar sesion" OnClick="LoginButton_Click" />
                         </div>
                     </div>
                 </div>

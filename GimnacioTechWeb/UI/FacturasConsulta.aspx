@@ -60,10 +60,10 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
-                <FooterStyle CssClass="bg-secondary" />
+                <FooterStyle CssClass="bg-primary" />
             </asp:GridView>
             <div class="float-left">
-                <asp:Button ID="ImprimirButton" runat="server" CommandName="Select" CssClass="btn btn-secondary" Text="Imprimir" OnClick="ImprimirButton_Click" />
+                <asp:Button ID="ImprimirButton" runat="server" CommandName="Select" CssClass="btn btn-primary" Text="Imprimir" OnClick="ImprimirButton_Click" />
             </div>
         </div>
     </div>
@@ -72,7 +72,7 @@
     <div class="modal" id="ModalEliminar">
         <div class="modal-dialog" role="document">
             <div class="modal-content ">
-                <div class="modal-header bg-secondary">
+                <div class="modal-header bg-primary">
                     <h5 class="modal-title">¡Atencion!</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -82,7 +82,7 @@
                     <p>Esta seguro de eliminar esta factura?</p>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="EliminarButton_Click" />
+                    <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-primary" Text="Si" OnClick="EliminarButton_Click" />
                     <asp:Button ID="CancelarEliminacionButton" runat="server" CssClass="btn btn-secondary" Text="No" OnClick="CancelarEliminacionButton_Click" />
                 </div>
             </div>

@@ -8,7 +8,7 @@
             <div class="col-7 col-sm-9 col-md-10">
             </div>
             <div class="col-5 col-sm-3 col-md-2">
-                <asp:Label ID="FechaFacturaLabel" runat="server" Font-Size="Large" CssClass="h4"></asp:Label>
+                <asp:Label ID="FechaFacturaLabel" runat="server" Font-Size="Large" CssClass="h4 text-primary"></asp:Label>
             </div>
         </div>
 
@@ -36,13 +36,13 @@
                         <asp:TextBox type="number" ID="ClienteIdTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
                     </div>
                     <div class="col-0">
-                        <asp:Button ID="BuscarClienteButton" runat="server" CssClass="btn btn-secondary" OnClick="BuscarClienteButton_Click" Text="B" />
+                        <asp:Button ID="BuscarClienteButton" runat="server" CssClass="btn btn-primary" OnClick="BuscarClienteButton_Click" Text="B" />
                     </div>
                     <div class="col-10 col-md-6">
                         <asp:TextBox ID="NombreClienteTextBox" runat="server" CssClass="form-control" autocomplete="off" Enabled="False"></asp:TextBox>
                     </div>
                     <div class="col-0">
-                        <asp:Button ID="CrearClienteButton" runat="server" CssClass="btn btn-secondary" OnClick="CrearClienteButton_Click" Text="A" />
+                        <asp:Button ID="CrearClienteButton" runat="server" CssClass="btn btn-primary" OnClick="CrearClienteButton_Click" Text="A" />
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                         <asp:TextBox type="number" ID="ProductoIdTextBox" runat="server" CssClass="form-control" autocomplete="off" OnTextChanged="ProductoIdTextBox_TextChanged" AutoPostBack="true"></asp:TextBox>
                     </div>
                     <div class="col-0">
-                        <asp:Button ID="BuscarProductoButton" runat="server" CssClass="btn btn-secondary" OnClick="BuscarProductoButton_Click" Text="B" />
+                        <asp:Button ID="BuscarProductoButton" runat="server" CssClass="btn btn-primary" OnClick="BuscarProductoButton_Click" Text="B" />
                     </div>
                     <div class="col-10 col-sm-6 col-md-4">
                         <asp:TextBox ID="DescripcionProductoTextBox" runat="server" CssClass="form-control" autocomplete="off" Enabled="False"></asp:TextBox>
@@ -82,7 +82,7 @@
                         <asp:TextBox type="number" ID="CantidadProductoTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
                     </div>
                     <div class="col-0">
-                        <asp:Button ID="AgregarProductoButton" runat="server" CssClass="btn btn-secondary" OnClick="AgregarProductoButton_Click" Text="A" />
+                        <asp:Button ID="AgregarProductoButton" runat="server" CssClass="btn btn-primary" OnClick="AgregarProductoButton_Click" Text="A" />
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@
                 <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None"
                     ID="DetalleGridView" runat="server" GridLines="Horizontal" ShowFooter="true">
                     <HeaderStyle CssClass="bg-secondary text-white" />
-                    <FooterStyle CssClass="bg-secondary" />
+                    <FooterStyle CssClass="bg-primary" />
                 </asp:GridView>
             </div>
             <!--Monto-->
@@ -112,7 +112,7 @@
                         <asp:TextBox type="number" ID="DineroPagadoTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
                     </div>
                     <div class="col-0">
-                        <asp:Button ID="CalcularDevueltaButton" runat="server" CssClass="btn btn-secondary" OnClick="CalcularDevueltaButton_Click" Text="C" />
+                        <asp:Button ID="CalcularDevueltaButton" runat="server" CssClass="btn btn-primary" OnClick="CalcularDevueltaButton_Click" Text="C" />
                     </div>
                     <div class="col-10 col-sm-6 col-md-2">
                         <asp:TextBox ID="DevueltaTextBox" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
@@ -133,7 +133,7 @@
         <div class="modal" id="ModalEliminar">
             <div class="modal-dialog" role="document">
                 <div class="modal-content ">
-                    <div class="modal-header bg-secondary">
+                    <div class="modal-header bg-primary">
                         <h5 class="modal-title">¡Atencion!</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -143,7 +143,7 @@
                         <p>Esta seguro de eliminar esta factura?</p>
                     </div>
                     <div class="modal-footer">
-                        <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="EliminarButton_Click" />
+                        <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-primary" Text="Si" OnClick="EliminarButton_Click" />
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                     </div>
                 </div>
