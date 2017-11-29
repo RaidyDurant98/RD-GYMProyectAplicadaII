@@ -149,14 +149,24 @@ namespace GimnacioTechWeb.UI
             if (Validar())
             {
                 producto.ProductoId = Utilidades.TOINT(ProductoIdTextBox.Text);
-                if (ProductosBLL.Guardar(LlenarInstanciaProducto()))
+                producto.Costo = Utilidades.TOINT(CostoTextBox.Text);
+                producto.Precio = Utilidades.TOINT(PrecioTextBox.Text);
+
+                if (producto.Costo > 0 && producto.Precio > 0)
                 {
-                    ProductoIdTextBox.Text = Convert.ToString(producto.ProductoId);
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Producto guardado con exito');", addScriptTags: true);
+                    if (ProductosBLL.Guardar(LlenarInstanciaProducto()))
+                    {
+                        ProductoIdTextBox.Text = Convert.ToString(producto.ProductoId);
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Producto guardado con exito');", addScriptTags: true);
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo guardar el producto');", addScriptTags: true);
+                    }
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo guardar el producto');", addScriptTags: true);
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Digite el costo o el precio correctamente');", addScriptTags: true);
                 }
             }
             else

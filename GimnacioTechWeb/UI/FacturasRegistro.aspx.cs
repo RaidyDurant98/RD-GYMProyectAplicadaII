@@ -457,6 +457,7 @@ namespace GimnacioTechWeb.UI
             else
             {
                 DineroPagadoTextBox.Enabled = true;
+                CalcularMonto();
             }     
         }
     }
