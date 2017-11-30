@@ -110,7 +110,7 @@
                         <p>Esta seguro de modificar este producto?</p>
                     </div>
                     <div class="modal-footer">
-                        <asp:Button ID="ModificarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="ModificarButton_Click" />
+                        <asp:Button ID="ModificarButton" runat="server" CssClass="btn btn-primary" Text="Si" OnClick="ModificarButton_Click" />
                         <asp:Button ID="CancelarModificacionButton" runat="server" CssClass="btn btn-secondary" Text="No" OnClick="CancelarModificacionButton_Click" />
                     </div>
                 </div>

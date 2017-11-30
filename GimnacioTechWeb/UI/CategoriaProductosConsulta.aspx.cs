@@ -115,18 +115,27 @@ namespace GimnacioTechWeb.UI
             // en este caso de la entidad Usuario
             //
             int id = Convert.ToInt32(CategoriasConsultaGridView.DataKeys[row.RowIndex].Value);
+            Entidades.Productos relacion = BLL.ProductosBLL.Buscar(p => p.CategoriaId == id);
 
-            Categoria = BLL.CategoriaProductosBLL.Buscar(U => U.CategoriaId == id);
-            if (BLL.CategoriaProductosBLL.Eliminar(Categoria))
+            if (relacion == null)
             {
-                Limpiar();
+                Categoria = BLL.CategoriaProductosBLL.Buscar(U => U.CategoriaId == id);
+                if (BLL.CategoriaProductosBLL.Eliminar(Categoria))
+                {
+                    Limpiar();
 
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Categoria eliminada con exito');", addScriptTags: true);
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Categoria eliminada con exito');", addScriptTags: true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar la categoria');", addScriptTags: true);
+                }
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar la categoria');", addScriptTags: true);
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se puede eliminar, existe un producto registrado con esta categoria');", addScriptTags: true);
             }
+            
             Categoria = null;
             Lista = BLL.CategoriaProductosBLL.GetListAll();
             CargarListaCategoria();

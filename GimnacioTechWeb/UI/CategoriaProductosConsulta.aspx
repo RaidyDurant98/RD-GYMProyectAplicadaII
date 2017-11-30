@@ -100,7 +100,7 @@
         <div class="modal" id="ModalModificar">
             <div class="modal-dialog" role="document">
                 <div class="modal-content ">
-                    <div class="modal-header bg-secondary">
+                    <div class="modal-header bg-primary">
                         <h5 class="modal-title">¡Atencion!</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>

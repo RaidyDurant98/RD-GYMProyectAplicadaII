@@ -46,7 +46,7 @@
                         <h4 class="card-header bg-secondary text-white">Clientes</h4>
                         <div class="card-body">
                             <h4 class="card-title">Vista de Clientes</h4>
-                            <p class="card-text">En la vista de clinetes puedes encontrar el registro de clientes donde guardas los clientes y su consulta para filtrar los clientes guardados.</p>
+                            <p class="card-text">En la vista de clientes puedes encontrar el registro de clientes donde guardas los clientes y su consulta para filtrar los clientes guardados.</p>
                             <asp:Button ID="RegistroClientesButton" class="btn btn-primary" runat="server" Text="Registro" OnClick="RegistroClientesButton_Click" />
                             <asp:Button ID="ConsultaClientesButton" class="btn btn-secondary" runat="server" Text="Consulta" OnClick="ConsultaClientesButton_Click" />
                         </div>

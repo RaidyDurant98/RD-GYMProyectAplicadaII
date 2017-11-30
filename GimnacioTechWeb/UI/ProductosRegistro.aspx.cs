@@ -186,15 +186,23 @@ namespace GimnacioTechWeb.UI
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
             int id = Utilidades.TOINT(ProductoIdTextBox.Text);
+            FacturasProductos detalle = FacturasProductosBLL.Buscar(p => p.ProductoId == id);
 
-            if (ProductosBLL.Eliminar(ProductosBLL.Buscar(p => p.ProductoId == id)))
+            if (detalle == null)
             {
-                Limpiar();
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Producto eliminado con exito');", addScriptTags: true);
+                if (ProductosBLL.Eliminar(ProductosBLL.Buscar(p => p.ProductoId == id)))
+                {
+                    Limpiar();
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Producto eliminado con exito');", addScriptTags: true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar el producto');", addScriptTags: true);
+                }
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar el producto');", addScriptTags: true);
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar, existe una factura registrada con este producto');", addScriptTags: true);
             }
         }
     }
