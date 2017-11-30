@@ -28,8 +28,8 @@ namespace GimnacioTechWeb.UI
 
         private void CargarListaFacturas()
         {
-            ProductosConsultaGridView.DataSource = Lista;
-            ProductosConsultaGridView.DataBind();
+            FacturaConsultaGridView.DataSource = Lista;
+            FacturaConsultaGridView.DataBind();
         }
 
         private void BotonImprimirVisibleSiHayListas()
@@ -92,7 +92,7 @@ namespace GimnacioTechWeb.UI
         {
             if (string.IsNullOrEmpty(FiltroTextBox.Text) && FiltrarDropDownList.SelectedIndex != 0 && FiltrarDropDownList.SelectedIndex != 4)
             {
-                ProductosConsultaGridView.DataBind();
+                FacturaConsultaGridView.DataBind();
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor digite el dato del filtro');", addScriptTags: true);
                 ImprimirButton.Visible = false;
             }
@@ -100,7 +100,7 @@ namespace GimnacioTechWeb.UI
             {
                 if (string.IsNullOrEmpty(FechaDesdeTextBox.Text) || string.IsNullOrEmpty(FechaHastaTextBox.Text))
                 {
-                    ProductosConsultaGridView.DataBind();
+                    FacturaConsultaGridView.DataBind();
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('Por favor elige el rango de la fecha');", addScriptTags: true);
                     ImprimirButton.Visible = false;
                 }
@@ -140,14 +140,14 @@ namespace GimnacioTechWeb.UI
             //
             // Se obtiene la fila seleccionada del gridview
             //
-            GridViewRow row = ProductosConsultaGridView.SelectedRow;
+            GridViewRow row = FacturaConsultaGridView.SelectedRow;
 
             //
             // Obtengo el id de la entidad que se esta editando
             // en este caso de la entidad Usuario
             //
-            int id = Convert.ToInt32(ProductosConsultaGridView.DataKeys[row.RowIndex].Value);
-
+            int id = Convert.ToInt32(FacturaConsultaGridView.DataKeys[row.RowIndex].Value);
+            AumentarExistenciaProducto();
             Factura = BLL.FacturasBLL.Buscar(U => U.FacturaId == id);
             if (BLL.FacturasBLL.Eliminar(Factura))
             {
@@ -168,6 +168,33 @@ namespace GimnacioTechWeb.UI
         protected void CancelarEliminacionButton_Click(object sender, EventArgs e)
         {
             ImprimirButton.Visible = true;
+        }
+
+        private void AumentarExistenciaProducto()
+        {
+            decimal cantidadAumentar = 0;
+            //
+            // Se obtiene la fila seleccionada del gridview
+            //
+            GridViewRow row = FacturaConsultaGridView.SelectedRow;
+
+            //
+            // Obtengo el id de la entidad que se esta editando
+            // en este caso de la entidad Usuario
+            //
+            int id = Convert.ToInt32(FacturaConsultaGridView.DataKeys[row.RowIndex].Value);
+
+            List<Entidades.FacturasProductos> relacion = BLL.FacturasProductosBLL.GetList(p => p.FacturaId == id);
+
+            foreach (var rel in relacion)
+            {
+
+                cantidadAumentar = rel.Cantidad;
+
+                rel.Producto = BLL.ProductosBLL.BuscarPorId(rel.ProductoId);
+                rel.Producto.Cantidad += cantidadAumentar;
+                BLL.ProductosBLL.Modificar(rel.Producto);
+            }
         }
     }
 }

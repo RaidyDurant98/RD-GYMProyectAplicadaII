@@ -42,7 +42,7 @@
             <div class="float-right">
                 <asp:Button ID="FiltroButton" runat="server" CssClass="btn btn-secondary" Text="Filtrar" OnClick="FiltroButton_Click" />
             </div>
-            <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="ProductosConsultaGridView" runat="server"
+            <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="FacturaConsultaGridView" runat="server"
                 AutoGenerateColumns="False" GridLines="Horizontal" DataKeyNames="FacturaId,NombreCliente" ShowFooter="true">
                 <HeaderStyle CssClass="bg-secondary" />
                 <Columns>

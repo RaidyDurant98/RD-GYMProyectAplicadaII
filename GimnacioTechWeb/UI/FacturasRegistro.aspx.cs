@@ -119,7 +119,7 @@ namespace GimnacioTechWeb.UI
         }
 
         private void LimpiarDatosProducto()
-        {
+        {         
             PrecioProductoTextBox.Text = "";
             DescripcionProductoTextBox.Text = "";
             CantidadProductoTextBox.Text = "";
@@ -273,6 +273,21 @@ namespace GimnacioTechWeb.UI
             }
         }
 
+        private void AumentarExistenciaProducto()
+        {
+            decimal cantidadAumentar = 0;
+            Entidades.Productos Producto = new Entidades.Productos();
+            foreach (GridViewRow producto in DetalleGridView.Rows)
+            {
+                int id = Convert.ToInt32(producto.Cells[0].Text);
+                cantidadAumentar = Convert.ToDecimal(producto.Cells[3].Text);
+
+                Producto = BLL.ProductosBLL.BuscarPorId(id);
+                Producto.Cantidad += cantidadAumentar;
+                BLL.ProductosBLL.Modificar(Producto);
+            }
+        }
+
         protected void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -312,6 +327,7 @@ namespace GimnacioTechWeb.UI
 
             if (BLL.FacturasBLL.Eliminar(BLL.FacturasBLL.Buscar(p => p.FacturaId == id)))
             {
+                AumentarExistenciaProducto();
                 Limpiar();
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Factura eliminada con exito');", addScriptTags: true);
             }
@@ -369,6 +385,8 @@ namespace GimnacioTechWeb.UI
                                 ViewState["Detalle"] = dt;
                                 this.BindGrid();
                                 CalcularMonto();
+                                LimpiarDatosProducto();
+                                ProductoIdTextBox.Text = "";
                             }
                             else
                             {
@@ -436,13 +454,6 @@ namespace GimnacioTechWeb.UI
         protected void CalcularDevueltaButton_Click(object sender, EventArgs e)
         {
             CalcularDevuelta();
-        }
-
-        protected void ProductoIdTextBox_TextChanged(object sender, EventArgs e)
-        {
-            DescripcionProductoTextBox.Text = "";
-            PrecioProductoTextBox.Text = "";
-            CantidadProductoTextBox.Text = "";
         }
 
         protected void FormaPagoDropDownList_SelectedIndexChanged(object sender, EventArgs e)

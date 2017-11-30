@@ -67,7 +67,7 @@
                 <asp:Label ID="ProductoIdLabel" runat="server" Text="Producto Id:"></asp:Label>
                 <div class="row">
                     <div class="col-10 col-sm-4 col-md-2">
-                        <asp:TextBox type="number" ID="ProductoIdTextBox" runat="server" CssClass="form-control" autocomplete="off" OnTextChanged="ProductoIdTextBox_TextChanged" AutoPostBack="true"></asp:TextBox>
+                        <asp:TextBox type="number" ID="ProductoIdTextBox" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
                     </div>
                     <div class="col-0">
                         <asp:Button ID="BuscarProductoButton" runat="server" CssClass="btn btn-primary" OnClick="BuscarProductoButton_Click" Text="B" />
