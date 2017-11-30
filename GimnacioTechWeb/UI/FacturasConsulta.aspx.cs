@@ -147,8 +147,10 @@ namespace GimnacioTechWeb.UI
             // en este caso de la entidad Usuario
             //
             int id = Convert.ToInt32(FacturaConsultaGridView.DataKeys[row.RowIndex].Value);
-            AumentarExistenciaProducto();
+            
             Factura = BLL.FacturasBLL.Buscar(U => U.FacturaId == id);
+
+            AumentarExistenciaProducto(id);
             if (BLL.FacturasBLL.Eliminar(Factura))
             {
                 Limpiar();
@@ -170,25 +172,14 @@ namespace GimnacioTechWeb.UI
             ImprimirButton.Visible = true;
         }
 
-        private void AumentarExistenciaProducto()
+        private void AumentarExistenciaProducto(int id)
         {
             decimal cantidadAumentar = 0;
-            //
-            // Se obtiene la fila seleccionada del gridview
-            //
-            GridViewRow row = FacturaConsultaGridView.SelectedRow;
-
-            //
-            // Obtengo el id de la entidad que se esta editando
-            // en este caso de la entidad Usuario
-            //
-            int id = Convert.ToInt32(FacturaConsultaGridView.DataKeys[row.RowIndex].Value);
 
             List<Entidades.FacturasProductos> relacion = BLL.FacturasProductosBLL.GetList(p => p.FacturaId == id);
 
             foreach (var rel in relacion)
             {
-
                 cantidadAumentar = rel.Cantidad;
 
                 rel.Producto = BLL.ProductosBLL.BuscarPorId(rel.ProductoId);

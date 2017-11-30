@@ -62,7 +62,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:Button ID="EnviarAlModalModificarButton" CommandName="Select" CssClass="btn btn-secondary" runat="server"
+                                <asp:Button ID="EnviarAlModalModificarButton" CommandName="Select" CssClass="btn btn-primary" runat="server"
                                     Text="Modificar" OnClick="EnviarAlModalModificarButton_Click" />
                             </ItemTemplate>
                         </asp:TemplateField>

@@ -44,7 +44,7 @@
     <div class="container">
         <div class="jumbotron jumbotron-fluid bg-secondary">
             <div class="container">
-                <h1 class="display-3 text-white">RD-GYM</h1>
+                <h1 class="display-3 text-white text-primary">RD-GYM</h1>
                 <p class="lead text-white">Nunca pares, nunca te conformes, hasta que lo bueno sea mejor y lo mejor excelente.</p>
             </div>
         </div>
