@@ -450,7 +450,6 @@ namespace GimnacioTechWeb.UI
             if (FormaPagoDropDownList.SelectedIndex == 1)
             {
                 DineroPagadoTextBox.Enabled = false;
-                MontoTextBox.Text = "";
                 DineroPagadoTextBox.Text = "";
                 DevueltaTextBox.Text = "";
             }
