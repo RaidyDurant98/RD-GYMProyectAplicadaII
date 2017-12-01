@@ -14,13 +14,9 @@ namespace GiemnacioTechTest
         [TestMethod]
         public void Guardar()
         {
-            CategoriaProductos cat = new CategoriaProductos();
-            cat.CategoriaId = 1;
-            cat.Descripcion = "jj";
+            CategoriaProductos cat = new CategoriaProductos(0, "Proteina");
 
-            var paso = CategoriaProductosBLL.Guardar(cat);
-
-            Assert.IsNotNull(paso, null);
+            Assert.IsTrue(CategoriaProductosBLL.Guardar(cat));
         }
 
         [TestMethod]
@@ -34,13 +30,21 @@ namespace GiemnacioTechTest
         [TestMethod]
         public void Eliminar()
         {
-            CategoriaProductos cat = new CategoriaProductos();
-            cat.CategoriaId = 1;
-            cat.Descripcion = "jj";
+            CategoriaProductos cat = new CategoriaProductos(0, "Proteina");
 
-            var paso = CategoriaProductosBLL.Guardar(cat);
+            CategoriaProductosBLL.Guardar(cat);
 
-            Assert.IsNull(paso, null);
+            Assert.IsNull(CategoriaProductosBLL.Eliminar(cat));
+        }
+
+        [TestMethod]
+        public void Modificar()
+        {
+            CategoriaProductos cat = new CategoriaProductos(0, "Proteina");
+
+            CategoriaProductosBLL.Guardar(cat);
+
+            Assert.IsNull(CategoriaProductosBLL.Modificar(cat));
         }
     }
 }

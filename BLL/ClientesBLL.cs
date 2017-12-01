@@ -96,5 +96,21 @@ namespace BLL
                 }
             }
         }
+
+        public static bool Modificar(Clientes cliente)
+        {
+            using (var context = new Respository<Clientes>())
+            {
+                try
+                {
+                    return context.Modificar(cliente);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
     }
 }

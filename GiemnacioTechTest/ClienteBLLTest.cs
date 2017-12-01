@@ -14,11 +14,10 @@ namespace GiemnacioTechTest
         [TestMethod]
         public void Guardar()
         {
-            Clientes cliente = new Clientes(0, "Raidy Duran Garcia", "R", DateTime.Now.Date, "1234", "Usuario", "ww");
+            Clientes cliente = new Clientes(0, "Raidy Duran Garcia", "Masculino", DateTime.Now.Date, 
+                "San Francisco de Macoris", "8096739368", "Raidy@outlook.es");
 
-            var paso = ClientesBLL.Guardar(cliente);
-
-            Assert.IsNotNull(paso, null);
+            Assert.IsTrue(ClientesBLL.Guardar(cliente));
         }
 
         [TestMethod]
@@ -32,11 +31,23 @@ namespace GiemnacioTechTest
         [TestMethod]
         public void Eliminar()
         {
-            Clientes cliente = new Clientes(0, "Raidy Duran Garcia", "R", DateTime.Now.Date, "1234", "Usuario", "ww");
+            Clientes cliente = new Clientes(0, "Raidy Duran Garcia", "Masculino", DateTime.Now.Date,
+                "San Francisco de Macoris", "8096739368", "Raidy@outlook.es");
 
-            ClientesBLL.Eliminar(cliente);
+            ClientesBLL.Guardar(cliente);
 
-            Assert.IsNull(cliente, null);
+            Assert.IsNull(ClientesBLL.Eliminar(cliente));
+        }
+
+        [TestMethod]
+        public void Modificar()
+        {
+            Clientes cliente = new Clientes(0, "Raidy Duran Garcia", "Masculino", DateTime.Now.Date,
+                "San Francisco de Macoris", "8096739368", "Raidy@outlook.es");
+
+            ClientesBLL.Guardar(cliente);
+
+            Assert.IsNull(ClientesBLL.Modificar(cliente));
         }
     }
 }

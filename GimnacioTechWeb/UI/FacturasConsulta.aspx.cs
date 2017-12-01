@@ -182,7 +182,7 @@ namespace GimnacioTechWeb.UI
             {
                 cantidadAumentar = rel.Cantidad;
 
-                rel.Producto = BLL.ProductosBLL.BuscarPorId(rel.ProductoId);
+                rel.Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == rel.ProductoId);
                 rel.Producto.Cantidad += cantidadAumentar;
                 BLL.ProductosBLL.Modificar(rel.Producto);
             }

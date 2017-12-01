@@ -13,9 +13,7 @@ namespace GiemnacioTechTest
         {
             Usuarios usuario = new Usuarios(0,"Raidy Duran Garcia", "R", "1234", "Usuario", DateTime.Now.Date);
 
-            var paso = UsuariosBLL.Guardar(usuario);
-
-            Assert.IsNotNull(paso, null);
+            Assert.IsTrue(UsuariosBLL.Guardar(usuario));
         }
 
         [TestMethod]
@@ -29,11 +27,20 @@ namespace GiemnacioTechTest
         [TestMethod]
         public void Eliminar()
         {
-            Usuarios usuario = new Usuarios(0, "Raidy Duran Garcia", "R", "1234", "Usuario", DateTime.Now.Date);
+            Usuarios usuario = new Usuarios(0, "Raidy Duran Garcia", "Roo", "1234", "Usuario", DateTime.Now.Date);
 
-            UsuariosBLL.Eliminar(usuario);
+            UsuariosBLL.Guardar(usuario);
+            Assert.IsTrue(UsuariosBLL.Eliminar(usuario));
+        }
 
-            Assert.IsNull(usuario, null);
+        [TestMethod]
+        public void Modificar()
+        {
+            Usuarios usuario = new Usuarios(0, "Raidy Duran Garcia", "Roo", "1234", "Usuario", DateTime.Now.Date);
+
+            UsuariosBLL.Guardar(usuario);
+
+            Assert.IsTrue(UsuariosBLL.Modificar(usuario));
         }
     }
 }

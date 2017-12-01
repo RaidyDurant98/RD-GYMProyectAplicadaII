@@ -278,7 +278,7 @@ namespace GimnasioTech.UI
                 int id = Convert.ToInt32(producto.Cells[2].Value);
                 cantidad = Convert.ToDecimal(producto.Cells[5].Value);
 
-                Detalle.Producto = BLL.ProductosBLL.BuscarPorId(id);
+                Detalle.Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == id);
                 Detalle.Producto.Cantidad -= cantidad;
                 BLL.ProductosBLL.Modificar(Detalle.Producto);
             }
@@ -291,7 +291,7 @@ namespace GimnasioTech.UI
                 int id = Convert.ToInt32(producto.Cells[2].Value);
                 cantidad = Convert.ToDecimal(producto.Cells[5].Value);
 
-                Detalle.Producto = BLL.ProductosBLL.BuscarPorId(id);
+                Detalle.Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == id);
                 Detalle.Producto.Cantidad += cantidad;
                 BLL.ProductosBLL.Modificar(Detalle.Producto);
             }

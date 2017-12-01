@@ -267,7 +267,7 @@ namespace GimnacioTechWeb.UI
                 int id = Convert.ToInt32(producto.Cells[0].Text);
                 cantidadDescontar = Convert.ToDecimal(producto.Cells[3].Text);
 
-                Producto = BLL.ProductosBLL.BuscarPorId(id);
+                Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == id);
                 Producto.Cantidad -= cantidadDescontar;
                 BLL.ProductosBLL.Modificar(Producto);
             }
@@ -282,7 +282,7 @@ namespace GimnacioTechWeb.UI
                 int id = Convert.ToInt32(producto.Cells[0].Text);
                 cantidadAumentar = Convert.ToDecimal(producto.Cells[3].Text);
 
-                Producto = BLL.ProductosBLL.BuscarPorId(id);
+                Producto = BLL.ProductosBLL.Buscar(p => p.ProductoId == id);
                 Producto.Cantidad += cantidadAumentar;
                 BLL.ProductosBLL.Modificar(Producto);
             }

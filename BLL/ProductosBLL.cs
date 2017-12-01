@@ -112,21 +112,5 @@ namespace BLL
                 }
             }
         }
-
-        public static Productos BuscarPorId(int id)
-        {
-            using (var context = new DAL.Respository<Entidades.Productos>())
-            {
-                try
-                {
-                    return context.BuscarOtro(id);
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-            }
-        }
     }
 }

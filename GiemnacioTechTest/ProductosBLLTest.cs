@@ -14,11 +14,9 @@ namespace GiemnacioTechTest
         [TestMethod]
         public void Guardar()
         {
-            Productos producto = new Productos(1, "Proteina", 1, 34, 50, DateTime.Now.Date, 1);
+            Productos producto = new Productos(0, "Whey 5 lbs", 10, 30, 40, DateTime.Now.Date, 1);
 
-            var paso = ProductosBLL.Guardar(producto);
-
-            Assert.IsNotNull(paso, null);
+            Assert.IsTrue(ProductosBLL.Guardar(producto));
         }
 
         [TestMethod]
@@ -32,11 +30,20 @@ namespace GiemnacioTechTest
         [TestMethod]
         public void Eliminar()
         {
-            Productos producto = new Productos(1, "Proteina", 1, 34, 50, DateTime.Now.Date, 1);
+            Productos producto = new Productos(0, "Whey 5 lbs", 10, 30, 40, DateTime.Now.Date, 1);
 
-            var paso = ProductosBLL.Guardar(producto);
+            ProductosBLL.Guardar(producto);
+            Assert.IsTrue(ProductosBLL.Eliminar(producto));
+        }
 
-            Assert.IsNull(paso, null);
+        [TestMethod]
+        public void Modificar()
+        {
+            Productos producto = new Productos(0, "Whey 5 lbs", 10, 30, 40, DateTime.Now.Date, 1);
+
+            ProductosBLL.Guardar(producto);
+
+            Assert.IsTrue(ProductosBLL.Modificar(producto));
         }
     }
 }
