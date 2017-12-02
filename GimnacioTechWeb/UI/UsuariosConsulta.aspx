@@ -18,7 +18,6 @@
                         <asp:ListItem>ID</asp:ListItem>
                         <asp:ListItem>Nombres</asp:ListItem>
                         <asp:ListItem>Nombre de Usuario</asp:ListItem>
-                        <asp:ListItem>Fecha Ingreso</asp:ListItem>
                         <asp:ListItem>Cargo Usuario</asp:ListItem>
                     </asp:DropDownList>
                 </div>
@@ -26,10 +25,13 @@
                     <asp:TextBox ID="FiltroTextBox" runat="server" CssClass="form-control" autoComplete="off"></asp:TextBox>
                 </div>
             </div>
+            <br />
+            <asp:CheckBox ID="FiltrarFechaCheckBox" runat="server" Text="Filtrar por fecha" AutoPostBack="true" />
+
             <!--TextBox Fecha-->
             <div class="row">
                 <div class="form-group col-12 col-sm-6">
-                    <asp:Label ID="DesdeLabel" runat="server" Text="Desde:" CssClass=""></asp:Label>
+                    <asp:Label ID="DesdeLabel" runat="server" Text="Desde:"></asp:Label>
                     <asp:TextBox type="date" CssClass="form-control" ID="FechaDesdeTextBox" runat="server"></asp:TextBox>
                 </div>
                 <div class="form-group col-12 col-sm-6">
