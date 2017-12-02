@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GimnacioTechWeb", "GimnacioTechWeb\GimnacioTechWeb.csproj", "{16F6A70B-B8E5-4FC6-A0D3-308B4BD49EA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiemnacioTechTest", "GiemnacioTechTest\GiemnacioTechTest.csproj", "{210A88F9-9A9E-4E86-95F9-B357D6E65581}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymTest", "GymTest\GymTest.csproj", "{3742CA5B-0082-4F8F-B62B-4698EFDA92C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{16F6A70B-B8E5-4FC6-A0D3-308B4BD49EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16F6A70B-B8E5-4FC6-A0D3-308B4BD49EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16F6A70B-B8E5-4FC6-A0D3-308B4BD49EA1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{210A88F9-9A9E-4E86-95F9-B357D6E65581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{210A88F9-9A9E-4E86-95F9-B357D6E65581}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{210A88F9-9A9E-4E86-95F9-B357D6E65581}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{210A88F9-9A9E-4E86-95F9-B357D6E65581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3742CA5B-0082-4F8F-B62B-4698EFDA92C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3742CA5B-0082-4F8F-B62B-4698EFDA92C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3742CA5B-0082-4F8F-B62B-4698EFDA92C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3742CA5B-0082-4F8F-B62B-4698EFDA92C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

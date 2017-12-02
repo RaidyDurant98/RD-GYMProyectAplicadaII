@@ -25,5 +25,19 @@ namespace Entidades
         {
             this.Relacion = new HashSet<FacturasProductos>();
         }
+
+        public Facturas(int id, string nombreCliente, string nombreUsuario, DateTime fecha, decimal monto,
+            decimal dineroPagado, decimal devuelta, string comentario, string formaPago)
+        {
+            this.FacturaId = id;
+            this.NombreCliente = nombreCliente;
+            this.NombreUsuario = NombreUsuario;
+            this.Fecha = fecha;
+            this.Monto = monto;
+            this.DineroPagado = dineroPagado;
+            this.Devuelta = devuelta;
+            this.Comentario = comentario;
+            this.FormaPago = formaPago;
+        }
     }
 }

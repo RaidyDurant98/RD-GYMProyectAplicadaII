@@ -397,6 +397,7 @@ namespace GimnacioTechWeb.UI
                             }
                             else
                             {
+                                LimpiarDatosProducto();
                                 ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('El id no coincide con de la descripcion y precio');", addScriptTags: true);
                             }
                         }
