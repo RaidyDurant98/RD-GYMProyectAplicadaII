@@ -120,15 +120,19 @@ namespace GimnacioTechWeb.UI
             if (relacion == null)
             {
                 Categoria = BLL.CategoriaProductosBLL.Buscar(U => U.CategoriaId == id);
-                if (BLL.CategoriaProductosBLL.Eliminar(Categoria))
-                {
-                    Limpiar();
 
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Categoria eliminada con exito');", addScriptTags: true);
-                }
-                else
+                if (Categoria != null)
                 {
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar la categoria');", addScriptTags: true);
+                    if (BLL.CategoriaProductosBLL.Eliminar(Categoria))
+                    {
+                        Limpiar();
+
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Categoria eliminada con exito');", addScriptTags: true);
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar la categoria');", addScriptTags: true);
+                    }
                 }
             }
             else

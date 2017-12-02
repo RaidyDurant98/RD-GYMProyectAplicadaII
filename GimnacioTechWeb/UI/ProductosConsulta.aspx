@@ -45,14 +45,14 @@
                 </div>
                 <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="ProductosConsultaGridView" runat="server"
                     AutoGenerateColumns="False" GridLines="Horizontal" DataKeyNames="ProductoId,Descripcion" ShowFooter="true">
-                    <HeaderStyle CssClass="bg-secondary" />
+                    <HeaderStyle CssClass="bg-secondary text-white" />
                     <Columns>
-                        <asp:BoundField DataField="ProductoId" HeaderText="Producto Id" />
+                        <asp:BoundField DataField="ProductoId" HeaderText="Id" />
                         <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
                         <asp:BoundField DataField="Costo" HeaderText="Costo" />
                         <asp:BoundField DataField="precio" HeaderText="precio" />
-                        <asp:BoundField DataField="FechaIngreso" DataFormatString="{0:d}" HeaderText="Fecha Ingreso" />
+                        <asp:BoundField DataField="FechaIngreso" DataFormatString="{0:d}" HeaderText="Ingreso" />
                         <asp:BoundField DataField="CategoriaId" HeaderText="Categoria"/>
                         <asp:TemplateField>
                             <ItemTemplate>

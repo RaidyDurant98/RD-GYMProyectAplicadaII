@@ -135,22 +135,25 @@ namespace GimnacioTechWeb.UI
             int id = Convert.ToInt32(UsuariosConsultaGridView.DataKeys[row.RowIndex].Value);
 
             Usuario = BLL.UsuariosBLL.Buscar(U => U.UsuarioId == id);
-            if (Usuario.UsuarioId != 1)
+            if (Usuario != null)
             {
-                if (BLL.UsuariosBLL.Eliminar(Usuario))
+                if (Usuario.UsuarioId != 1)
                 {
-                    Limpiar();
+                    if (BLL.UsuariosBLL.Eliminar(Usuario))
+                    {
+                        Limpiar();
 
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Usuario eliminado con exito');", addScriptTags: true);
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Usuario eliminado con exito');", addScriptTags: true);
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('No se pudo eliminar el usuario');", addScriptTags: true);
+                    }
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('No se pudo eliminar el usuario');", addScriptTags: true);
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No se puedo eliminar el usuario maestro');", addScriptTags: true);
                 }
-            }
-            else
-            {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('No se puedo eliminar el usuario maestro');", addScriptTags: true);
             }
 
             Usuario = null;

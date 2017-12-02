@@ -47,13 +47,13 @@
                 </div>
                 <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="UsuariosConsultaGridView" runat="server"
                     AutoGenerateColumns="False" GridLines="Horizontal" DataKeyNames="UsuarioId,Nombres" ShowFooter="true">
-                    <HeaderStyle CssClass="bg-secondary" />
+                    <HeaderStyle CssClass="bg-secondary text-white" />
                     <Columns>
-                        <asp:BoundField DataField="UsuarioId" HeaderText="Usuario Id" />
+                        <asp:BoundField DataField="UsuarioId" HeaderText="Id" />
                         <asp:BoundField DataField="Nombres" HeaderText="Nombres" />
                         <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre Usuario" />
                         <asp:BoundField DataField="Cargo" HeaderText="Cargo" />
-                        <asp:BoundField DataField="FechaIngreso" DataFormatString="{0:d}" HeaderText="Fecha Ingreso" />
+                        <asp:BoundField DataField="FechaIngreso" DataFormatString="{0:d}" HeaderText="Ingreso" />
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <asp:Button ID="EnviarAlModalEliminarButton" CommandName="Select" CssClass="btn btn-secondary" runat="server"

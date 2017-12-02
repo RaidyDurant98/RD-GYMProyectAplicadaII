@@ -44,13 +44,13 @@
             </div>
             <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="FacturaConsultaGridView" runat="server"
                 AutoGenerateColumns="False" GridLines="Horizontal" DataKeyNames="FacturaId,NombreCliente" ShowFooter="true">
-                <HeaderStyle CssClass="bg-secondary" />
+                <HeaderStyle CssClass="bg-secondary text-white" />
                 <Columns>
                     <asp:BoundField DataField="FacturaId" HeaderText="Id" />
-                    <asp:BoundField DataField="NombreCliente" HeaderText="Nombre Cliente" />
+                    <asp:BoundField DataField="NombreCliente" HeaderText="Cliente" />
                     <asp:BoundField DataField="FormaPago" HeaderText="Forma Pago" />
                     <asp:BoundField DataField="Monto" HeaderText="Monto" />
-                    <asp:BoundField DataField="DineroPagado" HeaderText="Dinero Recibido" />
+                    <asp:BoundField DataField="DineroPagado" HeaderText="Recibido" />
                     <asp:BoundField DataField="Devuelta" HeaderText="Devuelta" />
                     <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
                     <asp:TemplateField>

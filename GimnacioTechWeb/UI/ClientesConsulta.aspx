@@ -48,15 +48,15 @@
                 </div>
                 <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="ClientesConsultaGridView" runat="server"
                     AutoGenerateColumns="False" GridLines="Horizontal" DataKeyNames="ClienteId,Nombres" ShowFooter="true">
-                    <HeaderStyle CssClass="bg-secondary" />
+                    <HeaderStyle CssClass="bg-secondary text-white" />
                     <Columns>
-                        <asp:BoundField DataField="ClienteId" HeaderText="Cliente Id" />
+                        <asp:BoundField DataField="ClienteId" HeaderText="Id" />
                         <asp:BoundField DataField="Nombres" HeaderText="Nombres" />
                         <asp:BoundField DataField="Direccion" HeaderText="Direccion" />
-                        <asp:BoundField DataField="NumeroCelular" HeaderText="Numero Celular" />
+                        <asp:BoundField DataField="NumeroCelular" HeaderText="Celular" />
                         <asp:BoundField DataField="Email" HeaderText="Email" />
                         <asp:BoundField DataField="Sexo" HeaderText="Sexo" />
-                        <asp:BoundField DataField="FechaInscripcion" DataFormatString="{0:d}" HeaderText="Fecha Inscripcion" />
+                        <asp:BoundField DataField="FechaInscripcion" DataFormatString="{0:d}" HeaderText="Inscripcion" />
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <!--<asp:Button ID="SeleccionButton" runat="server" CommandName="Select" CssClass="btn btn-secondary" Text="Eliminar"/>-->

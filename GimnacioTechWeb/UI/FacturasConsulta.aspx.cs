@@ -150,17 +150,20 @@ namespace GimnacioTechWeb.UI
             
             Factura = BLL.FacturasBLL.Buscar(U => U.FacturaId == id);
 
-            AumentarExistenciaProducto(id);
-            if (BLL.FacturasBLL.Eliminar(Factura))
+            if (Factura != null)
             {
-                Limpiar();
+                AumentarExistenciaProducto(id);
+                if (BLL.FacturasBLL.Eliminar(Factura))
+                {
+                    Limpiar();
 
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Factura eliminado con exito');", addScriptTags: true);
-            }
-            else
-            {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar el producto');", addScriptTags: true);
-            }
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Factura eliminado con exito');", addScriptTags: true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar el producto');", addScriptTags: true);
+                }
+            }          
             Factura = null;
             Lista = BLL.FacturasBLL.GetListAll();
             CargarListaFacturas();

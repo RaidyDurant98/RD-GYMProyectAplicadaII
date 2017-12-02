@@ -136,15 +136,18 @@ namespace GimnacioTechWeb.UI
             int id = Convert.ToInt32(ClientesConsultaGridView.DataKeys[row.RowIndex].Value);
 
             Cliente = BLL.ClientesBLL.Buscar(U => U.ClienteId == id);
-            if (BLL.ClientesBLL.Eliminar(Cliente))
+            if(Cliente != null)
             {
-                Limpiar();
+                if (BLL.ClientesBLL.Eliminar(Cliente))
+                {
+                    Limpiar();
 
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Cliente eliminado con exito');", addScriptTags: true);
-            }
-            else
-            {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar el cliente');", addScriptTags: true);
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Cliente eliminado con exito');", addScriptTags: true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar el cliente');", addScriptTags: true);
+                }
             }
             Cliente = null;
             Lista = BLL.ClientesBLL.GetListAll();

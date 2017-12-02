@@ -34,9 +34,9 @@
                 </div>
                 <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="CategoriasConsultaGridView" runat="server"
                     AutoGenerateColumns="False" GridLines="Horizontal" DataKeyNames="CategoriaId,Descripcion" ShowFooter="true">
-                    <HeaderStyle CssClass="bg-secondary" />
+                    <HeaderStyle CssClass="bg-secondary text-white" />
                     <Columns>
-                        <asp:BoundField DataField="CategoriaId" HeaderText="Categoria Id" />
+                        <asp:BoundField DataField="CategoriaId" HeaderText="Id" />
                         <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
                         <asp:BoundField />
                         <asp:BoundField />

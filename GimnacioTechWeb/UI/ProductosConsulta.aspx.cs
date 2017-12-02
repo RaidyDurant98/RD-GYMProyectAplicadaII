@@ -132,20 +132,24 @@ namespace GimnacioTechWeb.UI
             // en este caso de la entidad Usuario
             //
             int id = Convert.ToInt32(ProductosConsultaGridView.DataKeys[row.RowIndex].Value);
-            Producto = BLL.ProductosBLL.Buscar(U => U.ProductoId == id);
+            
             Entidades.FacturasProductos Detalle = BLL.FacturasProductosBLL.Buscar(p => p.ProductoId == id);
 
             if (Detalle == null)
             {
-                if (BLL.ProductosBLL.Eliminar(Producto))
+                Producto = BLL.ProductosBLL.Buscar(U => U.ProductoId == id);
+                if (Producto != null)
                 {
-                    Limpiar();
+                    if (BLL.ProductosBLL.Eliminar(Producto))
+                    {
+                        Limpiar();
 
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Producto eliminado con exito');", addScriptTags: true);
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar el producto');", addScriptTags: true);
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Producto eliminado con exito');", addScriptTags: true);
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar el producto');", addScriptTags: true);
+                    }
                 }
             }
             else
