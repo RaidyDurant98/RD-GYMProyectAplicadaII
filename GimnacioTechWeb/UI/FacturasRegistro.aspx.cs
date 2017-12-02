@@ -378,19 +378,26 @@ namespace GimnacioTechWeb.UI
                     {                      
                         if (Producto.Cantidad >= Utilidades.TOINT(CantidadProductoTextBox.Text))
                         {
-                            if (!ValidarProductoAgregadoGrid())
+                            if (Producto.Descripcion == DescripcionProductoTextBox.Text)
                             {
-                                dt = (DataTable)ViewState["Detalle"];
-                                dt.Rows.Add(Utilidades.TOINT(ProductoIdTextBox.Text), DescripcionProductoTextBox.Text, Utilidades.TODECIMAL(PrecioProductoTextBox.Text), CantidadProductoTextBox.Text);
-                                ViewState["Detalle"] = dt;
-                                this.BindGrid();
-                                CalcularMonto();
-                                LimpiarDatosProducto();
-                                ProductoIdTextBox.Text = "";
+                                if (!ValidarProductoAgregadoGrid())
+                                {
+                                    dt = (DataTable)ViewState["Detalle"];
+                                    dt.Rows.Add(Producto.ProductoId, Producto.Descripcion, Producto.Precio, CantidadProductoTextBox.Text);
+                                    ViewState["Detalle"] = dt;
+                                    this.BindGrid();
+                                    CalcularMonto();
+                                    LimpiarDatosProducto();
+                                    ProductoIdTextBox.Text = "";
+                                }
+                                else
+                                {
+                                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('El producto ya esta agregado');", addScriptTags: true);
+                                }
                             }
                             else
                             {
-                                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('El producto ya esta agregado');", addScriptTags: true);
+                                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['info']('El id no coincide con de la descripcion y precio');", addScriptTags: true);
                             }
                         }
                         else
